@@ -99,8 +99,8 @@ mass, where $|T|=(TT^\dagger)^{1/2}$, and $\mu_i$ for the moment map of
 $\mathcal H$ with the induced metrics, so that the endomorphism $\Omega$ of
 the representation $\mathcal H$ is $\bigoplus_i(z_i+\mu_i)$. Let $\lambda$ be
 the least eigenvalue of $DD^\dagger$ and $\norm\cdot_1$ the trace norm. The
-exact subcomplex $(\ker D)^\perp\to U$ at $i_0$ is the \emph{exact part} of
-the metrized complex.
+quotient complex $\mathsf E/\mathcal H$ is supported at $i_0$ and is exact.
+We call its metric realization $(\ker D)^\perp\to U$ the \emph{exact part}.
 
 \begin{theorem}[Convergence on the cohomology]\label{thm:introB}
 Let $\mathsf E$ be a complex with a surjective differential at $i_0$. For all
@@ -161,7 +161,8 @@ vertex $i_0$, the charges and the dimensions, such that for all metrics
  \frac{d\cN}{dt}\leq-\gamma\,\cN+c
 \]
 along the phase flow. For a representation one can take $\gamma=\pi/\ell$,
-with $\ell$ the number of arrows of a longest path in $Q$.
+with $\ell$ the number of arrows of a longest path in $Q$, taking $\ell=1$
+when $Q$ has no arrows.
 \end{theorem}
 
 The derivative $d\cN/dt$ is a sum of three traces, one for $V$, one for $U$
@@ -231,11 +232,10 @@ $|Z(\mathsf R)|/\sin\varphi$ on the subquotients $\mathsf R$ of $\mathcal H$
 of phase $\varphi$.
 \end{theorem}
 
-The weights are in general forced up to a common factor: on the
-representation $\CC\to\CC$ of the
-quiver with one arrow, with two charges of equal argument, the metrics grow
-and decay like powers of $t$ whose exponents are $|z_1|/|z_0+z_1|$ and
-$-|z_0|/|z_0+z_1|$ (Proposition~\ref{prop:weights}). The proof of
+For a nonzero arrow $\CC\to\CC$ and two charges of equal argument, the
+metrics grow and decay like powers of $t$ with exponents $|z_1|/|z_0+z_1|$
+and $-|z_0|/|z_0+z_1|$. These exponents determine the ratio of the two
+weights (Proposition~\ref{prop:weights}). The proof of
 Theorem~\ref{thm:introS} compares the velocity of the flow with the gradient
 of the Kempf--Ness function: the difference is quadratic in the shifted
 moment map, hence integrable in time, and gradient flows of convex
@@ -265,10 +265,12 @@ differentials vanish at one of the two vertices, with any Hermitian metric.
  those of $(-1)^n\Omega_{H^n(\mathsf E)}$, the endomorphism of the
  representation $H^n(\mathsf E)$ with its induced metrics, extended by zero;
  the trace-norm distance decays exponentially from a time that depends on
- the initial metric. If $H^n(\mathsf E)$ is polystable, the metrics induced
- on it converge exponentially, after multiplication by a scalar function of
- the time, to a harmonic metric. In general these metrics have the
- properties of Theorems~\ref{thm:introH} and~\ref{thm:introS}, and
+ the initial metric. On nonzero $H^n(\mathsf E)$ the induced metrics
+ multiplied by $e^{-\pi nt}$ satisfy the conclusions of
+ Theorem~\ref{thm:introH} and, in the semistable case, of
+ Theorem~\ref{thm:introS}. On a Harder--Narasimhan quotient of phase
+ $\phi$, the induced metric multiplied by $e^{(\phi-\pi n)t}$ converges
+ exponentially to a harmonic metric if the quotient is polystable. The mass
  $\mass(h(t))$ converges to the sum over $n$ of the masses of the
  representations $H^n(\mathsf E)$ for the stability condition.
 \item[(iii)] Minimal bounded complexes of projective representations of

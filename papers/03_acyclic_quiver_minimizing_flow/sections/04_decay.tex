@@ -10,7 +10,8 @@ let
 \[
  \varpi_\star=\min\bigl\{\lambda_{\min}(\Phi_j):\ j=\mathsf t(a)\ \text{for an arrow }a\text{ out of }i_0\bigr\};
 \]
-if no arrow leaves $i_0$, then $s=0$, Lemma~\ref{lem:estimates}(iii) reads
+only targets with $W_j\neq0$ enter this minimum. If there are none,
+then $s=0$, Lemma~\ref{lem:estimates}(iii) reads
 $0\leq0$, and $\varpi_\star$, $\bar\varpi$ and the constants
 \eqref{eq:constants} are not used.
 Let $\Eone(b)=\int_1^\infty e^{-xb}\frac{dx}x$ be the exponential integral;
@@ -37,7 +38,7 @@ For all charges and every metric:
  \]
 \item[(iii)] $\dot s\leq\bigl(-\varpi_\star+\frac{4\pi q_{\mathrm{out}}}{y_\ast\lambda}\bigr)s$
  along the flow. Moreover $\lambda_{\min}(\Phi_j)\geq\arg(z_j+\cN)$ for
- $j\neq i_0$, and $\lambda_{\min}(\Phi_j)\geq\alpha_j$ if $j$ is a sink.
+ each $j\neq i_0$ with $W_j\neq 0$. At every sink with $W_j\neq 0$ one has $\lambda_{\min}(\Phi_j)\geq\alpha_j$.
 \item[(iv)] If $\sqrt{q_{\mathrm{out}}s/\lambda}\leq y_\ast/8$, then
  $\norm{\delta_{i_0}}\leq\frac{4\pi}{y_\ast}\sqrt{q_{\mathrm{out}}s/\lambda}$;
  and $\norm{\delta_j}\leq\norm{Y_j}/y_j\leq s/y_j$ for $j\neq i_0$.
@@ -127,7 +128,7 @@ numbers
 \[
  \arg(z_j+\bar\cN)\ \ (j\text{ not a sink}),\qquad\alpha_j\ \ (j\text{ a sink}),
 \]
-over the targets $j$ of the arrows out of $i_0$; by
+over the nonzero target spaces $W_j$ of arrows out of $i_0$; by
 Lemma~\ref{lem:estimates}(iii) and Theorem~\ref{thm:energy},
 $\varpi_\star\geq\bar\varpi$ for $t\geq t_0$. Let $\lambda_0=\lambda(0)$,
 $c_\lambda=1/\log(1+1/\lambda_0)$, $\Xi_0=\tr\Eone(L)|_{t=0}$, and
@@ -149,8 +150,8 @@ vertices.
 
 \begin{theorem}[Decay of the exact part]\label{thm:decay}
 Let $\mathsf E$ be a complex with a surjective differential at $i_0$ and
-$r\geq1$, with $W_j\neq0$ for some $j\neq i_0$ and with at least one arrow
-leaving $i_0$; fix a height function $w$ and let the constants be as in
+$r\geq1$, with at least one arrow from $i_0$ to a vertex $j$ with
+$W_j\neq0$; fix a height function $w$ and let the constants be as in
 \eqref{eq:constants}. For all
 charges in the upper half-plane and along every trajectory of the phase flow:
 \begin{enumerate}
@@ -272,7 +273,8 @@ $\Lambda_1\geq8\bar\cN/y_\ast$.
 
 (2) When an arrow leaves $i_0$, the phases $\Phi_{AA}$ and $\Phi_U$ on the
 exact part need not tend to $\alpha_\ast$ and $\alpha_\ast-\pi$, in contrast
-with Proposition~\ref{prop:sink}. The proof of Theorem~\ref{thm:decay} bounds
-$\inner v{\Phi_Vv}-\inner u{\Phi_Uu}$ from below by $\frac\pi2$ and does not
-determine its limit.
+with Proposition~\ref{prop:sink}. In the proof of Theorem~\ref{thm:decay}(i), the bound
+$\inner v{\Phi_Vv}-\inner u{\Phi_Uu}\geq\pi/2$ is used at a possible
+contact with the line $\lambda=\frac{\bar\varpi}4(t-t_1)-\mathfrak c_3$.
+It gives the stated lower bound for $\lambda(t)$.
 \end{remark}

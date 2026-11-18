@@ -128,8 +128,7 @@ and let $\epsilon\to0$.
 \end{proof}
 
 For $e=0$ the lemma says that the gradient flow does not increase distances;
-for the flow \eqref{eq:gradflow} this is due to Harada and Wilkin
-\cite{hw11}, as recalled in \cite[\S5.3]{hkkp23}.
+Harada and Wilkin prove a related contraction estimate for the trace of the relative metric and its inverse \cite[Theorem~3.18]{hw11}; see also \cite[\S5.3]{hkkp23}.
 
 \begin{theorem}[Comparison with the gradient flow]\label{thm:comparison}
 Assume (P) and let $\mathcal H$ be semistable. Let $\mathfrak g(t)$,
@@ -239,8 +238,8 @@ Theorem~\ref{thm:comparison}. The bounded factor between $\mathfrak h$ and
 \eqref{eq:iterated} is not shown to converge, also not in \cite{hkkp23} for
 the gradient flow; it converges in Proposition~\ref{prop:weights} below and
 in the example of \cite[Proposition~6.9]{wue26b}.
-The weights are forced up to a common factor, as the following example
-shows.
+In the following example the exponents determine the ratio of the vertex
+weights.
 
 \begin{proposition}\label{prop:weights}
 Let $Q$ be the quiver $0\to1$, let $z_0,z_1$ have the same argument
@@ -516,8 +515,10 @@ $\mathfrak h(t)$ satisfy \emph{(P)}. Then:
  $k<\mathsf n$ (with $\kappa=\infty$ if $\delta=0$);
 \item[(iv)] for each $k$ the metric induced by $\mathfrak h(t)$ on
  $\operatorname{gr}^k$, multiplied by $e^{(\phi_k-\varphi)t}$, satisfies
- \emph{(P)} for the semistable representation $\operatorname{gr}^k$, with
- an exponent $\min_l\varkappa_l$ in the place of $\kappa$. Hence
+ \emph{(P)} for the semistable representation $\operatorname{gr}^k$. For one
+ factor the original perturbation and its rate $\kappa$ are retained.
+ For two or more factors take $0<2\epsilon<\min_{l<\mathsf n}(\phi_l-\phi_{l+1})$;
+ the perturbation then has rate $\min_{l<\mathsf n}\varkappa_l$. Hence
  Proposition~\ref{prop:perturbed}, Theorem~\ref{thm:comparison} and
  Corollary~\ref{cor:iterated} apply to it: its moment map tends to the
  stability parameter of $\operatorname{gr}^k$, it is an asymptotic solution
@@ -657,7 +658,9 @@ gives (iii); one applies the inequality with $\epsilon/2$ in the place of
 $\epsilon$, so that a factor $t$ arising when the two exponents coincide is
 absorbed.
 
-\emph{Step 7: the factors.} The restriction of a metric to a subspace and
+\emph{Step 7: the factors.} If $\mathsf n=1$, the factor is $\mathcal H$
+and $\phi_1=\varphi$, so (iv) follows directly from (P). For $\mathsf n>1$,
+the restriction of a metric to a subspace and
 the quotient metric move with the compressed velocity. So in the adapted
 frames of Step~4 the metric induced on $\operatorname{gr}^k$, multiplied by
 $e^{(\phi_k-\varphi)t}$, has the velocity

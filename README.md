@@ -14,6 +14,6 @@ Bernd Johannes Wuebben · [ORCID](https://orcid.org/0009-0002-4588-3284)
 
 ### Convergence of the minimizing flow on acyclic quivers
 
-[Manuscript and source](papers/03_acyclic_quiver_minimizing_flow/) · [PDF](papers/03_acyclic_quiver_minimizing_flow/paper.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/phase-flow-acyclic-quivers/) · [Zenodo:24341619](https://zenodo.org/records/24341619)
+[Manuscript and source](papers/03_acyclic_quiver_minimizing_flow/) · [PDF](papers/03_acyclic_quiver_minimizing_flow/paper.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/phase-flow-acyclic-quivers/) · [Zenodo:24346923](https://zenodo.org/records/24346923)
 
 Copyright © 2026 Bernd Johannes Wuebben. All rights reserved.
