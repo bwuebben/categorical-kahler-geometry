@@ -9,8 +9,8 @@ persists for ranks at most one and fails in general for larger ranks
 (Theorem~\ref{thm:twosidedfailure}, Corollary~\ref{cor:classification}). We
 use $\cD$ and $\cD_i^n$ from Section~\ref{sec:rate}, $K_\Delta$, $\mathcal J$
 and the divided differences $\mathsf f[\,\cdot\,]$ from
-Section~\ref{sec:setting}, $J_L(M)$, $M_\pm$ and the inequality
-\eqref{eq:kernel} from Theorem~\ref{thm:imported}, and the terms of
+Section~\ref{sec:setting}, $J_L(M)$, $M_\pm$ and the trace estimate
+proved after Theorem~\ref{thm:imported}, and the terms of
 Definition~\ref{def:phase}.
 
 \subsection{An acyclic part at one vertex}
@@ -29,7 +29,7 @@ $c_0=|z_{i_0}|\sin(\alpha_{i_0}-\varphi)$, $B=D^\dagger D$, $L=DD^\dagger$,
  G_{\mathrm{in}}=\sum_{a:k\to i_0}\rho(a)\rho(a)^\dagger,\qquad
  J=J_L(DC_{\mathrm{out}}D^\dagger),
 \]
-and $R(b)=(1-e^{-b})/b$.
+and $R(b)=(1-e^{-b})/b$ for $b>0$, with $R(0)=1$.
 
 \begin{theorem}[Acyclic part at one vertex]\label{thm:onevertex}
 For the complexes just described:
@@ -48,16 +48,16 @@ For the complexes just described:
 \item[(b)] If $\alpha_{i_0}\geq\varphi$, then for every metric
  \[
  \cD\geq\varphi c_0\tr e^{-L}+\sigma\bigl(\varphi\tr J-\pi\tr J_-\bigr)
- \geq\varphi c_0\tr e^{-L}+\sigma\bigl(\varphi-\tfrac{2\pi}5\bigr)\tr J .
+ \geq\varphi c_0\tr e^{-L}+\sigma\bigl(\varphi-\tfrac{\pi}3\bigr)\tr J .
  \]
  Hence the phase potential is nonincreasing along the flow if
- $\alpha_{i_0}\geq\varphi$ and either $\varphi\geq\frac{2\pi}5$ or $r=1$, and
+ $\alpha_{i_0}\geq\varphi$ and either $\varphi\geq\frac{\pi}3$ or $r=1$, and
  strictly decreasing if moreover $\alpha_{i_0}>\varphi$.
 \item[(c)] Let instead $E_i=E_i^0$ for $i\neq i_0$ and
  $E_{i_0}=U\oplus V$ in degrees $-1,0$, with $d_{i_0}=D:U\to V$ injective,
  $r=\dim U\geq1$, and nonzero cohomology, so that
  $\varphi=\arg Z(\mathsf E)\in(0,\pi)$. If $\alpha_{i_0}\leq\varphi$ and
- either $\varphi\leq\frac{3\pi}5$ or $r=1$, the phase potential is
+ either $\varphi\leq\frac{2\pi}3$ or $r=1$, the phase potential is
  nonincreasing along the phase flow.
 \end{enumerate}
 \end{theorem}
@@ -89,9 +89,10 @@ $\psi_k-\varphi\in(-\pi-\varphi,-\pi)$ and the summand is at least
 $(\pi+\varphi)(\sigma\iota_k+c_0e_k)$. In both cases it is at least
 $\varphi(\sigma\iota_k+c_0e_k)-\pi\sigma(\iota_k)_-$, because $c_0e_k\geq0$;
 here $(\iota_k)_-=\max(-\iota_k,0)$. Summing, with
-$\sum_k(\iota_k)_-\leq\tr J_-$, gives the first inequality; the second is
-\eqref{eq:kernel}, since $DC_{\mathrm{out}}D^\dagger\geq0$. For $r=1$,
-$J\geq0$. If $\alpha_{i_0}>\varphi$, then $c_0>0$ and $\cD>0$. (c) follows from
+$\sum_k(\iota_k)_-\leq\tr J_-$, gives the first inequality; the second follows from the $1/3$ estimate after
+Theorem~\ref{thm:imported}, since $DC_{\mathrm{out}}D^\dagger\geq0$.
+For $r=1$ we have $J\geq0$. Thus if $r=1$ or $\varphi\geq \pi/3$,
+the strict inequality $\alpha_{i_0}>\varphi$ gives $c_0>0$ and $\cD>0$. (c) follows from
 (b) by Theorem~\ref{thm:duality}: the dual complex has an acyclic part at
 $i_0$ in degrees $0,1$ with surjective differential, the charge
 $-\overline{z_{i_0}}$ of argument $\pi-\alpha_{i_0}$ at $i_0$, and central
@@ -99,10 +100,9 @@ charge of argument $\pi-\varphi$ (Remark~\ref{rem:injective}).
 \end{proof}
 
 For $Q=K_m$, $i_0=0$ and cohomology at both vertices, $\varphi$ lies between
-$\alpha_1$ and $\alpha_0$, and the case $\alpha_0>\alpha_1$ of (b) is
-\cite[Proposition~7.4 and Theorem~7.6]{wue26b}; here equality and cohomology
-at one vertex are
-allowed. For $r\geq2$ a lower bound on $\varphi$ cannot be dispensed with:
+$\alpha_1$ and $\alpha_0$, and \cite[Proposition~7.4 and Theorem~7.6]{wue26b} gives strict decrease
+when $\alpha_0>\alpha_1$ and either $\varphi\geq2\pi/5$ or $r=1$.
+Part (b) also allows equality and cohomology at one vertex. For $r\geq2$ a lower bound on $\varphi$ cannot be dispensed with:
 for $K_2$, the charges $z_0=10^{-6}(-1+\ii)$, $z_1=1+\frac\ii{500}$ and
 cohomology of dimension vector $(1,1)$, where $\varphi=0.0020\ldots$, there
 is a complex with $r=2$ and a metric with $\cD<0$

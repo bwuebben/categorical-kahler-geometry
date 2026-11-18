@@ -10,7 +10,7 @@ Bernd Johannes Wuebben · [ORCID](https://orcid.org/0009-0002-4588-3284)
 
 ### Extending the Kempf–Ness function to complexes of quiver representations
 
-[Manuscript and source](papers/02_kempf_ness_complexes/) · [PDF](papers/02_kempf_ness_complexes/paper.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/kempf-ness-function-quiver-complexes/) · [Zenodo:24341615](https://zenodo.org/records/24341615)
+[Manuscript and source](papers/02_kempf_ness_complexes/) · [PDF](papers/02_kempf_ness_complexes/paper.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/kempf-ness-function-quiver-complexes/) · [Zenodo:24347420](https://zenodo.org/records/24347420) · [First version](https://zenodo.org/records/24341615)
 
 ### Convergence of the minimizing flow on acyclic quivers
 

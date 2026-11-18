@@ -319,7 +319,7 @@ on the left; the maps between consecutive terms are the differentials
 $(d_0,d_1)$.
 
 \subsection{Two matrix inequalities}
-We use two matrix inequalities of \cite{wue26b}. For Hermitian matrices $L>0$
+We recall two matrix inequalities of \cite{wue26b} and strengthen the first. For Hermitian matrices $L>0$
 and $M$ put
 \[
  J_L(M)=\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-xL}Me^{-yL}\,dx\,dy ,
@@ -349,9 +349,33 @@ is reduced to an inequality in one real variable, proved with the help of
 interval arithmetic, and (b) is proved by expressing
 $\tr(\dot T\,\dot\Psi)$ through a Sylvester equation as a quadratic form whose
 kernels are positive semidefinite by an integral representation
-\cite[Section~4]{wue26b}. They are quoted without proof; statement numbers of
-\cite{wue26b} refer to the version released together with this paper. The inequality
-\eqref{eq:kernel} is used only in Theorem~\ref{thm:onevertex}(b),(c) when the
-acyclic part has rank at least two, and Theorem~\ref{thm:imported}(b) only in
-Proposition~\ref{prop:parabolic}. All other statements of this paper are
-independent of \cite{wue26b}.
+\cite[Section~4]{wue26b}.
+
+We shall use the stronger estimate
+$\tr J_L(M)_-\leq\frac13\tr J_L(M)$, which admits a direct proof.
+In an eigenbasis of $L$, write $J_L(M)_{ik}=M_{ik}j(\ell_i,\ell_k)$,
+where $j(a,b)$ is the integral of $e^{-ax-by}$ over $x,y\geq0$, $x+y\leq1$.
+For $s\in I=[0,1/2]$ put $F_a(s)=\int_0^s e^{-ax}\,dx$,
+$A_a=F_a(1/2)$ and $V_a(s)=e^{-a(1-s)}$. Splitting the triangle at
+$x=1/2$ and $y=1/2$ gives
+$j(a,b)=A_aA_b+\int_I(F_aV_b+V_aF_b)\,ds$. Thus both $Q$ and $j+Q$ are
+positive semidefinite kernels, where
+\[
+ Q(a,b)=\tfrac23\int_I(F_a-\tfrac34V_a)(F_b-\tfrac34V_b)\,ds .
+\]
+Indeed, $j+Q$ is $A_aA_b$ plus the same integral with both minus signs
+replaced by plus signs. On the diagonal suppress the subscript $a$. Since
+$sV\leq F\leq A$ and $V^2$ is increasing,
+$\int_I FV\geq\int_I sV^2\geq\tfrac14\int_I V^2$. Expanding the square gives
+\[
+ Q(a,a)\leq\tfrac13 A^2+\tfrac12\int_I FV\,ds
+ \leq\tfrac13 j(a,a).
+\]
+By the Schur product theorem, the matrices with entries
+$M_{ik}(j+Q)(\ell_i,\ell_k)$ and $M_{ik}Q(\ell_i,\ell_k)$ are positive
+semidefinite. Taking the trace on the negative spectral subspace of their
+difference bounds $\tr J_L(M)_-$ by $\sum_i M_{ii}Q(\ell_i,\ell_i)$,
+which is at most $\frac13\tr J_L(M)$.
+This estimate enters Theorem~\ref{thm:onevertex}(b),(c) in rank at least
+two and hence the one-sided cases of Corollary~\ref{cor:classification}.
+Proposition~\ref{prop:parabolic} uses Theorem~\ref{thm:imported}(b).

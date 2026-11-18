@@ -29,11 +29,9 @@ function with differential $\Omega$ it extends to every bounded complex of
 representations of every finite quiver (Theorem~\ref{thm:introA}). As a
 function that does not increase along the flow it extends to two classes of
 complexes (Theorem~\ref{thm:introC}) and not to all
-(Theorem~\ref{thm:introD}). Convexity along geodesics of the space of
-metrics, and the characterization of semistability by boundedness below, are
-not examined for complexes; Corollary~\ref{cor:increase} shows that the
-extended function can be unbounded below on a complex with polystable
-cohomology.
+(Theorem~\ref{thm:introD}). Even on a complex with polystable cohomology, the phase potential can be
+unbounded below and strictly concave along a geodesic in the space of
+metrics (Corollary~\ref{cor:increase}).
 
 In \cite[\S5.4]{hkkp26} the phase of $\Omega$ is written with the functional
 calculus, which presupposes that $\Omega$ is normal. For complexes this can
@@ -107,8 +105,8 @@ We call $\Ima(e^{-\ii\varphi}\cS_{\CC})$ the \emph{phase potential}. For a
 representation in degree zero, with $\varphi\in(0,\pi)$, it is
 $\sin\varphi$ times the Kempf--Ness function
 $\sum_a\norm{\rho(a)}^2_{\HS}+\sum_i\theta_i\log\det h_i$ with
-$\theta_i=\Ima(e^{-\ii\varphi}z_i)/\sin\varphi$, and all terms on the right
-of (iii) are nonnegative (Proposition~\ref{prop:kempfness}). For complexes
+$\theta_i=\Ima(e^{-\ii\varphi}z_i)/\sin\varphi$, and each trace in the sum
+in (iii) is nonnegative (Proposition~\ref{prop:kempfness}). For complexes
 they can have either sign. The last term of $\cS_{\CC}$ is a transgression by
 the number operator along the rescaling of the differentials, of the kind
 used for Bott--Chern forms of Hermitian complexes \cite{bgs88}, here taken on
@@ -128,7 +126,7 @@ phase flow.
  space $E_i^0$ in degree zero at every vertex $i\neq i_0$ and $V\to U$ in
  degrees $0,1$ at $i_0$, with surjective differential and nonzero
  cohomology; and, for $\varphi=\arg Z\in(0,\pi)$, one has
- $\arg z_{i_0}\geq\varphi$ and either $\varphi\geq\frac{2\pi}5$ or
+ $\arg z_{i_0}\geq\varphi$ and either $\varphi\geq\frac{\pi}3$ or
  $\dim U=1$.
 \item[(ii)] $Q=K_m$ and $\arg z_0\geq\arg z_1$; the complex is
  $(0\to U_1)\to(V\to W)\to(U_0\to0)$ in degrees $-1,0,1$, that is, with $U_1$
@@ -162,18 +160,19 @@ Corollary~\ref{cor:increase} and Theorem~\ref{thm:twosidedfailure}.
 
 \emph{Sharpness.} For $Q=K_m$, $i_0=0$ and cohomology at both vertices,
 $\varphi$ lies between $\arg z_1$ and $\arg z_0$, so the condition
-$\arg z_0\geq\varphi$ is $\arg z_0\geq\arg z_1$. For $\arg z_0>\arg z_1$ and
-the same condition on $\varphi$ or $\dim U$, the strict decrease of the
-potential is \cite[Theorem~7.6]{wue26b}. Theorem~\ref{thm:introC}(i) adds
+$\arg z_0\geq\varphi$ is $\arg z_0\geq\arg z_1$. For $\arg z_0>\arg z_1$,
+strict decrease when $\varphi\geq 2\pi/5$ or $\dim U=1$ is
+\cite[Theorem~7.6]{wue26b}. The stronger bound $\pi/3$ follows from the elementary trace estimate
+in Section~\ref{sec:setting}. Theorem~\ref{thm:introC}(i) adds
 arbitrary quivers, the case of equality, and cohomology at a single vertex. In Theorem~\ref{thm:introD}(i) the differential is at
 one vertex and $\arg z_1<\varphi$; so the condition
 $\arg z_{i_0}\geq\varphi$ of Theorem~\ref{thm:introC}(i) cannot be dropped.
 For $\dim U\geq2$ a lower bound on $\varphi$ cannot be dispensed with
 either: for $K_2$, the charges $z_0=10^{-6}(-1+\ii)$, $z_1=1+\frac\ii{500}$
 and cohomology of dimension vector $(1,1)$, where
-$\varphi=0.0020\ldots<\frac{2\pi}5$, there is a complex with $\dim U=2$ and a
-metric at which the potential increases \cite[Proposition~10.2]{wue26b}. We
-do not know whether the value $\frac{2\pi}5$ is sharp. Theorem~\ref{thm:introD}(ii) shows that the
+$\varphi=0.0020\ldots<\frac{\pi}3$, there is a complex with $\dim U=2$ and a
+metric at which the potential increases \cite[Proposition~10.2]{wue26b}. The optimal lower bound on $\varphi$ for
+nonnegative total dissipation at every metric remains open. Theorem~\ref{thm:introD}(ii) shows that the
 condition on the dimensions in Theorem~\ref{thm:introC}(ii) cannot be
 dropped; for $z_0=-1+\ii$, $z_1=1+\ii$ and cohomology with equal dimensions
 at the two vertices, the pairs $(\dim U_0,\dim U_1)$ for which the phase
@@ -188,11 +187,11 @@ variation of the curvature element under a change of metric; the same lemma
 serves the algebra of the quiver
 and, for bundles, the algebra of endomorphism-valued forms, where it is the
 classical argument by which Bott--Chern forms do not depend, modulo
-$\partial$- and $\bar\partial$-exact forms, on the path of metrics. Theorem~\ref{thm:introC}(i) rests on a trace inequality of
-\cite[Theorem~3.1]{wue26b} for the Schur multiplier whose entries are the
-second divided differences of $e^{-x}$ at the points $\ell_i,0,\ell_k$, the
-$\ell_i$ being the eigenvalues of the differential times its adjoint
-(Theorem~\ref{thm:imported}). In the three-term complexes the point $0$ is
+$\partial$- and $\bar\partial$-exact forms, on the path of metrics. Theorem~\ref{thm:introC}(i) uses the trace estimate
+proved after Theorem~\ref{thm:imported}, which strengthens
+\cite[Theorem~3.1]{wue26b}. The entries of the Schur multiplier are the
+second divided differences of $e^{-x}$ at $\ell_i,0,\ell_k$, where the
+$\ell_i$ are the eigenvalues of the differential times its adjoint. In the three-term complexes the point $0$ is
 replaced by the eigenvalues of the other differential times its adjoint, and
 no such inequality holds uniformly in these eigenvalues
 (Remark~\ref{rem:interpolation}); this is the source of the example in
@@ -218,7 +217,7 @@ differential in degrees $-1,0$ (Remark~\ref{rem:injective}).
 \subsection{Bundles}
 The last section gives the corresponding formulation for a two-term complex
 $E^0\to E^1$ of holomorphic vector bundles with Hermitian metrics on a
-compact Riemann surface, with $\frac{\ii}{2\pi}\Lambda F_h$ in the place of
+compact Riemann surface, with $-\frac{\ii}{2\pi}\Lambda F_h$ in the place of
 the moment map, following the dictionary of \cite[Remark~5.14]{hkkp26} and
 using Quillen's superconnection \cite{qui85}. We record the formal
 properties, which for the closedness follow the theory of Bott--Chern forms
@@ -227,8 +226,8 @@ metrics is closed, with a primitive given by the same transgression; for a
 single bundle the phase potential is a positive multiple of Donaldson's
 functional \cite{don85}; the derivative formula of
 Theorem~\ref{thm:introA}(iii) holds along smooth solutions; the
-linearization of the flow is parabolic, in the sense that its principal
-symbol has eigenvalues with positive real part; and for a section $s$ of a
+linearization is parabolic in the sense of Petrovskii
+for the convention $\Delta_\omega=-d^*d$; and for a section $s$ of a
 line bundle the sum $(\Omega^0+\Omega^1)\,\omega$ of the two blocks of
 $\Omega$, times the K\"ahler form, is a representative of the Euler class of
 the kind constructed by Mathai and Quillen \cite{mq86}, and the integrand of
@@ -241,9 +240,11 @@ part are not treated here, except for the contractible summands of
 Proposition~\ref{prop:contractible}. For two-term complexes over $K_m$ with
 a surjective differential at the vertex $0$, the decay is proved in
 \cite{wue26b} for all charges and the convergence for strictly ordered
-charges and polystable cohomology; for a differential at one vertex of a
-quiver without oriented cycles both are proved in \cite{wue26c}, and
-Remark~\ref{rem:injective} carries them to injective differentials. For the
+charges and polystable cohomology. For the corresponding complexes on
+acyclic quivers, \cite{wue26c} proves decay of the exact part and
+exponential convergence of the rescaled metrics on polystable
+Harder--Narasimhan quotients of the cohomology.
+Remark~\ref{rem:injective} carries these results to injective differentials. For the
 three-term complexes of Theorem~\ref{thm:introC}(ii) both are open. Beyond
 Theorems~\ref{thm:onevertex} and~\ref{thm:rankone} and
 Corollaries~\ref{cor:increase} and~\ref{cor:classification} we do not know
@@ -254,8 +255,8 @@ current of integration over the zeros of the section.
 
 \subsection{Organization}
 Section~\ref{sec:setting} recalls the definition of \cite{hkkp26}, gives the
-integral formula for $\Omega$, fixes the terminology, and states the two
-matrix inequalities used from \cite{wue26b}. Section~\ref{sec:primitive}
+integral formula for $\Omega$, fixes the terminology, and sharpens one of the two
+matrix inequalities recalled from \cite{wue26b}. Section~\ref{sec:primitive}
 proves Theorem~\ref{thm:introA}(i),(ii), and Section~\ref{sec:rate} proves
 (iii) and Theorem~\ref{thm:introD}(i). Section~\ref{sec:duality} proves
 Theorem~\ref{thm:introB}. Section~\ref{sec:monotone} proves
