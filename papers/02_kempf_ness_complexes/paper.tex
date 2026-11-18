@@ -1,0 +1,87 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+ pdftitle={Extending the Kempf-Ness function to complexes of quiver representations},
+ pdfsubject={MSC 2020: 16G20, 53D20; 14F08, 18G80, 53C07},
+ pdfkeywords={quiver representation, complex of representations, stability condition, superconnection, polar decomposition, Kempf-Ness function, Donaldson functional}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\id}{1}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\Nop}{\mathsf N}
+\newcommand{\gr}{\varepsilon}
+\newcommand{\Eone}{\mathrm E_1}
+\newcommand{\mass}{\mathfrak m}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\str}{str}
+\DeclareMathOperator{\Ein}{Ein}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+
+
+\title[Extending the Kempf--Ness function to complexes]{Extending the
+Kempf--Ness function\\ to complexes of quiver representations}
+\author{Bernd Johannes Wuebben}
+\email{wuebben@gmail.com}
+\subjclass[2020]{Primary 16G20, 53D20; Secondary 14F08, 18G80, 53C07}
+\keywords{Quiver representation, complex of representations, stability
+condition, superconnection, polar decomposition, Kempf--Ness function,
+Donaldson functional}
+\date{November 18, 2026\\This version: November 18, 2026}
+
+\begin{document}
+\begin{abstract}
+For every bounded complex of representations of a finite quiver with vertex
+charges in the upper half-plane, the superconnection endomorphism of Haiden,
+Katzarkov, Kontsevich and Pandit defines a closed one-form on the space of
+Hermitian metrics. We construct a primitive by transgression along the
+rescaling of the differentials. For nonzero total charge $Z$, rotating the
+primitive by $\overline Z/|Z|$ and taking its imaginary part gives a real
+potential. On representations this potential is a positive multiple of the
+Kempf--Ness function and is nonincreasing along the flow defined by the
+argument of the unitary polar factor of the endomorphism. For a two-term
+complex in degrees zero and one whose differential surjects onto a term
+supported at a loopless vertex $i$, the potential is nonincreasing if the
+vertex charge $z_i$ satisfies $\arg z_i\geq\arg Z$ and either
+$\arg Z\geq 2\pi/5$ or the differential has rank one. On a three-term
+Kronecker quiver complex the potential can increase even when the induced
+metric on its stable cohomology is harmonic. Quillen's superconnection
+gives the analogous potential for two-term complexes of holomorphic bundles
+on a compact Riemann surface. On a single bundle it is a positive multiple
+of Donaldson's functional.
+\end{abstract}
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_setting}
+\input{sections/03_primitive}
+\input{sections/04_rate}
+\input{sections/05_duality}
+\input{sections/06_monotone}
+\input{sections/07_bundles}
+\input{references}
+\end{document}

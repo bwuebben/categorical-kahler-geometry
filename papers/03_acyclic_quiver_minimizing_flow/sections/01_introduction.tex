@@ -1,0 +1,327 @@
+\section{Introduction}\label{sec:intro}
+
+Haiden, Katzarkov, Kontsevich and Pandit \cite{hkkp26} propose a notion of
+K\"ahler geometry on a triangulated category with a stability condition in
+the sense of Bridgeland \cite{bri07}, in which an object carries a space of
+metrics, an endomorphism $\Omega$ depending on the metric whose trace is the
+central charge, a phase $\arg\Omega$ defined by a positivity condition, a
+mass $\tr|\Omega|$, and a flow $h^{-1}\dot h=-\arg\Omega$ of the metrics,
+called the minimizing flow in \cite[\S4.1]{hkkp26}. A metric is
+\emph{harmonic} if $\arg\Omega$ is a scalar, and harmonic metrics are
+expected to exist on polystable objects and to be the limits of the flow
+\cite[\S\S1,~4.1]{hkkp26}, a categorical form of the theorem of Donaldson,
+Uhlenbeck and Yau \cite{don85,uy86}. This paper proves that on a quiver
+without oriented cycles the flow converges, up to a scalar function of the
+time, on every polystable representation, and that for complexes of
+representations with one differential the metrics induced on the cohomology
+converge in the same sense when the cohomology is polystable. When it is not
+polystable, the long-time behaviour is described through the
+Harder--Narasimhan filtration of the cohomology and, on its factors, through
+gradient flows of Kempf--Ness functions.
+
+\subsection{Representations}
+Let $Q$ be a finite quiver without oriented cycles, with central charges
+$z_i$ in the upper half-plane at its vertices, and let $\mathsf R$ be a
+representation of $Q$ with Hermitian metrics $h_i$ on its spaces. Write
+$\beta^\dagger$ for the adjoint of a linear map for the metrics. The
+\emph{moment map} at the vertex $i$ is the Hermitian endomorphism $\mu_i$
+equal to the sum of $\beta^\dagger\beta$ over the arrows $\beta$ out of $i$
+minus the sum of $\beta\beta^\dagger$ over the arrows into $i$. For a
+representation the endomorphism $\Omega$ of \cite[\S5.1]{hkkp26} is
+$\bigoplus_i(z_i+\mu_i)$; it is normal, and the flow is
+\[
+ h_i^{-1}\dot h_i=-\arg(z_i+\mu_i),
+\]
+with the argument taken by the functional calculus, in $(0,\pi)$. Let
+$Z(\mathsf R)=\sum_iz_i\dim\mathsf R_i=|Z|e^{\ii\varphi}$ be the central
+charge of $\mathsf R$, and
+\[
+ \theta_i=\frac{\Ima(e^{-\ii\varphi}z_i)}{\sin\varphi}.
+\]
+A representation with central charge of argument $\varphi$ is
+\emph{semistable} if no subrepresentation has a central charge of argument
+larger than $\varphi$; this is King's stability \cite{kin94} for the real
+parameter $-\theta$, and a metric is harmonic exactly when
+$\mu_i=\theta_i$ for all $i$, that is, when it is a zero of the moment map
+shifted by the stability parameter (Section~\ref{sec:convergence}).
+
+\begin{theorem}[Representations]\label{thm:introR}
+For all charges in the upper half-plane, every nonzero representation
+$\mathsf R$ of $Q$ and every initial metric, along the flow:
+\begin{enumerate}
+\item[(i)] the Kempf--Ness function
+ $\sum_a\norm{\rho_a}^2+\sum_i\theta_i\log\det h_i$ of $\mathsf R$ does not
+ increase;
+\item[(ii)] if $\mathsf R$ is semistable, then $\mu_i(t)\to\theta_i$ for all
+ $i$, and the mass tends to $|Z|$;
+\item[(iii)] if $\mathsf R$ is polystable, the metrics $e^{\varphi t}h(t)$
+ converge exponentially to a harmonic metric.
+\end{enumerate}
+\end{theorem}
+
+Here $\rho_a$ is the map of the arrow $a$ and $\norm\cdot$ the
+Hilbert--Schmidt norm for the metrics. The factor $e^{\varphi t}$ is needed
+because a harmonic metric is not stationary: it moves by the scalar
+$e^{-\varphi t}$. After multiplication of the metrics by $e^{\varphi t}$ the
+velocity of the flow at the vertex $i$ is $\varphi-\arg(z_i+\mu_i)$, an
+increasing function of $\mu_i-\theta_i$ that vanishes at zero. The downward
+gradient flow of the Kempf--Ness function, which \cite[(5.5)]{hkkp26}
+describes as a simplification of this flow, has the velocity
+$\mu_i-\theta_i$ up to a positive factor; its exponential convergence on
+polystable representations is classical (see \cite[\S5.1]{hkkp23}, and
+\cite{grs21} for the general theory), and the gradient flow of the norm
+square of the moment map on the space of representations is studied in
+\cite{hw11}. Theorem~\ref{thm:introR} concerns the flow $-\arg\Omega$ itself.
+The precise statement, with the rate, is Theorem~\ref{thm:representations}.
+
+\subsection{Complexes with one differential}
+For complexes of representations $\Omega$ is defined through a
+superconnection \cite[\S5.4]{hkkp26}; it is then not normal in general, and
+we take $\arg\Omega$ to be the argument of the unitary factor in the polar
+decomposition, which is our reading of the positivity condition of
+\cite[\S4.2]{hkkp26}; it agrees with the functional calculus of
+\cite[\S5.4]{hkkp26} when $\Omega$ is normal (Section~\ref{sec:setting}). All
+statements below refer to this choice, and we call the flow the \emph{phase
+flow}.
+
+Fix a vertex $i_0$. A complex of representations $\mathsf E$ of $Q$ has
+\emph{a surjective differential at $i_0$} if at each vertex $i\neq i_0$ it is
+a vector space in degree zero and at $i_0$ it is $V\xrightarrow{D}U$ in
+degrees $0,1$ with $D$ surjective (Definition~\ref{def:type}). Its cohomology
+is a representation $\mathcal H$ of $Q$ in degree zero, with $\ker D$ at
+$i_0$; we assume $\mathcal H\neq0$, and put
+$Z=Z(\mathcal H)=|Z|e^{\ii\varphi}$ and $\theta$ as above. For Hermitian
+metrics $h$ on the spaces of $\mathsf E$, the endomorphism $\Omega$ preserves
+each of these spaces. We write $\Omega_V$, $\Omega_U$ and $\Omega_i$
+($i\neq i_0$) for its blocks,
+$\mass(h)=\tr|\Omega_V|+\tr|\Omega_U|+\sum_{i\neq i_0}\tr|\Omega_i|$ for the
+mass, where $|T|=(TT^\dagger)^{1/2}$, and $\mu_i$ for the moment map of
+$\mathcal H$ with the induced metrics, so that the endomorphism $\Omega$ of
+the representation $\mathcal H$ is $\bigoplus_i(z_i+\mu_i)$. Let $\lambda$ be
+the least eigenvalue of $DD^\dagger$ and $\norm\cdot_1$ the trace norm. The
+exact subcomplex $(\ker D)^\perp\to U$ at $i_0$ is the \emph{exact part} of
+the metrized complex.
+
+\begin{theorem}[Convergence on the cohomology]\label{thm:introB}
+Let $\mathsf E$ be a complex with a surjective differential at $i_0$. For all
+charges in the upper half-plane and every initial metric, along the phase
+flow:
+\begin{enumerate}
+\item[(i)] if $\mathcal H$ is semistable, then $\mu_i(t)\to\theta_i$ for all
+ $i$ and $\mass(h(t))\to|Z|$;
+\item[(ii)] if $\mathcal H$ is polystable, the metrics induced on the spaces
+ of $\mathcal H$, multiplied by $e^{\varphi t}$, converge exponentially to a
+ harmonic metric of $\mathcal H$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Decay of the exact part]\label{thm:introA}
+Let $\mathsf E$ be a complex with a surjective differential at $i_0$ and
+$U\neq0$. For all charges in the upper half-plane and every initial metric,
+along the phase flow, $\lambda(t)\to\infty$ and, for $t\geq t_1$,
+\[
+ \norm{\Omega_V-(z_{i_0}+\mu_{i_0})\oplus0}_1+\norm{\Omega_U}_1
+ +\sum_{i\neq i_0}\norm{\Omega_i-(z_i+\mu_i)}_1
+ \leq C\,e^{-\varkappa(t-t_1)},
+\]
+where $\oplus\,0$ refers to $V=\ker D\oplus(\ker D)^\perp$, the constants
+$C,\varkappa>0$ depend only on the quiver, the vertex $i_0$, the charges and
+the dimensions, and $t_1$ depends in addition on the initial metric.
+\end{theorem}
+
+Theorem~\ref{thm:introA} makes no assumption on $\mathcal H$. For $U\neq0$
+the complex itself carries no harmonic metric, since the phase has its
+spectrum in $(0,\pi)$ on $V$ and in $(-\pi,0)$ on $U$; what is proved is that
+the exact part decays and that the metrics induced on the cohomology
+converge. By duality \cite[Theorem~5.1]{wue26c} the two theorems hold for
+complexes \emph{with an injective differential at $i_0$}, which at $i_0$ are
+$U'\to V'$ in degrees $-1,0$ with an injective differential
+(Proposition~\ref{prop:injective}). The precise statements, with the
+constants, are Theorems~\ref{thm:decay} and~\ref{thm:convergence},
+Proposition~\ref{prop:sink} and Remark~\ref{rem:vanishing}.
+
+\subsection{The method}
+For a complex with $U\neq0$ the Kempf--Ness function of the cohomology
+decreases only up to an error controlled by the exact part
+(Theorem~\ref{thm:convergence}(i)), so the proof cannot start from a
+Lyapunov function; it rests on an a priori bound for the arrows. Once the arrows are
+bounded, the exact part decays, the error becomes exponentially small, and
+the convexity of the Kempf--Ness function gives the convergence
+(Proposition~\ref{prop:perturbed}). For an arrow $a$ with map $\rho_a$ let
+$e_a=\norm{\rho_a}^2$ if $a$ does not start at $i_0$ and
+$e_a=\tr(\rho_aR(D^\dagger D)\rho_a^\dagger)$, with $R(b)=(1-e^{-b})/b$, if it
+does, and put $\cN=\sum_ae_a$. For a representation $\cN$ is the sum of the
+squared norms of the arrows.
+
+\begin{theorem}[A priori bound]\label{thm:introC}
+Let $\mathsf E$ be a complex with a surjective differential at $i_0$. There
+are constants $\gamma>0$ and $c\geq0$, depending only on the quiver, the
+vertex $i_0$, the charges and the dimensions, such that for all metrics
+\[
+ \frac{d\cN}{dt}\leq-\gamma\,\cN+c
+\]
+along the phase flow. For a representation one can take $\gamma=\pi/\ell$,
+with $\ell$ the number of arrows of a longest path in $Q$.
+\end{theorem}
+
+The derivative $d\cN/dt$ is a sum of three traces, one for $V$, one for $U$
+and one for the remaining vertices (Lemma~\ref{lem:energyderivative}). The
+trace for $V$ is bounded by a trace inequality for the polar phase, and the
+trace for $U$ by a bound for the negative part of a Hermitian matrix that
+occurs in $\Omega_U$, both from \cite{wue26b}
+(Proposition~\ref{prop:used}(ii),(i)); the third by an elementary estimate
+(Lemma~\ref{lem:three}(c)), in which the blocks are normal and are
+indefinite perturbations of the charges. The estimates at the different
+vertices are combined with coefficients that increase along the arrows, and
+$\gamma$ is the least increment; this is where the absence of oriented
+cycles is used, and for a quiver with a loop no such bound holds
+(Remark~\ref{rem:energy}). See Theorem~\ref{thm:energy} and
+Proposition~\ref{prop:reparrows}.
+
+\subsection{Cohomology that is not polystable}
+Every nonzero representation $\mathcal H$ has a unique filtration
+$0=\mathcal H^0\subset\mathcal H^1\subset\dots\subset\mathcal H^{\mathsf n}=\mathcal H$
+by subrepresentations whose factors
+$\operatorname{gr}^k=\mathcal H^k/\mathcal H^{k-1}$ are semistable with
+$\arg Z(\operatorname{gr}^1)>\dots>\arg Z(\operatorname{gr}^{\mathsf n})$,
+the Harder--Narasimhan filtration; we write
+$\phi_k=\arg Z(\operatorname{gr}^k)$. The sum
+$\sum_k|Z(\operatorname{gr}^k)|$ is the mass of $\mathcal H$ for the stability
+condition.
+
+\begin{theorem}[Harder--Narasimhan asymptotics]\label{thm:introH}
+Let $\mathcal H$ be a nonzero representation of $Q$ with the phase flow from
+an arbitrary initial metric, or the cohomology of a complex with a surjective
+or an injective differential at one vertex, with the metrics $h_i(t)$ induced
+by the phase flow of the complex. For all charges in the upper half-plane:
+\begin{enumerate}
+\item[(i)] for every nonzero vector $v$ of $\mathcal H_i$,
+ $\lim_{t\to\infty}\frac1t\log h_i(t)(v,v)=-\phi_k$, where $k$ is the least
+ index with $v\in\mathcal H^k_i$; so the Harder--Narasimhan filtration is the
+ filtration of the spaces by the exponential rate of decay of the metric;
+\item[(ii)] the eigenvalues of the argument of $z_i+\mu_i$, with $\mu$ the
+ moment map of $\mathcal H$ for the metrics $h(t)$, converge to the $\phi_k$
+ with the multiplicities $\dim\operatorname{gr}^k_i$, and
+ $\sum_i\tr|z_i+\mu_i|$ converges to $\sum_k|Z(\operatorname{gr}^k)|$, which
+ is its infimum over all metrics on $\mathcal H$; along the phase flow of a
+ representation this sum, the mass, is nonincreasing;
+\item[(iii)] the second fundamental forms of the subrepresentations
+ $\mathcal H^k$ tend to zero exponentially, and the metric induced on
+ $\operatorname{gr}^k$, multiplied by $e^{\phi_kt}$, has the properties
+ stated in Theorem~\ref{thm:introB} and in Theorem~\ref{thm:introS} below
+ for $\operatorname{gr}^k$ in the place of $\mathcal H$: its moment map
+ tends to the stability parameter of $\operatorname{gr}^k$, and it converges
+ exponentially to a harmonic metric if $\operatorname{gr}^k$ is polystable.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Semistable cohomology]\label{thm:introS}
+Let $\mathcal H$ be as in Theorem~\ref{thm:introH} and semistable, with
+$Z(\mathcal H)=|Z|e^{\ii\varphi}$. Then the metrics $e^{\varphi t}h(t)$ remain
+at bounded distance, in the space of metrics, from a trajectory of the
+gradient flow of the Kempf--Ness function of $\mathcal H$ for the
+Riemannian metric $\sum_i\mathsf m_i\tr\xi_i^2$ with the weights
+$\mathsf m_i=\Ima z_i/\sin^2\varphi$. Hence they are an asymptotic solution of
+this gradient flow in the sense of \cite{hkkp23}, and by
+\cite[Corollary~5.10 and Theorem~5.11]{hkkp23} their growth and decay are
+given, up to bounded factors, by products of powers of iterated logarithms
+of $t$ on the steps of the iterated weight filtration of $\mathcal H$, for
+the weight function $\sum_i\mathsf m_i\dim\mathsf R_i$, which equals
+$|Z(\mathsf R)|/\sin\varphi$ on the subquotients $\mathsf R$ of $\mathcal H$
+of phase $\varphi$.
+\end{theorem}
+
+The weights are in general forced up to a common factor: on the
+representation $\CC\to\CC$ of the
+quiver with one arrow, with two charges of equal argument, the metrics grow
+and decay like powers of $t$ whose exponents are $|z_1|/|z_0+z_1|$ and
+$-|z_0|/|z_0+z_1|$ (Proposition~\ref{prop:weights}). The proof of
+Theorem~\ref{thm:introS} compares the velocity of the flow with the gradient
+of the Kempf--Ness function: the difference is quadratic in the shifted
+moment map, hence integrable in time, and gradient flows of convex
+functions on spaces of nonpositive curvature do not increase distances. The
+proof of Theorem~\ref{thm:introH} uses the mass as a Lyapunov function; its
+dissipation is bounded below by a multiple of the sum of the squared norms
+of the commutators of the arrows with the phases. See Theorems~\ref{thm:comparison} and~\ref{thm:hn},
+Corollary~\ref{cor:iterated} and
+Propositions~\ref{prop:dissipation} and~\ref{prop:hnmass}.
+
+\subsection{Kronecker quivers and the projective line}
+Let $K_m$ be the generalized Kronecker quiver, with two vertices and $m$
+arrows from the first to the second.
+
+\begin{theorem}[Differentials at one vertex]\label{thm:introD}
+Let $\mathsf E$ be a bounded complex of representations of $K_m$ whose
+differentials vanish at one of the two vertices, with any Hermitian metric.
+\begin{enumerate}
+\item[(i)] $\mathsf E$ is an orthogonal direct sum of subcomplexes
+ $\mathsf E_n$, one for each degree $n$, where $\mathsf E_n$ has cohomology
+ $H^n(\mathsf E)$ in degree $n$ and, if $H^n(\mathsf E)\neq0$, is a shift of a
+ complex with a surjective or with an injective differential at one vertex.
+ The phase flow preserves this decomposition and is the product of the flows
+ of the $\mathsf E_n$.
+\item[(ii)] For all charges in the upper half-plane and every $n$, the
+ blocks of the endomorphism $\Omega_{\mathsf E_n}$ of $\mathsf E_n$ approach
+ those of $(-1)^n\Omega_{H^n(\mathsf E)}$, the endomorphism of the
+ representation $H^n(\mathsf E)$ with its induced metrics, extended by zero;
+ the trace-norm distance decays exponentially from a time that depends on
+ the initial metric. If $H^n(\mathsf E)$ is polystable, the metrics induced
+ on it converge exponentially, after multiplication by a scalar function of
+ the time, to a harmonic metric. In general these metrics have the
+ properties of Theorems~\ref{thm:introH} and~\ref{thm:introS}, and
+ $\mass(h(t))$ converges to the sum over $n$ of the masses of the
+ representations $H^n(\mathsf E)$ for the stability condition.
+\item[(iii)] Minimal bounded complexes of projective representations of
+ $K_m$, and minimal bounded complexes of injective representations, have
+ differentials vanishing at one vertex. Hence (i) and (ii) hold for every
+ object of the bounded derived category of $K_2$, that is, of the projective
+ line, represented by such a complex with arbitrary metrics; the limit of
+ the mass is the mass of the object for the stability condition with heart
+ the category of representations.
+\end{enumerate}
+\end{theorem}
+
+See Theorems~\ref{thm:decomposition}, \ref{thm:longtime} and~\ref{thm:P1}
+and Proposition~\ref{prop:minimal}.
+
+\subsection{Relation to earlier work and scope}
+For $Q=K_m$ and a surjective differential at the first vertex, with $U\neq0$
+and cohomology that is nonzero at both vertices,
+Theorems~\ref{thm:introB}, \ref{thm:introA} and~\ref{thm:introC} are
+\cite[Theorems~5.4, 5.7, 6.1 and~6.6]{wue26b}, with the same proofs, up to
+two differences: here equal arguments of the two charges are included in
+Theorem~\ref{thm:introB}, and the constant $c$ of
+Theorem~\ref{thm:introC} is the one of \cite{wue26b} only after the
+refinement of Remark~\ref{rem:energy}(2). Sections~\ref{sec:decay}
+and~\ref{sec:convergence} follow \cite{wue26b}. What is added here is the
+a priori bound on a general quiver (Section~\ref{sec:energy}), a reduction of
+the Kempf--Ness theorem for real stability parameters to the rational case
+of King (Lemma~\ref{lem:king}), the description of the flow for cohomology
+that is not polystable (Section~\ref{sec:asymptotics}), and
+Section~\ref{sec:kronecker}.
+Theorem~\ref{thm:introR} is contained in \cite{wue26b} only for
+representations of $K_m$ with both spaces nonzero and the charge of the
+first vertex of larger argument than that of the second, where it follows
+from the theorems on complexes by adding an exact summand.
+
+Complexes with nonzero differentials at two or more vertices are open, in
+particular complexes of representations of $K_m$ with differentials at both
+vertices. Quivers with oriented cycles are excluded. For a cohomology
+representation that is semistable and not polystable the induced metrics
+have no limit after any normalization by a scalar function of the time
+(Remark~\ref{rem:scope}); Theorem~\ref{thm:introS} determines them up to a
+bounded factor, and whether this factor converges is open in general. It
+converges in the example of Proposition~\ref{prop:weights} and for a
+representation of $K_2$ for which the metrics are shown in
+\cite[Proposition~6.9]{wue26b} to grow and decay like $t^{\pm1/2}$. The time $t_1$ of Theorem~\ref{thm:introA} is explicit
+but very large (Remark~\ref{rem:decay}).
+
+\subsection{Organization}
+Section~\ref{sec:setting} fixes the setting and states the results used from
+\cite{wue26a,wue26b,wue26c}. Section~\ref{sec:energy} proves
+Theorem~\ref{thm:introC}, Section~\ref{sec:decay} Theorem~\ref{thm:introA},
+and Section~\ref{sec:convergence} Theorems~\ref{thm:introR}
+and~\ref{thm:introB}, including the Kempf--Ness theorem for real stability
+parameters in the form needed. Section~\ref{sec:asymptotics} proves
+Theorems~\ref{thm:introH} and~\ref{thm:introS}, and
+Section~\ref{sec:kronecker} proves Theorem~\ref{thm:introD}.

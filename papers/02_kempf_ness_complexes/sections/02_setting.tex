@@ -1,0 +1,357 @@
+\section{The endomorphism \texorpdfstring{$\Omega$}{Omega} of a complex of representations}\label{sec:setting}
+
+\subsection{Complexes of representations and metrics}
+Let $Q$ be a finite quiver with set of vertices $Q_0$ and set of arrows
+$Q_1$; we write $a:i\to j$ for an arrow from $i$ to $j$. Loops and oriented
+cycles are allowed. We write $K_m$ for the generalized Kronecker quiver with
+vertices $0,1$ and $m\geq1$ arrows $a_1,\dots,a_m$ from $0$ to $1$. Fix
+\emph{central charges} $z_i$, $i\in Q_0$, in the open upper half-plane, and
+put $\alpha_i=\arg z_i\in(0,\pi)$; they define the central charge of a stability
+condition on the bounded derived category of finite-dimensional
+representations of $Q$ whose heart is the category of representations
+\cite[Propositions~2.4 and~5.3]{bri07}. Phases in this paper are arguments, in radians; in the
+normalization of \cite{bri07} they are divided by $\pi$, and a shift by one
+degree changes them by $\pi$. A \emph{complex of representations}
+$\mathsf E$ consists of finite-dimensional complex vector spaces $E_i^n$
+($i\in Q_0$, $n\in\mathbb Z$, almost all zero), differentials
+$d_i:E_i^n\to E_i^{n+1}$ with $d_i^2=0$, and for each arrow $a:i\to j$ a chain
+map $\rho(a):E_i^\bullet\to E_j^\bullet$ of degree zero. Its central charge is
+\[
+ Z(\mathsf E)=\sum_{i,n}(-1)^nz_i\dim E_i^n .
+\]
+A \emph{metric} $h$ on $\mathsf E$ is a Hermitian metric $h_i^n$ on each
+$E_i^n$; a complex with a metric is called metrized. The adjoint of a linear
+map for the metrics is written ${}^\dagger$, inner products are
+conjugate-linear in the first argument, and
+$\norm T_{\HS}=(\tr T^\dagger T)^{1/2}$ is the Hilbert--Schmidt norm. For an
+endomorphism $T$ of a Hermitian space, $\frac12(T+T^\dagger)$ is its
+Hermitian part and $\Ima T=\frac1{2\ii}(T-T^\dagger)$ its imaginary part. We
+write $E_i=\bigoplus_nE_i^n$
+and $E=\bigoplus_iE_i$. The \emph{number operator} $\Nop$ is the endomorphism
+of $E$ equal to $n$ on $E_i^n$, and $\gr=(-1)^{\Nop}$ is the grading. A
+tangent vector to the space of metrics at $h$ is an endomorphism
+$\xi=h^{-1}\delta h$ of $E$ that preserves each $E_i^n$ and is Hermitian for
+$h$. In the algebra $\mathcal A(Q)$ below we write $\sqrt{-1}$ for the
+imaginary unit, as in \cite{hkkp26}; elsewhere it is $\ii$, and the italic
+$i$ is a vertex.
+
+\subsection{The definition of Haiden, Katzarkov, Kontsevich and Pandit}
+The graded $*$-algebra $\mathcal A(Q)$ of \cite[Definition~5.13]{hkkp26} has
+the basis $e_i,f_i$ ($i\in Q_0$) in degree $0$, $a\in Q_1$ in degree $1$ and
+$a^*$ in degree $-1$, and the nonzero products of basis elements are
+\begin{gather*}
+ e_i^2=e_i,\qquad e_if_i=f_ie_i=f_i,\qquad e_ja=ae_i=a,\qquad e_ia^*=a^*e_j=a^*,\\
+ aa^*=\sqrt{-1}\,f_j,\qquad a^*a=-\sqrt{-1}\,f_i
+\end{gather*}
+for $a:i\to j$. In the graded tensor product
+$\mathcal A(Q)\otimes\End(E)$ the product is
+$(x\otimes T)(y\otimes S)=(-1)^{|T||y|}xy\otimes TS$. The involution of
+$\mathcal A(Q)$ fixes the $e_i$ and $f_i$ and exchanges $a$ and $a^*$; on
+$\End(E)$ it is $T^*=T^\dagger$ for even $T$ and $T^*=\sqrt{-1}\,T^\dagger$
+for odd $T$, the adjoints being those of the metric. Let
+$\mathcal B\subset\mathcal A(Q)\otimes\End(E)$ be the subalgebra
+\[
+ \mathcal B=\bigoplus_i\bigl(e_i\otimes\End(E_i)\oplus f_i\otimes\End(E_i)\bigr)
+ \oplus\bigoplus_{a:i\to j}\bigl(a\otimes\Hom(E_i,E_j)\oplus a^*\otimes\Hom(E_j,E_i)\bigr),
+\]
+with unit $\sum_ie_i\otimes\id_{E_i}$. Put
+\[
+ A=\sum_ie_i\otimes d_i+\sum_aa\otimes\rho(a),\qquad
+ F=(A-A^*)^2+\sqrt{-1}\sum_if_i\otimes z_i\id_{E_i} .
+\]
+Here $A^*=\sqrt{-1}\sum_ie_i\otimes d_i^\dagger+\sum_aa^*\otimes\rho(a)^\dagger$,
+and this is the only use of the involution. These are elements of
+$\mathcal B$. Following \cite[\S5.4]{hkkp26} we put
+\begin{equation}\label{eq:Omegadef}
+ \Omega:=\gr\,\bigl[\exp(-\sqrt{-1}\,F)\bigr]_f\in\End(E),
+\end{equation}
+where the exponential is taken in $\mathcal B$ and, for
+$X=\sum_i(e_i\otimes X_{e_i}+f_i\otimes X_{f_i})+\dots\in\mathcal B$, the
+endomorphism $[X]_f=\bigoplus_iX_{f_i}$ is the component along the $f_i$.
+With
+\begin{equation}\label{eq:DeltaMGamma}
+ \Delta_i=d_id_i^\dagger+d_i^\dagger d_i,\qquad
+ M_a=d_j^\dagger\rho(a)-\rho(a)d_i^\dagger,\qquad
+ \Gamma_i=z_i+\sum_{a:i\to\cdot}\rho(a)^\dagger\rho(a)-\sum_{a:\cdot\to i}\rho(a)\rho(a)^\dagger ,
+\end{equation}
+where $M_a:E_i^\bullet\to E_j^{\bullet-1}$ for $a:i\to j$, one has
+\cite[display after Remark~5.15]{hkkp26}
+\begin{equation}\label{eq:F}
+ -\sqrt{-1}\,F=-\sum_ie_i\otimes\Delta_i+\sum_aa\otimes M_a
+ +\sqrt{-1}\sum_aa^*\otimes M_a^\dagger+\sum_if_i\otimes\Gamma_i .
+\end{equation}
+For a representation, that is, a complex in degree zero, $\Omega=\Gamma$:
+at each vertex $\Omega$ is $z_i$ shifted by the moment map of the action of
+the unitary group of $E_i$.
+
+In \cite[Remark~5.14]{hkkp26} the algebra $\mathcal A(Q)$ is compared with
+the differential forms on a Riemann surface: the $e_i$ correspond to
+functions, $a$ and $a^*$ to forms of type $(1,0)$ and $(0,1)$, and the $f_i$
+to two-forms. In this dictionary $A-A^*$ plays the role of a superconnection
+in the sense of Quillen \cite{qui85} on the graded space $E$, $F$ that of
+its curvature shifted by the central term, $[\,\cdot\,]_f$ that of the
+component of top degree, and the functional $\tau$ of
+Section~\ref{sec:primitive} that of the integral of the supertrace of this
+component. Section~\ref{sec:bundles} carries the dictionary out for bundles.
+
+\subsection{An integral formula}
+For Hermitian $\Delta\geq0$ and an operator $G$ put
+$K_\Delta(G)=\int_0^1e^{-(1-x)\Delta}Ge^{-x\Delta}dx$, and for operators
+$X:E'\to E''$, $Y:E''\to E'$ and Hermitian $\Delta',\Delta''\geq0$ on $E'$,
+$E''$,
+\[
+ \mathcal J_{\Delta'',\Delta'}(X,Y)
+ =\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-x\Delta''}X\,e^{-(1-x-y)\Delta'}\,Y\,e^{-y\Delta''}\,dx\,dy .
+\]
+In eigenbases of $\Delta$, $\Delta''$ and $\Delta'$, with eigenvalues
+$\ell_i$, $\ell''_i$ and $\ell'_\mu$, these are given by divided differences
+of the function $\mathsf f(x)=e^{-x}$, written $\mathsf f[\,\cdot\,]$, by the
+Hermite--Genocchi formula:
+\[
+ K_\Delta(G)_{ik}=-\mathsf f[\ell_i,\ell_k]\,G_{ik},\qquad
+ \mathcal J_{\Delta'',\Delta'}(X,Y)_{ik}=\sum_\mu\mathsf f[\ell''_i,\ell'_\mu,\ell''_k]\,X_{i\mu}Y_{\mu k},
+\]
+with $-\mathsf f[a,b]>0$ and $\mathsf f[a,b,c]>0$, by the mean value form of
+divided differences. The expansion
+$e^{X+Y}=e^X+\int_0^1e^{(1-x)X}Ye^{xX}dx+\dots$ is called the Duhamel
+expansion below.
+
+\begin{proposition}\label{prop:coefficient}
+The endomorphism $\Omega$ preserves each $E_i^n$, and for every vertex $i$
+\[
+ \gr\,\Omega\big|_{E_i}=K_{\Delta_i}(\Gamma_i)
+ +\sum_{a:k\to i}\mathcal J_{\Delta_i,\Delta_k}(M_a,M_a^\dagger)
+ -\sum_{a:i\to j}\mathcal J_{\Delta_i,\Delta_j}(M_a^\dagger,M_a).
+\]
+\end{proposition}
+
+\begin{proof}
+Write the right side of \eqref{eq:F} as $X_e+X_a+X_{a^*}+X_f$. In
+$\mathcal A(Q)$ every product of three elements of $\{a,a^*,f_i\}$ vanishes,
+and so do the products $f_if_k$, $f_ia$, $af_i$, $f_ia^*$, $a^*f_i$, $aa'$,
+$a^*a'^*$, and $aa'^*$, $a^*a'$ for $a\neq a'$. So in the Duhamel expansion of
+$\exp(X_e+Y)$, $Y=X_a+X_{a^*}+X_f$, the component along the $f_i$ receives
+only the terms with one factor $X_f$, or with one factor $X_a$ and one
+factor $X_{a^*}$ of the same arrow, in either order. The element $X_e$ is
+even and the $e_i$ act as units, so
+$e^{xX_e}=\sum_ie_i\otimes e^{-x\Delta_i}$ and no signs arise from it. By the
+sign rule, for $a:i\to j$,
+\begin{align*}
+ (a\otimes M_a)(\sqrt{-1}\,a^*\otimes M_a^\dagger)
+ &=\sqrt{-1}\,(-1)^{|M_a||a^*|}aa^*\otimes M_aM_a^\dagger=f_j\otimes M_aM_a^\dagger,\\
+ (\sqrt{-1}\,a^*\otimes M_a^\dagger)(a\otimes M_a)
+ &=\sqrt{-1}\,(-1)^{|M_a^\dagger||a|}a^*a\otimes M_a^\dagger M_a=-f_i\otimes M_a^\dagger M_a .
+\end{align*}
+The second-order term of the expansion is
+$\int e^{xX_e}Ye^{(1-x-y)X_e}Ye^{yX_e}\,dx\,dy$ over the simplex; inserting the
+heat factors gives the three terms. Each term preserves the degree, because
+$\Delta_i,\Gamma_i$ have degree $0$, $M_a$ has degree $-1$ and $M_a^\dagger$
+degree $+1$.
+\end{proof}
+
+The formula is the expansion to second order of the display for
+$-\sqrt{-1}F$ in \cite[\S5.4]{hkkp26}; no higher terms occur.
+
+\begin{proposition}\label{prop:properties}
+For every metrized complex:
+\begin{enumerate}
+\item[(a)] All terms of Proposition~\ref{prop:coefficient} other than the
+ summand $K_{\Delta_i}(z_i)=z_ie^{-\Delta_i}$ of $K_{\Delta_i}(\Gamma_i)$ are
+ Hermitian. Hence, on each $E_i^n$,
+ $\Ima\bigl((-1)^n\Omega\bigr)=(\Ima z_i)\,e^{-\Delta_i}>0$.
+\item[(b)] $\tr\Omega=Z(\mathsf E)$ \cite[Lemma~5.17]{hkkp26}.
+\item[(c)] On each $E_i^n$ there is a unique Hermitian $\Phi_i^n$ with
+ spectrum in $(-\pi n,\pi(1-n))$ such that
+ $\Omega|_{E_i^n}\,e^{-\ii\Phi_i^n}$ is positive definite.
+\item[(d)] The flow $h^{-1}\dot h=-\Phi$, $\Phi=\bigoplus\Phi_i^n$, has a
+ unique solution for all $t\geq0$ from every initial metric.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) $K_\Delta(G)^\dagger=K_\Delta(G^\dagger)$ by the substitution
+$x\mapsto1-x$, and $\mathcal J(X,X^\dagger)^\dagger=\mathcal J(X,X^\dagger)$ by
+exchanging $x$ and $y$. (b) This is \cite[Lemma~5.17]{hkkp26}; the argument
+is as follows. With $\tau(X)=\tr(\gr\,[X]_f)$ one has
+$\tr\Omega=\tau(e^{-\sqrt{-1}F})$. Replace all structure maps by their
+multiples by $u\in[0,1]$; then $F$ becomes $-u^2[A,A^*]+F_z$ with
+$F_z=\sqrt{-1}\sum_if_i\otimes z_i$, the element $A$ commutes with it, and the
+derivative of $\tau(e^{-\sqrt{-1}F})$ in $u$ is
+$2\sqrt{-1}\,u\,\tau\bigl([A,A^*e^{-\sqrt{-1}F}]\bigr)=0$, because $\tau$
+vanishes on supercommutators of elements of $\mathcal B$
+(Lemma~\ref{lem:tau} below). At $u=0$,
+$e^{-\sqrt{-1}F_z}=\sum_i(e_i+f_i\otimes z_i)$ and
+$\tau=\sum_{i,n}(-1)^nz_i\dim E_i^n$. (c) Let $T$ be a matrix with $\Ima T$ positive
+definite. Then $T$ is invertible, since $Tv=0$ gives
+$\inner v{(\Ima T)v}=\Ima\inner v{Tv}=0$. Let $T=PU$ be its polar
+decomposition, with $P=(TT^\dagger)^{1/2}>0$ and $U$ unitary. If
+$Uv=\lambda v$, then $\inner v{(\Ima T)v}=(\Ima\lambda)\inner v{Pv}$, so
+$\Ima\lambda>0$. Hence $U=e^{\ii\Psi}$ for a unique Hermitian $\Psi$ with
+spectrum in $(0,\pi)$, and $Te^{-\ii\Psi}=P>0$; conversely such a $\Psi$
+gives a polar decomposition, which is unique. Apply this to
+$(-1)^n\Omega|_{E_i^n}$ and put $\Phi_i^n=\Psi-\pi n$. (d) The vector field is real-analytic on the space of
+metrics, and $\norm{h^{-1}\dot h}\leq\pi(1+\max|n|)$, so solutions cannot
+leave compact sets in finite time.
+\end{proof}
+
+The computation in (a) is that of \cite[proof of Lemma~5.16]{hkkp26}. That
+lemma also states that $\Omega$ is normal. By (a), a block $\Omega|_{E_i^n}$
+is normal if and only if its Hermitian part commutes with $e^{-\Delta_i}$,
+and this does not hold for all complexes:
+
+\begin{example}[$\Omega$ need not be normal]\label{ex:nonnormal}
+Let $Q=K_1$, with charges $z_0=-1+\ii$, $z_1=1+\ii$, and consider the complex
+with the spaces $V=\CC^2$ in degree $0$ and $U_0=\CC^2$ in degree $1$ at the
+vertex $0$, the spaces $U_1=\CC$ in degree $-1$ and $W=\CC$ in degree $0$ at
+the vertex $1$, the standard metrics, the differentials
+$d_0=\diag(1,4):V\to U_0$ and $d_1=3:U_1\to W$, and the arrow
+$\rho(a_1)=(\rho_1,\rho_2)=(4,100):V\to W$. On $V$ one has
+$d_0^\dagger d_0=\diag(\ell_1,\ell_2)$ with $(\ell_1,\ell_2)=(1,16)$ and
+$\Gamma_0=z_0+\rho(a_1)^\dagger\rho(a_1)$; the operator $M_{a_1}$ of
+\eqref{eq:DeltaMGamma} restricts to $3\rho(a_1):V\to U_1$, and $\Delta_1=9$
+on $U_1$. By Proposition~\ref{prop:coefficient} (see
+Proposition~\ref{prop:twosidedcoefficient} for the general formula), the
+block of $\Omega$ on $V$ is
+\[
+ (\Omega_V)_{ik}=z_0e^{-\ell_i}\delta_{ik}
+ +\rho_i\rho_k\bigl(-\mathsf f[\ell_i,\ell_k]-9\,\mathsf f[\ell_i,9,\ell_k]\bigr),
+\]
+where the factor $9$ is $|d_1|^2$ and the point $9$ is the eigenvalue of
+$d_1^\dagger d_1$. Its imaginary part $\diag(e^{-1},e^{-16})$ has distinct
+eigenvalues, and its Hermitian part has the off-diagonal entry
+$400\,(-\mathsf f[1,16]-9\,\mathsf f[1,9,16])=-1.2183\ldots\neq0$; so the two
+do not commute. This complex is used again in
+Theorem~\ref{thm:twosidedfailure}. For two-term complexes over $K_m$ see
+\cite[Example~2.3]{wue26a}.
+\end{example}
+
+\subsection{Terminology}
+
+\begin{definition}\label{def:phase}
+Let $\mathsf E$ be a metrized complex.
+\begin{enumerate}
+\item[(i)] The \emph{blocks} of $\Omega$ are the endomorphisms
+ $\Omega_i^n=\Omega|_{E_i^n}$. The \emph{phase} is
+ $\Phi=\bigoplus\Phi_i^n$ with $\Phi_i^n$ as in
+ Proposition~\ref{prop:properties}(c), and
+ $|\Omega_i^n|:=\Omega_i^ne^{-\ii\Phi_i^n}=(\Omega_i^n\Omega_i^{n\dagger})^{1/2}$.
+ The word phase is also used, as usual, for the argument of a central
+ charge.
+\item[(ii)] The \emph{phase flow} is the flow $h^{-1}\dot h=-\Phi$ of
+ Proposition~\ref{prop:properties}(d). The \emph{mass} is
+ $\mass(h)=\sum_{i,n}\tr|\Omega_i^n|$, and a metric is \emph{harmonic} if
+ $\Phi$ is a scalar.
+\item[(iii)] Let $i$ be a vertex. The complex of vector spaces $E_i^\bullet$
+ splits orthogonally as $\ker\Delta_i\oplus(\ker\Delta_i)^\perp$; the
+ differential vanishes on the first summand, which maps isomorphically onto
+ the cohomology, and the second summand is an acyclic subcomplex. We call
+ $(\ker\Delta_i)^\perp$ the \emph{acyclic part of $\mathsf E$ at $i$} and the
+ rank of $d_i$ its \emph{rank}. The metrics \emph{induced on the cohomology}
+ are the restrictions of the metrics to the spaces $\ker\Delta_i$.
+\item[(iv)] A \emph{contractible summand} is a direct summand of
+ $\mathsf E$, as a complex of representations, that is contractible. Those
+ used below are complexes $C^n\to C^{n+1}$ at one vertex, with invertible
+ differential, on which no arrow acts.
+\item[(v)] Suppose that the cohomology of $\mathsf E$ is a representation in
+ degree zero, with $Z(\mathsf E)=|Z|e^{\ii\varphi}$, $\varphi\in(0,\pi)$.
+ Along a trajectory of the phase flow, the acyclic part \emph{decays} if the
+ least nonzero eigenvalue of each $\Delta_i$ tends to infinity and $\Omega$
+ minus the endomorphism of the cohomology representation with its induced
+ metrics, extended by zero to the acyclic parts, tends to zero in the trace
+ norm $\tr(T^\dagger T)^{1/2}$ for the metrics $h(t)$ (this is called
+ cancellation of the acyclic part
+ in \cite{wue26b} and decay of the exact part in \cite{wue26c}); and the
+ flow
+ \emph{converges on the cohomology} if the metrics induced on the
+ cohomology, multiplied by $e^{\varphi t}$, converge to a harmonic metric of
+ the cohomology representation.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}\label{rem:phase}
+(1) The phase of Definition~\ref{def:phase} satisfies the positivity
+condition of \cite[\S4.2]{hkkp26} recalled in the Introduction, with the
+branches of \cite[(5.15)]{hkkp26}, and the phase flow is the minimizing flow
+of \cite[\S4.1]{hkkp26} for this phase; for normal $\Omega$ the phase is the
+argument in the sense of the functional calculus used in
+\cite[\S5.4]{hkkp26}.
+
+(2) Since the intervals $(-\pi n,\pi(1-n))$ are pairwise disjoint, a harmonic
+metric can exist only on a complex concentrated in one degree $n$, that is,
+on a shifted representation; then $\Phi$ is the scalar $\arg Z(\mathsf E)$
+taken in $(-\pi n,\pi(1-n))$, the metric is a zero of the moment map shifted
+by the stability parameter (Proposition~\ref{prop:kempfness}), and one
+exists if and only if the representation is polystable
+\cite[Theorem~5.1]{hkkp26}, \cite[Proposition~6.5]{kin94}. For a complex with
+terms in several degrees, `harmonic' is used below only for the metrics
+induced on the cohomology.
+
+(3) The acyclic part at a vertex is in general not preserved by the arrows,
+and an acyclic direct summand need not be contractible
+(Theorem~\ref{thm:twosidedfailure}).
+\end{remark}
+
+Changing the metric at fixed structure maps is the same as moving the
+structure maps in their orbit under $\prod\mathrm{GL}(E_i^n)$ at a fixed
+metric. Precisely, if $h=\overline g^{\mathsf T}g$ in fixed bases, the matrix
+of a structure map
+$T\in\{d_i,\rho(a)\}$ in the orthonormal frames given by $g$ is
+$g_{\mathrm{target}}Tg_{\mathrm{source}}^{-1}$; along the phase flow one can
+choose $g$ with $\dot gg^{-1}=-\frac12\Phi$, where $\Phi$ now denotes the
+Hermitian matrix of the phase in these frames, and then
+\begin{equation}\label{eq:frameflow}
+ \dot T=\tfrac12\bigl(T\,\Phi_{\mathrm{source}}-\Phi_{\mathrm{target}}\,T\bigr)
+\end{equation}
+for the matrices in orthonormal frames, where $\Phi_{\mathrm{source}}$,
+$\Phi_{\mathrm{target}}$ are the phases on the source and the target of $T$.
+The endomorphism $\Omega$, the phases and the mass depend only on the
+matrices of the structure maps in orthonormal frames, up to unitary changes
+of the frames.
+
+For $Q=K_m$ the charges are called \emph{ordered} if
+$\alpha_0\geq\alpha_1$ and \emph{strictly ordered} if $\alpha_0>\alpha_1$;
+that is, the simple representation at the source vertex has phase at least,
+respectively larger than, that of the simple representation at the target
+vertex. We
+write a complex of representations of $K_m$ as a row of its terms, each term
+being the representation $(E_0^n\to E_1^n)$ with the space at the vertex $0$
+on the left; the maps between consecutive terms are the differentials
+$(d_0,d_1)$.
+
+\subsection{Two matrix inequalities}
+We use two matrix inequalities of \cite{wue26b}. For Hermitian matrices $L>0$
+and $M$ put
+\[
+ J_L(M)=\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-xL}Me^{-yL}\,dx\,dy ,
+\]
+so that $J_L(XY)=\mathcal J_{L,0}(X,Y)$; in an eigenbasis of $L$ with
+eigenvalues $\ell_i$, $J_L(M)_{ik}=\mathsf f[\ell_i,0,\ell_k]\,M_{ik}$. We
+write $M_\pm\geq0$ for the positive and negative parts of a Hermitian matrix
+$M=M_+-M_-$.
+
+\begin{theorem}[{\cite[Theorems~3.1 and~4.1]{wue26b}}]\label{thm:imported}
+The following hold.
+\begin{enumerate}
+\item[(a)] For Hermitian matrices $L>0$ and $M\geq0$,
+ \begin{equation}\label{eq:kernel}
+ \tr J_L(M)_-\leq\tfrac25\tr J_L(M).
+ \end{equation}
+\item[(b)] Let $T(s)$ be a smooth family of matrices with constant positive
+ definite imaginary part, and $\Psi(s)$ the Hermitian matrices with spectrum
+ in $(0,\pi)$ and $T e^{-\ii\Psi}>0$. Then $\tr(\dot T\,\dot\Psi)<0$ wherever
+ $\dot T\neq0$.
+\end{enumerate}
+\end{theorem}
+
+For $1\times1$ matrices, (a) is empty because $J_L(M)\geq0$, and (b) says
+that $\arg(x+\ii y)$ decreases in $x$ for fixed $y>0$. In \cite{wue26b}, (a)
+is reduced to an inequality in one real variable, proved with the help of
+interval arithmetic, and (b) is proved by expressing
+$\tr(\dot T\,\dot\Psi)$ through a Sylvester equation as a quadratic form whose
+kernels are positive semidefinite by an integral representation
+\cite[Section~4]{wue26b}. They are quoted without proof; statement numbers of
+\cite{wue26b} refer to the version released together with this paper. The inequality
+\eqref{eq:kernel} is used only in Theorem~\ref{thm:onevertex}(b),(c) when the
+acyclic part has rank at least two, and Theorem~\ref{thm:imported}(b) only in
+Proposition~\ref{prop:parabolic}. All other statements of this paper are
+independent of \cite{wue26b}.

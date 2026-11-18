@@ -1,0 +1,330 @@
+\section{Kronecker quivers: complexes with differentials at one vertex}\label{sec:kronecker}
+
+Let $Q=K_m$, with vertices $0,1$ and arrows $a_1,\dots,a_m$ from $0$ to $1$.
+A bounded complex of representations $\mathsf E$ has spaces $V^n$ at the
+vertex $0$ and $W^n$ at the vertex $1$, differentials
+$d_0:V^n\to V^{n+1}$ and $d_1:W^n\to W^{n+1}$, and arrows
+$A_j^n:V^n\to W^n$ with $d_1A_j^n=A_j^{n+1}d_0$. Its cohomology in degree $n$
+is a representation $H^n(\mathsf E)$. The endomorphism $\Omega$, the phase
+and the phase flow of $\mathsf E$ with a metric are those of
+Section~\ref{sec:setting}, and we use the properties (O1) and (O2) stated
+there. In this section the charges $z_0,z_1$ are arbitrary in the upper
+half-plane unless stated otherwise; we call them \emph{strictly ordered} if
+$\alpha_0>\alpha_1$, that is, if the simple representation at the vertex $0$
+has the larger phase. For strictly ordered charges there are stable
+representations with both spaces nonzero; for $\alpha_0\leq\alpha_1$ the only
+stable representations are the two simple ones, because a representation
+$(\mathsf R_0\to\mathsf R_1)$ with $\mathsf R_0,\mathsf R_1\neq0$ has the subrepresentation $(0\to\mathsf R_1)$, whose phase $\alpha_1$ is then
+not smaller than that of the representation.
+
+\subsection{The decomposition}
+
+\begin{theorem}[Decomposition]\label{thm:decomposition}
+Let $\mathsf E$ be a bounded complex of representations of $K_m$ with a
+metric.
+\begin{enumerate}
+\item[(a)] Suppose $d_1=0$. Put $U^n=d_0(V^{n-1})\subset V^n$, and let
+ $(U^n)^\perp$ be its orthogonal complement in $V^n$. For each $n$ the spaces
+ \[
+ \bigl((U^n)^\perp\xrightarrow{A_j^n}W^n\bigr)\ \text{in degree }n,\qquad
+ (U^{n+1}\to0)\ \text{in degree }n+1,
+ \]
+ with the differential $d_0:(U^n)^\perp\to U^{n+1}$, which is surjective,
+ form a subcomplex of representations $\mathsf E_n$. The complex $\mathsf E$
+ is the orthogonal direct sum of the $\mathsf E_n$. If $H^n(\mathsf E)\neq0$,
+ then $\mathsf E_n[n]$ is a complex with a surjective differential at the
+ vertex $0$ (Definition~\ref{def:type}), with cohomology $H^n(\mathsf E)$.
+\item[(b)] Suppose $d_0=0$. Let $C^n$ be the orthogonal complement of
+ $\ker d_1^n$ in $W^n$. For each $n$ the spaces
+ \[
+ (0\to C^{n-1})\ \text{in degree }n-1,\qquad
+ \bigl(V^n\xrightarrow{A_j^n}\ker d_1^n\bigr)\ \text{in degree }n,
+ \]
+ with the differential $d_1:C^{n-1}\to\ker d_1^n$, which is injective, form
+ a subcomplex of representations $\mathsf E_n$. The complex $\mathsf E$ is the
+ orthogonal direct sum of the $\mathsf E_n$. If $H^n(\mathsf E)\neq0$, then
+ $\mathsf E_n[n]$ is a complex with an injective differential at the vertex
+ $1$ (Definition~\ref{def:type}), with cohomology $H^n(\mathsf E)$.
+\item[(c)] In both cases, if $H^n(\mathsf E)=0$, then $\mathsf E_n$ is a
+ complex $C\to C'$ at one vertex with invertible differential, on which the
+ arrows vanish.
+\item[(d)] In both cases $\Omega$ and the phase of $\mathsf E$ are the direct
+ sums of those of the $\mathsf E_n$, and the phase flow preserves the
+ decomposition: the subspaces remain orthogonal for the metric at every time,
+ and the metric of each $\mathsf E_n$ evolves by the phase flow of
+ $\mathsf E_n$.
+\end{enumerate}
+The subspaces $(U^n)^\perp$ and $C^n$, and with them the subcomplexes
+$\mathsf E_n$, depend on the metric.
+\end{theorem}
+
+\begin{proof}
+(a) Since $A_j^{n+1}d_0=d_1A_j^n=0$, the arrows vanish on $U^{n+1}$; so
+$\mathsf E_n$ is closed under the arrows, and it is closed under the
+differential because $d_0$ maps $(U^n)^\perp$ into $U^{n+1}$ and vanishes on
+$U^{n+1}$. The map $d_0:(U^n)^\perp\to U^{n+1}=d_0(V^n)$ is surjective because
+$d_0$ vanishes on $U^n$. The spaces of the $\mathsf E_n$ decompose those of
+$\mathsf E$: $W^n$ belongs to $\mathsf E_n$, and $V^n=U^n\oplus(U^n)^\perp$
+with $U^n$ in $\mathsf E_{n-1}$ and $(U^n)^\perp$ in $\mathsf E_n$,
+orthogonally. The kernel of $d_0$ on $(U^n)^\perp$ is isomorphic to
+$\ker d_0^n/d_0(V^{n-1})$, so the cohomology of $\mathsf E_n$ is
+$H^n(\mathsf E)$ in degree $n$.
+
+(b) Since $d_1A_j^n=A_j^{n+1}d_0=0$, the arrows map $V^n$ into $\ker d_1^n$.
+The differential maps $C^{n-1}$ into $d_1(W^{n-1})\subset\ker d_1^n$ and is
+injective on it. $V^n$ belongs to $\mathsf E_n$, and
+$W^n=\ker d_1^n\oplus C^n$ with $\ker d_1^n$ in $\mathsf E_n$ and $C^n$ in
+$\mathsf E_{n+1}$. The cohomology of $\mathsf E_n$ is $V^n$ at the vertex $0$
+and $\ker d_1^n/d_1(W^{n-1})$ at the vertex $1$.
+
+(c) In (a), $H^n(\mathsf E)=0$ means $W^n=0$ and $\ker d_0\cap(U^n)^\perp=0$;
+in (b) it means $V^n=0$ and $d_1(C^{n-1})=\ker d_1^n$.
+
+(d) The first statement is (O1). Hence at a metric for which the
+decomposition is orthogonal the vector field \eqref{eq:flow} is tangent to the
+set of such metrics, and the solution stays in this set; on it the flow is
+the product of the flows of the summands.
+\end{proof}
+
+The metric induced on $H^n(\mathsf E)$ is the restriction of the metric to
+the orthogonal complement of the image of the differential in its kernel; it
+is the metric induced on the cohomology of $\mathsf E_n[n]$ in the sense of
+Section~\ref{sec:convergence}.
+
+\begin{theorem}[Long-time behaviour]\label{thm:longtime}
+Let $\mathsf E$ be a bounded complex of representations of $K_m$ with
+$d_0=0$ or $d_1=0$, with any metric and arbitrary charges in the upper
+half-plane, and let $\mathsf E_n$ be as in
+Theorem~\ref{thm:decomposition}. Then along the phase flow, for every $n$:
+\begin{enumerate}
+\item[(i)] if the differential $f$ of $\mathsf E_n$ is not zero, the least
+ nonzero eigenvalue of $ff^\dagger$ tends to infinity; and the trace-norm
+ distance between the endomorphism $\Omega_{\mathsf E_n}$ of $\mathsf E_n$
+ and $(-1)^n\Omega_{H^n(\mathsf E)}$, the endomorphism of the representation
+ $H^n(\mathsf E)$ with its induced metrics, extended by zero, tends to zero
+ exponentially for $t\geq t_1$; here $t_1$ is the time of
+ Theorem~\ref{thm:decay} or of Proposition~\ref{prop:sink} for
+ $\mathsf E_n[n]$ or its dual if $H^n(\mathsf E)\neq0$, and
+ $t_1=\frac1\pi\log^+\frac1{\lambda_0}$, with $\lambda_0$ the least
+ eigenvalue of $ff^\dagger$ at time $0$, if $H^n(\mathsf E)=0$;
+\item[(ii)] if $H^n(\mathsf E)$ is nonzero and semistable, with
+ $\varphi_n=\arg Z(H^n(\mathsf E))\in(0,\pi)$, its moment map tends to its
+ stability parameter $\theta$ (Section~\ref{sec:convergence}); if it is
+ polystable, the metrics induced on $H^n(\mathsf E)$, multiplied by
+ $e^{(\varphi_n-\pi n)t}$, converge exponentially to a harmonic metric of
+ $H^n(\mathsf E)$;
+\item[(iii)] if $H^n(\mathsf E)\neq0$, with
+ $\varphi_n=\arg Z(H^n(\mathsf E))$, the metrics induced on
+ $H^n(\mathsf E)$, multiplied by $e^{(\varphi_n-\pi n)t}$, satisfy the
+ hypothesis (P) of Section~\ref{sec:asymptotics} from some time on. So
+ Theorem~\ref{thm:hn} applies to them with the Harder--Narasimhan
+ filtration of the representation $H^n(\mathsf E)$, and
+ Theorem~\ref{thm:comparison} and Corollary~\ref{cor:iterated} apply to its
+ factors.
+\end{enumerate}
+In all cases $\mass(h(t))\to\sum_n\mass_{\mathrm{HN}}(H^n(\mathsf E))$, the
+sum of the masses of the Harder--Narasimhan filtrations of the cohomology
+representations; this is $\sum_n|Z(H^n(\mathsf E))|$ if they are semistable.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:decomposition} the flow is the product of the flows of
+the $\mathsf E_n$, and by (O2) the flow of $\mathsf E_n[n]$ has the same
+trajectories up to the factor $e^{-\pi nt}$. If $H^n(\mathsf E)=0$, then
+$\mathsf E_n[n]$ is a complex $C\xrightarrow fC'$ at one vertex $i$, in
+degrees $0,1$ or $-1,0$, on which the arrows vanish; by \eqref{eq:general}
+its endomorphism is
+$\pm\bigl(z_ie^{-f^\dagger f}\oplus(-z_ie^{-ff^\dagger})\bigr)$, the phases on
+$C$ and $C'$ are scalars that differ by $\pi$, and by \eqref{eq:frameflow}
+$f(t)=e^{\pi t/2}f(0)$ in orthonormal frames. Let now
+$H^n(\mathsf E)\neq0$ and $d_1=0$, so that $\mathsf E_n[n]$ has a surjective
+differential at the vertex $0$. If this differential is zero,
+$\mathsf E_n[n]$ is the representation $H^n(\mathsf E)$, and
+Theorem~\ref{thm:representations} applies. If it is not zero and $W^n\neq0$,
+Theorems~\ref{thm:decay} and~\ref{thm:convergence} apply, with $Q=K_m$ and
+$i_0=0$. If it is not zero and $W^n=0$, all arrows vanish, and
+Proposition~\ref{prop:sink} and Remark~\ref{rem:vanishing} apply. For
+$d_0=0$ the complex $\mathsf E_n[n]$ has an injective differential at the
+vertex $1$: if this differential is zero, $\mathsf E_n[n]$ is the
+representation $H^n(\mathsf E)$ and Theorem~\ref{thm:representations}
+applies; otherwise Proposition~\ref{prop:injective} reduces it to the two
+remaining cases for its dual. In each of these cases the metrics induced on
+$H^n(\mathsf E)$, normalized as in (iii), satisfy (P), as recalled at the
+beginning of Section~\ref{sec:asymptotics}; this is (iii). For the mass, the
+mass of $\mathsf E_n$ differs from the mass of the representation
+$H^n(\mathsf E)$ with its induced metrics by a quantity that tends to zero,
+by (i) and because the trace norm of a difference bounds the difference of
+the trace norms, and the latter mass tends to
+$\mass_{\mathrm{HN}}(H^n(\mathsf E))$ by Theorem~\ref{thm:hn}(i).
+\end{proof}
+
+\subsection{Complexes of projective and of injective representations}
+The indecomposable projective representations of $K_m$ are the simple
+representation $S_1=(0\to\CC)$ at the vertex $1$ and
+$P_0=(\CC\xrightarrow{e_j}\CC^m)$, in which the $j$-th arrow maps $1$ to the
+$j$-th basis vector; the indecomposable injective representations are the
+simple representation $S_0=(\CC\to0)$ and $I_1=(\CC^m\xrightarrow{e_j^*}\CC)$.
+One has $\Hom(P_0,S_1)=0$ and $\Hom(S_0,I_1)=0$, the endomorphisms of $S_1$,
+$P_0$, $S_0$, $I_1$ are the scalars, a homomorphism $S_1^a\to P_0^b$ is zero
+at the vertex $0$, and a homomorphism $I_1^a\to S_0^b$ is zero at the vertex
+$1$. A bounded complex of projective, or of injective, representations is
+\emph{minimal} if no component of its differential between indecomposable
+summands is an isomorphism.
+
+\begin{proposition}\label{prop:minimal}
+For bounded complexes of representations of $K_m$:
+\begin{enumerate}
+\item[(a)] A complex of projective representations has $d_0=0$ if and only
+ if its differential has no component $P_0\to P_0$ that is an isomorphism.
+ In particular a minimal one has $d_0=0$, and its differential has only
+ components $S_1\to P_0$.
+\item[(b)] A complex of injective representations has $d_1=0$ if and only if
+ its differential has no component $I_1\to I_1$ that is an isomorphism. In
+ particular a minimal one has $d_1=0$, and its differential has only
+ components $I_1\to S_0$.
+\item[(c)] Every bounded complex of representations is quasi-isomorphic to a
+ minimal bounded complex of projective representations, and to a minimal
+ bounded complex of injective ones.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) Write the terms as $P_0^{b_n}\oplus S_1^{a_n}$. The components
+$P_0\to S_1$ vanish, the components $P_0\to P_0$ and $S_1\to S_1$ are
+scalars, and the components $S_1\to P_0$ are zero at the vertex $0$. The
+space at the vertex $0$ is $\CC^{b_n}$, and $d_0$ is the matrix of the
+components $P_0\to P_0$. (b) is dual. (c) The category of representations of
+$K_m$ is hereditary with enough projectives and injectives, so a bounded
+complex has bounded resolutions by finite-dimensional projectives and by
+injectives; and a bounded complex of projectives, or of injectives, is the
+direct sum of a minimal one and of a contractible one, obtained by splitting
+off the isomorphisms between indecomposable summands.
+\end{proof}
+
+By Theorem~\ref{thm:decomposition}, Theorem~\ref{thm:longtime} therefore
+applies to every bounded complex of projective representations with
+$d_0=0$, and of injective representations with $d_1=0$, with any metric; in
+particular to the minimal ones. Thus a minimal complex of projective
+representations falls under Theorem~\ref{thm:decomposition}(b), with
+injective differentials at the vertex $1$, and a minimal complex of
+injective representations under Theorem~\ref{thm:decomposition}(a), with
+surjective differentials at the vertex $0$. An example, which is not minimal unless all
+$\beta_j$ vanish, is the standard projective resolution of a representation
+$\mathsf R=(\mathsf R_0\xrightarrow{\beta_j}\mathsf R_1)$ with $\mathsf R_0\neq0$,
+\[
+ \bigl(0\to\mathsf R_0\otimes\CC^m\bigr)\ \longrightarrow\
+ \bigl(\mathsf R_0\xrightarrow{v\mapsto(v\otimes e_j,\,0)}(\mathsf R_0\otimes\CC^m)\oplus\mathsf R_1\bigr),
+ \qquad v\otimes e_j\mapsto(v\otimes e_j,\,-\beta_jv),
+\]
+in degrees $-1,0$: it has $d_0=0$ and an injective differential at the
+vertex $1$, with an exact part of rank $m\dim\mathsf R_0$.
+
+\subsection{The derived category of the projective line}
+Let $m=2$. By Beilinson's theorem \cite{bei78} the bounded derived category
+of representations of $K_2$ is equivalent to the bounded derived category
+$D^b(\mathbb P^1)$ of coherent sheaves on the projective line, by the functor
+$R\mathrm{Hom}(\mathcal O\oplus\mathcal O(1),\,\cdot\,)$, which sends a sheaf
+$\mathcal F$ with $\mathrm{Ext}^1(\mathcal O\oplus\mathcal O(1),\mathcal F)=0$
+to the representation
+$\Hom(\mathcal O(1),\mathcal F)\rightrightarrows\Hom(\mathcal O,\mathcal F)$,
+the arrows being the compositions with the two coordinate sections of
+$\mathcal O(1)$. Under this equivalence the simple representations $S_1$ and
+$S_0$ correspond to $\mathcal O$ and $\mathcal O(-1)[1]$
+\cite[\S2.4]{oka06}. More generally, for $l\geq0$ let
+$\mathsf L_l=(\CC[x]_{<l}\rightrightarrows\CC[x]_{\leq l})$ be the
+representation on the polynomials of degree less than $l$ and at most $l$,
+with the two arrows given by the inclusion and by multiplication by $x$, and
+$\mathsf L_l^\vee$ its dual, of dimension vector $(l+1,l)$, regarded as a
+representation of $K_2$ through the isomorphism of $K_2$ with its opposite
+quiver that exchanges the vertices; so
+$\mathsf L_0=S_1$ and $\mathsf L_0^\vee=S_0$. Computing the functor on
+sheaves, with Serre duality for the second, gives
+\[
+ \mathsf L_l\leftrightarrow\mathcal O(l),\qquad
+ \mathsf L_l^\vee\leftrightarrow\mathcal O(-l-1)[1]\qquad(l\geq0),
+\]
+and the representations of dimension vector $(1,1)$ with a nonzero arrow
+correspond to the skyscraper sheaves of the points of $\mathbb P^1$. A pair of charges
+$z_0,z_1$ in the upper half-plane is the central charge of a stability
+condition on this category with heart the category of representations
+(by \cite[Propositions~2.4 and~5.3]{bri07}, since every object of the heart
+has finite length). An object $X$ is isomorphic to the direct sum
+of the $H^n(X)[-n]$, with $H^n(X)$ its cohomology representations, because
+the category of representations is hereditary. Let $\operatorname{gr}^k_n$
+be the factors of the Harder--Narasimhan filtration of the representation
+$H^n(X)$, semistable of phases $\phi_{n,1}>\phi_{n,2}>\dots$ in $(0,\pi)$.
+The objects $\operatorname{gr}^k_n[-n]$ are semistable of the phases
+$\phi_{n,k}-\pi n$, which decrease strictly in the lexicographic order of
+$(n,k)$; so they are the Harder--Narasimhan factors of $X$, and the mass of
+$X$ for the stability condition is
+$\sum_n\mass_{\mathrm{HN}}(H^n(X))=\sum_{n,k}|Z(\operatorname{gr}^k_n)|$. If
+every nonzero $H^n(X)$ is semistable this is $\sum_n|Z(H^n(X))|$.
+
+\begin{theorem}\label{thm:P1}
+Let $X$ be an object of $D^b(\mathbb P^1)$, let $\mathsf E$ be a minimal
+bounded complex of projective representations, or of injective
+representations, of $K_2$ representing $X$, with arbitrary Hermitian metrics
+on its spaces at the two vertices, and let $z_0,z_1$ be charges in the upper
+half-plane. Then along the phase flow of $\mathsf E$:
+\begin{enumerate}
+\item[(i)] the flow is the product of flows, one for each cohomological
+ degree $n$, and the blocks of $\Omega$ in the summand of degree $n$ approach
+ $(-1)^n$ times those of the representation $H^n(X)$ with its induced
+ metrics, exponentially in the trace norm;
+\item[(ii)] for each $n$ such that $H^n(X)$ is polystable, the metrics
+ induced on $H^n(X)$, multiplied by $e^{(\varphi_n-\pi n)t}$ with
+ $\varphi_n=\arg Z(H^n(X))\in(0,\pi)$, converge exponentially to a harmonic
+ metric of $H^n(X)$;
+\item[(iii)] $\mass(h(t))$ converges to the mass of $X$ for the stability
+ condition with central charge $(z_0,z_1)$ and heart the category of
+ representations;
+\item[(iv)] for each $n$ with $H^n(X)\neq0$ the metrics induced on $H^n(X)$
+ decay at the exponential rates $\phi_{n,k}-\pi n$ on the steps of the
+ Harder--Narasimhan filtration of $H^n(X)$, as in
+ Theorem~\ref{thm:hn}(ii); and the metric induced on each Harder--Narasimhan
+ factor $\operatorname{gr}^k_n[-n]$ of $X$, multiplied by
+ $e^{(\phi_{n,k}-\pi n)t}$, is an asymptotic solution of the weighted
+ gradient flow of the Kempf--Ness function of $\operatorname{gr}^k_n$
+ (Corollary~\ref{cor:iterated}), and converges exponentially to a harmonic
+ metric if $\operatorname{gr}^k_n$ is polystable.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:minimal} and Theorem~\ref{thm:longtime}.
+\end{proof}
+
+The hypothesis of (ii) depends on the cohomology representations.
+For strictly ordered charges the following representations of $K_m$ are
+stable: the simple ones; those of dimension vector $(1,1)$ with a nonzero
+arrow; and, for $m=2$ and $l\geq1$, the representations $\mathsf L_l$ and
+$\mathsf L_l^\vee$. Indeed, the simple ones have no proper nonzero
+subrepresentation, and those of dimension vector $(1,1)$ have only
+$(0\to\CC)$, of phase $\alpha_1<\varphi$. For $\mathsf L_l$ the stability
+parameter has $\theta_0=l+1$ and $\theta_1=-l$ up to a positive factor, and a
+subrepresentation $(V',W')$ with $V'\neq0$ has
+$W'\supset V'+xV'$, of dimension at least $\dim V'+1$, so that
+$(l+1)\dim V'-l\dim W'\leq\dim V'-l<0$ unless $V'=\CC[x]_{<l}$, in which case
+$W'=\CC[x]_{\leq l}$; and duality preserves stability and strictly ordered
+charges, the dual being regarded as a representation of $K_2$ as above. So,
+for $m=2$ and strictly ordered charges, that is, when the phase of
+$\mathcal O(-1)[1]$ exceeds that of $\mathcal O$, every line bundle and
+every skyscraper sheaf on $\mathbb P^1$ is stable up to shift, whereas for
+$\alpha_0\leq\alpha_1$ only $\mathcal O$ and $\mathcal O(-1)[1]$ are, among
+the objects of the heart (compare \cite{oka06}).
+Theorem~\ref{thm:P1}(ii) then applies to every object whose cohomology
+representations are direct sums of representations of this list with the
+same argument of the central charge in each degree.
+
+\begin{remark}\label{rem:scope}
+An example of a complex with nonzero differentials at both vertices, to
+which the theorems of this section do not apply, is the cone of the identity
+map of a representation with both spaces nonzero. When a cohomology
+representation is semistable and not polystable, its moment map converges to
+$\theta$, but the induced metrics do not converge after any normalization by
+a scalar function of the time: the moment map is invariant under common
+rescalings, so a limit would be a zero of the shifted moment map, which does
+not exist (Lemma~\ref{lem:king}). Theorem~\ref{thm:comparison} and
+Corollary~\ref{cor:iterated} describe these metrics up to a bounded
+factor.
+\end{remark}

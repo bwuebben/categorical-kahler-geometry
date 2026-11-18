@@ -1,0 +1,340 @@
+\section{Introduction}\label{sec:intro}
+
+Haiden, Katzarkov, Kontsevich and Pandit \cite{hkkp26} propose a notion of
+K\"ahler geometry on a triangulated category with a stability condition in
+the sense of Bridgeland \cite{bri07}. In their framework an object carries a
+space of metrics $h$ and a complex-valued function $\cS_{\CC}$ on it with
+differential $\delta h\mapsto\tr(\Omega\,h^{-1}\delta h)$, for an endomorphism
+$\Omega$ whose trace is the central charge of the object. A \emph{phase}
+$\arg\Omega$ is defined by a positivity condition, the \emph{mass} is
+$m=\tr|\Omega|$, and the metrics move by the flow
+$h^{-1}\dot h=-\arg\Omega$, called the minimizing flow in
+\cite[\S4.1]{hkkp26}. In \cite[\S\S1,~4.1]{hkkp26} the mass is expected to
+decrease along the flow, the flow to converge to a \emph{harmonic} metric,
+one of constant phase, when the object admits one, and harmonic metrics to
+exist on polystable objects, a categorical form of the theorem of Donaldson,
+Uhlenbeck and Yau \cite{don85,uy86}. For a representation of a quiver,
+$\Omega$ is the central charge of each vertex shifted by the moment map, and
+the harmonic metrics are the zeros of the shifted moment map. For complexes
+of quiver representations $\Omega$ is defined through a superconnection in a
+graded algebra \cite[\S5.4]{hkkp26}, and it is asked there whether the mass
+decreases \cite[Question~5.18]{hkkp26}.
+
+For a complex the endomorphism $\Omega$ is in general not normal
+\cite[Example~2.3]{wue26}, whereas in \cite[\S5.4]{hkkp26} its phase is
+written with the functional calculus. Throughout this paper $\arg\Omega$ is
+taken in the sense of the positivity condition of \cite[\S4.2]{hkkp26}, that
+is, as the argument of the unitary factor in the polar decomposition
+(Section~\ref{sec:setting}). Every statement about the flow below, including
+the comparison with \cite[Question~5.18]{hkkp26}, refers to this reading. We
+call the resulting flow the \emph{phase flow}: it is the minimizing flow of
+\cite[\S4.1]{hkkp26} with this reading of the phase.
+
+The simplest complexes on which both a differential and the arrows of a
+quiver act are
+\begin{equation}\label{eq:introcomplex}
+ (V\xrightarrow{\,(A_j)\,}W)\ \xrightarrow{\,(D,0)\,}\ (U\to0),
+\end{equation}
+two-term complexes of representations of the generalized Kronecker quiver
+with $k$ arrows, with $D:V\to U$ surjective and $A_1,\dots,A_k:V\to W$. The
+cohomology is the representation $\ker D\to W$ in degree zero; it is a
+subcomplex, and the quotient $(V/\ker D\to0)\to(U\to0)$ is an acyclic complex
+of rank $r=\dim U$, the \emph{acyclic part}. So \eqref{eq:introcomplex} is
+quasi-isomorphic to a representation. For these complexes $\Omega$ was
+computed in \cite{wue26}, where it was shown that the mass can increase along
+the phase flow \cite[Theorem~1.1]{wue26}; that the contribution of the
+acyclic part to $\Omega$ nevertheless decays if the least singular
+value of $D$ in the initial metrics is large \cite[Theorem~1.3]{wue26}; and
+that for one pair of charges and $\dim\ker D=\dim W$ the moment map of the
+cohomology representation then tends to zero if its Kempf--Ness function is
+bounded below \cite[Theorem~1.4]{wue26}.
+
+We prove that, for every initial metric, the contribution of the acyclic
+part decays, for all charges, and that, when the charge at the source vertex
+has the larger argument, the metrics induced on the cohomology converge,
+after a scalar normalization, to a harmonic metric of the cohomology
+representation whenever that representation is polystable. This
+removes the assumption on the initial metrics of
+\cite[Theorems~1.3,~1.4]{wue26}. The main results are
+Theorems~\ref{thm:introA} and~\ref{thm:introB}.
+
+\subsection{Results}
+Let $h=(h_V,h_U,h_W)$ be Hermitian metrics on the three spaces of
+\eqref{eq:introcomplex}; adjoints, written ${}^\dagger$, are taken for the
+current metrics. Let $z_0,z_1$ be central charges in the upper half-plane,
+attached to the source vertex $0$, which carries $V$ and $U$, and to the
+target vertex $1$, which carries $W$; let $n_0=\dim\ker D$, $n_1=\dim W$,
+$Z=n_0z_0+n_1z_1$ and $\varphi=\arg Z\in(0,\pi)$. The pair $(z_0,z_1)$ is the
+central charge of a stability condition on the bounded derived category of
+representations whose heart is the category of representations; the phase of
+a representation of dimension vector $(a,b)$ is $\arg(az_0+bz_1)$, which is
+$\pi$ times the usual normalized phase. The endomorphism of
+\cite[\S5.4]{hkkp26} is $\Omega=\Omega_V\oplus\Omega_U\oplus\Omega_W$; it is
+computed in \eqref{eq:coeff} below. Put
+\[
+ L=DD^\dagger,\qquad\lambda=\lambda_{\min}(L),\qquad
+ D^+=D^\dagger(DD^\dagger)^{-1},\qquad s=\sum_j\norm{A_jD^+}_{\HS}^2 .
+\]
+For the metrics induced on $\ker D$ and $W$ let $H_j$ be the matrix of
+$A_j|_{\ker D}$ in orthonormal frames, $C_0=\sum_jH_j^\dagger H_j$ and
+$C_1=\sum_jH_jH_j^\dagger$. For the cohomology representation with these
+metrics, $\Omega$ is $(z_0+C_0)\oplus(z_1-C_1)$, a scalar standing for the
+corresponding multiple of the identity. We write $\norm\cdot_1$ for
+the trace norm, and $(z_0+C_0)\oplus0$ for the endomorphism of
+$V=\ker D\oplus(\ker D)^\perp$ that is $z_0+C_0$ on $\ker D$ and zero on the
+orthogonal complement.
+
+\begin{theorem}[Cancellation of the acyclic part]\label{thm:introA}
+For all charges $z_0,z_1$ in the upper half-plane and every complex
+\eqref{eq:introcomplex}, along the phase flow $\lambda(t)\to\infty$,
+$s(t)\to0$, and for $t\geq t_1$
+\[
+ \norm{\Omega_V-(z_0+C_0)\oplus0}_1+\norm{\Omega_U}_1+\norm{\Omega_W-(z_1-C_1)}_1
+ \leq C_{\mathrm{can}}\,e^{-\frac14(\arg z_1)(t-t_1)},
+\]
+where $C_{\mathrm{can}}$ is an explicit function of the dimensions and the
+charges, and $t_1$ of these and of three numbers computed from the initial
+metrics. No hypothesis is made on the cohomology representation.
+\end{theorem}
+
+The charges are \emph{ordered} if $\arg z_0>\arg z_1$, that is, if the simple
+representation at the source vertex has the larger phase, and
+\emph{reversed} if $\arg z_0<\arg z_1$. For reversed charges no
+representation with $n_0,n_1\geq1$ is semistable. For ordered charges there
+are unique $\theta_0,\theta_1>0$ with
+$\arg(z_0+\theta_0)=\arg(z_1-\theta_1)=\varphi$; then
+$n_0\theta_0=n_1\theta_1$, and a representation of dimension vector
+$(n_0,n_1)$ is semistable, in the sense that no subrepresentation has phase
+larger than $\varphi$, exactly when it is semistable in the sense of King
+\cite{kin94} for the character $(-\theta_0,\theta_1)$. We call
+$(\theta_0,\theta_1)$ the \emph{stability parameter}. The \emph{moment map} of
+the cohomology representation, shifted by the stability parameter, is
+$\mu=(C_0-\theta_0,\,C_1-\theta_1)$. Its zeros are the pairs of metrics for
+which the phases $\arg(z_0+C_0)$ and $\arg(z_1-C_1)$ at the two vertices both
+equal $\varphi$, that is, the harmonic metrics; they exist exactly for polystable
+representations \cite{kn79,kin94}.
+
+\begin{theorem}[Convergence]\label{thm:introB}
+Along the phase flow, for every initial metric:
+\begin{enumerate}
+\item[(i)] If the charges are ordered and the cohomology representation is
+ semistable, then $\mu(t)\to0$ and $m(h(t))\to|Z|$.
+\item[(ii)] If the charges are ordered and the cohomology representation is
+ polystable, the induced metrics
+ $(e^{\varphi t}h_V|_{\ker D},\,e^{\varphi t}h_W)$ converge exponentially, as
+ Hermitian forms on the fixed vector spaces $\ker D$ and $W$, to a zero of
+ the moment map, that is, to a harmonic metric of the cohomology
+ representation; the moment map and $m-|Z|$ tend to zero exponentially.
+\item[(iii)] If the charges are reversed, the arrows $H_j$ tend to zero
+ exponentially and $m(h(t))\to n_0|z_0|+n_1|z_1|$.
+\end{enumerate}
+\end{theorem}
+
+A harmonic metric of a representation is not stationary under the flow but
+moves by the scalar $e^{-\varphi t}$, which is why the limit is stated for
+the normalized metrics. The complex itself has no harmonic metric, since the
+phase on $U$ is negative and the phases on $V,W$ are positive, and its
+metrics do not converge even after normalization, because $\lambda\to\infty$;
+the limit exists for the metrics induced on the cohomology. In
+\cite[Remark~5.15]{hkkp26} the metrics of an object are the metrized
+complexes isomorphic to it in the derived category. The flow preserves the
+underlying complex, and Theorem~\ref{thm:introB} identifies its limit with a
+harmonic metric on another representative of the same object, the
+cohomology representation. The rate in (ii)
+is governed by the least eigenvalue of the Hessian of the Kempf--Ness
+function transversally to the zeros of the moment map and by the rate of
+Theorem~\ref{thm:introA}. The precise statements are
+Theorems~\ref{thm:cancellation}, \ref{thm:relaxation}, \ref{thm:convergence}
+and~\ref{thm:reversed}.
+
+The proof of Theorem~\ref{thm:introA} does not use a Lyapunov function: the
+mass is not monotone, and the function $\cK$ introduced before
+Theorem~\ref{thm:introE} is monotone for the charges of that theorem but not
+for all charges. It rests on an a priori bound for the
+following quantity, which is not monotone either, and on the growth of
+$\lambda$. Let $R(b)=(1-e^{-b})/b$ and
+\[
+ N=\sum_j\tr\bigl(A_jR(D^\dagger D)A_j^\dagger\bigr),
+\]
+the \emph{arrow energy}; it is the term of $-\cS_{\CC}$, see
+\eqref{eq:primitive}, that does not contain the charges, and it bounds $\tr C_0$ and $(1-e^{-\lambda})s$.
+
+\begin{theorem}[A priori bound]\label{thm:introC}
+For all charges in the upper half-plane, along the phase flow
+\[
+ \frac{dN}{dt}\leq-\rho N+n_1M_1,\qquad
+ \rho=\pi-\max\bigl\{\arg z_0,\tfrac{2\pi}5\bigr\}>0,
+\]
+with $M_1=\max\{\pi\max(\Rea z_1,0),\,2\Ima z_1\}$. Hence
+$N(t)\leq\max\{N(0),n_1M_1/\rho\}$ for all $t\geq0$, and
+$N(t)\leq2n_1M_1/\rho$ after an explicit time.
+\end{theorem}
+
+The three terms of $dN/dt$ come from the three blocks of $\Omega$
+(Lemma~\ref{lem:energy}). The block $\Omega_W$ is a normal matrix and its
+term is elementary. The blocks $\Omega_V$ and $\Omega_U$ are not normal, and
+their terms are controlled by two matrix inequalities, stated and proved
+independently of the flow in Sections~\ref{sec:kernel} and~\ref{sec:phase}.
+
+\begin{theorem}[Two matrix inequalities]\label{thm:introD}
+The following hold.
+\begin{enumerate}
+\item[(i)] Let $L>0$ and $E\geq0$ be Hermitian matrices, and let $J_L(E)$ be
+ the integral of $e^{-xL}Ee^{-yL}$ over the simplex $x,y\geq0$, $x+y\leq1$.
+ Then the negative part of the Hermitian matrix $J_L(E)$ satisfies
+ $\tr J_L(E)_-\leq\frac25\tr J_L(E)$.
+\item[(ii)] Let $\Omega',\Omega''$ be matrices with the same positive
+ definite imaginary part and $\Phi',\Phi''$ the arguments of the unitary
+ factors in their polar decompositions, with spectrum in $(0,\pi)$. Then
+ $\tr\bigl((\Omega''-\Omega')(\Phi''-\Phi')\bigr)\leq0$, with equality only
+ if $\Omega'=\Omega''$.
+\end{enumerate}
+\end{theorem}
+
+By the Hermite--Genocchi formula for divided differences, in an eigenbasis
+of $L$ the matrix
+$J_L(E)$ is the entrywise product of $E$ with the matrix of second divided
+differences of $e^{-x}$ at the points $\ell_i,0,\ell_k$; this matrix is not
+positive semidefinite, and (i) says that the negative part of the product
+carries at most two fifths of the trace. The best constant is at least
+$(\sqrt2-1)/2$. The proof reduces (i) to an inequality in one real variable,
+which is proved by estimates near $0$ and $\infty$ and by interval
+arithmetic on a compact interval (Section~\ref{sec:kernel}). Statement (ii)
+says that minus the argument of the polar factor is a strictly monotone
+operator, in the sense of Minty \cite{min62}, on the Hermitian matrices with
+the trace inner product; it is not monotone for the L\"owner order, because
+the
+arctangent is not operator monotone on the real line
+(Remark~\ref{rem:phasefails}). For a scalar imaginary part it is the fact
+that the argument of a complex number decreases in its real part. The proof
+uses an integral representation of anti-L\"owner type \cite{aud11}
+(Section~\ref{sec:phase}).
+
+The mass is not monotone along the phase flow, also for the charges and
+complexes of Theorem~\ref{thm:introB}: we give a complex with $512$ arrows,
+stable cohomology and $r=1$, with metrics at which the mass increases, for
+$z_0=-1+\ii$, $z_1=1+\ii$ (Proposition~\ref{prop:mass}). The largest phase
+can increase and the smallest phase can decrease
+(Proposition~\ref{prop:extreme}), whereas for representations the mass and
+the extreme phases are monotone, as expected in \cite[\S4.1]{hkkp26}
+(Proposition~\ref{prop:representations}). What converges for the complexes
+\eqref{eq:introcomplex}, for ordered charges and semistable cohomology, is
+the mass measure of \cite[\S4.2]{hkkp26}, recalled in
+Section~\ref{sec:expectations} (Proposition~\ref{prop:measure}).
+
+For a range of charges there is a Lyapunov function. The \emph{phase
+potential} is
+\[
+ \cK=\frac{\Ima(e^{-\ii\varphi}\cS_{\CC})}{\sin\varphi},
+\]
+with $\cS_{\CC}$ the function \eqref{eq:primitive}. We call
+$z_0=-1+\ii$, $z_1=1+\ii$ the \emph{symmetric charges}; for them and
+$n_0=n_1$,
+\[
+ \cK(h)=\log\det h_V-\log\det h_U-\log\det h_W+\tr\Ein(D^\dagger D)+N,
+ \qquad\Ein(b)=\int_0^1(1-e^{-xb})\frac{dx}x ,
+\]
+with the determinants of the Gram matrices in fixed reference bases.
+
+\begin{theorem}[Lyapunov function]\label{thm:introE}
+Let the charges be ordered, and suppose that $\varphi\geq\frac{2\pi}5$ or
+$r=1$. Then the phase potential is strictly decreasing along the phase flow.
+For the symmetric charges and $n_0=n_1$,
+\[
+ -\frac{d\cK}{dt}\ \geq\ \frac\pi{10}\tr J_L(DCD^\dagger)+\frac\pi2\tr e^{-L}>0,
+ \qquad C=\sum_jA_j^\dagger A_j .
+\]
+There are ordered charges and complexes with $r=2$, with metrics at which
+the phase potential increases along the flow.
+\end{theorem}
+
+The number $\frac{2\pi}5$ is $\pi$ times the constant of
+Theorem~\ref{thm:introD}(i). The rate of the potential is a sum of three
+terms, one for each of $V$, $W$ (degree zero) and $U$ (degree one); the first
+two are nonnegative for elementary reasons, and the third is controlled by
+Theorem~\ref{thm:introD}(i). See Theorem~\ref{thm:monotone} and
+Propositions~\ref{prop:reversed}, \ref{prop:orderedfailure}.
+
+\begin{theorem}[Infimum and moduli]\label{thm:introF}
+Let the charges be ordered, and let $\gamma$ be Euler's constant.
+\begin{enumerate}
+\item[(i)] The potential depends on reference bases of $V,U,W$ only through
+ their volume elements. With volume elements on $\ker D$ and $W$ induced
+ from those of $V,U,W$ through $\det V\cong\det\ker D\otimes\det U$, the
+ infimum of the phase potential over all metrics of the complex is the
+ infimum of the Kempf--Ness function \eqref{eq:KN} of its cohomology
+ representation for the stability parameter $(\theta_0,\theta_1)$, plus
+ $\gamma\,\theta_0r$; it is not attained. Consequently
+ the infima for two quasi-isomorphic complexes of the class
+ \eqref{eq:introcomplex} with semistable cohomology and corresponding volume
+ elements differ by $\gamma\,\theta_0(r'-r)$.
+\item[(ii)] On the stable locus of a holomorphic family of complexes,
+ $\ii\partial\bar\partial$ of the infimum is the pullback of the K\"ahler form
+ of the moduli space of stable representations.
+\item[(iii)] For semistable cohomology the potential along the flow tends to
+ its infimum, exponentially and locally uniformly on the stable locus.
+\end{enumerate}
+\end{theorem}
+
+Part (ii) follows from (i) and the classical description of the K\"ahler
+potential of a K\"ahler quotient (Lemma~\ref{lem:kappa}). See
+Theorems~\ref{thm:infimum}, \ref{thm:moduli} and~\ref{thm:families}.
+
+\subsection{Remarks on the setting and the method}
+The phase flow is not the gradient flow of the phase potential
+(Section~\ref{sec:potential}). For a representation
+regarded as a complex in degree zero $\Omega$ is normal, the phase
+potential is the Kempf--Ness function, and its monotonicity along the flow
+follows from formulas displayed in \cite[\S\S4.2, 5.1]{hkkp26}. On a
+representation the flow has the same stationary points modulo scaling as the
+downward gradient flow of the Kempf--Ness function, and its velocity pairs
+negatively with the gradient, but it is not that gradient flow
+(Section~\ref{sec:convergence}).
+
+The estimates for the polar decomposition that isolate one block of a
+matrix, and the differential inequality for $s$, are taken from \cite{wue26}
+and recalled in Proposition~\ref{prop:imported}. What is new in the proof of
+Theorem~\ref{thm:introA} is the control of the arrows and of $\lambda$ before
+$\lambda$ is large: Theorem~\ref{thm:introC} bounds the arrows, and a second
+differential inequality, for the trace of the exponential integral of $L$,
+forces $\lambda$ to grow (Theorem~\ref{thm:growth}). For the charges of
+Theorem~\ref{thm:introE} and semistable cohomology the Lyapunov function
+gives the same control with different constants
+(Proposition~\ref{prop:apriori}). Theorem~\ref{thm:introB} then follows from
+the convexity of the Kempf--Ness function; the relevant statements are
+classical \cite{kn79,grs21} and are proved for the present linear action in
+Section~\ref{sec:convergence}.
+
+The following is not proved here. For semistable cohomology that is not
+polystable the induced metrics diverge
+(Proposition~\ref{prop:divergence}); the asymptotics are determined here
+only for the smallest such representation, regarded as a complex in degree
+zero, where the metrics have the form $t^{\mp1/2}$ on a subrepresentation
+and the quotient (Proposition~\ref{prop:semistable}). In general the
+normalized induced metrics stay at bounded distance from a trajectory of the
+gradient flow of the Kempf--Ness function for the invariant Riemannian
+metric weighted by the imaginary parts of the charges
+\cite[Theorem~6.3 and Corollary~6.5]{wue26b}, whose asymptotics are
+described in \cite{hkkp23}; whether the bounded factor converges is open
+beyond this example. The case
+$\arg z_0=\arg z_1$ is covered by Theorems~\ref{thm:introA}
+and~\ref{thm:introC} but not by Theorem~\ref{thm:introB}. Complexes whose
+term of degree one sits at the target vertex, with acyclic parts at both
+vertices, or with terms in more than two degrees, are not treated. For
+cohomology that is not semistable, Theorems~\ref{thm:introA}
+and~\ref{thm:introC} apply, and the induced metrics follow the
+Harder--Narasimhan filtration of the cohomology representation
+\cite[Theorem~6.11]{wue26b} (Remark~\ref{rem:unstable}).
+
+\subsection{Organization}
+Section~\ref{sec:setting} recalls the endomorphism $\Omega$, the flow and the
+estimates
+used from \cite{wue26}. Sections~\ref{sec:kernel} and~\ref{sec:phase} prove
+Theorem~\ref{thm:introD}. Section~\ref{sec:energy} proves
+Theorems~\ref{thm:introC} and~\ref{thm:introA}, and
+Section~\ref{sec:convergence} Theorem~\ref{thm:introB}.
+Section~\ref{sec:potential} treats the phase potential and proves
+Theorem~\ref{thm:introE}, and Section~\ref{sec:moduli} proves
+Theorem~\ref{thm:introF}. Section~\ref{sec:expectations} treats the mass, the
+extreme phases and the fixed points, and Section~\ref{sec:remarks} the charges
+for which the phase potential is not monotone, and open questions.

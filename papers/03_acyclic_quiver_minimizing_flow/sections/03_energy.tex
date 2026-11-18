@@ -1,0 +1,246 @@
+\section{An a priori bound for the arrows}\label{sec:energy}
+
+\begin{definition}\label{def:energy}
+For an arrow $a$ put
+\[
+ e_a=\norm{\rho_a}^2\quad\text{if }\mathsf s(a)\neq i_0,\qquad
+ e_a=\tr\bigl(\rho_aR(B)\rho_a^\dagger\bigr)\quad\text{if }\mathsf s(a)=i_0 .
+\]
+The \emph{arrow energy} of the metrized complex is $\cN=\sum_{a\in Q_1}e_a$.
+\end{definition}
+
+For an arrow $a$ out of $i_0$ we split $e_a=e_a^K+e_a^J$ with
+\[
+ e_a^K=\tr\bigl(\rho_a^\dagger\rho_a\,e^{-B}\bigr)\geq0,\qquad
+ e_a^J=\tr\bigl(\rho_a^\dagger\rho_a\,(R(B)-e^{-B})\bigr)\geq0 .
+\]
+Then
+\begin{equation}\label{eq:traces}
+ \tr K_B(C_{\mathrm{out}})=\sum_{a:i_0\to\cdot}e_a^K,\qquad
+ \tr J=\sum_{a:i_0\to\cdot}e_a^J,\qquad
+ \cN=\sum_a\norm{\beta_a}^2+\sum_{j\neq i_0}\tr Y_j .
+\end{equation}
+The first identity holds because $\tr K_B(G)=\tr(Ge^{-B})$. For the second,
+let $\omega(\ell)=\int_0^1we^{-w\ell}dw=(1-e^{-\ell}-\ell e^{-\ell})/\ell^2$;
+then
+\[
+ \tr J=\tr\bigl(DC_{\mathrm{out}}D^\dagger\,\omega(L)\bigr),\qquad
+ D^\dagger\omega(L)D=R(B)-e^{-B}.
+\]
+The third follows from
+$\rho_aR(B)\rho_a^\dagger=H_aH_a^\dagger+X_a(1-e^{-L})X_a^\dagger$. In
+particular
+\begin{equation}\label{eq:energybounds}
+ \sum_a\norm{\beta_a}^2\leq\cN,\qquad\tr J\leq\cN,\qquad
+ (1-e^{-\lambda})\,s\leq\sum_j\tr Y_j\leq\cN,\qquad\norm{\mu_i}_1\leq\cN .
+\end{equation}
+
+\begin{lemma}\label{lem:energyderivative}
+For all charges, along the phase flow,
+\[
+ \frac{d\cN}{dt}=\tr(M_V\Phi_V)+\tr(J\Phi_U)+\sum_{j\neq i_0}\tr(M_j\Phi_j).
+\]
+\end{lemma}
+
+\begin{proof}
+In the function \eqref{eq:primitive} of Proposition~\ref{prop:usedc}(a), by
+\eqref{eq:blocks},
+\[
+ \tr\Omega_U^{(x)}=\tr J_{xL}(xDC_{\mathrm{out}}D^\dagger)-z_\ast\tr e^{-xL},\qquad
+ \tr J_{xL}(xDC_{\mathrm{out}}D^\dagger)=x\tr\bigl(DC_{\mathrm{out}}D^\dagger\omega(xL)\bigr).
+\]
+Since $\int_0^1\omega(x\ell)\,dx=(1-R(\ell))/\ell$ and
+$D^\dagger\frac{1-R(L)}LD=1-R(B)$, the part of $\cS_{\CC}$ that does not
+contain the charges is
+\[
+ -\sum_a\norm{\rho_a}^2+\tr C_{\mathrm{out}}-\tr\bigl(C_{\mathrm{out}}R(B)\bigr)=-\cN .
+\]
+Both sides of the identity for $d\cS_{\CC}$ are affine functions of the
+charges, so the terms without charges agree:
+$d\cN(\xi)=-\tr(M_V\xi_V)-\tr(J\xi_U)-\sum_j\tr(M_j\xi_j)$. Put $\xi=-\Phi$.
+\end{proof}
+
+We use the following elementary inequality: for a complex number $\zeta$ in
+the upper half-plane and a real number $u\geq0$,
+\begin{equation}\label{eq:scalar}
+ u\bigl(\pi-\arg(\zeta-u)\bigr)\leq\max\{\pi\max(\Rea\zeta,0),\,2\Ima\zeta\}.
+\end{equation}
+It is trivial for $u=0$; let $u>0$. If $\Rea\zeta\leq u/2$ then
+$\pi-\arg(\zeta-u)=\arctan\frac{\Ima\zeta}{u-\Rea\zeta}\leq\frac{2\Ima\zeta}u$,
+and otherwise $u<2\Rea\zeta$ and $\pi-\arg(\zeta-u)\leq\frac\pi2$ for
+$u\geq\Rea\zeta$, while for $u<\Rea\zeta$ the left side is at most
+$\pi u<\pi\Rea\zeta$.
+
+\begin{lemma}\label{lem:three}
+For every metric and all charges:
+\begin{enumerate}
+\item[(a)] $\tr(M_V\Phi_V)\leq\alpha_\ast\tr M_V
+ =\alpha_\ast\bigl(\sum_{a:i_0\to\cdot}e_a^K-\sum_{a:\cdot\to i_0}e_a\bigr)$;
+\item[(b)] $\tr(J\Phi_U)\leq\pi\tr J_-\leq\frac{2\pi}5\tr J
+ =\frac{2\pi}5\sum_{a:i_0\to\cdot}e_a^J$, and $\tr(J\Phi_U)\leq0$ if $r\leq1$;
+\item[(c)] for $j\neq i_0$, with the number $b_j:=\max\{\pi|x_j|,\,2y_j\}$,
+ \[
+ \tr(M_j\Phi_j)\leq n_jb_j-\pi\tr(M_j)_-,\qquad
+ \tr(M_j)_-\geq\Bigl(\sum_{a:\cdot\to j}e_a-\sum_{a:j\to\cdot}e_a\Bigr)_+ .
+ \]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Proposition~\ref{prop:used}(ii) with $zP=z_\ast e^{-B}$ and $K=M_V$; and
+$\tr G_{\mathrm{in}}=\sum_{a:\cdot\to i_0}e_a$.
+
+(b) Since $-\pi<\Phi_U<0$, $\tr(J_+\Phi_U)\leq0$ and
+$-\tr(J_-\Phi_U)\leq\pi\tr J_-$; then apply
+Proposition~\ref{prop:used}(i) to $M=DC_{\mathrm{out}}D^\dagger\geq0$. If
+$r=1$, $J$ is a nonnegative number.
+
+(c) The matrix $\Omega_j=z_j+M_j$ is normal and $\Phi_j=g_j(M_j)$ with
+$g_j(u)=\arg(z_j+u)\in(0,\pi)$ for real $u$. For $u\geq0$,
+$\arg(z_j+u)=\pi-\arg(-\overline{z_j}-u)$, so \eqref{eq:scalar} with
+$\zeta=-\overline{z_j}$ gives $u\,g_j(u)\leq b_j$. For $u<0$,
+$u\,g_j(u)=-\pi|u|+|u|\bigl(\pi-\arg(z_j-|u|)\bigr)\leq-\pi|u|+b_j$ by
+\eqref{eq:scalar} with $\zeta=z_j$. Summing over the eigenvalues of $M_j$ gives
+the first inequality. Finally $\tr(M_j)_-\geq(-\tr M_j)_+$, and
+$-\tr M_j=\sum_{a:\cdot\to j}e_a-\sum_{a:j\to\cdot}e_a$ by \eqref{eq:blocks}.
+\end{proof}
+
+\subsection{Height functions}
+The estimates of Lemma~\ref{lem:three} at the different vertices are combined
+with coefficients that increase along the arrows. Let
+\[
+ \alpha_\ast^+=\max\{\alpha_\ast,\tfrac{2\pi}5\}\ \text{ if }r\geq2,\qquad
+ \alpha_\ast^+=\alpha_\ast\ \text{ if }r\leq1 .
+\]
+A \emph{height function} is a function $w:Q_0\setminus\{i_0\}\to[0,1]$ such
+that
+\[
+ w_{\mathsf t(a)}>w_{\mathsf s(a)}\ \ \text{if }\mathsf s(a),\mathsf t(a)\neq i_0,\qquad
+ \pi w_{\mathsf t(a)}>\alpha_\ast^+\ \ \text{if }\mathsf s(a)=i_0,\qquad
+ \pi w_{\mathsf s(a)}<\alpha_\ast\ \ \text{if }\mathsf t(a)=i_0 .
+\]
+Height functions exist. Let $\mathcal A$ be the set of vertices different from $i_0$
+with a path to $i_0$, $\mathcal D$ the set of vertices different from $i_0$
+reached by a path from $i_0$, and $\mathcal R$ the set of the remaining
+vertices different from $i_0$. Since $Q$ has no oriented cycle,
+$\mathcal A\cap\mathcal D=\emptyset$, there is no arrow from
+$\mathcal R\cup\mathcal D$ to $\mathcal A$, and none from $\mathcal D$ to
+$\mathcal R$. So there is a linear order of $Q_0\setminus\{i_0\}$, compatible
+with the arrows, in which the vertices of $\mathcal A$ come first and those
+of $\mathcal D$ last; let $w$ be increasing for this order, with values in
+$(0,\frac{\alpha_\ast}{2\pi})$ on $\mathcal A$, in
+$(\frac{\alpha_\ast}{2\pi},\frac{\pi+\alpha_\ast^+}{2\pi})$ on $\mathcal R$ and in
+$(\frac{\pi+\alpha_\ast^+}{2\pi},1)$ on $\mathcal D$. For a height function
+$w$ put
+\begin{equation}\label{eq:rhoQ}
+ \begin{gathered}
+ \gamma_w=\min\Bigl\{\min_{\substack{a\in Q_1\\\mathsf s(a),\mathsf t(a)\neq i_0}}\pi\bigl(w_{\mathsf t(a)}-w_{\mathsf s(a)}\bigr),\
+ \min_{a:i_0\to\cdot}\bigl(\pi w_{\mathsf t(a)}-\alpha_\ast^+\bigr),\
+ \min_{a:\cdot\to i_0}\bigl(\alpha_\ast-\pi w_{\mathsf s(a)}\bigr)\Bigr\}>0,\\
+ c_Q=\sum_{j\neq i_0}n_jb_j,
+ \end{gathered}
+\end{equation}
+where a minimum over an empty set is omitted; if $Q$ has no arrows, put
+$\gamma_w=1$.
+
+\begin{theorem}[A priori bound]\label{thm:energy}
+Let $\mathsf E$ be a complex with a surjective differential at $i_0$ and
+$w$ a height function. For all charges in the upper half-plane and every
+trajectory of the phase flow,
+\[
+ \frac{d\cN}{dt}\leq-\gamma_w\,\cN+c_Q,\qquad
+ \cN(t)\leq\cN(0)e^{-\gamma_wt}+\frac{c_Q}{\gamma_w}\bigl(1-e^{-\gamma_wt}\bigr).
+\]
+Hence $\cN(t)\leq\max\{\cN(0),c_Q/\gamma_w\}$ for all $t\geq0$, and if $c_Q>0$,
+\[
+ \cN(t)\leq\bar\cN:=\frac{2c_Q}{\gamma_w}\qquad\text{for }t\geq
+ t_0:=\frac1{\gamma_w}\log^+\frac{\gamma_w\cN(0)}{c_Q},
+\]
+where $\log^+x=\max(\log x,0)$.
+\end{theorem}
+
+\begin{proof}
+For $w_j\in[0,1]$ one has $\tr(M_j)_-\geq w_j\,(-\tr M_j)$, by
+Lemma~\ref{lem:three}(c). So Lemmas~\ref{lem:energyderivative}
+and~\ref{lem:three} give
+\[
+ \frac{d\cN}{dt}\leq c_Q-\pi\sum_{j\neq i_0}w_j\Bigl(\sum_{a:\cdot\to j}e_a-\sum_{a:j\to\cdot}e_a\Bigr)
+ +\alpha_\ast\!\!\sum_{a:i_0\to\cdot}\!\!e_a^K+\tfrac{2\pi}5\!\!\sum_{a:i_0\to\cdot}\!\!e_a^J
+ -\alpha_\ast\!\!\sum_{a:\cdot\to i_0}\!\!e_a,
+\]
+where for $r\leq1$ the term with $\frac{2\pi}5$ is absent. Collect the terms
+arrow by arrow. An arrow $a$ with $\mathsf s(a),\mathsf t(a)\neq i_0$ has the coefficient
+$-\pi(w_{\mathsf t(a)}-w_{\mathsf s(a)})$. An arrow $a$ out of $i_0$ has $-\pi w_{\mathsf t(a)}e_a$
+from the first sum and at most $\alpha_\ast^+(e_a^K+e_a^J)=\alpha_\ast^+ e_a$ from
+the next two. An arrow $a$ into $i_0$ has $+\pi w_{\mathsf s(a)}e_a-\alpha_\ast e_a$.
+Hence $\frac{d\cN}{dt}\leq c_Q-\gamma_w\sum_ae_a$. The second inequality
+follows by integration, and
+$\cN(0)e^{-\gamma_wt}\leq c_Q/\gamma_w$ for $t\geq t_0$.
+\end{proof}
+
+\begin{remark}\label{rem:energy}
+(1) By \eqref{eq:energybounds} the theorem bounds the arrows of the
+cohomology representation, its moment map, $\tr J$, and
+$s\leq\cN/(1-e^{-\lambda})$. The bound $\bar\cN$ depends only on the charges,
+the dimensions $n_j$ and the height function; the initial metric enters only
+through
+$t_0$. The height function constructed above is determined by the quiver,
+the vertex $i_0$ and the numbers $\alpha_\ast$, $\alpha_\ast^+$ once the
+linear order and the values are fixed by a rule, for instance values equally
+spaced in each of the three intervals; with such a rule the constants of
+Theorem~\ref{thm:energy} and of \eqref{eq:constants} depend only on the
+quiver, $i_0$, the charges and the dimensions, except $\kappa_1$ and the
+times $t_0$, $t_1$, $t_2$, which depend in addition on the initial metric.
+
+(2) For $Q=K_m$ and $i_0=0$ the only condition on $w$ is
+$\pi w_1>\alpha_\ast^+$, and $w_1=1$ gives $\gamma_w=\pi-\alpha_\ast^+$, the
+constant of \cite[Theorem~5.4]{wue26b}. For a vertex $j$ that is a sink the
+number $b_j$ may be replaced by $\max\{\pi\max(x_j,0),2y_j\}$, and for a source
+by $\max\{\pi\max(-x_j,0),2y_j\}$, since only one sign of the eigenvalues of
+$M_j$ occurs.
+
+(3) For a quiver with an oriented cycle there is no such bound in general: a
+loop acting by a multiple $x$ of a unitary matrix has zero moment map for
+every $x$, the phases are then constant, and the arrow does not change along
+the flow.
+\end{remark}
+
+For a representation no vertex is distinguished, and the bound takes the
+following form. It is used in Theorem~\ref{thm:representations}.
+
+\begin{proposition}[Representations]\label{prop:reparrows}
+Let $\mathsf R$ be a nonzero representation of a finite quiver $Q$ without
+oriented cycles, with dimension vector $(n_i)$ and any metric. Let $\ell_Q\geq1$ be
+the number of arrows of a longest path in $Q$; if $Q$ has no arrows, put
+$\ell_Q=1$. For all charges in the upper half-plane, the sum
+$\cN=\sum_a\norm{\rho_a}^2$ of the squared norms of the arrows satisfies,
+along the phase flow,
+\[
+ \frac{d\cN}{dt}\leq-\frac\pi{\ell_Q}\,\cN+c_{\mathsf R},\qquad
+ c_{\mathsf R}=\sum_in_i\max\{\pi|x_i|,2y_i\}.
+\]
+Hence $\cN(t)\leq\bar\cN_{\mathsf R}:=2\ell_Qc_{\mathsf R}/\pi$ for
+$t\geq t_{\mathsf R}:=\frac{\ell_Q}\pi\log^+\frac{\pi\cN(0)}{\ell_Qc_{\mathsf R}}$.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:frameflow},
+$\frac d{dt}\norm{\rho_a}^2=\tr(\rho_a^\dagger\rho_a\Phi_{\mathsf s(a)})
+-\tr(\rho_a\rho_a^\dagger\Phi_{\mathsf t(a)})$, so
+$\frac{d\cN}{dt}=\sum_i\tr(\mu_i\Phi_i)$ with the moment map
+$\mu_i=\sum_{a:i\to\cdot}\rho_a^\dagger\rho_a-\sum_{a:\cdot\to i}\rho_a\rho_a^\dagger$.
+The block $\Omega_i=z_i+\mu_i$ is normal and $\Phi_i=\arg(z_i+\mu_i)$, so the
+argument of Lemma~\ref{lem:three}(c) gives, for every vertex $i$ and every
+$w_i\in[0,1]$,
+\[
+ \tr(\mu_i\Phi_i)\leq n_i\max\{\pi|x_i|,2y_i\}-\pi\tr(\mu_i)_-
+ \leq n_i\max\{\pi|x_i|,2y_i\}
+ -\pi w_i\Bigl(\sum_{a:\cdot\to i}\norm{\rho_a}^2-\sum_{a:i\to\cdot}\norm{\rho_a}^2\Bigr).
+\]
+Let $\ell(i)$ be the number of arrows of a longest path ending at $i$, and
+$w_i=\ell(i)/\ell_Q$; then $w_{\mathsf t(a)}-w_{\mathsf s(a)}\geq1/\ell_Q$ for
+every arrow $a$. Summing over $i$ gives
+$\frac{d\cN}{dt}\leq c_{\mathsf R}-\pi\sum_a(w_{\mathsf t(a)}-w_{\mathsf s(a)})\norm{\rho_a}^2
+\leq c_{\mathsf R}-\frac\pi{\ell_Q}\cN$, and the last statement follows by
+integration.
+\end{proof}

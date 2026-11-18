@@ -1,0 +1,296 @@
+\section{Trace monotonicity of the polar phase}\label{sec:phase}
+
+This section is independent of the rest of the paper. Let $\Omega$ be a
+complex $n\times n$ matrix with positive definite imaginary part
+$\Ima\Omega=(\Omega-\Omega^\dagger)/2\ii$, where ${}^\dagger$ is the conjugate
+transpose. Then $\Omega$ is invertible, and the unitary factor $\mathsf W$ in
+the polar decompositions
+$\Omega=(\Omega\Omega^\dagger)^{1/2}\mathsf W=\mathsf W(\Omega^\dagger\Omega)^{1/2}$
+has its spectrum in the open upper half of the unit circle. The \emph{polar
+phase} of $\Omega$ is the Hermitian matrix $\Phi$ with spectrum in $(0,\pi)$
+and $\mathsf W=e^{\ii\Phi}$, and $|\Omega|=(\Omega\Omega^\dagger)^{1/2}=\Omega e^{-\ii\Phi}$
+is the left modulus. The set of matrices with a prescribed positive definite
+imaginary part is an affine space over the Hermitian matrices, and on it the
+polar phase is a real-analytic map: the unitary polar factor of an invertible
+matrix depends analytically on it, and $\Phi$ is $-\ii$ times its principal
+logarithm.
+
+\begin{theorem}[Monotonicity of the polar phase]\label{thm:phase}
+Let $\Omega',\Omega''$ be matrices with the same positive definite imaginary
+part, and let $\Phi',\Phi''$ be their polar phases. Then
+\[
+ \tr\bigl((\Omega''-\Omega')(\Phi''-\Phi')\bigr)\leq0,
+\]
+with equality only if $\Omega'=\Omega''$. More precisely, for every smooth
+family $\Omega(\varepsilon)$ with constant positive definite imaginary part,
+$\tr(\dot\Omega\,\dot\Phi)<0$ wherever $\dot\Omega\neq0$.
+\end{theorem}
+
+In other words, $\Rea\Omega\mapsto-\Phi$ is a strictly monotone operator
+\cite{min62} on the real Hilbert space of Hermitian matrices with the trace
+inner product.
+For $n=1$ this says that $\arg(x+\ii y)$ decreases in $x$ when $y>0$, and for
+a scalar imaginary part it follows from that by the functional calculus. In
+general $\Omega$ is not normal and $\Phi$ is not a function of its
+eigenvalues. The derivative of the unitary polar factor solves a Sylvester
+equation, which is used in the perturbation theory of the polar
+decomposition \cite{bha97}; we are not aware of a statement on the sign of the derivative
+of its argument. The phases of a sectorial matrix in the sense of
+\cite{wckq20} are defined through a congruence and are a different object.
+
+\begin{corollary}\label{cor:comparison}
+Let $\Ima\Omega^{(0)}>0$, let $K$ be Hermitian, and let $\Phi^{(0)}$ and $\Phi$
+be the polar phases of $\Omega^{(0)}$ and $\Omega^{(0)}+K$. Then
+$\tr(K\Phi)\leq\tr(K\Phi^{(0)})$. In particular, if
+$\Omega^{(0)}=zP$ with $\Ima z>0$ and $P>0$, then
+$\tr(K\Phi)\leq(\arg z)\tr K$.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:phase} with $\Omega'=\Omega^{(0)}$ and
+$\Omega''=\Omega^{(0)}+K$. The polar phase of $zP=(|z|P)e^{\ii\arg z}$ is the
+scalar $\arg z$.
+\end{proof}
+
+\begin{corollary}\label{cor:blocks}
+Let $\CC^n=H\oplus H'$ be an orthogonal decomposition and
+\[
+ \Omega=\begin{pmatrix}\Omega_{11}&K_{12}\\K_{12}^\dagger&\Omega_{22}\end{pmatrix},
+ \qquad\Ima\Omega>0\text{ block diagonal},
+\]
+with polar phase $\Phi=(\Phi_{ik})$. Then
+$\Rea\tr(K_{12}\,\Phi_{21})\leq0$, with equality only if $K_{12}=0$.
+\end{corollary}
+
+\begin{proof}
+Let $K$ be the Hermitian matrix with off-diagonal blocks $K_{12},K_{12}^\dagger$
+and zero diagonal blocks, $\Omega(\varepsilon)=\Omega-(1-\varepsilon)K$ and
+$\Sigma=\diag(\id,-\id)$. Then $\Ima\Omega(\varepsilon)=\Ima\Omega$,
+$\Sigma\Omega(\varepsilon)\Sigma=\Omega(-\varepsilon)$, and the polar phase is
+equivariant under unitary conjugation; so
+$f(\varepsilon)=\tr(K\Phi(\varepsilon))$ is odd, $f(0)=0$, and $f'<0$ for
+$K\neq0$ by Theorem~\ref{thm:phase}. Finally
+$f(1)=2\Rea\tr(K_{12}\Phi_{21})$.
+\end{proof}
+
+The rest of this section proves Theorem~\ref{thm:phase}. The pairing
+$\tr(\dot\Omega\dot\Phi)$ is expressed through the solution of a Sylvester
+equation, and the resulting quadratic form is a sum of forms with matrices
+$(\Ima\Omega)\circ\mathsf L^{(a)}$, where the matrices $\mathsf L^{(a)}$ are
+positive semidefinite by an integral representation of the kind that
+characterizes anti-L\"owner functions \cite{aud11}.
+
+\subsection{The first variation of the phase}
+Put
+\[
+ \tilde P=e^{-\ii\Phi/2}\,|\Omega|\,e^{\ii\Phi/2}>0,\qquad\text{so that}\qquad
+ \Omega=e^{\ii\Phi/2}\,\tilde P\,e^{\ii\Phi/2}.
+\]
+We work in an orthonormal eigenbasis of $\Phi$, $\Phi=\diag(\phi_a)$ with
+$\phi_a\in(0,\pi)$. Then
+$\Omega_{ab}=e^{\ii(\phi_a+\phi_b)/2}\tilde P_{ab}$, and since $\tilde P$ is
+Hermitian,
+\begin{equation}\label{eq:reim}
+ (\Rea\Omega)_{ab}=\tilde P_{ab}\cos\tfrac{\phi_a+\phi_b}2,\qquad
+ (\Ima\Omega)_{ab}=\tilde P_{ab}\,\varsigma_{ab},\qquad
+ \varsigma_{ab}:=\sin\tfrac{\phi_a+\phi_b}2>0 .
+\end{equation}
+
+\begin{lemma}\label{lem:variation}
+Let $\Omega(\varepsilon)$ be a smooth family with $\Omega(0)=\Omega$,
+$\Ima\Omega(\varepsilon)>0$, and derivative $\dot\Omega$ at $0$. There is a
+Hermitian matrix $\Theta$ with
+\begin{equation}\label{eq:sylvester}
+ \tilde P\Theta+\Theta\tilde P=\frac{X-X^\dagger}{2\ii},\qquad
+ X=e^{-\ii\Phi/2}\,\dot\Omega\,e^{-\ii\Phi/2},
+\end{equation}
+and, in the eigenbasis of $\Phi$,
+\begin{equation}\label{eq:phidot}
+ \dot\Phi_{ab}=\frac{\phi_a-\phi_b}{\sin\frac{\phi_a-\phi_b}2}\,\Theta_{ab},
+\end{equation}
+where the factor is read as $2$ if $\phi_a=\phi_b$. If $\dot\Omega$ is
+Hermitian, the right side of \eqref{eq:sylvester} has entries
+$-\dot\Omega_{ab}\,\varsigma_{ab}$.
+\end{lemma}
+
+\begin{proof}
+Let $\mathsf U(\varepsilon)=e^{\ii\Phi(\varepsilon)/2}$, so that
+$\Omega=\mathsf U\tilde P\mathsf U$ for every $\varepsilon$. Since
+$\mathsf U$ is unitary,
+$\dot{\mathsf U}=\ii\Upsilon\mathsf U=\mathsf U\,\ii\Upsilon'$ with $\Upsilon$ Hermitian and
+$\Upsilon'=\mathsf U^{-1}\Upsilon\mathsf U$. Hence
+$\dot\Omega=\ii\Upsilon\Omega+\mathsf U\dot{\tilde P}\mathsf U+\ii\Omega\Upsilon'$ and
+\[
+ \mathsf U^{-1}\dot\Omega\,\mathsf U^{-1}
+ =\dot{\tilde P}+\ii\bigl(\Upsilon'\tilde P+\tilde P\Upsilon\bigr).
+\]
+Apply $M\mapsto(M-M^\dagger)/2\ii$. The Hermitian matrix $\dot{\tilde P}$
+drops out and $\ii(\Upsilon'\tilde P+\tilde P\Upsilon)$ contributes
+$\frac12[(\Upsilon+\Upsilon')\tilde P+\tilde P(\Upsilon+\Upsilon')]$; so \eqref{eq:sylvester}
+holds with $\Theta=\frac12(\Upsilon+\Upsilon')$. For an entire function $f$ and
+a smooth family of Hermitian matrices, differentiating the Cauchy integral
+$f(\Phi)=\frac1{2\pi\ii}\oint f(\zeta)(\zeta-\Phi)^{-1}d\zeta$ gives, in an
+eigenbasis of $\Phi$,
+$(\frac d{d\varepsilon}f(\Phi))_{ab}=\dot\Phi_{ab}\,(f(\phi_a)-f(\phi_b))/(\phi_a-\phi_b)$,
+with the value $f'(\phi_a)$ if $\phi_a=\phi_b$ (the formula of Daleckii and
+Krein; see \cite{bha97}). For $f(x)=e^{\ii x/2}$ and
+$\gamma=\phi_a-\phi_b$ this gives
+$\Upsilon_{ab}=-\ii\dot{\mathsf U}_{ab}e^{-\ii\phi_b/2}
+=\dot\Phi_{ab}\,2\gamma^{-1}\sin(\gamma/4)\,e^{\ii\gamma/4}$ and
+$\Upsilon'_{ab}=e^{-\ii\gamma/2}\Upsilon_{ab}$, hence
+$\Theta_{ab}=\dot\Phi_{ab}\sin(\gamma/2)/\gamma$. For Hermitian
+$\dot\Omega$,
+$(X-X^\dagger)_{ab}/2\ii=\dot\Omega_{ab}(e^{-\ii(\phi_a+\phi_b)/2}-e^{\ii(\phi_a+\phi_b)/2})/2\ii
+=-\dot\Omega_{ab}\,\varsigma_{ab}$.
+\end{proof}
+
+The equation \eqref{eq:sylvester} has a unique solution because
+$\tilde P>0$.
+
+\begin{lemma}\label{lem:form}
+Let
+\[
+ \varrho_{ab}=\frac{\phi_a-\phi_b}{2(\cos\phi_b-\cos\phi_a)}\quad(\phi_a\neq\phi_b),
+ \qquad\varrho_{ab}=\frac1{2\sin\phi_a}\quad(\phi_a=\phi_b),
+\]
+a positive symmetric function of $(\phi_a,\phi_b)$. For a family with
+constant imaginary part, $\tr(\dot\Omega\dot\Phi)=-4\,Q(\Theta)$, where
+\[
+ Q(\Theta)=\sum_{a,b}\varrho_{ab}\,(\tilde P\Theta+\Theta\tilde P)_{ba}\,\Theta_{ab}
+ =\sum_a\inner{\theta^a}{\bigl((\Ima\Omega)\circ\mathsf L^{(a)}\bigr)\theta^a},\qquad
+ \mathsf L^{(a)}_{bd}=\frac{\varrho_{ba}+\varrho_{da}}{\varsigma_{bd}},
+\]
+and $\theta^a$ is the $a$-th column of $\Theta$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:variation},
+$\dot\Omega_{ab}=-(\tilde P\Theta+\Theta\tilde P)_{ab}/\varsigma_{ab}$ and
+$\dot\Phi_{ab}=\gamma\,\Theta_{ab}/\sin(\gamma/2)$ with
+$\gamma=\phi_a-\phi_b$, and
+$\gamma/(\sin(\gamma/2)\,\varsigma_{ab})=2\gamma/(\cos\phi_b-\cos\phi_a)=4\varrho_{ab}$.
+So
+$\tr(\dot\Omega\dot\Phi)=\sum_{a,b}\overline{\dot\Omega_{ab}}\dot\Phi_{ab}=-4Q(\Theta)$,
+the conjugate of an entry of a Hermitian matrix being the transposed entry.
+Expanding,
+$Q=\sum_{a,b,c}\varrho_{ab}[\tilde P_{bc}\Theta_{ca}\Theta_{ab}
++\Theta_{bc}\tilde P_{ca}\Theta_{ab}]$; renaming the indices $(a,b,c)$ of the
+second sum as $(c,a,b)$ turns it into
+$\sum_{a,b,c}\varrho_{ca}\tilde P_{bc}\Theta_{ca}\Theta_{ab}$. Hence
+$Q=\sum_{a,b,c}(\varrho_{ab}+\varrho_{ca})\tilde P_{bc}\,\Theta_{ab}\Theta_{ca}$,
+and $\tilde P_{bc}=(\Ima\Omega)_{bc}/\varsigma_{bc}$ by \eqref{eq:reim}, while
+$\Theta_{ab}\Theta_{ca}=\overline{\theta^a_b}\,\theta^a_c$.
+\end{proof}
+
+\subsection{Positivity of the kernels}
+
+\begin{lemma}\label{lem:integral}
+For $x,c>0$ let
+$g_c(x)=(1+x^2)(\arctan x-\arctan c)/(x^2-c^2)$ for $x\neq c$ and
+$g_c(c)=1/(2c)$. Then
+\[
+ g_c(x)=\frac2\pi\int_0^\infty\frac x{x^2+y^2}\,w_c(y)\,dy,\qquad
+ w_c(y)=\frac{|1-y^2|\,k_c(y)}{y^2+c^2}\geq0,
+\]
+where $k_c(y)=\arctan c$ for $0<y<1$ and $k_c(y)=\frac\pi2-\arctan c$ for
+$y>1$.
+\end{lemma}
+
+\begin{proof}
+For $x\neq c$,
+$(1-y^2)/((x^2+y^2)(c^2+y^2))=p/(x^2+y^2)+p'/(c^2+y^2)$ with
+$p=(1+x^2)/(c^2-x^2)$ and $p'=(1+c^2)/(x^2-c^2)$. Moreover
+$\int_0^1x\,dy/(x^2+y^2)=\frac\pi2-\arctan x$,
+$\int_1^\infty x\,dy/(x^2+y^2)=\arctan x$,
+$\int_0^1x\,dy/(c^2+y^2)=\frac xc(\frac\pi2-\arctan c)$ and
+$\int_1^\infty x\,dy/(c^2+y^2)=\frac xc\arctan c$. With $\beta=\arctan c$ and
+$\beta'=\frac\pi2-\beta$,
+\begin{align*}
+ \int_0^\infty\frac{x\,w_c(y)}{x^2+y^2}\,dy
+ &=\beta\bigl[p(\tfrac\pi2-\arctan x)+p'\tfrac xc\beta'\bigr]
+ -\beta'\bigl[p\arctan x+p'\tfrac xc\beta\bigr]\\
+ &=\tfrac\pi2\,p\,(\arctan c-\arctan x)=\tfrac\pi2\,g_c(x).
+\end{align*}
+Both sides are continuous in $x$, which gives the case $x=c$.
+\end{proof}
+
+\begin{lemma}\label{lem:antiloewner}
+For every $c>0$ and all $x_1,\dots,x_n>0$ the matrix
+$\bigl[(g_c(x_b)+g_c(x_d))/(x_b+x_d)\bigr]_{b,d}$ is positive semidefinite.
+\end{lemma}
+
+\begin{proof}
+For $f_y(x)=x/(x^2+y^2)$,
+\[
+ \frac{f_y(x)+f_y(x')}{x+x'}=\frac{xx'+y^2}{(x^2+y^2)(x'^2+y^2)}
+ =f_y(x)f_y(x')+y^2\,\frac1{x^2+y^2}\,\frac1{x'^2+y^2},
+\]
+a sum of two kernels of the form $\psi(x)\psi(x')$. Integrate against the
+positive measure $\frac2\pi w_c(y)\,dy$ of Lemma~\ref{lem:integral}.
+\end{proof}
+
+Functions $g$ on $(0,\infty)$ for which all matrices
+$[(g(x_b)+g(x_d))/(x_b+x_d)]$ are positive semidefinite are called
+anti-L\"owner; Audenaert \cite{aud11} characterizes them by an integral
+representation, and Lemma~\ref{lem:integral} puts $g_c$ in that form. The
+sufficient condition of Kwong quoted in \cite{aud11}, operator monotonicity
+of $g$, does not apply, since $g_c$ is not monotone: for $c=1$ the limits at
+$0$ and at $\infty$ are $\frac\pi4$, while the value at $1$ is $\frac12$.
+
+\begin{lemma}\label{lem:antiloewnermatrix}
+For every index $a$ the matrix $\mathsf L^{(a)}$ of Lemma~\ref{lem:form} is
+positive semidefinite, with positive diagonal.
+\end{lemma}
+
+\begin{proof}
+Put $x_b=\tan(\phi_b/2)>0$ and $c=x_a$. Then
+$\cos\phi_a-\cos\phi_b=2(x_b^2-c^2)/((1+c^2)(1+x_b^2))$ and
+$\phi_b-\phi_a=2(\arctan x_b-\arctan c)$, so
+$\varrho_{ba}=\frac{1+c^2}2g_c(x_b)$, also when $\phi_b=\phi_a$; and
+$\varsigma_{bd}=(x_b+x_d)/(\sqrt{1+x_b^2}\sqrt{1+x_d^2})$. Hence
+\[
+ \mathsf L^{(a)}_{bd}=\frac{1+c^2}2\,\sqrt{1+x_b^2}\,\sqrt{1+x_d^2}\;
+ \frac{g_c(x_b)+g_c(x_d)}{x_b+x_d},
+\]
+the matrix of Lemma~\ref{lem:antiloewner} conjugated by a positive diagonal
+matrix. The diagonal entries $2\varrho_{ba}/\varsigma_{bb}$ are positive.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:phase}]
+By Lemma~\ref{lem:form},
+$\tr(\dot\Omega\dot\Phi)=-4\sum_a\inner{\theta^a}{((\Ima\Omega)\circ\mathsf L^{(a)})\theta^a}$.
+Let $y_{\min}>0$ be the least eigenvalue of $\Ima\Omega$. Since
+$\Ima\Omega-y_{\min}\id\geq0$ and $\mathsf L^{(a)}\geq0$, the Schur product
+theorem \cite[Section~7.5]{hj13} gives
+$(\Ima\Omega)\circ\mathsf L^{(a)}\geq y_{\min}\diag(\mathsf L^{(a)}_{bb})>0$ by
+Lemma~\ref{lem:antiloewnermatrix}. So $Q(\Theta)>0$ unless $\Theta=0$, and
+$\Theta=0$ forces $\dot\Omega=0$ by \eqref{eq:sylvester}. The integrated
+statement follows along the segment
+$\Omega'+\varepsilon(\Omega''-\Omega')$, on which the imaginary part is
+constant.
+\end{proof}
+
+\begin{remark}\label{rem:phasefails}
+The positivity of $\Ima\Omega$ is needed. (The numbers of this remark are
+computed in floating-point arithmetic and are not used in any proof.) The
+polar phase is defined and
+analytic near any invertible matrix whose unitary polar factor has spectrum
+in the open upper half-circle. For $\Phi=\diag(\frac15,3)$,
+$\tilde P=\left(\begin{smallmatrix}1&9/10\\9/10&1\end{smallmatrix}\right)$ and
+$\Omega=e^{\ii\Phi/2}\tilde Pe^{\ii\Phi/2}$, the matrix $\Ima\Omega$ has
+eigenvalues $-0.730\ldots$ and $1.0699\ldots$, and the symmetric part of the
+derivative of the phase on Hermitian variations has the positive eigenvalue
+$0.2335\ldots$ For $\Ima\Omega>0$ the phase is in general not the gradient of
+a function of $\Rea\Omega$ for the trace inner product: at
+$\Omega=\left(\begin{smallmatrix}\ii&1\\1&3\ii\end{smallmatrix}\right)$ the
+derivative of the entry $\Phi_{11}$ with respect to $(\Rea\Omega)_{22}$ is
+$0.0488\ldots$, while that of $\Phi_{22}$ with respect to $(\Rea\Omega)_{11}$
+is $0.0306\ldots$ Nor is $\Rea\Omega\mapsto-\Phi$ monotone for the L\"owner
+order, even for a scalar imaginary part $y$: there
+$-\Phi=\arctan(\Rea\Omega/y)-\frac\pi2$, and the arctangent is not operator
+monotone on the real line, since an operator monotone function on the real
+line is affine. The
+trace norm $\tr|\Omega|$ is a convex function of $\Rea\Omega$ with gradient
+$\cos\Phi$, so $\cos\Phi$ is a monotone map; Theorem~\ref{thm:phase} concerns
+$\Phi$ itself and does not follow from this.
+\end{remark}

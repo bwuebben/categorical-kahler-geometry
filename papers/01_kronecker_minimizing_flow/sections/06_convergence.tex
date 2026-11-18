@@ -1,0 +1,684 @@
+\section{Ordered and reversed charges: the limit on the cohomology}\label{sec:convergence}
+
+By Theorem~\ref{thm:cancellation} the long-time behaviour is that of the
+metrics induced on the cohomology representation, which move by its own
+phases up to an exponentially small error. We treat ordered charges with
+semistable and with polystable cohomology, and reversed charges.
+
+For ordered charges, the \emph{Kempf--Ness function} of the cohomology
+representation for the stability parameter $(\theta_0,\theta_1)$ of
+\eqref{eq:theta} is the function of a pair $(h_0,h_1)$ of Hermitian metrics
+on $\ker D$ and $W$
+\begin{equation}\label{eq:KN}
+ \cK_{\coh}(h_0,h_1)=q+\theta_0\log\det h_0-\theta_1\log\det h_1,\qquad
+ q=\sum_j\tr\bigl(h_0^{-1}b_j^*h_1b_j\bigr),
+\end{equation}
+where $b_j$ is the matrix of $A_j|_{\ker D}$ in fixed reference bases,
+$b_j^*$ its conjugate transpose, and $h_0,h_1$ stand for the Gram
+matrices. Writing $h_i=g_i^*g_i$, one has
+$\cK_{\coh}=\norm{g\cdot b}^2+\theta_0\log|\det g_0|^2-\theta_1\log|\det g_1|^2$
+with $b=(b_j)$ and $(g\cdot b)_j=g_1b_jg_0^{-1}$; so $\cK_{\coh}$ is the
+Kempf--Ness function of the point $b$ on the symmetric space
+$\mathrm{GL}_{n_0}\times\mathrm{GL}_{n_1}/\mathrm U(n_0)\times\mathrm U(n_1)$
+of pairs of metrics. It is invariant under a common rescaling of $h_0,h_1$ because
+$n_0\theta_0=n_1\theta_1$, and its critical points are the zeros of the
+moment map $\mu=(C_0-\theta_0\id,\,C_1-\theta_1\id)$
+(Lemma~\ref{lem:knvariation}).
+
+Put $\cK_*:=\inf\cK_{\coh}\in[-\infty,\infty)$. A zero of the moment map exists
+if and only if the cohomology representation is polystable
+\cite[Proposition~6.5]{kin94}, and $\cK_*>-\infty$ if and only if it is
+semistable \cite[Theorem~5.1]{hkkp23}. King's results are stated for integral
+characters. They apply here because $(\theta_0,\theta_1)$ is a positive
+multiple $c\,(n_1,n_0)$ of an integral vector, and the Kempf--Ness function
+for the stability parameter $c\,(n_1,n_0)$ at the arrows $b$ is $c$ times
+the one for $(n_1,n_0)$ at the arrows $b/\sqrt c$, which have the same
+subrepresentations.
+
+For the second statement we recall the argument. If a subrepresentation
+$(V',W')$ of dimension vector $(a_0,a_1)$ has $a_0\theta_0-a_1\theta_1>0$, let
+$h_0=1\oplus e^\tau$ on $V'\oplus V'^\perp$ and $h_1=1\oplus e^\tau$ on
+$W'\oplus W'^\perp$, for reference metrics; then $q$ stays bounded as
+$\tau\to\infty$, and
+$\cK_{\coh}=q-\tau(a_0\theta_0-a_1\theta_1)\to-\infty$, since
+$n_0\theta_0=n_1\theta_1$. Conversely, for a semistable representation and
+an integral character, the closure of the orbit of a lift of the
+representation to the total space of the character does not meet the zero
+section \cite[Proposition~3.1 and Lemma~2.2]{kin94}, the norm function on
+the total space considered in \cite[\S6]{kin94} is proper on this closed set
+\cite[Lemma~6.3]{kin94}, hence bounded below by a
+positive constant there, and $\frac12\cK_{\coh}$ is its logarithm on the
+orbit.
+
+We write
+$\norm\mu^2=\norm{\mu_0}_{\HS}^2+\norm{\mu_1}_{\HS}^2$ and
+$\norm\delta^2=\norm{\delta_0}_{\HS}^2+\norm{\delta_1}_{\HS}^2$; for a pair of
+matrices $\norm\cdot$ denotes this Hilbert--Schmidt norm, and for a single
+matrix it remains the operator norm.
+
+On a representation, regarded as a complex in degree zero, the normalized
+metrics move with velocity $(G_0(C_0),-G_1(C_1))$ for increasing functions
+$G_i$ with $G_i(\theta_i)=0$ (see \eqref{eq:velocities}), whereas the downward
+gradient flow of the Kempf--Ness function has velocity
+$(C_0-\theta_0,-(C_1-\theta_1))$. So the phase flow is not that gradient flow,
+but it has the same stationary points and its velocity pairs negatively with
+the gradient $(-\mu_0,\mu_1)$.
+
+\subsection{The moment map tends to zero}
+Let the charges be ordered. Besides \eqref{eq:constants} put
+\[
+ \Gamma=\max\Bigl\{\frac{(|z_0|+\bar N)^2}{y_0},\frac{(|z_1|+\bar N)^2}{y_1}\Bigr\},\qquad
+ c_\delta^2=\frac{2\pi\alpha_1s_1}{y_0}+\frac{s_1^2}{y_1^2}
+\]
+(the formula for $c_\delta$ makes sense for all charges and is used again in
+Theorem~\ref{thm:reversed}). We note that
+\begin{equation}\label{eq:thetabound}
+ \theta_0,\ \theta_1\ \leq\ \vartheta\ \leq\ \bar N .
+\end{equation}
+Indeed $\theta_1=x_1-y_1\cot\varphi$. If $\cot\varphi\geq0$, then
+$0<\theta_1\leq x_1\leq M_1/\pi$. If $\cot\varphi<0$, then
+$\frac\pi2<\varphi<\alpha_0$, so
+$|\cot\varphi|=\cot(\pi-\varphi)\leq(\pi-\varphi)^{-1}<(\pi-\alpha_0)^{-1}\leq\rho^{-1}$
+and $\theta_1\leq\max(x_1,0)+y_1/\rho\leq M_1/\pi+M_1/(2\rho)$. In both cases
+$\theta_1\leq2M_1/\rho$, that is, $\vartheta=n_1\theta_1\leq\bar N$. Let
+\[
+ \mathfrak h(t)=\bigl(e^{\varphi t}h_V(t)|_{\ker D},\ e^{\varphi t}h_W(t)\bigr)
+\]
+be the pair of induced metrics on $\ker D$ and $W$, multiplied by
+$e^{\varphi t}$. The function $\cK_{\coh}$ is invariant under common rescaling, so
+$\mathcal E(t):=\cK_{\coh}(\mathfrak h(t))-\cK_*$ is the excess of the induced pair.
+
+\begin{theorem}[Decay of the moment map]\label{thm:relaxation}
+Let the charges be ordered and the cohomology representation semistable.
+Then along every trajectory, for $t\geq t_2$,
+\begin{equation}\label{eq:KNderivative}
+ \frac{d}{dt}\cK_{\coh}(\mathfrak h(t))
+ \leq-\frac1\Gamma\norm\mu^2+\norm\mu\norm\delta
+ \leq-\frac1{2\Gamma}\norm\mu^2+\frac\Gamma2\norm\delta^2,
+ \qquad\norm{\delta(t)}\leq c_\delta\,e^{-\frac{\alpha_1}4(t-t_1)},
+\end{equation}
+and
+\[
+ \mathcal E(t)+\frac1{2\Gamma}\int_{t_2}^t\norm\mu^2
+ \leq\mathcal E^\sharp:=\mathcal E(0)+2\pi(N_0+\vartheta)\,t_2+\frac\Gamma{\alpha_1}c_\delta^2 ,
+\]
+with $N_0=\max\{N(0),n_1M_1/\rho\}$ as in Theorem~\ref{thm:energy} and
+$\delta=(\delta_0,\delta_1)$, $\delta_0=\Phi_{HH}-\phi_0$,
+$\delta_1=\Phi_W-\phi_1$, as in Section~\ref{sec:setting}. Moreover
+$\mu(t)\to0$, $\cK_{\coh}(\mathfrak h(t))\to\cK_*$ and $m(h(t))\to|Z|$ as $t\to\infty$.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:flow} and \eqref{eq:adapted} the pair $\mathfrak h(t)$ has velocities
+$\xi_0=\varphi-\Phi_{HH}$ and $\xi_1=\varphi-\Phi_W$ in the frames induced by
+the adapted frames; that is,
+\begin{equation}\label{eq:velocities}
+ \begin{gathered}
+ \xi_0=G_0(C_0)-\delta_0,\qquad\xi_1=-G_1(C_1)-\delta_1,\\
+ G_0(x)=\varphi-\arg(z_0+x),\qquad G_1(x)=\arg(z_1-x)-\varphi .
+ \end{gathered}
+\end{equation}
+The function $G_0$ is increasing with $G_0(\theta_0)=0$, because
+$\Ima(e^{-\ii\varphi}(z_0+x))=c_0-\sigma x$, and
+$G_0'(x)=y_0/|z_0+x|^2\in[y_0/(|z_0|+\bar N)^2,\ 1/y_0]$ on $[0,\bar N]$;
+likewise $G_1$ is increasing with $G_1(\theta_1)=0$ and
+$G_1'(x)=y_1/|z_1-x|^2\in[y_1/(|z_1|+\bar N)^2,\ 1/y_1]$. By
+Theorem~\ref{thm:energy} the spectra of $C_0,C_1$ lie in $[0,\bar N]$ for
+$t\geq t_0$, and $\theta_0,\theta_1\leq\bar N$ by \eqref{eq:thetabound}. The first variation of \eqref{eq:KN} is
+$d\cK_{\coh}(\xi)=-\tr(\xi_0\mu_0)+\tr(\xi_1\mu_1)$
+(Lemma~\ref{lem:knvariation}), so
+\[
+ \frac d{dt}\cK_{\coh}(\mathfrak h(t))
+ =-\tr\bigl(\mu_0G_0(C_0)\bigr)-\tr\bigl(\mu_1G_1(C_1)\bigr)
+ +\tr(\mu_0\delta_0)-\tr(\mu_1\delta_1),
+\]
+and $\tr(\mu_0G_0(C_0))=\sum(c-\theta_0)G_0(c)\geq\Gamma^{-1}\norm{\mu_0}_{\HS}^2$
+over the eigenvalues $c$ of $C_0$, likewise for $\mu_1$. This is the first
+inequality of \eqref{eq:KNderivative}, for all $t\geq t_0$; the bound on
+$\norm\delta$ for $t\geq t_2$ is Theorem~\ref{thm:cancellation}(i),(iv).
+
+Since $\norm{\xi_0},\norm{\xi_1}\leq\pi$ and
+$\norm{\mu_0}_1\leq q+n_0\theta_0$, $\norm{\mu_1}_1\leq q+n_1\theta_1$, we have
+$|\frac d{dt}\cK_{\coh}(\mathfrak h(t))|\leq2\pi(N_0+\vartheta)$ for all $t$, hence
+$\mathcal E(t_2)\leq\mathcal E(0)+2\pi(N_0+\vartheta)t_2$. Integrating
+\eqref{eq:KNderivative} from $t_2$ and using
+$\frac\Gamma2\int_{t_2}^\infty\norm\delta^2\leq\frac\Gamma{\alpha_1}c_\delta^2$
+and $\mathcal E\geq0$ gives the displayed bound. By \eqref{eq:adapted} and
+$\norm{\Phi_\bullet}\leq\pi$,
+$\norm{\dot\mu_0}_{\HS},\norm{\dot\mu_1}_{\HS}\leq2\pi q\leq2\pi N_0$, so
+$\norm\mu^2$ is uniformly continuous and integrable and therefore tends to
+zero. Then $C_0\to\theta_0\id$ and $C_1\to\theta_1\id$, so
+$m_H\to n_0|z_0+\theta_0|+n_1|z_1-\theta_1|$. Both $z_0+\theta_0$ and
+$z_1-\theta_1$ have argument $\varphi$, so this limit is
+$\Rea\bigl(e^{-\ii\varphi}(Z+n_0\theta_0-n_1\theta_1)\bigr)=|Z|$, and
+$m\to|Z|$ by Theorem~\ref{thm:cancellation}(iii).
+
+It remains to show $\mathcal E(t)\to0$. By \eqref{eq:KNderivative} the
+function $\mathcal E(t)+\frac\Gamma2\int_t^\infty\norm\delta^2$ is
+nonincreasing on $[t_2,\infty)$, so $\mathcal E(t)$ has a limit
+$\mathcal E_\infty\geq0$. Suppose $\mathcal E_\infty>0$ and choose a pair
+$\mathfrak h'$ with $\cK_{\coh}(\mathfrak h')-\cK_*<\mathcal E_\infty/2$. By convexity of
+$\cK_{\coh}$ along the geodesic from $\mathfrak h(t)$ to $\mathfrak h'$ in the
+space of pairs of metrics, with its invariant distance $d$ (these are
+recalled in the next subsection; Lemma~\ref{lem:knvariation}),
+$\cK_{\coh}(\mathfrak h(t))-\cK_{\coh}(\mathfrak h')\leq\norm{\mu(t)}\,d(\mathfrak h(t),\mathfrak h')$, and the left
+side is at least $\mathcal E_\infty/4$ for large $t$. By
+\eqref{eq:velocities} the speed of $\mathfrak h(t)$ is at most
+$\norm\mu/\min(y_0,y_1)+\norm\delta$, which is square integrable, so
+$d(\mathfrak h(t),\mathfrak h')\leq c+c'\sqrt t$ by the Cauchy--Schwarz inequality. Then
+$\norm{\mu(t)}^2\geq\mathcal E_\infty^2/(16(c+c'\sqrt t)^2)$ is not
+integrable, a contradiction.
+\end{proof}
+
+Theorem~\ref{thm:relaxation} does not require a zero of the moment map to
+exist: for semistable cohomology that is not polystable the infimum $\cK_*$
+is not attained, and $\cK_{\coh}(\mathfrak h(t))\to\cK_*$ is the analogue for the phase
+flow of the corresponding fact for gradient flow lines of a Kempf--Ness
+function \cite[Theorem~4.3]{grs21}.
+
+\subsection{The Kempf--Ness function on the space of metric pairs}
+The convexity statements of this subsection are classical in the theory of
+Kempf--Ness functions; see \cite[Theorem~4.3]{grs21}, where they are proved
+for actions on closed K\"ahler manifolds. We include the short proofs for the
+linear action at hand. Let $\mathcal X$ be the space of pairs $\mathfrak h=(\mathfrak h_0,\mathfrak h_1)$
+of Hermitian metrics on $\ker D$ and $W$. A tangent vector at $\mathfrak h$ is a pair
+$\xi=(\xi_0,\xi_1)$ of $\mathfrak h$-Hermitian endomorphisms, $\delta\mathfrak h=\mathfrak h\xi$, and
+$\norm\xi^2=\tr\xi_0^2+\tr\xi_1^2$ defines an invariant Riemannian metric, for
+which $\mathcal X$ is complete, simply connected and nonpositively curved.
+Its geodesics are $u\mapsto \mathfrak he^{u\xi}$, the exponential map at any point is a
+diffeomorphism, and closed balls are compact. Let $d$ be the distance. In a
+$\mathfrak h$-orthonormal frame let $H_j$ be the matrix of $A_j|_{\ker D}$, and $C_0$,
+$C_1$, $\mu_0$, $\mu_1$, $q$ as before.
+
+\begin{lemma}\label{lem:knvariation}
+$d\cK_{\coh}(\xi)=-\tr(\xi_0\mu_0)+\tr(\xi_1\mu_1)$, so the gradient of
+$\cK_{\coh}$ is $(-\mu_0,\mu_1)$, of norm $\norm\mu$. Along a geodesic,
+\[
+ \frac{d^2}{du^2}\cK_{\coh}(\mathfrak he^{u\xi})
+ =\sum_j\norm{\xi_1H_j(u)-H_j(u)\xi_0}_{\HS}^2\geq0,\qquad
+ H_j(u)=e^{u\xi_1/2}H_je^{-u\xi_0/2}.
+\]
+\end{lemma}
+
+\begin{proof}
+In the $\mathfrak h$-orthonormal frame,
+$q(\mathfrak he^{u\xi})=\sum_j\tr(e^{-u\xi_0}H_j^\dagger e^{u\xi_1}H_j)$, and
+$\log\det$ is affine along geodesics with derivative $\tr\xi$. Differentiate
+once and twice.
+\end{proof}
+
+So $\cK_{\coh}$ is geodesically convex and its critical points, the zeros of
+the moment map, are its minimizers. Let $\mathcal Z\subset\mathcal X$ be the
+set of zeros of the moment map. For $\mathfrak h\in\mathcal X$ let $\mathfrak a(\mathfrak h)$ be
+the space of $\mathfrak h$-Hermitian pairs $\xi$ with $\xi_1A_j=A_j\xi_0$ on $\ker D$
+for all $j$, the Hermitian infinitesimal automorphisms of the
+representation.
+
+\begin{lemma}\label{lem:minimumset}
+For $p\in\mathcal Z$, $\mathcal Z=\{pe^\xi:\xi\in\mathfrak a(p)\}$. It is a
+closed totally geodesic submanifold with $T_p\mathcal Z=\mathfrak a(p)$.
+\end{lemma}
+
+\begin{proof}
+If $\xi\in\mathfrak a(p)$, the second derivative of $\cK_{\coh}$ along
+$u\mapsto pe^{u\xi}$ vanishes identically by Lemma~\ref{lem:knvariation}, and
+the first derivative vanishes at $u=0$; so $pe^\xi\in\mathcal Z$. Conversely,
+if $pe^\xi\in\mathcal Z$, the convex function
+$u\mapsto\cK_{\coh}(pe^{u\xi})$ takes its minimum at $u=0$ and $u=1$, hence is
+constant on $[0,1]$, and its second derivative at $0$ gives
+$\xi\in\mathfrak a(p)$. $\mathcal Z=\{\mu=0\}$ is closed, and it is the image
+of a linear subspace under the exponential map at each of its points.
+\end{proof}
+
+\begin{lemma}\label{lem:gap}
+For $p\in\mathcal Z$ put
+\[
+ \nu_*:=\min\Bigl\{\sum_j\norm{\xi_1H_j-H_j\xi_0}_{\HS}^2:\
+ \xi\perp\mathfrak a(p),\ \norm\xi=1\Bigr\}>0,\qquad\varrho_*:=\frac{\log2}{\sqrt2}.
+\]
+Then $\nu_*$ does not depend on $p\in\mathcal Z$, and for every unit
+$\xi\perp\mathfrak a(p)$ and $0\leq u\leq\varrho_*$,
+$\frac{d^2}{du^2}\cK_{\coh}(pe^{u\xi})\geq\nu_*/2$.
+\end{lemma}
+
+\begin{proof}
+The quadratic form is positive on the orthogonal complement of its kernel
+$\mathfrak a(p)$. By Lemma~\ref{lem:knvariation},
+$\xi_1H_j(u)-H_j(u)\xi_0=e^{u\xi_1/2}(\xi_1H_j-H_j\xi_0)e^{-u\xi_0/2}$ has
+Hilbert--Schmidt norm at least
+$e^{-u(\norm{\xi_1}+\norm{\xi_0})/2}\norm{\xi_1H_j-H_j\xi_0}_{\HS}$, and
+$\norm{\xi_1}+\norm{\xi_0}\leq\sqrt2$ for a unit $\xi$. So the second
+derivative is at least $e^{-\sqrt2u}\nu_*$. If $p'=pe^\zeta$ with
+$\zeta\in\mathfrak a(p)$, then $e^{-\zeta/2}$ is a pair of automorphisms of
+the representation that maps $p$-orthonormal frames to $p'$-orthonormal
+frames and preserves the matrices $H_j$; conjugation by it carries
+$\mathfrak a(p)$ and its orthogonal complement isometrically to those of
+$p'$.
+\end{proof}
+
+\begin{lemma}\label{lem:kngrowth}
+Let the representation be polystable, so that $\mathcal Z\neq\emptyset$.
+For $\mathfrak h\in\mathcal X$ put $\mathsf d=d(\mathfrak h,\mathcal Z)$ and
+$\mathcal E=\cK_{\coh}(\mathfrak h)-\cK_*$. Then
+\begin{enumerate}
+\item[(i)] $\mathcal E\leq\norm{\mu(\mathfrak h)}\,\mathsf d$;
+\item[(ii)] $\mathcal E\geq\frac{\nu_*}4\min(\mathsf d^2,\varrho_*\mathsf d)$;
+\item[(iii)] if $\mathsf d\leq\varrho_*$, then $\norm{\mu(\mathfrak h)}\geq\frac{\nu_*}2\mathsf d$
+ and $\mathcal E\leq\frac2{\nu_*}\norm{\mu(\mathfrak h)}^2$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Let $p\in\mathcal Z$ be a nearest point and $\mathfrak h=pe^{\mathsf d\xi}$ with
+$\norm\xi=1$; then $\xi\perp\mathfrak a(p)$. The function
+$f(u)=\cK_{\coh}(pe^{u\xi})-\cK_*$ is convex with $f(0)=f'(0)=0$.
+(i) $0=f(0)\geq f(\mathsf d)-\mathsf d f'(\mathsf d)$ and $f'(\mathsf d)\leq\norm{\mu(\mathfrak h)}$.
+(ii) $f''\geq\nu_*/2$ on $[0,\varrho_*]$ by Lemma~\ref{lem:gap}, so
+$f(u)\geq\frac{\nu_*}4u^2$ there, and $f(u)\geq f(\varrho_*)u/\varrho_*$ for
+$u\geq\varrho_*$ by convexity. (iii) $\norm{\mu(\mathfrak h)}\geq f'(\mathsf d)
+=\int_0^\mathsf d f''\geq\frac{\nu_*}2\mathsf d$; combine with (i).
+\end{proof}
+
+Part (iii) is a \L ojasiewicz gradient inequality with exponent $\frac12$
+for $\cK_{\coh}$ near $\mathcal Z$.
+
+
+\subsection{Convergence for polystable cohomology}
+
+\begin{theorem}[Convergence to a harmonic metric]\label{thm:convergence}
+Let the charges be ordered and the cohomology representation polystable.
+Then along every trajectory there is a zero $\mathfrak h_\infty$ of the moment map,
+that is, a harmonic metric of the cohomology representation in the sense of
+\cite{hkkp26}, with
+\[
+ d\bigl(\mathfrak h(t),\mathfrak h_\infty\bigr)\leq\mathfrak C\,e^{-\beta t}\qquad(t\geq0)
+\]
+for every rate $\beta<\frac12\min\{\nu_*/(4\Gamma),\ \alpha_1/2\}$, where the
+constant $\mathfrak C$ depends only on $\beta$, the dimensions, the charges, $N(0)$, $t_2$,
+$\mathcal E(0)$ and $\nu_*$. Moreover, for $t\geq t_1$,
+\[
+ \norm{\mu(\mathfrak h(t))}\leq2\bar N\,d(\mathfrak h(t),\mathfrak h_\infty),\qquad
+ 0\leq m_H(t)-|Z|\leq\frac{\norm{\mu(\mathfrak h(t))}^2}{2\min(y_0,y_1)},
+\]
+so that the moment map of the cohomology representation and $m(h(t))-|Z|$
+tend to zero exponentially.
+\end{theorem}
+
+The convergence is as Hermitian forms on the fixed vector spaces $\ker D$ and
+$W$: no time-dependent automorphism of the representation is applied. The
+limit depends on the initial metric through its position on $\mathcal Z$.
+
+\begin{proof}
+By Theorem~\ref{thm:relaxation}, \eqref{eq:KNderivative} holds for
+$t\geq t_2$ and $\mathcal E(t)\leq\mathcal E^\sharp$ there.
+
+\emph{Step 1.} By Lemma~\ref{lem:kngrowth}(ii),
+$d(\mathfrak h(t),\mathcal Z)\leq\mathsf d_{\max}:=\max\{\varrho_*,4\mathcal E^\sharp/(\nu_*\varrho_*)\}$
+for $t\geq t_2$, and by (i), $\mathcal E(t)\leq\norm{\mu(t)}\mathsf d_{\max}$.
+
+\emph{Step 2.} By Theorem~\ref{thm:relaxation},
+$\int_{t_2}^\infty\norm\mu^2\leq2\Gamma\mathcal E^\sharp$ and
+$\mathcal E(t)\leq\mathcal E(t')+\frac\Gamma2\int_{t'}^\infty\norm\delta^2$ for
+$t\geq t'\geq t_2$. For $T>0$ there is $t'\in[t_2+T/2,t_2+T]$ with
+$\norm{\mu(t')}^2\leq4\Gamma\mathcal E^\sharp/T$, hence for $t\geq t_2+T$
+\[
+ \mathcal E(t)\leq\mathsf d_{\max}\sqrt{4\Gamma\mathcal E^\sharp/T}
+ +\frac\Gamma{\alpha_1}c_\delta^2e^{-\frac{\alpha_1}4T}.
+\]
+Choose $T$, depending only on the dimensions, the charges,
+$\mathcal E^\sharp$ and $\nu_*$, so that the right side is at most
+$\frac{\nu_*}4\varrho_*^2$; then $d(\mathfrak h(t),\mathcal Z)\leq\varrho_*$ for
+$t\geq t_3:=t_2+T$ by Lemma~\ref{lem:kngrowth}(ii). For such $t$,
+Lemma~\ref{lem:kngrowth}(iii) and \eqref{eq:KNderivative} give
+\[
+ \dot{\mathcal E}\leq-\frac{\nu_*}{4\Gamma}\mathcal E
+ +\frac\Gamma2c_\delta^2e^{-\frac{\alpha_1}2(t-t_1)},
+\]
+so $\mathcal E(t)\leq\mathfrak C_2e^{-2\beta t}$ for every
+$2\beta<\min\{\nu_*/(4\Gamma),\alpha_1/2\}$.
+
+\emph{Step 3.} Integrating \eqref{eq:KNderivative} over $[t,t+1]$,
+$\int_t^{t+1}\norm\mu^2\leq2\Gamma\mathcal E(t)+\Gamma^2\int_t^{t+1}\norm\delta^2
+\leq\mathfrak C_3e^{-2\beta t}$. By \eqref{eq:velocities} and $|G_0'|\leq1/y_0$,
+$|G_1'|\leq1/y_1$, the speed of $\mathfrak h(t)$ is
+$\norm\xi\leq\norm\mu/\min(y_0,y_1)+\norm\delta$. Hence
+$\int_t^\infty\norm\xi\leq\mathfrak C_4e^{-\beta t}$ for $t\geq t_3$, and by
+completeness $\mathfrak h(t)$ converges to some $\mathfrak h_\infty$ with
+$d(\mathfrak h(t),\mathfrak h_\infty)\leq\mathfrak C_4e^{-\beta t}$; $\mu(\mathfrak h_\infty)=0$ by continuity. On
+$[0,t_3]$ the speed is at most $\pi\sqrt{n_0+n_1}$, because the spectra of
+$\Phi_{HH}$ and $\Phi_W$ lie in $(0,\pi)$; this gives the dependence of $\mathfrak C$.
+
+\emph{The moment map and the mass.} Let $t\geq t_1$ and let
+$u\mapsto \mathfrak h_\infty e^{u\zeta}$, $0\leq u\leq1$, be the geodesic from
+$\mathfrak h_\infty$ to $\mathfrak h(t)$. The function $q$ is convex along geodesics, so
+$q\leq\max(\vartheta,q(\mathfrak h(t)))\leq\bar N$ on it, by
+\eqref{eq:thetabound}; here $q(\mathfrak h_\infty)=\tr C_0=\vartheta$. In the frames of
+Lemma~\ref{lem:knvariation},
+$\frac d{du}C_0=-\frac12(\zeta_0C_0+C_0\zeta_0)+\sum_jH_j^\dagger\zeta_1H_j$
+and similarly for $C_1$, so $\norm{\frac d{du}\mu}\leq2q\norm\zeta$, and
+$\mu(\mathfrak h_\infty)=0$. For the mass, the functions $x\mapsto|z_0+x|$ and
+$x\mapsto|z_1-x|$ are convex with second derivatives at most $1/y_0$ and
+$1/y_1$, and their first-order terms at $\theta_0,\theta_1$ cancel in the sum
+over the eigenvalues of $C_0$ and $C_1$ because $\tr\mu_0=\tr\mu_1$. Combine
+with Theorem~\ref{thm:cancellation}(iii).
+\end{proof}
+
+\begin{remark}\label{rem:rate}
+The rate is limited by the gap $\nu_*$ of the Hessian of $\cK_{\coh}$
+transversally to $\mathcal Z$ and by the decay of $A_jD^+$. When the
+cohomology representation is stable, $\mathfrak a$ consists of the scalar
+pairs $(c,c)$.
+\end{remark}
+
+\subsection{Semistable cohomology that is not polystable}
+In this case Theorem~\ref{thm:relaxation} gives $\mu\to0$, and there is no
+limit metric.
+
+\begin{proposition}\label{prop:divergence}
+Let the charges be ordered and let the cohomology representation be
+semistable and not polystable. Then along every trajectory
+$d(\mathfrak h(t),\mathfrak h(0))\to\infty$, and for $t\geq t_2$
+\[
+ d\bigl(\mathfrak h(t),\mathfrak h(t_2)\bigr)
+ \leq\frac{\sqrt{2\Gamma\mathcal E^\sharp}}{\min(y_0,y_1)}\,\sqrt{t-t_2}
+ +\frac{4c_\delta}{\alpha_1}.
+\]
+\end{proposition}
+
+\begin{proof}
+Suppose $d(\mathfrak h(t_k),\mathfrak h(0))$ is bounded along a sequence
+$t_k\to\infty$. Closed balls of $\mathcal X$ are compact, so a subsequence
+converges to a pair $\mathfrak h_\infty$. The moment map is continuous on
+$\mathcal X$ and $\mu(\mathfrak h(t))\to0$ by
+Theorem~\ref{thm:relaxation}; so $\mu(\mathfrak h_\infty)=0$ and the
+representation is polystable, a contradiction. By \eqref{eq:velocities} and
+$0<G_i'\leq1/y_i$ on $[0,\infty)$, the speed of $\mathfrak h(t)$ is at most
+$\norm\mu/\min(y_0,y_1)+\norm\delta$. By Theorem~\ref{thm:relaxation} and the
+Cauchy--Schwarz inequality
+$\int_{t_2}^t\norm\mu\leq(2\Gamma\mathcal E^\sharp)^{1/2}\sqrt{t-t_2}$, and
+$\int_{t_2}^\infty\norm\delta\leq4c_\delta/\alpha_1$ because $t_2\geq t_1$.
+\end{proof}
+
+The bound $\sqrt t$ is not attained in the following example, the smallest
+one: there the distance grows like $\log t$, and the asymptotics can be
+determined for every initial metric. Let $\mathsf R$ be the representation of
+the Kronecker quiver with two arrows on $\CC^2\to\CC^2$ with the arrows
+\[
+ b_1=\id,\qquad b_2=E_{12},\qquad E_{12}e_2=e_1,\quad E_{12}e_1=0 .
+\]
+Here $n_0=n_1=2$, so $\theta_0=\theta_1=:\theta$. A subrepresentation
+$(V',W')$ has $V'=b_1V'\subset W'$, so $\mathsf R$ is semistable; the
+lines $\CC e_1\to\CC e_1$ form a subrepresentation of dimension vector
+$(1,1)$, so it is not stable; and it is not polystable, since a direct sum
+of two representations of dimension vector $(1,1)$ has arrows that are
+diagonal in suitable bases of the two spaces, and then $b_1^{-1}b_2=E_{12}$
+would be diagonalizable. Both $\CC e_1\to\CC e_1$ and the quotient are
+isomorphic to the stable representation $\CC\to\CC$ with arrows $(1,0)$. Put
+\[
+ \mathsf g_0=G_0'(\theta)=\frac{y_0}{|z_0+\theta|^2},\qquad
+ \mathsf g_1=G_1'(\theta)=\frac{y_1}{|z_1-\theta|^2},\qquad
+ \mathsf k=\frac{2\mathsf g_0\mathsf g_1}{\mathsf g_0+\mathsf g_1},\qquad
+ \Lambda_\infty=(\mathsf g_0+\mathsf g_1)\,\theta,
+\]
+with $G_0,G_1$ as in \eqref{eq:velocities}. For a pair of metrics
+$(h_0,h_1)$ on $\mathsf R$, with Hermitian forms conjugate-linear in the
+first argument, let
+\[
+ p_1=h_0(e_1,e_1),\qquad\chi_0=\frac{h_0(e_1,e_2)}{p_1},\qquad
+ p_2=h_0(e_2-\chi_0e_1,\,e_2-\chi_0e_1),
+\]
+and define $p_1',\chi_1,p_2'$ in the same way from $h_1$; these are the
+Gram--Schmidt data of the two metrics for the flag $\CC e_1\subset\CC^2$.
+The metrics are diagonal in the basis $e_1,e_2$ exactly when
+$\chi_0=\chi_1=0$, and the automorphisms $\id+xE_{12}$, $x\in\CC$, of
+$\mathsf R$ shift $\chi_0$ and $\chi_1$ by $x$. Put
+\[
+ a=\frac{p_1'}{p_1},\qquad b=\frac{p_2'}{p_2},\qquad c=\frac{p_1'}{p_2},\qquad
+ \chi=\chi_1-\chi_0 .
+\]
+
+\begin{proposition}[A semistable example]\label{prop:semistable}
+Let the charges be ordered. For every initial pair of metrics on
+$\mathsf R$, regarded as a complex in degree zero, along the phase flow:
+\begin{enumerate}
+\item[(i)] $\chi$ vanishes identically or has constant argument, it tends to
+ zero with $|\chi(t)|=O(e^{-\Lambda't})$ for every $\Lambda'<\Lambda_\infty$,
+ and $\chi_0$, $\chi_1$ converge to a common limit $\chi_\infty$;
+\item[(ii)] $c(t)=\dfrac1{\mathsf kt}+O\Bigl(\dfrac{\log t}{t^2}\Bigr)$,
+ $a-\theta=-\dfrac{\mathsf g_1}{\mathsf g_0+\mathsf g_1}c+O(c^2)$ and
+ $b-\theta=-\dfrac{\mathsf g_0}{\mathsf g_0+\mathsf g_1}c+O(c^2)$;
+\item[(iii)] $\displaystyle\lim_{t\to\infty}t\,\norm{\mu(t)}
+ =\frac{\sqrt{2(\mathsf g_0^2+\mathsf g_1^2)}}{2\mathsf g_0\mathsf g_1}$ and
+ $\cK_{\coh}(\mathfrak h(t))-\cK_*=\dfrac1{\mathsf kt}+O\Bigl(\dfrac{\log t}{t^2}\Bigr)$;
+\item[(iv)] there is a constant $A>0$ with
+ \[
+ e^{\varphi t}p_1\sim A\,t^{-1/2},\quad e^{\varphi t}p_1'\sim\theta A\,t^{-1/2},\quad
+ e^{\varphi t}p_2\sim\theta\mathsf kA\,t^{1/2},\quad
+ e^{\varphi t}p_2'\sim\theta^2\mathsf kA\,t^{1/2},
+ \]
+ and $d(\mathfrak h(t),\mathfrak h(0))=\log t+O(1)$.
+\end{enumerate}
+\end{proposition}
+
+So for every initial metric the normalized metrics decay like $t^{-1/2}$ on
+the subrepresentation $\CC e_1\to\CC e_1$ and grow like $t^{1/2}$ on the
+quotient. These rates hold in every basis $e_1,\ e_2-xe_1$; the value
+$x=\chi_\infty$ is the one for which the metrics become diagonal, in the
+sense that $h_i(e_1,e_2-\chi_\infty e_1)/h_i(e_1,e_1)\to0$ for $i=0,1$. The
+exponents do not depend on the charges; the constants do, through $\theta$,
+$\mathsf g_0$ and $\mathsf g_1$.
+
+\begin{proof}
+\emph{Frames.} The vectors $e_1/\sqrt{p_1}$, $(e_2-\chi_0e_1)/\sqrt{p_2}$ form
+an $h_0$-orthonormal frame, and $e_1/\sqrt{p_1'}$,
+$(e_2-\chi_1e_1)/\sqrt{p_2'}$ an $h_1$-orthonormal frame. Since
+$e_2-\chi_0e_1=(e_2-\chi_1e_1)+\chi e_1$ and $E_{12}(e_2-\chi_0e_1)=e_1$, the
+arrows have the matrices
+$H_1=\bigl(\begin{smallmatrix}\sqrt a&\chi\sqrt c\\0&\sqrt b\end{smallmatrix}\bigr)$
+and $H_2=\bigl(\begin{smallmatrix}0&\sqrt c\\0&0\end{smallmatrix}\bigr)$, so
+\[
+ C_0=\begin{pmatrix}a&\chi\sqrt{ac}\\\bar\chi\sqrt{ac}&b+c+|\chi|^2c\end{pmatrix},\qquad
+ C_1=\begin{pmatrix}a+c+|\chi|^2c&\chi\sqrt{bc}\\\bar\chi\sqrt{bc}&b\end{pmatrix}.
+\]
+Let $F_0(x)=\arg(z_0+x)=\varphi-G_0(x)$ and
+$F_1(x)=\arg(z_1-x)=\varphi+G_1(x)$; the matrices of the phases in these
+frames are $F_0(C_0)$ and $F_1(C_1)$.
+
+\emph{Evolution of the data.} For a metric $h$ with phase $\Phi$,
+$\frac d{dt}h(u,w)=-h(u,\Phi w)$. Writing $e_1$, $e_2$ in the frame, one finds
+for the data $(p_1,p_2,\chi_0)$ of $h_0$ and the matrix $\phi=F_0(C_0)$
+\[
+ \tfrac d{dt}\log p_1=-\phi_{11},\qquad\tfrac d{dt}\log p_2=-\phi_{22},\qquad
+ \dot\chi_0=-\sqrt{p_2/p_1}\;\phi_{12},
+\]
+the second because $\det h_0=p_1p_2$ has logarithmic derivative $-\tr\phi$;
+and likewise for $h_1$ with $\phi=F_1(C_1)$. For a $2\times2$ Hermitian matrix
+$C$ with eigenvalues $c^\pm$ and a function $f$, $f(C)-f[c^+,c^-]\,C$ is a
+scalar matrix, where $f[\,\cdot\,,\cdot\,]$ is the divided difference; so
+$f(C)_{12}=f[c^+,c^-]\,C_{12}$. Let $\varrho_0=-F_0[c_0^+,c_0^-]>0$ and
+$\varrho_1=F_1[c_1^+,c_1^-]>0$ for the eigenvalues of $C_0$, $C_1$. Since
+$\sqrt{p_2/p_1}\sqrt{ac}=a$ and $\sqrt{p_2'/p_1'}\sqrt{bc}=b$,
+\begin{equation}\label{eq:chi}
+ \dot\chi_0=\varrho_0\,a\,\chi,\qquad\dot\chi_1=-\varrho_1\,b\,\chi,\qquad
+ \dot\chi=-(a\varrho_0+b\varrho_1)\,\chi .
+\end{equation}
+
+\emph{Limits.} Theorem~\ref{thm:relaxation} applies to the flow of a
+representation. Indeed, let $\mathsf E$ be the orthogonal direct sum of
+$\mathsf R$ and a complex $(V_1\to0)\to(U\to0)$ with invertible differential.
+It is of the form \eqref{eq:complex}, its endomorphism \eqref{eq:coeff} is
+the direct sum of those of the two summands, so the flow preserves the
+orthogonal splitting and restricts to the flow of each summand; the
+cohomology of $\mathsf E$ is $\mathsf R$ with its own metrics, and
+$\delta=0$. Hence $C_0\to\theta$ and $C_1\to\theta$, that is, $a\to\theta$,
+$b\to\theta$, $c(1+|\chi|^2)\to0$, and $\varrho_i\to\mathsf g_i$. By
+\eqref{eq:chi}, $\chi$ is a real positive multiple of $\chi(0)$, $|\chi|$ is
+nonincreasing, and $a\varrho_0+b\varrho_1\to\Lambda_\infty$; this gives the
+decay of $\chi$. Then
+$\dot\chi_0$ and $\dot\chi_1$ are integrable, so $\chi_0$, $\chi_1$ converge,
+to the same limit. This is (i).
+
+\emph{The reduced system.} Put
+\[
+ w_1=-G_0(a)-G_1(a+c),\qquad w_2=-G_0(b+c)-G_1(b),\qquad
+ w_3=-G_0(b+c)-G_1(a+c),
+\]
+functions of $(a,b,c)$. If $\chi=0$, the matrices $C_0$, $C_1$ are diagonal
+and $\frac d{dt}\log a=w_1$, $\frac d{dt}\log b=w_2$,
+$\frac d{dt}\log c=w_3$. In general, for a $2\times2$ Hermitian matrix $C$
+with eigenvalues $c^\pm$ and a smooth function $f$, Newton interpolation of
+$f$ at the nodes $C_{11},c^+,c^-$ gives
+\[
+ f(C)=f(C_{11})+f[C_{11},c^+]\,(C-C_{11})+f[C_{11},c^+,c^-]\,(C-C_{11})(C-c^+),
+\]
+and the upper left entries of $C-C_{11}$ and $(C-C_{11})(C-c^+)$ are $0$ and
+$|C_{12}|^2$. So $|f(C)_{11}-f(C_{11})|\leq\frac12\sup|f''|\,|C_{12}|^2$, and
+likewise for the other diagonal entry. Here $|C_{12}|^2\leq|\chi|^2c\,(a+b)$,
+and the diagonal entries of $C_0$, $C_1$ differ from those for $\chi=0$ by
+$|\chi|^2c$. Hence, with
+$\varepsilon(t):=|\chi(t)|^2$,
+\begin{equation}\label{eq:reduced}
+ \tfrac d{dt}\log a=w_1+O(\varepsilon c),\qquad
+ \tfrac d{dt}\log b=w_2+O(\varepsilon c),\qquad
+ \tfrac d{dt}\log c=w_3+O(\varepsilon c),
+\end{equation}
+and $\frac d{dt}\log(e^{\varphi t}p_1)=G_0(a)+O(\varepsilon c)$, and similarly
+for $p_2$, $p_1'$, $p_2'$ with $G_0(b+c)$, $-G_1(a+c)$, $-G_1(b)$.
+
+\emph{The fast variables.} Differentiating along \eqref{eq:reduced},
+\[
+ \dot w_1=-\Lambda_aw_1-G_1'(a+c)\,c\,w_3+O(\varepsilon c),\qquad
+ \dot w_2=-\Lambda_bw_2-G_0'(b+c)\,c\,w_3+O(\varepsilon c),
+\]
+with $\Lambda_a=a(G_0'(a)+G_1'(a+c))$ and $\Lambda_b=b(G_0'(b+c)+G_1'(b))$,
+both tending to $\Lambda_\infty$. Near $(a,b,c)=(\theta,\theta,0)$ the
+functions $(w_1,w_2,c)$ are real-analytic coordinates, with
+$w_1=-(\mathsf g_0+\mathsf g_1)(a-\theta)-\mathsf g_1c$ and
+$w_2=-(\mathsf g_0+\mathsf g_1)(b-\theta)-\mathsf g_0c$ to first order.
+Therefore, with $|w|=(w_1^2+w_2^2)^{1/2}$,
+\begin{equation}\label{eq:slow}
+ a-\theta=-\frac{w_1+\mathsf g_1c}{\mathsf g_0+\mathsf g_1}+O(|w|^2+c^2),\qquad
+ w_3=-\mathsf kc+\frac{\mathsf g_1w_1+\mathsf g_0w_2}{\mathsf g_0+\mathsf g_1}
+ +O(|w|^2+c^2),
+\end{equation}
+and similarly for $b$; the factor of $c$ in $w_3$ is
+$-(\mathsf g_0+\mathsf g_1)+(\mathsf g_0^2+\mathsf g_1^2)/(\mathsf g_0+\mathsf g_1)=-\mathsf k$.
+
+We claim $|w|=O(c^2)$. Choose $T$ such that for $t\geq T$:
+$\Lambda_a,\Lambda_b\geq\Lambda_\infty/2$,
+$|\frac d{dt}\log c|\leq\Lambda_\infty/16$, $|w|\leq1$, $c\leq1$,
+\eqref{eq:slow} holds, and $a\varrho_0+b\varrho_1\geq\Lambda_\infty/2$, so
+that $\varepsilon(s)\leq\varepsilon(T)e^{-\Lambda_\infty(s-T)}$ for $s\geq T$
+by \eqref{eq:chi}. Then, for constants $K',K''$ and after enlarging $T$,
+\[
+ \frac d{dt}|w|\leq-\frac{\Lambda_\infty}4|w|+K'\,c^2+K''\,\varepsilon\,c
+\]
+in the sense of upper right derivatives. Since
+$c(s)\leq c(t)e^{\frac{\Lambda_\infty}{16}(t-s)}$ and
+$e^{-\frac{\Lambda_\infty}{16}(t-T)}\leq c(t)/c(T)$ for $T\leq s\leq t$,
+\[
+ |w(t)|\leq\Bigl(\frac{c(t)}{c(T)}\Bigr)^4|w(T)|+\frac{8K'}{\Lambda_\infty}\,c(t)^2
+ +K''c(t)\,\varepsilon(T)\int_T^te^{-\frac{3\Lambda_\infty}{16}(t-s)}e^{-\Lambda_\infty(s-T)}ds ,
+\]
+and the integral is at most
+$\frac{16}{13\Lambda_\infty}e^{-\frac{3\Lambda_\infty}{16}(t-T)}\leq\frac{16}{13\Lambda_\infty}(c(t)/c(T))^3$.
+This proves the claim. By \eqref{eq:reduced} and \eqref{eq:slow},
+$\frac d{dt}\log c=-\mathsf kc+O(c^2)+O(\varepsilon c)$, so
+$\frac d{dt}(1/c)=\mathsf k+O(c)+O(\varepsilon)$; then $c=O(1/t)$,
+$\int^tc=O(\log t)$ and $1/c=\mathsf kt+O(\log t)$. With \eqref{eq:slow} this
+is (ii).
+
+(iii) By (ii), up to terms $O(c^2)$ and terms of order
+$|\chi|\sqrt c$, which decay exponentially,
+$C_0-\theta=\frac{\mathsf g_1c}{\mathsf g_0+\mathsf g_1}\diag(-1,1)$ and
+$C_1-\theta=\frac{\mathsf g_0c}{\mathsf g_0+\mathsf g_1}\diag(1,-1)$. Moreover
+$\cK_{\coh}=\tr C_0+\theta\log(\det h_0/\det h_1)=a+b+c+\varepsilon c-\theta\log(ab)$,
+and $x-\theta\log x$ is stationary at $\theta$, so
+$\cK_{\coh}=2\theta-2\theta\log\theta+c+O(c^2)+O(\varepsilon c)$; the constant
+is $\cK_*$ by Theorem~\ref{thm:relaxation}.
+
+(iv) By \eqref{eq:reduced} and (ii),
+$\frac d{dt}\log(e^{\varphi t}p_1)=\mathsf g_0(a-\theta)+O(c^2)+O(\varepsilon c)
+=-\frac{\mathsf k}2c+O(c^2)+O(\varepsilon c)=-\frac1{2t}+O(\frac{\log t}{t^2})$;
+the error is integrable, so $e^{\varphi t}p_1\,t^{1/2}$ has a positive limit
+$A$. Then $p_1'=ap_1$, $p_2=p_1'/c$ and $p_2'=bp_2$ give the other three. The
+metrics are $g_i^*\diag g_i$ with the diagonal matrices of the data and
+$g_i=\bigl(\begin{smallmatrix}1&\chi_i\\0&1\end{smallmatrix}\bigr)$, which
+converge. For every pair $(g_0,g_1)$ of invertible matrices the map
+$(h_0,h_1)\mapsto(g_0^*h_0g_0,\,g_1^*h_1g_1)$ is an isometry of the space of
+pairs of metrics, and the $g_i(t)$ stay in a compact set; so the distance
+from $\mathfrak h(0)$ is
+$\bigl(\sum_i\log^2(e^{\varphi t}p_i)+\sum_i\log^2(e^{\varphi t}p_i')\bigr)^{1/2}+O(1)
+=\log t+O(1)$.
+\end{proof}
+
+\begin{remark}\label{rem:semistable}
+Apart from the limits $a,b\to\theta$ and $c\to0$, the proof uses of
+$G_0,G_1$ only that they are smooth and increasing, with positive
+derivatives at $\theta$, and vanish at $\theta$. For the downward gradient
+flow of the Kempf--Ness function, for which these limits hold as well, the
+same computation applies with $G_i(x)=x-\theta$, and gives the same exponents
+with $\mathsf g_0=\mathsf g_1=\mathsf k=1$; asymptotics of such gradient flows
+at semistable points are the subject of \cite{hkkp23}. The rate in (i) is
+not attained for $\Lambda'=\Lambda_\infty$: the divided differences satisfy
+$\varrho_i=\mathsf g_i+O(c^2)$, hence
+$a\varrho_0+b\varrho_1=\Lambda_\infty-\mathsf kc+O(c^2)$ by (ii), and $|\chi(t)|$
+is asymptotic to a constant multiple of $t\,e^{-\Lambda_\infty t}$. For
+general semistable cohomology the induced metrics are determined up to a
+bounded factor by \cite[Theorem~6.3 and Corollary~6.5]{wue26b}; whether the
+factor converges is open.
+\end{remark}
+
+\subsection{Reversed charges}
+
+\begin{theorem}[Reversed charges]\label{thm:reversed}
+Let $\alpha_0<\alpha_1$. Along every trajectory, for
+$t\geq t_{\mathrm{rev}}:=\max\bigl\{t_2,\ t_1+\frac4{\alpha_1}\log^+\frac{2\sqrt2\,c_\delta}{\alpha_1-\alpha_0}\bigr\}$,
+\[
+ q(t)\leq\bar N\,e^{-\frac12(\alpha_1-\alpha_0)(t-t_{\mathrm{rev}})} ,
+\]
+and $m(h(t))\to n_0|z_0|+n_1|z_1|$ as $t\to\infty$. The phases of the induced
+metrics on $\ker D$ and $W$ converge to $\alpha_0$ and $\alpha_1$.
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:adapted},
+$\dot q=\tr(C_0\Phi_{HH})-\tr(C_1\Phi_W)
+=\tr(C_0\phi_0)-\tr(C_1\phi_1)+\tr(C_0\delta_0)-\tr(C_1\delta_1)$. Since
+$C_0,C_1\geq0$, $\phi_0=\arg(z_0\id+C_0)\leq\alpha_0$ and
+$\phi_1=\arg(z_1\id-C_1)\geq\alpha_1$. Hence, for all charges,
+$\dot q\leq-(\alpha_1-\alpha_0-\norm{\delta_0}-\norm{\delta_1})\,q$. By
+Theorem~\ref{thm:cancellation}(i),(iv),
+$\norm{\delta_0}+\norm{\delta_1}\leq\sqrt2\,c_\delta e^{-\frac{\alpha_1}4(t-t_1)}$
+for $t\geq t_2$, which is at most $\frac12(\alpha_1-\alpha_0)$ for
+$t\geq t_{\mathrm{rev}}$; and $q(t_{\mathrm{rev}})\leq\bar N$. Then $C_0,C_1\to0$, so
+$\phi_0\to\alpha_0$, $\phi_1\to\alpha_1$, $\delta\to0$,
+$m_H\to n_0|z_0|+n_1|z_1|$, and $|m-m_H|\to0$ by
+Theorem~\ref{thm:cancellation}(iii).
+\end{proof}
+
+For reversed charges every representation with nonzero arrows is unstable;
+its Harder--Narasimhan factors are the two semisimple representations
+supported at one vertex each, of phases $\alpha_1>\alpha_0$, and Theorem~\ref{thm:reversed} says that the flow
+converges to their direct sum. By the triangle inequality
+$n_0|z_0|+n_1|z_1|>|Z|$ unless $z_0,z_1$ are parallel.
+
+\begin{remark}\label{rem:unstable}
+For ordered charges and cohomology that is not semistable,
+Theorem~\ref{thm:cancellation} still gives the cancellation of the acyclic
+part, with arrows bounded by $q\leq\bar N$ after the time $t_0$, and reduces
+the long-time behaviour
+to that of the phase flow of the cohomology representation, perturbed by the
+exponentially decaying $\delta_0,\delta_1$. In \cite[\S4.1]{hkkp26} the
+asymptotics of the flow on an object without harmonic metric are expected to
+be controlled by a refinement of its Harder--Narasimhan filtration. For the
+complexes of this paper this is proved in the following form
+\cite[Theorem~6.11 and Corollary~6.5]{wue26b}: the induced metrics decay at
+the exponential rates given by the phases of the Harder--Narasimhan
+filtration of the cohomology representation, on the steps of that
+filtration, and the metric induced on each factor is determined, up to a
+bounded factor, by the theory for semistable representations. The simplest case is that in which all arrows of the
+cohomology representation vanish: then $H_j=0$ for all time,
+$\Omega_V$ is block diagonal with the block $z_0\id$ on $\ker D$, so
+$\Phi_{HH}=\alpha_0$ exactly, and $\Phi_W=\arg(z_1\id-Y)\to\alpha_1$.
+\end{remark}

@@ -1,0 +1,339 @@
+\section{The endomorphism \texorpdfstring{$\Omega$}{Omega}, the flow and the function \texorpdfstring{$\mathcal S_{\mathbb C}$}{S}}\label{sec:setting}
+
+This section fixes notation and recalls what is used from \cite{hkkp26} and
+\cite{wue26}. Nothing in it is new. Throughout, $T^\dagger$ is the adjoint of
+a linear map for the Hermitian metrics in force (the conjugate transpose in
+orthonormal frames), $T^*$ is the conjugate transpose of a matrix in fixed
+reference bases, and $D^+$ is the Moore--Penrose inverse. Inner products
+$\inner\cdot\cdot$ and Hermitian forms are conjugate-linear in the first
+argument, and a scalar in a matrix expression denotes the corresponding
+multiple of the identity. For a square matrix
+$T$ we write
+$\Rea T=(T+T^\dagger)/2$ and $\Ima T=(T-T^\dagger)/2\ii$; $\norm T_1$ is the
+trace norm, $\norm T_{\HS}$ the Hilbert--Schmidt norm and $\norm T$ the
+operator norm; for a Hermitian matrix $M$, $M_\pm\geq0$ are its positive and
+negative parts, $M=M_+-M_-$, $M_+M_-=0$. The letter $\varphi$ always denotes
+the argument of the total central charge; $\phi$ with indices denotes phases
+of blocks and their eigenvalues. Likewise $\vartheta$, $\varkappa$,
+$\varrho$, $\varsigma$, $\varpi$ denote objects different from those denoted
+by $\theta$, $\kappa$, $\rho$, $\sigma$, $\pi$.
+
+\subsection{Complexes and the endomorphism \texorpdfstring{$\Omega$}{Omega}}
+Let $V,U,W$ be finite-dimensional complex vector spaces, $D:V\to U$ a linear
+map and $A_1,\dots,A_k:V\to W$ linear maps. This is a two-term complex of
+representations of the generalized Kronecker quiver, with two vertices $0,1$
+and $k$ arrows from $0$ to $1$:
+\begin{equation}\label{eq:complex}
+ \mathsf E:\qquad(V\xrightarrow{\,(A_j)\,}W)\ \xrightarrow{\,(D,0)\,}\ (U\to0),
+\end{equation}
+with $V$ and $W$ in degree $0$ and $U$ in degree $1$. We assume throughout
+that
+\[
+ D\text{ is surjective},\qquad n_0:=\dim\ker D\geq1,\quad n_1:=\dim W\geq1,
+ \quad r:=\dim U\geq1 .
+\]
+The \emph{cohomology representation} is $\ker D\to W$ with the arrows
+$A_j|_{\ker D}$, of dimension vector $(n_0,n_1)$. It is a subcomplex of
+$\mathsf E$, and the quotient $(V/\ker D\to0)\to(U\to0)$ is an acyclic
+complex, which we call the \emph{acyclic part}; $r$ is its rank. Fix
+\emph{central charges} $z_0,z_1$ in the open upper half-plane, attached to
+the two vertices, and write
+\[
+ z_i=x_i+\ii y_i=|z_i|e^{\ii\alpha_i},\qquad y_i>0,\quad\alpha_i\in(0,\pi).
+\]
+
+Let $h=(h_V,h_U,h_W)$ be Hermitian metrics. Adjoints refer to the current
+metrics. Put
+\[
+ B=D^\dagger D,\qquad L=DD^\dagger,\qquad C=\sum_jA_j^\dagger A_j,
+\]
+and, for Hermitian matrices $P\geq0$ and $M$,
+\begin{equation}\label{eq:J}
+ \begin{gathered}
+ R(P)=\int_0^1e^{-xP}dx,\qquad
+ K_P(M)=\int_0^1e^{-(1-x)P}Me^{-xP}dx,\\
+ J_P(M)=\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-xP}Me^{-yP}\,dx\,dy .
+ \end{gathered}
+\end{equation}
+In \cite[\S5.4]{hkkp26} a complex of quiver representations with metrics
+carries an endomorphism $\Omega$ of its underlying graded vector space,
+defined through a superconnection in a graded algebra attached to the
+quiver: $\Omega=\varepsilon\,[\exp(-\sqrt{-1}F)]_f$, where
+$F=(A-A^*)^2+\sqrt{-1}\sum_if_i\otimes z_i$ is formed from the element
+$A=\sum_ie_i\otimes d_i+\sum_aa\otimes\rho(a)$ of the algebra of
+\cite[Definition~5.13]{hkkp26} tensored with the endomorphisms, with $d_i$
+the differentials and $\rho(a)$ the maps of the arrows, $\varepsilon$ is the
+grading, and $[\,\cdot\,]_f$ is the component along the basis elements
+$f_i$. Apart from $\Omega$ and $z_i$, the symbols of this sentence are those
+of \cite{hkkp26} and have this meaning only here; $A^*$ is formed from the
+involution of that algebra and the adjoints for the metrics
+\cite[(5.14)]{hkkp26}. The
+differential of the function $\cS_{\CC}$ below is
+$\xi\mapsto\tr(\Omega\xi)$; the trace of $\Omega$ is the central charge
+\eqref{eq:central}, and for a representation $\Omega$ is the central charge
+of each vertex shifted by the moment map. For \eqref{eq:complex} it is
+$\Omega=\Omega_V\oplus\Omega_U\oplus\Omega_W$ with
+\cite[Proposition~2.1]{wue26}
+\begin{equation}\label{eq:coeff}
+ \Omega_V=z_0e^{-B}+K_B(C),\qquad
+ \Omega_U=J_L(DCD^\dagger)-z_0e^{-L},\qquad
+ \Omega_W=z_1\id-\sum_jA_jR(B)A_j^\dagger .
+\end{equation}
+We abbreviate
+\begin{equation}\label{eq:KJG}
+ K=K_B(C),\qquad J=J_L(DCD^\dagger),\qquad G=\sum_jA_jR(B)A_j^\dagger\geq0 ,
+\end{equation}
+three Hermitian matrices that do not depend on the charges. Hence
+\begin{equation}\label{eq:imaginary}
+ \Ima\Omega_V=y_0e^{-B}>0,\qquad
+ \Ima(-\Omega_U)=y_0e^{-L}>0,\qquad
+ \Ima\Omega_W=y_1\id>0,
+\end{equation}
+and \cite[Lemma~5.17]{hkkp26}
+\begin{equation}\label{eq:central}
+ \tr\Omega_V+\tr\Omega_U+\tr\Omega_W=n_0z_0+n_1z_1=:Z .
+\end{equation}
+The matrix $\Omega_W$ is normal. The matrix $\Omega_V$ is in general not
+normal \cite[Example~2.3]{wue26}, and neither is $\Omega_U$, whose Hermitian
+and anti-Hermitian parts $J-x_0e^{-L}$ and $-y_0e^{-L}$ commute only if $J$
+commutes with $e^{-L}$.
+
+\subsection{The phase and the flow}
+For a matrix $T$ with $\Ima T>0$ there is a unique Hermitian matrix $\Psi$
+with spectrum in $(0,\pi)$ such that $Te^{-\ii\Psi}>0$, the \emph{polar phase}
+of $T$; it is the argument of the unitary factor in the polar decomposition
+$T=(TT^\dagger)^{1/2}e^{\ii\Psi}$ \cite[Section~7.3]{hj13}: if
+$e^{\ii\Psi}v=\zeta v$, then
+$\inner v{(\Ima T)v}=(\Ima\zeta)\inner v{|T|v}$, so the eigenvalues of the
+unitary factor lie in the open upper half-circle (see also
+\cite[Lemma~2.2]{wue26}). Here
+$|T|:=(TT^\dagger)^{1/2}$ is the left modulus; the unitary factor is the same
+in the left and right polar decompositions, and so is the trace norm (in
+\cite{bha97} the modulus is the right one, $(T^\dagger T)^{1/2}$). The phases
+$\Phi_V,\Phi_W$ are the polar phases of $\Omega_V,\Omega_W$, and
+$\Phi_U+\pi$ is the polar phase of $-\Omega_U$; so
+\begin{equation}\label{eq:phase}
+ |\Omega_\bullet|:=\Omega_\bullet e^{-\ii\Phi_\bullet}
+ =(\Omega_\bullet\Omega_\bullet^\dagger)^{1/2}>0,\qquad\bullet\in\{V,U,W\},
+\end{equation}
+with $\spec\Phi_V,\spec\Phi_W\subset(0,\pi)$ and
+$\spec\Phi_U\subset(-\pi,0)$. This is the phase defined by positivity in
+\cite[\S4.2]{hkkp26}, with the branches of \cite[(5.15)]{hkkp26}. In
+\cite[\S5.4]{hkkp26} the phase of $\Omega$ for a complex is written with the
+functional calculus. For normal $\Omega$, in particular for
+representations, the two readings coincide; for complexes $\Omega$ is not
+normal in general \cite[Example~2.3]{wue26}. The flow studied here is the
+one defined with the polar phase:
+\begin{equation}\label{eq:flow}
+ h_\bullet^{-1}\dot h_\bullet=-\Phi_\bullet,\qquad\bullet\in\{V,U,W\}.
+\end{equation}
+We call it the \emph{phase flow}. It is the minimizing flow of
+\cite[\S4.1]{hkkp26} with the phase read as above; we use a neutral name
+because on complexes the mass can increase along it
+\cite[Theorem~1.1]{wue26}. The \emph{mass} is $m(h)=\sum_\bullet\tr|\Omega_\bullet|\geq|Z|$. The
+vector field is smooth and its solutions exist for all $t\geq0$
+\cite[Lemma~2.4]{wue26}. In orthonormal frames moving with the metrics the
+maps evolve by
+\begin{equation}\label{eq:mapflow}
+ \dot D=\tfrac12(D\Phi_V-\Phi_UD),\qquad
+ \dot A_j=\tfrac12(A_j\Phi_V-\Phi_WA_j).
+\end{equation}
+A \emph{state} is a tuple $(D,A_j)$ of matrices in orthonormal frames, up to
+unitary changes of the frames; equivalently, a triple of metrics on the
+fixed complex up to isometry, or a point of the orbit of $(D,A_j)$ under
+$\mathrm{GL}(V)\times\mathrm{GL}(U)\times\mathrm{GL}(W)$ modulo the unitary
+groups. All quantities below are functions of the state.
+
+\begin{lemma}\label{lem:eigenbasis}
+Let $T$ be a matrix with $\Ima T>0$ and polar phase $\Psi$, and let $v$ be a
+unit vector with $\Psi v=\psi v$. Then
+$\inner v{Tv}=p\,e^{\ii\psi}$ with $p=\inner v{|T|v}>0$. Consequently, in an
+orthonormal eigenbasis $(v_k)$ of $\Psi$ with eigenvalues $\psi_k$ and
+$p_k=\inner{v_k}{|T|v_k}$, $\tr(|T|f(\Psi))=\sum_kp_kf(\psi_k)$ for every
+real function $f$.
+\end{lemma}
+
+\begin{proof}
+$T=|T|e^{\ii\Psi}$, so $\inner v{Tv}=e^{\ii\psi}\inner v{|T|v}$. The second
+statement is the trace computed in the basis $(v_k)$.
+\end{proof}
+
+The lemma applies to $\Omega_V$, $\Omega_W$ and $-\Omega_U$; for the block
+$U$ it gives $\inner v{\Omega_Uv}=p\,e^{\ii\phi}$ for a unit eigenvector $v$
+of $\Phi_U$ with eigenvalue $\phi\in(-\pi,0)$.
+
+\subsection{The primitive}
+Let $\Ein(b)=\int_0^1(1-e^{-xb})\,dx/x$. With respect to fixed reference
+bases, in which $\log\det h_\bullet$ denotes the logarithm of the Gram
+determinant, put
+\begin{equation}\label{eq:primitive}
+ \cS_{\CC}(h)=z_0\bigl(\log\det h_V-\log\det h_U\bigr)+z_1\log\det h_W
+ +z_0\tr\Ein(B)-\tr\bigl(CR(B)\bigr).
+\end{equation}
+Then \cite[Proposition~7.1]{wue26}, for every variation
+$\xi_\bullet=h_\bullet^{-1}\delta h_\bullet$ of the metrics,
+\begin{equation}\label{eq:primitivevariation}
+ d\cS_{\CC}(\xi)=\sum_\bullet\tr(\Omega_\bullet\xi_\bullet).
+\end{equation}
+Both sides are affine in $(z_0,z_1)$, so the terms without charges agree:
+\begin{equation}\label{eq:energyvariation}
+ d\bigl(\tr(CR(B))\bigr)(\xi)=-\tr(K\xi_V)-\tr(J\xi_U)+\tr(G\xi_W).
+\end{equation}
+
+\subsection{Charges and the stability parameter}
+Put
+\[
+ \varphi=\arg Z\in(0,\pi),\quad\sigma=\sin\varphi,\quad
+ c_0=|z_0|\sin(\alpha_0-\varphi),\quad c_1=|z_1|\sin(\varphi-\alpha_1).
+\]
+Since $\Ima(e^{-\ii\varphi}Z)=0$ we have $n_0c_0=n_1c_1$. The charges are
+\emph{ordered} if $\alpha_0>\alpha_1$ and \emph{reversed} if
+$\alpha_0<\alpha_1$; they are ordered exactly when $c_0>0$, or when
+$\alpha_1<\varphi<\alpha_0$. For ordered charges put
+\begin{equation}\label{eq:theta}
+ \theta_0=c_0/\sigma,\qquad\theta_1=c_1/\sigma,\qquad
+ \vartheta=n_0\theta_0=n_1\theta_1>0 ;
+\end{equation}
+then $z_0+\theta_0$ and $z_1-\theta_1$ have argument $\varphi$. We call the
+pair $(\theta_0,\theta_1)$ the \emph{stability parameter}. A
+representation whose dimension vector $(a_0,a_1)$ satisfies
+$a_0\theta_0=a_1\theta_1$, for instance $(n_0,n_1)$, has phase $\varphi$. It
+is \emph{semistable} if $a\theta_0-b\theta_1\leq0$ for the dimension vector
+$(a,b)$ of each of its subrepresentations, that is, if no subrepresentation
+has phase $\arg(az_0+bz_1)$ larger than $\varphi$; it is \emph{stable} if the
+inequality is strict for proper nonzero subrepresentations, and
+\emph{polystable} if it is a direct sum of stable representations of phase
+$\varphi$. In the convention of King \cite[Definition~1.1]{kin94} this is
+stability for the character $(-\theta_0,\theta_1)$, a positive multiple of
+the integral character $(-n_1,n_0)$; the Kempf--Ness function \eqref{eq:KN}
+carries the weights $(\theta_0,-\theta_1)$ on
+$(\log\det h_0,\log\det h_1)$. For reversed charges no
+representation with $n_0,n_1\geq1$ is semistable, because the
+subrepresentation supported at the vertex $1$ has phase
+$\alpha_1>\varphi$.
+
+\begin{definition}\label{def:admissible}
+Let $(n_0,n_1,r)$ be given. The charges $(z_0,z_1)$ are
+\emph{admissible} if they are ordered and either $\varphi\geq\frac{2\pi}5$ or
+$r=1$.
+\end{definition}
+
+This is the range of charges covered by Theorem~\ref{thm:monotone}; the
+number $\frac{2\pi}5$ comes from the constant of Theorem~\ref{thm:kernel}.
+
+The \emph{symmetric charges} are $z_0=-1+\ii$, $z_1=1+\ii$. If moreover
+$n_0=n_1$, then $\varphi=\frac\pi2$, $\sigma=1$, $\theta_0=\theta_1=1$, and they
+are admissible for every $r$.
+
+\subsection{The splitting adapted to \texorpdfstring{$\ker D$}{ker D}}
+Choose orthonormal frames adapted to $V=\ker D\oplus(\ker D)^\perp$ and write
+\[
+ D=[0,F],\qquad A_j=[H_j,T_j],\qquad
+ \Phi_V=\begin{pmatrix}\Phi_{HH}&\Phi_{HA}\\\Phi_{AH}&\Phi_{AA}\end{pmatrix}.
+\]
+Here the indices $H$ and $A$ refer to $\ker D$ and to its orthogonal
+complement, which carries the acyclic part. So $F$ is invertible and the
+$H_j$ are the matrices of the arrows of the cohomology representation for the
+induced metrics. Let
+$D^+=D^\dagger(DD^\dagger)^{-1}$ be the Moore--Penrose inverse of $D$ and
+\[
+ X_j=A_jD^+=T_jF^{-1}:U\to W .
+\]
+These maps vanish exactly when the arrows vanish on $(\ker D)^\perp$. Put
+\begin{equation}\label{eq:qslambda}
+ C_0=\sum_jH_j^\dagger H_j,\quad C_1=\sum_jH_jH_j^\dagger,\quad
+ q=\tr C_0=\tr C_1,\quad s=\sum_j\norm{X_j}_{\HS}^2,\quad
+ \lambda=\lambda_{\min}(L),
+\end{equation}
+let $\ell_1\leq\dots\leq\ell_r$ be the eigenvalues of $L=FF^\dagger$, so
+$\lambda=\ell_1$, and
+\begin{equation}\label{eq:Y}
+ Y=\sum_jX_j(\id-e^{-L})X_j^\dagger\geq0,\qquad G=C_1+Y,\qquad
+ \tr Y\geq(1-e^{-\lambda})\,s .
+\end{equation}
+With the choice of the moving frames made in \cite[\S6.1]{wue26} (the frames
+of $V$ are rotated so that the splitting is preserved),
+\begin{equation}\label{eq:adapted}
+ \dot F=\tfrac12(F\Phi_{AA}-\Phi_UF),\qquad
+ \dot H_j=\tfrac12(H_j\Phi_{HH}-\Phi_WH_j),
+\end{equation}
+and
+\begin{equation}\label{eq:adaptedcoeff}
+ \Omega_V=\begin{pmatrix}z_0\id+C_0&E_R\\E_R^\dagger&z_0e^{-F^\dagger F}+K_{F^\dagger F}(C_T)\end{pmatrix},
+ \qquad\Omega_W=z_1\id-C_1-Y,
+\end{equation}
+with $C_T=\sum_jT_j^\dagger T_j$ and $E_R=\sum_jH_j^\dagger T_jR(F^\dagger F)$.
+For the cohomology representation with its induced metrics the
+endomorphism $\Omega$ is
+\[
+ \Omega_H=(z_0\id+C_0)\oplus(z_1\id-C_1);
+\]
+it is normal, with phases the Hermitian matrices
+$\phi_0=\arg(z_0\id+C_0)$ and $\phi_1=\arg(z_1\id-C_1)$, and mass
+$m_H=\norm{z_0\id+C_0}_1+\norm{z_1\id-C_1}_1$. We write
+\[
+ \delta_0=\Phi_{HH}-\phi_0,\qquad\delta_1=\Phi_W-\phi_1,\qquad
+ \mathcal E_V=\Omega_V-\diag\bigl(z_0\id+C_0,\ z_0e^{-F^\dagger F}\bigr).
+\]
+We say that \emph{the acyclic part cancels} along a trajectory if
+$\lambda\to\infty$ and
+$\norm{\Omega_V-(z_0\id+C_0)\oplus0}_1+\norm{\Omega_U}_1+\norm{\Omega_W-(z_1\id-C_1)}_1\to0$.
+The name refers to the central charge, to which the two terms of the acyclic
+part contribute $z_0r$ and $-z_0r$; the statement is that their
+contributions to $\Omega$ itself tend to zero.
+
+For ordered charges we write
+$\mu=(\mu_0,\mu_1)=(C_0-\theta_0\id,\ C_1-\theta_1\id)$ and call it the
+\emph{moment map} of the cohomology representation. The pair
+$(-\mu_0,\mu_1)$ is the gradient of the Kempf--Ness function
+(Lemma~\ref{lem:knvariation}), that is, up to a constant factor the moment
+map of $\mathrm U(n_0)\times\mathrm U(n_1)$ in the usual convention, shifted
+by King's character; we change the sign of the first component so that both
+components read $C_i-\theta_i$. A pair of metrics on
+$\ker D$ and $W$ with $\mu=0$ is a \emph{zero of the moment map}; such pairs
+exist exactly when the cohomology representation is polystable
+\cite[Proposition~6.5]{kin94}, which extends the theorem of Kempf and Ness
+\cite{kn79}, and they are the harmonic metrics of \cite{hkkp26} for a
+representation, since $\mu=0$ if and only if both phases $\phi_0,\phi_1$ equal
+$\varphi$.
+
+\subsection{Estimates for \texorpdfstring{$A_jD^+$}{A\_jD+} and for the phases}
+We use the following facts from \cite{wue26}, valid for all charges in the
+upper half-plane and all dimensions. Put $\kappa_0=\pi/(2e)$ and
+$d_0=\min(n_0,r)$.
+
+\begin{proposition}[{\cite{wue26}}]\label{prop:imported}
+Along the phase flow and at every metric:
+\begin{enumerate}
+\item[(i)] $\lambda$ is nondecreasing along the flow. By the formula for the
+ one-sided derivative of the least eigenvalue of a differentiable family of
+ Hermitian matrices, its right derivative is the minimum of
+ $\lambda\bigl(\inner v{\Phi_{AA}v}-\inner u{\Phi_Uu}\bigr)$ over the unit
+ vectors $v$ with $F^\dagger Fv=\lambda v$, where $u=Fv/\sqrt\lambda$
+ \cite[Lemma~4.3 and \S6.1]{wue26}.
+\item[(ii)] $\norm{E_R}_{\HS}\leq\sqrt{qs/\lambda}$,
+ $\norm{K_{F^\dagger F}(C_T)}_1\leq r\kappa_0s$, $\norm{J}_1\leq rs$ and
+ $\norm{Y}_1\leq s$; hence
+ $\norm{\mathcal E_V}_1\leq2\sqrt{d_0qs/\lambda}+r\kappa_0s$
+ \cite[Lemma~4.2, \S6.1 and \S6.3]{wue26}.
+\item[(iii)] $\dot s\leq\bigl(-\alpha_1+\frac{4\pi q}{y_0\lambda}\bigr)s$
+ \cite[\S6.2]{wue26}.
+\item[(iv)] If $\sqrt{qs/\lambda}\leq y_0/8$, then
+ $\norm{\delta_0}_{\HS}\leq\frac{4\pi}{y_0}\sqrt{qs/\lambda}$; and
+ $\norm{\delta_1}_{\HS}\leq s/y_1$ always
+ \cite[Lemma~3.1 and \S6.2]{wue26}.
+\item[(v)] Let $T_\circ=|T_\circ|\,e^{\ii\Psi_\circ}$ be an invertible
+ matrix in polar form, with $\Psi_\circ$ Hermitian, and $T=T_\circ+M$ a
+ matrix with $\Ima T>0$ and polar phase $\Psi$. If $v$ is a unit vector with
+ $|T_\circ|v=pv$ and $\Psi_\circ v=\psi v$, where $p>0$ and $0<\psi<\pi$,
+ then $|\inner v{(\Psi-\psi)v}|\leq\pi\sqrt{\norm M_1/p}$
+ \cite[Lemma~3.2]{wue26}.
+\end{enumerate}
+\end{proposition}
+
+In \cite{wue26} these estimates were used when the initial value of
+$\lambda$ is large: then the acyclic part cancels, for all charges
+\cite[Theorem~1.3]{wue26}, and for the symmetric charges the moment map of
+the cohomology representation tends to zero if its Kempf--Ness function is
+bounded below \cite[Theorem~1.4]{wue26}. Whether the assumption on the
+initial value of $\lambda$ can be removed was left open there.

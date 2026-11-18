@@ -1,0 +1,263 @@
+\section{Introduction}\label{sec:intro}
+
+Haiden, Katzarkov, Kontsevich and Pandit \cite{hkkp26} propose a notion of
+K\"ahler geometry on a triangulated category with a stability condition in
+the sense of Bridgeland \cite{bri07}. In their framework an object carries a
+space of metrics, a complex-valued function $\cS_{\CC}$ on it whose
+differential is given by an endomorphism $\Omega$, a phase $\arg\Omega$
+defined by a positivity condition, a mass $\tr|\Omega|$, and a flow
+$h^{-1}\dot h=-\arg\Omega$ of the metrics, called the minimizing flow in
+\cite[\S4.1]{hkkp26}; a metric is \emph{harmonic} if $\arg\Omega$ is a
+scalar. For a representation of a quiver with central charges $z_i$ and
+Hermitian metrics, $\Omega$ is $z_i$ shifted by the moment map at each
+vertex, and the function $\cS_{\CC}$ is explicit \cite[\S5.1]{hkkp26}: after
+rotation by the argument of the central charge of the representation, its
+imaginary part is a positive multiple of the Kempf--Ness function. For a
+complex of representations an endomorphism $\Omega$ is defined in
+\cite[\S5.4]{hkkp26} through a superconnection in a graded algebra attached
+to the quiver; its trace is the central charge of the complex. No function
+$\cS_{\CC}$ is given there for complexes.
+
+For a representation the flow is not the gradient flow of the Kempf--Ness
+function, but the Kempf--Ness function does not increase along it
+(Proposition~\ref{prop:kempfness}); that is, it is a Lyapunov function for
+the flow. The question of this paper is whether the Kempf--Ness function
+of a representation extends to complexes. Two properties of the Kempf--Ness
+function \cite{kn79,kin94} are meant: its differential is the moment map
+shifted by the charges, and it does not increase along the flow. As a
+function with differential $\Omega$ it extends to every bounded complex of
+representations of every finite quiver (Theorem~\ref{thm:introA}). As a
+function that does not increase along the flow it extends to two classes of
+complexes (Theorem~\ref{thm:introC}) and not to all
+(Theorem~\ref{thm:introD}). Convexity along geodesics of the space of
+metrics, and the characterization of semistability by boundedness below, are
+not examined for complexes; Corollary~\ref{cor:increase} shows that the
+extended function can be unbounded below on a complex with polystable
+cohomology.
+
+In \cite[\S5.4]{hkkp26} the phase of $\Omega$ is written with the functional
+calculus, which presupposes that $\Omega$ is normal. For complexes this can
+fail (Example~\ref{ex:nonnormal}). In the general framework of
+\cite[\S4.2]{hkkp26} the argument is a self-adjoint element $\arg\Omega$ such
+that $\Omega(e^{-\sqrt{-1}\arg\Omega}x^*x)\geq0$ for all elements $x$ of the
+algebra attached to the metrized object, $\Omega$ being a functional there;
+for the functional $x\mapsto\tr(\Omega x)$ on endomorphisms this says that
+$\Omega e^{-\ii\arg\Omega}$ is positive semidefinite. We therefore define
+$\arg\Omega$ as the Hermitian endomorphism $\Phi$, with spectrum in the
+interval $(-\pi n,\pi(1-n))$ in degree $n$, the branch of
+\cite[(5.15)]{hkkp26}, for which $\Omega e^{-\ii\Phi}$ is positive definite;
+$e^{\ii\Phi}$ is the unitary factor of the polar decomposition of $\Omega$.
+For normal $\Omega$ this is the argument of the functional calculus. All
+statements about the flow of a complex refer to this definition. We call the
+resulting flow the \emph{phase flow}; we do not use the name minimizing flow
+because on complexes the mass can increase along it
+\cite[Theorem~1.1]{wue26a}. It is the flow of \cite{wue26b,wue26c}, whose
+titles keep the name of \cite{hkkp26}.
+
+The phase flow was studied in \cite{wue26a,wue26b} for two-term complexes of
+representations of a generalized Kronecker quiver that are quasi-isomorphic
+to a representation: the acyclic part decays, and for suitable charges the
+flow converges on the cohomology when the cohomology is polystable
+\cite[Theorems~1.1 and~1.2]{wue26b}; these two notions are defined in
+Section~\ref{sec:setting}. For these complexes a function with
+differential $\Omega$ was found by direct computation
+\cite[Proposition~7.1]{wue26a}, and for a range of charges its rotated
+imaginary part decreases along the flow \cite[Theorem~7.6]{wue26b}.
+
+\subsection{Results}
+Let $Q$ be a finite quiver with central charges $z_i$ in the upper
+half-plane, and $\mathsf E$ a bounded complex of representations of $Q$ with
+spaces $E_i^n$ at the vertex $i$ in degree $n$, differentials $d_i$, arrows
+$\rho(a)$ and a Hermitian metric $h_i^n$ on each $E_i^n$
+(Section~\ref{sec:setting}). The endomorphism $\Omega$ preserves each
+$E_i^n$; we write $\Omega_i^n$ for its restriction to $E_i^n$, and
+$\norm\cdot_{\HS}$ for the Hilbert--Schmidt norm of a linear map for the
+metrics. An integral formula for $\Omega$ is given in
+Proposition~\ref{prop:coefficient}. Its trace is the central charge
+$Z=\sum_{i,n}(-1)^nz_i\dim E_i^n$ of the complex.
+
+\begin{theorem}[Primitive]\label{thm:introA}
+For every bounded complex of representations of $Q$ with a metric:
+\begin{enumerate}
+\item[(i)] The one-form $\xi\mapsto\tr(\Omega\,\xi)$ on the space of metrics,
+ $\xi=h^{-1}\delta h$, is closed.
+\item[(ii)] For $x\in[0,1]$ let $\Omega^{(x)}$ be the endomorphism of the
+ complex with differentials $\sqrt x\,d_i$ and the same arrows and metrics.
+ Then
+ \[
+ \cS_{\CC}(h)=\sum_n(-1)^n\Bigl[\sum_iz_i\log\det h_i^n-\sum_a\norm{\rho^n(a)}^2_{\HS}\Bigr]
+ +\int_0^1\sum_{i,n}n\,\tr\bigl((\Omega^{(x)})_i^n-(\Omega^{(0)})_i^n\bigr)\,\frac{dx}x
+ \]
+ satisfies $d\cS_{\CC}(\xi)=\tr(\Omega\,\xi)$. Here $\rho^n(a)$ is the
+ restriction of $\rho(a)$ to degree $n$, and the determinants are Gram
+ determinants in fixed bases.
+\item[(iii)] If $Z$ is not zero, then for any real $\varphi$ with
+ $Z=|Z|e^{\ii\varphi}$, along the phase flow
+ \[
+ \frac d{dt}\Ima\bigl(e^{-\ii\varphi}\cS_{\CC}\bigr)
+ =-\sum_{i,n}\tr\Bigl(|\Omega_i^n|\,(\Phi_i^n-\varphi)\sin(\Phi_i^n-\varphi)\Bigr),
+ \]
+ where $\Omega_i^n=|\Omega_i^n|e^{\ii\Phi_i^n}$ is the polar decomposition
+ with the spectrum of $\Phi_i^n$ in the interval
+ \mbox{$(-\pi n,\pi(1-n))$}.
+\end{enumerate}
+\end{theorem}
+
+We call $\Ima(e^{-\ii\varphi}\cS_{\CC})$ the \emph{phase potential}. For a
+representation in degree zero, with $\varphi\in(0,\pi)$, it is
+$\sin\varphi$ times the Kempf--Ness function
+$\sum_a\norm{\rho(a)}^2_{\HS}+\sum_i\theta_i\log\det h_i$ with
+$\theta_i=\Ima(e^{-\ii\varphi}z_i)/\sin\varphi$, and all terms on the right
+of (iii) are nonnegative (Proposition~\ref{prop:kempfness}). For complexes
+they can have either sign. The last term of $\cS_{\CC}$ is a transgression by
+the number operator along the rescaling of the differentials, of the kind
+used for Bott--Chern forms of Hermitian complexes \cite{bgs88}, here taken on
+the space of metrics and in the algebra attached to the quiver.
+
+Let $K_m$ be the generalized Kronecker quiver, with vertices $0,1$ and $m$
+arrows from $0$ to $1$. We write a complex of representations of $K_m$ as a
+row of its terms, each term being a representation written as (space at the
+vertex $0$ $\to$ space at the vertex $1$); the maps between consecutive terms
+are the differentials.
+
+\begin{theorem}[Monotonicity in two classes]\label{thm:introC}
+In each of the following cases the phase potential is nonincreasing along the
+phase flow.
+\begin{enumerate}
+\item[(i)] $i_0$ is a vertex of $Q$ without loops; the complex is a vector
+ space $E_i^0$ in degree zero at every vertex $i\neq i_0$ and $V\to U$ in
+ degrees $0,1$ at $i_0$, with surjective differential and nonzero
+ cohomology; and, for $\varphi=\arg Z\in(0,\pi)$, one has
+ $\arg z_{i_0}\geq\varphi$ and either $\varphi\geq\frac{2\pi}5$ or
+ $\dim U=1$.
+\item[(ii)] $Q=K_m$ and $\arg z_0\geq\arg z_1$; the complex is
+ $(0\to U_1)\to(V\to W)\to(U_0\to0)$ in degrees $-1,0,1$, that is, with $U_1$
+ at the vertex $1$ in degree $-1$ and $U_0$ at the vertex $0$ in degree $1$
+ (the subscript is the vertex), with injective differential $U_1\to W$,
+ surjective differential $V\to U_0$ and nonzero cohomology; and
+ $\dim U_0\leq1$, $\dim U_1\leq1$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Failure of monotonicity]\label{thm:introD}
+Let $Q=K_m$, $z_0=-1+\ii$ and $z_1=1+\ii$.
+\begin{enumerate}
+\item[(i)] Let $\mathsf E$ be the orthogonal direct sum of a representation
+ with spaces of equal dimension $k\geq1$ at the two vertices, with a harmonic
+ metric, and of the complex $\CC\to\CC$ at the vertex $1$ in degrees $0,1$
+ with a nonzero differential $f$. Then the phase potential increases along
+ the whole trajectory, at the rate $\pi e^{-|f|^2}$, where $|f|$ is the norm
+ of $f$ for the metrics at the time considered, and it is not bounded below
+ on the metrics of $\mathsf E$.
+\item[(ii)] There is a three-term complex as in
+ Theorem~\ref{thm:introC}(ii) with $\dim U_0=2$, $\dim U_1=1$ and stable
+ cohomology, with a metric at which the phase potential increases along the
+ flow.
+\end{enumerate}
+\end{theorem}
+
+Theorem~\ref{thm:introC} is proved as Theorems~\ref{thm:onevertex}
+and~\ref{thm:rankone}, and Theorem~\ref{thm:introD} as
+Corollary~\ref{cor:increase} and Theorem~\ref{thm:twosidedfailure}.
+
+\emph{Sharpness.} For $Q=K_m$, $i_0=0$ and cohomology at both vertices,
+$\varphi$ lies between $\arg z_1$ and $\arg z_0$, so the condition
+$\arg z_0\geq\varphi$ is $\arg z_0\geq\arg z_1$. For $\arg z_0>\arg z_1$ and
+the same condition on $\varphi$ or $\dim U$, the strict decrease of the
+potential is \cite[Theorem~7.6]{wue26b}. Theorem~\ref{thm:introC}(i) adds
+arbitrary quivers, the case of equality, and cohomology at a single vertex. In Theorem~\ref{thm:introD}(i) the differential is at
+one vertex and $\arg z_1<\varphi$; so the condition
+$\arg z_{i_0}\geq\varphi$ of Theorem~\ref{thm:introC}(i) cannot be dropped.
+For $\dim U\geq2$ a lower bound on $\varphi$ cannot be dispensed with
+either: for $K_2$, the charges $z_0=10^{-6}(-1+\ii)$, $z_1=1+\frac\ii{500}$
+and cohomology of dimension vector $(1,1)$, where
+$\varphi=0.0020\ldots<\frac{2\pi}5$, there is a complex with $\dim U=2$ and a
+metric at which the potential increases \cite[Proposition~10.2]{wue26b}. We
+do not know whether the value $\frac{2\pi}5$ is sharp. Theorem~\ref{thm:introD}(ii) shows that the
+condition on the dimensions in Theorem~\ref{thm:introC}(ii) cannot be
+dropped; for $z_0=-1+\ii$, $z_1=1+\ii$ and cohomology with equal dimensions
+at the two vertices, the pairs $(\dim U_0,\dim U_1)$ for which the phase
+potential is nonincreasing at all metrics are determined in
+Corollary~\ref{cor:classification}.
+
+\emph{Method.} The closedness in Theorem~\ref{thm:introA} needs only two odd
+derivations of a graded algebra with the relations of
+Lemma~\ref{lem:abstract}, a functional that vanishes on
+supercommutators and on the images of the derivations, and a formula for the
+variation of the curvature element under a change of metric; the same lemma
+serves the algebra of the quiver
+and, for bundles, the algebra of endomorphism-valued forms, where it is the
+classical argument by which Bott--Chern forms do not depend, modulo
+$\partial$- and $\bar\partial$-exact forms, on the path of metrics. Theorem~\ref{thm:introC}(i) rests on a trace inequality of
+\cite[Theorem~3.1]{wue26b} for the Schur multiplier whose entries are the
+second divided differences of $e^{-x}$ at the points $\ell_i,0,\ell_k$, the
+$\ell_i$ being the eigenvalues of the differential times its adjoint
+(Theorem~\ref{thm:imported}). In the three-term complexes the point $0$ is
+replaced by the eigenvalues of the other differential times its adjoint, and
+no such inequality holds uniformly in these eigenvalues
+(Remark~\ref{rem:interpolation}); this is the source of the example in
+Theorem~\ref{thm:introD}(ii). The numerical values in that example are
+enclosures obtained with interval arithmetic \cite{joh17}.
+
+\begin{theorem}[Duality]\label{thm:introB}
+Let $\mathsf E^\vee$ be the dual complex over the opposite quiver, with
+$(E^\vee)_i^n=(E_i^{-n})^*$, the transposed maps, the dual metrics and the
+charges $-\overline{z_i}$. Then $\Omega^\vee=-(\Omega^\dagger)^{\mathsf T}$,
+the phases satisfy $\Phi^\vee=\pi-\Phi^{\mathsf T}$, the masses agree, and
+$h\mapsto e^{-\pi t}(h^{-1})^{\mathsf T}$ maps trajectories of the phase flow
+of $\mathsf E$ to trajectories of the phase flow of $\mathsf E^\vee$. If
+$Z(\mathsf E)\neq0$ and the argument of $Z(\mathsf E^\vee)$ is taken as
+$\pi-\varphi$, this map preserves the phase potential up to a constant.
+\end{theorem}
+
+Duality is used as a tool: it halves the cases in
+Theorem~\ref{thm:onevertex}, and it carries statements about complexes with a
+surjective differential in degrees $0,1$ over to complexes with an injective
+differential in degrees $-1,0$ (Remark~\ref{rem:injective}).
+
+\subsection{Bundles}
+The last section gives the corresponding formulation for a two-term complex
+$E^0\to E^1$ of holomorphic vector bundles with Hermitian metrics on a
+compact Riemann surface, with $\frac{\ii}{2\pi}\Lambda F_h$ in the place of
+the moment map, following the dictionary of \cite[Remark~5.14]{hkkp26} and
+using Quillen's superconnection \cite{qui85}. We record the formal
+properties, which for the closedness follow the theory of Bott--Chern forms
+\cite{bc65,don85,bgs88}: the one-form defined by $\Omega$ on the space of
+metrics is closed, with a primitive given by the same transgression; for a
+single bundle the phase potential is a positive multiple of Donaldson's
+functional \cite{don85}; the derivative formula of
+Theorem~\ref{thm:introA}(iii) holds along smooth solutions; the
+linearization of the flow is parabolic, in the sense that its principal
+symbol has eigenvalues with positive real part; and for a section $s$ of a
+line bundle the sum $(\Omega^0+\Omega^1)\,\omega$ of the two blocks of
+$\Omega$, times the K\"ahler form, is a representative of the Euler class of
+the kind constructed by Mathai and Quillen \cite{mq86}, and the integrand of
+the phase potential decreases at every point of the surface
+(Propositions~\ref{prop:bundleprimitive}--\ref{prop:section}).
+
+\subsection{Open questions}
+Convergence of the phase flow on the cohomology and decay of the acyclic
+part are not treated here, except for the contractible summands of
+Proposition~\ref{prop:contractible}. For two-term complexes over $K_m$ with
+a surjective differential at the vertex $0$, the decay is proved in
+\cite{wue26b} for all charges and the convergence for strictly ordered
+charges and polystable cohomology; for a differential at one vertex of a
+quiver without oriented cycles both are proved in \cite{wue26c}, and
+Remark~\ref{rem:injective} carries them to injective differentials. For the
+three-term complexes of Theorem~\ref{thm:introC}(ii) both are open. Beyond
+Theorems~\ref{thm:onevertex} and~\ref{thm:rankone} and
+Corollaries~\ref{cor:increase} and~\ref{cor:classification} we do not know
+when the phase potential is monotone. For bundles, existence of solutions of
+the flow is not proved, and neither is the convergence along the flow, for a
+section of a line bundle, of the form $(\Omega^0+\Omega^1)\,\omega$ to the
+current of integration over the zeros of the section.
+
+\subsection{Organization}
+Section~\ref{sec:setting} recalls the definition of \cite{hkkp26}, gives the
+integral formula for $\Omega$, fixes the terminology, and states the two
+matrix inequalities used from \cite{wue26b}. Section~\ref{sec:primitive}
+proves Theorem~\ref{thm:introA}(i),(ii), and Section~\ref{sec:rate} proves
+(iii) and Theorem~\ref{thm:introD}(i). Section~\ref{sec:duality} proves
+Theorem~\ref{thm:introB}. Section~\ref{sec:monotone} proves
+Theorems~\ref{thm:introC} and~\ref{thm:introD}(ii).
+Section~\ref{sec:bundles} is on bundles.

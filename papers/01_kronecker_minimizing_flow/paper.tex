@@ -1,0 +1,83 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+ pdftitle={Convergence of the minimizing flow on Kronecker quiver complexes},
+ pdfsubject={MSC 2020: 16G20, 53D20; 14D20, 14L24, 15A45, 18G80, 47A63},
+ pdfkeywords={quiver representation, complex of representations, stability condition, harmonic metric, polar decomposition, Kempf-Ness function, moment map, Schur multiplier, Lyapunov function, K\"ahler quotient}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\id}{I}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\coh}{\mathrm{coh}}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cS}{\mathcal S}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Ein}{Ein}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\spec}{spec}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+
+\title[The minimizing flow on Kronecker quiver complexes]{Convergence of the
+minimizing flow\\ on Kronecker quiver complexes}
+\author{Bernd Johannes Wuebben}
+\email{wuebben@gmail.com}
+\subjclass[2020]{Primary 16G20, 53D20; Secondary 14D20, 14L24, 15A45, 18G80, 47A63}
+\keywords{Quiver representation, complex of representations, stability
+condition, harmonic metric, polar decomposition, Kempf--Ness function, moment
+map, Schur multiplier, Lyapunov function, K\"ahler quotient}
+\date{November 18, 2026\\This version: November 18, 2026}
+
+\begin{document}
+\begin{abstract}
+We prove exponential cancellation of the acyclic part of a two-term complex
+$(V\to W)\to(U\to0)$ of generalized Kronecker quiver representations under
+the minimizing flow of Haiden, Katzarkov, Kontsevich and Pandit. The
+differential $D\colon V\to U$ is surjective with $U\ne0$, and the
+cohomology $H=(\ker D\to W)$ is nonzero at both vertices. For all vertex
+charges in the upper half-plane and every initial Hermitian metric, the
+endomorphism whose polar phase defines the flow approaches the cohomology
+endomorphism exponentially in trace norm. Here $H$ carries the induced metric
+and its endomorphism is extended by zero. If the source charge has larger
+argument than the target charge and
+$H$ is polystable, the induced metric multiplied by $e^{t\arg Z(H)}$
+converges exponentially to a harmonic metric, where $Z(H)$ is the central
+charge of $H$. In the same chamber, semistability suffices for the shifted
+moment map to tend to zero. Two matrix estimates control the arrow energy.
+At fixed positive definite imaginary part, minus the argument of the
+unitary polar factor is strictly monotone for the trace inner product.
+Schur multiplication by the second divided differences of $e^{-x}$ at
+$\ell_i,0,\ell_j$, with all $\ell_i>0$, sends each positive semidefinite
+matrix to a matrix $J$ whose negative part has trace at most
+$\tfrac25\tr J$.
+\end{abstract}
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_setting}
+\input{sections/03_kernel}
+\input{sections/04_phase}
+\input{sections/05_energy}
+\input{sections/06_convergence}
+\input{sections/07_potential}
+\input{sections/08_moduli}
+\input{sections/09_expectations}
+\input{sections/10_charges}
+\input{references}
+\end{document}

@@ -1,0 +1,468 @@
+\section{Stability, the Kempf--Ness function and convergence}\label{sec:convergence}
+
+\subsection{The stability parameter}
+Let $\mathcal H$ be a nonzero representation of $Q$ with dimension vector
+$(n_i)$ and $Z(\mathcal H)=|Z|e^{\ii\varphi}$, $\varphi\in(0,\pi)$,
+$\sigma=\sin\varphi$; in the applications it is the cohomology of a complex
+with a surjective differential, or the representation itself. For $i\in Q_0$
+put
+\[
+ \theta_i=\frac{\Ima(e^{-\ii\varphi}z_i)}\sigma=\frac{|z_i|\sin(\alpha_i-\varphi)}\sigma .
+\]
+Then $\sum_in_i\theta_i=0$, and for a real number $x$ one has
+$\arg(z_i+x)=\varphi$ if and only if $x=\theta_i$; moreover
+$|z_i+\theta_i|=y_i/\sigma$. A representation $\mathsf R$ has
+$\arg Z(\mathsf R)\leq\varphi$ if and only if
+$\sum_i\theta_i\dim\mathsf R_i\leq0$. A representation $\mathsf R$ with
+$\sum_i\theta_i\dim\mathsf R_i=0$, such as $\mathcal H$, is \emph{semistable}
+if $\sum_i\theta_i\dim\mathsf R'_i\leq0$ for each of its subrepresentations
+$\mathsf R'$, \emph{stable} if the inequality is strict for the proper
+nonzero ones, and \emph{polystable} if it is a direct sum of stable
+representations $\mathsf R''$ with $\sum_i\theta_i\dim\mathsf R''_i=0$. This
+is stability in the sense of King \cite[Definition~1.1]{kin94} for the real
+parameter $-\theta$ (the sign comes from the convention, outgoing minus
+incoming, for the moment map), and it is the semistability of objects of
+phase $\varphi/\pi$ for the stability condition of
+Section~\ref{sec:setting}. Since $\arg(z_i+x)=\varphi$ only for
+$x=\theta_i$, a metric on $\mathcal H$ is harmonic exactly when $\mu_i=\theta_i$ for all $i$; we call such a metric
+a \emph{zero of the shifted moment map} $\mu-\theta$, where $\mu=(\mu_i)$ is
+the moment map of Section~\ref{sec:setting}.
+
+\subsection{The Kempf--Ness function}
+Let $\mathcal X$ be the space of metrics
+$\mathfrak h=(\mathfrak h_i)_{i\in Q_0}$ on the spaces $\mathcal H_i$. A
+tangent vector at $\mathfrak h$ is a tuple $\xi=(\xi_i)$ of
+$\mathfrak h$-Hermitian endomorphisms, $\delta\mathfrak h=\mathfrak h\xi$, and
+$\norm\xi^2=\sum_i\tr\xi_i^2$ defines an invariant Riemannian metric for which
+$\mathcal X$ is complete, simply connected and nonpositively curved, with
+geodesics $u\mapsto\mathfrak he^{u\xi}$ and distance $d$. The
+\emph{Kempf--Ness function} of $\mathcal H$ is
+\begin{equation}\label{eq:KN}
+ \cK_{\mathcal H}(\mathfrak h)=\sum_a\tr\bigl(\mathfrak h_{\mathsf s(a)}^{-1}\beta_a^*\,\mathfrak h_{\mathsf t(a)}\beta_a\bigr)
+ +\sum_i\theta_i\log\det\mathfrak h_i ,
+\end{equation}
+where $\beta_a$ are the matrices of the arrows of $\mathcal H$ in fixed bases,
+$\beta_a^*$ their conjugate transposes, and $\mathfrak h_i$ stands for the
+Gram matrix. The first sum is the sum of the squared norms of the arrows for
+the metric $\mathfrak h$. Since $\sum_in_i\theta_i=0$, $\cK_{\mathcal H}$ is
+invariant under a common rescaling of the $\mathfrak h_i$. In terms of the
+function \eqref{eq:primitive} for the representation $\mathcal H$,
+$\cK_{\mathcal H}=\Ima(e^{-\ii\varphi}\cS_{\CC})/\sigma$.
+
+\begin{lemma}\label{lem:variation}
+The differential of the Kempf--Ness function is
+$d\cK_{\mathcal H}(\xi)=-\sum_i\tr\bigl(\xi_i(\mu_i-\theta_i)\bigr)$, and along
+a geodesic
+\[
+ \frac{d^2}{du^2}\cK_{\mathcal H}(\mathfrak he^{u\xi})
+ =\sum_a\norm{\xi_{\mathsf t(a)}\beta_a(u)-\beta_a(u)\xi_{\mathsf s(a)}}^2\geq0,\qquad
+ \beta_a(u)=e^{u\xi_{\mathsf t(a)}/2}\beta_ae^{-u\xi_{\mathsf s(a)}/2},
+\]
+in an $\mathfrak h$-orthonormal frame. So $\cK_{\mathcal H}$ is geodesically
+convex, its critical points are the zeros of the shifted moment map, and its
+gradient has the norm $\norm{\mu-\theta}:=(\sum_i\norm{\mu_i-\theta_i}^2)^{1/2}$.
+\end{lemma}
+
+\begin{proof}
+In an $\mathfrak h$-orthonormal frame the first sum of \eqref{eq:KN} at
+$\mathfrak he^{u\xi}$ is
+$\sum_a\tr(e^{-u\xi_{\mathsf s(a)}}\beta_a^\dagger e^{u\xi_{\mathsf t(a)}}\beta_a)$,
+and $\log\det$ is affine along geodesics with derivative $\tr\xi_i$.
+Differentiate once and twice.
+\end{proof}
+
+For $\mathfrak h\in\mathcal X$ let $\mathfrak a(\mathfrak h)$ be the space of
+tuples $\xi$ of $\mathfrak h$-Hermitian endomorphisms with
+$\xi_{\mathsf t(a)}\beta_a=\beta_a\xi_{\mathsf s(a)}$ for all arrows $a$, the
+Hermitian infinitesimal automorphisms of $\mathcal H$, and let
+$\mathcal Z\subset\mathcal X$ be the set of zeros of the shifted moment map. The next
+lemma collects the convexity properties used; they are classical for
+Kempf--Ness functions (see \cite[Theorem~4.3]{grs21} for actions on closed
+K\"ahler manifolds), and we include the short proofs for the present linear
+action.
+
+\begin{lemma}\label{lem:convexity}
+Suppose $\mathcal Z\neq\emptyset$.
+\begin{enumerate}
+\item[(a)] For $p\in\mathcal Z$, $\mathcal Z=\{pe^\xi:\xi\in\mathfrak a(p)\}$;
+ it is a closed totally geodesic submanifold.
+\item[(b)] The number
+ \[
+ \nu_*=\min\Bigl\{\sum_a\norm{\xi_{\mathsf t(a)}\beta_a-\beta_a\xi_{\mathsf s(a)}}^2:\
+ \xi\perp\mathfrak a(p),\ \norm\xi=1\Bigr\}>0,
+ \]
+ with the $\beta_a$ in a $p$-orthonormal frame, does not depend on
+ $p\in\mathcal Z$ (if $\mathfrak a(p)$ is the whole tangent space, which
+ happens when all arrows vanish, put $\nu_*=\infty$, with the convention
+ $\infty\cdot0=0$ below; then $\mathcal Z=\mathcal X$ and
+ $\cK_{\mathcal H}$ is constant); and for every unit
+ $\xi\perp\mathfrak a(p)$ and
+ $0\leq u\leq\varrho_*:=\log2/\sqrt2$,
+ $\frac{d^2}{du^2}\cK_{\mathcal H}(pe^{u\xi})\geq\nu_*/2$.
+\item[(c)] For $\mathfrak h\in\mathcal X$ put
+ $\mathfrak d=d(\mathfrak h,\mathcal Z)$ and
+ $\mathcal E=\cK_{\mathcal H}(\mathfrak h)-\min\cK_{\mathcal H}$. Then
+ $\mathcal E\leq\norm{\mu-\theta}\,\mathfrak d$,
+ $\mathcal E\geq\frac{\nu_*}4\min(\mathfrak d^2,\varrho_*\mathfrak d)$,
+ and if $\mathfrak d\leq\varrho_*$, then
+ $\norm{\mu-\theta}\geq\frac{\nu_*}2\mathfrak d$ and
+ $\mathcal E\leq\frac2{\nu_*}\norm{\mu-\theta}^2$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) If $\xi\in\mathfrak a(p)$, the second derivative of $\cK_{\mathcal H}$
+along $u\mapsto pe^{u\xi}$ vanishes identically by
+Lemma~\ref{lem:variation}, and the first derivative vanishes at $u=0$; so
+$pe^\xi\in\mathcal Z$. Conversely, if $pe^\xi\in\mathcal Z$, the convex
+function $u\mapsto\cK_{\mathcal H}(pe^{u\xi})$ takes its minimum at $u=0$ and
+$u=1$, hence is constant on $[0,1]$, and its second derivative at $0$ gives
+$\xi\in\mathfrak a(p)$. So $\mathcal Z$ is the image of a linear subspace
+under the exponential map at each of its points.
+
+(b) The quadratic form is positive on the orthogonal complement of its kernel
+$\mathfrak a(p)$. By Lemma~\ref{lem:variation},
+$\xi_{\mathsf t(a)}\beta_a(u)-\beta_a(u)\xi_{\mathsf s(a)}
+=e^{u\xi_{\mathsf t(a)}/2}(\xi_{\mathsf t(a)}\beta_a-\beta_a\xi_{\mathsf s(a)})e^{-u\xi_{\mathsf s(a)}/2}$
+has norm at least
+$e^{-u(\norm{\xi_{\mathsf t(a)}}_{\mathrm{op}}+\norm{\xi_{\mathsf s(a)}}_{\mathrm{op}})/2}$
+times that of $\xi_{\mathsf t(a)}\beta_a-\beta_a\xi_{\mathsf s(a)}$, and
+$\norm{\xi_{\mathsf s(a)}}_{\mathrm{op}}+\norm{\xi_{\mathsf t(a)}}_{\mathrm{op}}\leq\sqrt2$
+for a unit $\xi$, because $\mathsf s(a)\neq\mathsf t(a)$. So the second
+derivative is at least $e^{-\sqrt2u}\nu_*$. If $p'=pe^\zeta$ with
+$\zeta\in\mathfrak a(p)$, then $e^{-\zeta/2}$ is a tuple of automorphisms of
+$\mathcal H$ that maps $p$-orthonormal frames to $p'$-orthonormal frames and
+preserves the matrices $\beta_a$; conjugation by it carries $\mathfrak a(p)$
+and its orthogonal complement isometrically to those of $p'$.
+
+(c) Let $p\in\mathcal Z$ be a nearest point and
+$\mathfrak h=pe^{\mathfrak d\xi}$ with $\norm\xi=1$; then
+$\xi\perp\mathfrak a(p)$. The function
+$f(u)=\cK_{\mathcal H}(pe^{u\xi})-\min\cK_{\mathcal H}$ is convex with
+$f(0)=f'(0)=0$. First, $0=f(0)\geq f(\mathfrak d)-\mathfrak df'(\mathfrak d)$
+and $f'(\mathfrak d)\leq\norm{\mu-\theta}$. Secondly,
+$f''\geq\nu_*/2$ on $[0,\varrho_*]$ by (b), so $f(u)\geq\frac{\nu_*}4u^2$
+there, and $f(u)\geq f(\varrho_*)u/\varrho_*$ for $u\geq\varrho_*$ by
+convexity. Thirdly, if $\mathfrak d\leq\varrho_*$, then
+$\norm{\mu-\theta}\geq f'(\mathfrak d)=\int_0^{\mathfrak d}f''\geq\frac{\nu_*}2\mathfrak d$;
+combine with the first inequality.
+\end{proof}
+
+\begin{lemma}[Kempf--Ness, King]\label{lem:king}
+Let $\cK_*=\inf\cK_{\mathcal H}\in[-\infty,\infty)$.
+\begin{enumerate}
+\item[(a)] $\cK_*>-\infty$ if and only if $\mathcal H$ is semistable.
+\item[(b)] A zero of the shifted moment map exists if and only if $\mathcal H$ is
+ polystable.
+\end{enumerate}
+\end{lemma}
+
+For a parameter that is a positive multiple of an integral vector these are
+the theorems of Kempf--Ness and King \cite{kn79,kin94}: (b) is
+\cite[Proposition~6.5]{kin94}, and (a) is stated in
+\cite[Theorem~5.1]{hkkp23} and follows from
+\cite[Proposition~3.1, Lemmas~2.2 and~6.3]{kin94}. The parameter $\theta$ is
+real, and for a quiver with more than two vertices it need not be a multiple
+of an integral vector; (b) is stated for real parameters in
+\cite[Theorem~5.1]{hkkp26}, with reference to \cite{kin94}, and the general
+theory of \cite{grs21} has no integrality hypothesis but is written for
+actions on closed K\"ahler manifolds. We give the reduction to integral
+parameters.
+
+\begin{proof}
+Let $\Theta$ be the real vector space of all $\theta'\in\RR^{Q_0}$ with
+$\sum_in_i\theta_i'=0$, and write $\cK^{\theta'}$ for the function
+\eqref{eq:KN} with $\theta'$ in the place of $\theta$. The first sum of
+\eqref{eq:KN} does not depend on $\theta'$, so
+$\cK^{\sum c_l\theta^{(l)}}=\sum c_l\cK^{\theta^{(l)}}$ whenever $\sum c_l=1$. For
+a positive number $c$, $\cK^{c\theta'}$ at the arrows $\beta$ is $c$ times
+$\cK^{\theta'}$ at the arrows $\beta/\sqrt c$, which have the same
+subrepresentations; so the cited theorems hold for all rational
+$\theta'\in\Theta$. Let $\mathfrak S$ be the finite set of dimension vectors of
+subrepresentations of $\mathcal H$.
+
+(a) If a subrepresentation $\mathcal H'$ with dimension vector $(n_i')$ has
+$\sum_in_i'\theta_i>0$, let $\mathfrak h_i=1\oplus e^\tau$ on
+$\mathcal H_i'\oplus\mathcal H_i'^\perp$ for reference metrics. The first sum
+of \eqref{eq:KN} stays bounded as $\tau\to\infty$, because the arrows map
+$\mathcal H'$ to $\mathcal H'$, and
+$\sum_i\theta_i\log\det\mathfrak h_i=\tau\sum_i\theta_i(n_i-n_i')=-\tau\sum_in_i'\theta_i\to-\infty$.
+Conversely, the set of $\theta'\in\Theta$ for which $\mathcal H$ is
+semistable is the rational polyhedral cone
+$\{\theta':\sum_in_i'\theta_i'\leq0\text{ for all }(n_i')\in\mathfrak S\}$. A point
+of a rational polyhedral cone is a convex combination of rational points of
+the cone: the cone is generated by finitely many rational vectors $v_j$, and
+if $\theta=\sum_j\lambda_jv_j$ with $\lambda_j\geq0$, choose rational numbers
+$q_j>0$ with $\sum_j\lambda_j/q_j<1$; then $\theta$ is a convex combination of
+the points $q_jv_j$ and $0$. So $\theta=\sum_lc_l\theta^{(l)}$ with $c_l\geq0$, $\sum c_l=1$ and
+rational $\theta^{(l)}$ for which $\mathcal H$ is semistable, and
+$\cK^\theta=\sum_lc_l\cK^{\theta^{(l)}}$ is bounded below.
+
+(b) Let $\mathfrak h$ be a zero of the shifted moment map, $\mathcal H'$ a
+subrepresentation and $\Pi_i$ the $\mathfrak h$-orthogonal projection onto
+$\mathcal H_i'$. Since
+$\beta_a\Pi_{\mathsf s(a)}=\Pi_{\mathsf t(a)}\beta_a\Pi_{\mathsf s(a)}$,
+\[
+ \sum_in_i'\theta_i=\sum_i\tr(\Pi_i\mu_i)
+ =\sum_a\bigl(\norm{\beta_a\Pi_{\mathsf s(a)}}^2-\norm{\Pi_{\mathsf t(a)}\beta_a}^2\bigr)
+ =-\sum_a\norm{\Pi_{\mathsf t(a)}\beta_a(1-\Pi_{\mathsf s(a)})}^2\leq0 .
+\]
+So $\mathcal H$ is semistable, and if equality holds the orthogonal
+complement of $\mathcal H'$ is a subrepresentation, and $\mathfrak h$
+restricts to a zero of the shifted moment map on both summands. By induction on the
+dimension, $\mathcal H$ is polystable. Conversely, an orthogonal direct sum
+of zeros of the shifted moment maps of the summands is a zero of the shifted moment map; so
+let $\mathcal H$ be stable. The set of $\theta'\in\Theta$ for which
+$\mathcal H$ is stable is open and defined by finitely many strict rational
+inequalities, so $\theta=\sum_lc_l\theta^{(l)}$ with $c_l>0$, $\sum c_l=1$ and
+rational $\theta^{(l)}$ for which $\mathcal H$ is stable. For each $l$ the
+function $\cK^{\theta^{(l)}}$ attains its minimum
+\cite[Proposition~6.5]{kin94}, and by Lemma~\ref{lem:convexity}(a), which
+holds for every parameter in $\Theta$, its set of minimizers is
+$\{pe^\xi:\xi\in\mathfrak a(p)\}$; a stable representation has only scalar
+endomorphisms, so the minimizers form one orbit of the common rescalings. A
+geodesically convex function on the quotient of $\mathcal X$ by the common
+rescalings, which is again a complete simply connected manifold of
+nonpositive curvature, with a single minimizer is proper: it exceeds its
+minimum by a positive constant on the unit sphere around the minimizer, and
+then by that constant times $d$ at distance $d\geq1$. Hence
+$\cK^\theta=\sum_lc_l\cK^{\theta^{(l)}}$ is proper on this quotient and attains
+its minimum, at a critical point.
+\end{proof}
+
+\subsection{Convergence}
+For $i\in Q_0$ let $G_i(u)=\varphi-\arg(z_i+u)$ for real $u$. These functions
+are increasing, $G_i(\theta_i)=0$, and
+$0<G_i'(u)=y_i/|z_i+u|^2\leq1/y_i$. For a number $\bar\cN\geq0$ put
+\begin{equation}\label{eq:Gamma}
+ \bar Q=\max\bigl\{\bar\cN,\ \max_i|\theta_i|\bigr\},\qquad
+ \Gamma=\max_i\frac{(|z_i|+\bar Q)^2}{y_i}.
+\end{equation}
+The next proposition is the common part of the convergence theorems for
+representations and for complexes; for representations the perturbation
+$\delta$ in it is zero.
+
+\begin{proposition}\label{prop:perturbed}
+Let $\mathfrak h(t)$, $t\geq\tau_0$, be a differentiable curve in $\mathcal X$
+whose velocity $\xi=\mathfrak h^{-1}\dot{\mathfrak h}$ has the form
+\[
+ \xi_i=G_i(\mu_i)-\delta_i\qquad(i\in Q_0),
+\]
+with $\mu=\mu(\mathfrak h(t))$ and $\mathfrak h$-Hermitian endomorphisms
+$\delta_i$. Put $\norm\delta^2=\sum_i\norm{\delta_i}^2$, and suppose that for
+$t\geq\tau_0$ the sum of the squared norms of the arrows for the metric
+$\mathfrak h(t)$ is at most $\bar\cN$, and that
+$\norm{\delta(t)}\leq c_\delta\,e^{-\kappa(t-\tau_0)}$ with constants
+$c_\delta\geq0$, $\kappa>0$. Let $\Gamma$ be as in \eqref{eq:Gamma}. Then:
+\begin{enumerate}
+\item[(i)] $\frac d{dt}\cK_{\mathcal H}(\mathfrak h(t))
+ \leq-\frac1\Gamma\norm{\mu-\theta}^2+\norm{\mu-\theta}\,\norm\delta$ for
+ $t\geq\tau_0$.
+\item[(ii)] If $\mathcal H$ is semistable, then $\mu_i\to\theta_i$ for all
+ $i$ and $\cK_{\mathcal H}(\mathfrak h(t))\to\cK_*$ as $t\to\infty$.
+\item[(iii)] If $\mathcal H$ is polystable, there is a zero
+ $\mathfrak h_\infty$ of the shifted moment map with
+ $d(\mathfrak h(t),\mathfrak h_\infty)\leq\mathfrak C\,e^{-\varkappa t}$ for
+ every $\varkappa<\min\{\nu_*/(8\Gamma),\kappa\}$, with a constant
+ $\mathfrak C$ depending on $\varkappa$ and the curve; and $\mu-\theta$ tends
+ to zero exponentially.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) By Lemma~\ref{lem:variation},
+\[
+ \frac d{dt}\cK_{\mathcal H}(\mathfrak h(t))=-\sum_i\tr\bigl((\mu_i-\theta_i)G_i(\mu_i)\bigr)
+ +\sum_i\tr\bigl((\mu_i-\theta_i)\delta_i\bigr).
+\]
+The eigenvalues of $\mu_i$ lie in $[-\bar\cN,\bar\cN]$; for real $u$ with
+$|u|\leq\bar Q$, $(u-\theta_i)G_i(u)=G_i'(\zeta)(u-\theta_i)^2$ with a point
+$\zeta$ between $u$ and $\theta_i$, and $G_i'(\zeta)\geq1/\Gamma$.
+
+(ii) Put $\mathcal E(t)=\cK_{\mathcal H}(\mathfrak h(t))-\cK_*\geq0$
+(Lemma~\ref{lem:king}(a)). By (i),
+\[
+ \frac d{dt}\cK_{\mathcal H}(\mathfrak h(t))\leq-\frac1{2\Gamma}\norm{\mu-\theta}^2+\frac\Gamma2\norm\delta^2 ,
+\]
+so $\norm{\mu-\theta}^2$ is integrable on $[\tau_0,\infty)$. In
+$\mathfrak h$-orthonormal frames the arrows evolve by
+$\dot\beta_a=\frac12(\xi_{\mathsf t(a)}\beta_a-\beta_a\xi_{\mathsf s(a)})$, and
+$\beta_a$ and $\xi$ are bounded; so the derivatives of the $\mu_i$ are
+bounded, $\norm{\mu-\theta}^2$ is uniformly continuous, and
+$\mu_i\to\theta_i$. The function
+$\mathcal E(t)+\frac\Gamma2\int_t^\infty\norm\delta^2$ is nonincreasing, so
+$\mathcal E$ has a limit $\mathcal E_\infty\geq0$. Suppose
+$\mathcal E_\infty>0$ and choose $\mathfrak h'$ with
+$\cK_{\mathcal H}(\mathfrak h')-\cK_*<\mathcal E_\infty/2$. By convexity along
+the geodesic from $\mathfrak h(t)$ to $\mathfrak h'$,
+$\cK_{\mathcal H}(\mathfrak h(t))-\cK_{\mathcal H}(\mathfrak h')\leq\norm{\mu-\theta}\,d(\mathfrak h(t),\mathfrak h')$,
+and the left side is at least $\mathcal E_\infty/4$ for large $t$. The speed
+of $\mathfrak h(t)$ is at most $\norm{\mu-\theta}/\min_iy_i+\norm\delta$,
+which is square integrable, so
+$d(\mathfrak h(t),\mathfrak h')\leq c+c'\sqrt t$; then
+$\norm{\mu-\theta}^2\geq\mathcal E_\infty^2/(16(c+c'\sqrt t)^2)$ for large
+$t$, which is not integrable. So $\mathcal E\to0$.
+
+(iii) By Lemma~\ref{lem:king}(b), $\mathcal Z\neq\emptyset$. By
+Lemma~\ref{lem:convexity}(c) and $\mathcal E\to0$,
+$d(\mathfrak h(t),\mathcal Z)\leq\varrho_*$ for large $t$, and then
+$\norm{\mu-\theta}^2\geq\frac{\nu_*}2\mathcal E$, so
+$\frac d{dt}\mathcal E\leq-\frac{\nu_*}{4\Gamma}\mathcal E+\frac\Gamma2\norm\delta^2$
+and $\mathcal E(t)=O(e^{-2\varkappa t})$ for every
+$2\varkappa<\min\{\nu_*/(4\Gamma),2\kappa\}$. Integrating the second
+inequality of the proof of (ii) over $[t,t+1]$ bounds
+$\int_t^{t+1}\norm{\mu-\theta}^2$ by a multiple of
+$\mathcal E(t)+\int_t^{t+1}\norm\delta^2$; by the bound on the speed and the
+Cauchy--Schwarz inequality the length of $\mathfrak h$ over $[t,t+1]$ is
+$O(e^{-\varkappa t})$, so $\mathfrak h(t)$ converges at this rate, and the
+limit is a zero of the shifted moment map by continuity. Finally $\mu$ is a
+locally Lipschitz function on $\mathcal X$ with $\mu(\mathfrak h_\infty)=\theta$.
+\end{proof}
+
+\begin{theorem}[Representations]\label{thm:representations}
+Let $Q$ be a finite quiver without oriented cycles, with charges $z_i$ in the
+upper half-plane, and let $\mathsf R$ be a nonzero representation of $Q$
+with $Z(\mathsf R)=|Z|e^{\ii\varphi}$ and
+$\theta_i=\Ima(e^{-\ii\varphi}z_i)/\sin\varphi$. Let $h(t)$ be the solution
+of the phase flow $h_i^{-1}\dot h_i=-\arg(z_i+\mu_i)$ from an arbitrary
+initial metric, and $\mathfrak h(t)=e^{\varphi t}h(t)$. Then:
+\begin{enumerate}
+\item[(a)] the Kempf--Ness function $\cK_{\mathsf R}(\mathfrak h(t))=\cK_{\mathsf R}(h(t))$ is
+ nonincreasing;
+\item[(b)] if $\mathsf R$ is semistable, then $\mu_i(t)\to\theta_i$ for all
+ $i$, $\cK_{\mathsf R}(h(t))\to\inf\cK_{\mathsf R}$, and the mass
+ $\sum_i\tr|z_i+\mu_i(t)|$ tends to $|Z|$;
+\item[(c)] if $\mathsf R$ is polystable, $\mathfrak h(t)$ converges to a
+ harmonic metric $\mathfrak h_\infty$, that is, a metric with
+ $\mu_i(\mathfrak h_\infty)=\theta_i$ for all $i$, and
+ $d(\mathfrak h(t),\mathfrak h_\infty)\leq\mathfrak C\,e^{-\varkappa t}$ for
+ every $\varkappa<\nu_*/(8\Gamma)$, where $\nu_*$ is the number of
+ Lemma~\ref{lem:convexity}(b) and $\Gamma$ is given by \eqref{eq:Gamma} with
+ $\bar\cN=\bar\cN_{\mathsf R}$, the bound of
+ Proposition~\ref{prop:reparrows}; and $\mu-\theta$ and the mass minus $|Z|$
+ tend to zero exponentially.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The block of $\Omega$ at $i$ is $z_i+\mu_i$, so the velocity of
+$\mathfrak h(t)$ is $\xi_i=\varphi-\arg(z_i+\mu_i)=G_i(\mu_i)$. By
+Lemma~\ref{lem:variation},
+$\frac d{dt}\cK_{\mathsf R}(\mathfrak h(t))=-\sum_i\tr\bigl((\mu_i-\theta_i)G_i(\mu_i)\bigr)\leq0$,
+because $(u-\theta_i)G_i(u)\geq0$ for all real $u$; this is (a). By
+Proposition~\ref{prop:reparrows} the sum of the squared norms of the arrows
+is at most $\bar\cN_{\mathsf R}$ for $t\geq t_{\mathsf R}$, and it does not
+change under a common rescaling of the metrics. So
+Proposition~\ref{prop:perturbed} applies with $\tau_0=t_{\mathsf R}$,
+$\delta=0$ and every $\kappa>0$, and gives (b) and (c); for the mass,
+$\sum_i\tr|z_i+\mu_i|\to\sum_in_i|z_i+\theta_i|=\sum_in_iy_i/\sigma=|Z|$,
+exponentially in case (c) because $\tr|z_i+\mu_i|$ is a Lipschitz function of
+$\mu_i$.
+\end{proof}
+
+\begin{theorem}[Complexes with a surjective differential]\label{thm:convergence}
+Let $\mathsf E$ be a complex with a surjective differential at $i_0$ and
+$r\geq1$, with $W_j\neq0$ for some $j\neq i_0$ and with at least one arrow
+leaving $i_0$; fix a height function and let the constants be as in
+\eqref{eq:constants}, and $\Gamma$ as in \eqref{eq:Gamma}. Let
+\[
+ \mathfrak h(t)=\bigl(e^{\varphi t}h_i(t)|_{\mathcal H_i}\bigr)_{i\in Q_0}
+\]
+be the metrics induced on the cohomology representation $\mathcal H$,
+multiplied by $e^{\varphi t}$; at $i_0$ the induced metric is the restriction
+of the metric of $V$ to $\ker D$. Put
+$c_\delta^2=\frac{2\pi\bar\varpi\,s_1}{y_\ast}+s_1^2\sum_{j\neq i_0}y_j^{-2}$.
+For all charges in the upper half-plane:
+\begin{enumerate}
+\item[(i)] For $t\geq t_2$,
+ \[
+ \frac d{dt}\cK_{\mathcal H}(\mathfrak h(t))\leq-\frac1\Gamma\norm{\mu-\theta}^2+\norm{\mu-\theta}\,\norm\delta,
+ \qquad\norm{\delta(t)}\leq c_\delta\,e^{-\frac{\bar\varpi}4(t-t_1)}.
+ \]
+\item[(ii)] If $\mathcal H$ is semistable, then as $t\to\infty$:
+ $\mu_i\to\theta_i$ for all $i$, $\cK_{\mathcal H}(\mathfrak h(t))\to\cK_*$
+ and $\mass(h(t))\to|Z|$.
+\item[(iii)] If $\mathcal H$ is polystable, $\mathfrak h(t)$ converges to a
+ harmonic metric $\mathfrak h_\infty$ of $\mathcal H$, a zero of the shifted
+ moment map, with
+ $d(\mathfrak h(t),\mathfrak h_\infty)\leq\mathfrak C\,e^{-\varkappa t}$ for
+ every $\varkappa<\min\{\nu_*/(8\Gamma),\ \bar\varpi/4\}$; and $\mu-\theta$ and
+ $\mass-|Z|$ tend to zero exponentially.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By \eqref{eq:flow} the velocity of $\mathfrak h(t)$ at the vertex $i$ is
+$\varphi-\Phi_i$, with $\Phi_{HH}$ in the place of $\Phi_{i_0}$, that is,
+$\xi_i=G_i(\mu_i)-\delta_i$ with the $\delta_i$ of
+Section~\ref{sec:setting}. For $t\geq t_0$ the sum of the squared norms of
+the arrows of $\mathcal H$ is at most $\cN\leq\bar\cN$ by
+\eqref{eq:energybounds} and Theorem~\ref{thm:energy}, and for $t\geq t_2$
+Theorem~\ref{thm:decay}(i),(iii) gives
+$\norm\delta^2\leq\frac{2\pi\bar\varpi}{y_\ast}s+s^2\sum_jy_j^{-2}\leq c_\delta^2e^{-\frac{\bar\varpi}2(t-t_1)}$.
+So Proposition~\ref{prop:perturbed} applies with $\tau_0=t_2$ and
+$\kappa=\bar\varpi/4$. For the mass,
+$\sum_i\norm{z_i+\mu_i}_1\to\sum_in_i|z_i+\theta_i|=|Z|$, exponentially in
+case (iii) because $\norm{z_i+\mu_i}_1$ is a Lipschitz function of $\mu_i$,
+and the difference to $\mass$ is bounded by Theorem~\ref{thm:decay}(ii).
+\end{proof}
+
+\begin{remark}\label{rem:vanishing}
+Let $\mathsf E$ have a surjective differential at $i_0$ and $r\geq1$, and
+let $\rho_a=0$ for all arrows $a$ out of $i_0$; this includes the case in
+which all $W_j$ vanish. By Proposition~\ref{prop:sink} the complex is, for
+every metric, the orthogonal direct sum of its cohomology representation
+and an exact complex at $i_0$, and the flow preserves this decomposition. So
+the metrics induced on the cohomology follow the phase flow of the
+representation $\mathcal H$, Theorem~\ref{thm:representations} applies to
+them, and $\mass(h(t))\to|Z|$ if $\mathcal H$ is semistable, exponentially if
+it is polystable.
+\end{remark}
+
+For example, Theorems~\ref{thm:decay} and~\ref{thm:convergence},
+Proposition~\ref{prop:sink} and Remark~\ref{rem:vanishing} apply to the
+quiver $A_l$ with the linear orientation, with the differential at any
+vertex.
+
+\subsection{Complexes with an injective differential}
+Let $\mathsf E'$ be a complex with an injective differential at $i_0$
+(Definition~\ref{def:type}), with $U'\xrightarrow{D'}V'$ at $i_0$. The
+arrows out of $i_0$ vanish on $D'U'$, and the cohomology is a representation
+in degree zero with $V'/D'U'$ at $i_0$; the \emph{exact part} is the
+subcomplex $U'\to D'U'$, of rank $\dim U'$. The metric induced on $V'/D'U'$ is
+the quotient metric, that is, the metric of the orthogonal complement of
+$D'U'$ in $V'$.
+
+\begin{proposition}[Injective differential]\label{prop:injective}
+Let $\mathsf E'$ be a complex with an injective differential at $i_0$ and
+$U'\neq0$, with total phase $\varphi$, and let $\lambda'$ be the least
+eigenvalue of $D'^\dagger D'$. Its dual $\mathsf E'^\vee$ over the opposite quiver, with
+the charges $-\overline{z_i}$, is a complex with a surjective differential at
+$i_0$ and total phase $\pi-\varphi$. Along the phase flow of $\mathsf E'$:
+\begin{enumerate}
+\item[(i)] $\lambda'\to\infty$, and the blocks of $\Omega$ approach those of
+ the cohomology representation with its induced metrics, with the bound of
+ Theorem~\ref{thm:decay}(ii), or of Proposition~\ref{prop:sink}, for
+ $\mathsf E'^\vee$;
+\item[(ii)] the statements of Theorem~\ref{thm:convergence}, or of
+ Remark~\ref{rem:vanishing}, hold for the metrics induced on the cohomology
+ of $\mathsf E'$, multiplied by $e^{\varphi t}$, with the constants of
+ $\mathsf E'^\vee$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+The opposite quiver has no oriented cycles, and the transposed differential
+$D'^{\mathsf T}:V'^*\to U'^*$ is surjective in degrees $0,1$. By
+Proposition~\ref{prop:usedc}(b), the trajectories correspond by
+$h\mapsto e^{-\pi t}(h^{-1})^{\mathsf T}$, the blocks of $\Omega$ correspond
+up to sign and complex conjugation in dual orthonormal frames, with the same
+trace norms, and the mass is preserved. The cohomology representation of
+$\mathsf E'^\vee$ is the dual of that of $\mathsf E'$, with the dual of the
+induced metrics; subrepresentations of one correspond to quotients of the
+other, and the argument $\psi$ of a central charge corresponds to
+$\pi-\psi$, so that one is semistable, stable or polystable if and only if
+the other is. The normalized induced metrics
+$e^{(\pi-\varphi)t}e^{-\pi t}(h^{-1})^{\mathsf T}$ of $\mathsf E'^\vee$
+converge exactly when $e^{\varphi t}h$ does.
+\end{proof}

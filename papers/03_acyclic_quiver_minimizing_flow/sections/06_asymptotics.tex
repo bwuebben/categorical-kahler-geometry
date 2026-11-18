@@ -1,0 +1,699 @@
+\section{Semistable and unstable cohomology}\label{sec:asymptotics}
+
+This section describes the long-time behaviour when $\mathcal H$ is not
+polystable. For semistable $\mathcal H$ the curve of normalized metrics
+stays at bounded distance from a trajectory of a gradient flow of the
+Kempf--Ness function, whose asymptotics are known
+(Theorem~\ref{thm:comparison}). With no hypothesis on $\mathcal H$, the mass
+converges to the mass of the Harder--Narasimhan filtration, the filtration
+of the spaces by the exponential rate of decay of the metric is that
+filtration, and its factors, which are semistable, follow the semistable
+theory (Theorem~\ref{thm:hn}).
+
+Throughout the section $Q$ is a finite quiver without oriented cycles,
+$\mathcal H$ is a nonzero representation of $Q$, with
+$Z(\mathcal H)=|Z|e^{\ii\varphi}$, and $\mathfrak h(t)$,
+$t\geq\tau_0$, is a curve of metrics on $\mathcal H$ as in
+Proposition~\ref{prop:perturbed}: it is continuously differentiable, its
+velocity is $\xi_i=G_i(\mu_i)-\delta_i$ with continuous
+$\mathfrak h$-Hermitian $\delta_i$,
+$\norm{\delta(t)}\leq c_\delta e^{-\kappa(t-\tau_0)}$ with $\kappa>0$, and the
+sum of the squared norms of the arrows is at most $\bar\cN$. We call this
+\emph{hypothesis} (P). No stability of $\mathcal H$ is assumed in (P). It
+holds, with $\delta=0$, for the normalized phase flow
+$\mathfrak h=e^{\varphi t}h$ on a representation of a quiver without oriented
+cycles (Proposition~\ref{prop:reparrows}); and it holds for the normalized
+metrics induced on the cohomology of a complex with a surjective or an
+injective differential at one vertex, for every cohomology representation:
+the proof of Theorem~\ref{thm:convergence}(i) and
+Theorem~\ref{thm:decay} use no stability, and Remark~\ref{rem:vanishing}
+covers the complexes excluded there. For an injective differential one
+passes to the dual complex (Proposition~\ref{prop:injective}): the
+normalized induced metrics of the two are dual to each other, so their
+velocities are $\xi$ and $-\xi^{\mathsf T}$; the moment map changes sign
+under duality; and
+$\varphi-\arg(z_i+u)=-\bigl[(\pi-\varphi)-\arg(-\overline{z_i}-u)\bigr]$
+for real $u$. So (P) for the dual gives (P).
+
+We write $\Phi^{\mathcal H}_i=\arg(z_i+\mu_i)=\varphi-G_i(\mu_i)$ for the
+phase of the representation $\mathcal H$ with the metric $\mathfrak h$, a
+Hermitian matrix in an orthonormal frame; the function
+$u\mapsto\arg(z_i+u)$ is decreasing, with derivative in $[-1/y_i,0)$. In
+orthonormal frames of $\mathfrak h(t)$ whose coordinate maps $g_i$, with
+$|g_iv|^2=\mathfrak h_i(v,v)$, satisfy $\dot g_ig_i^{-1}=\frac12\xi_i$, the
+arrows evolve by
+\begin{equation}\label{eq:betaflow}
+ \dot\beta_a=\tfrac12\bigl(\beta_a(\Phi^{\mathcal H}_{\mathsf s(a)}+\delta_{\mathsf s(a)})
+ -(\Phi^{\mathcal H}_{\mathsf t(a)}+\delta_{\mathsf t(a)})\beta_a\bigr),
+\end{equation}
+and the eigenvalues of all $\Phi^{\mathcal H}_i$ lie in a compact interval
+$[\psi_-,\psi_+]\subset(0,\pi)$ determined by the charges and $\bar\cN$. Two
+facts on functions of Hermitian matrices are used. If $g$ is a continuously
+differentiable function on $\RR$ with $|g'|\leq c$, then
+$\norm{g(A)-g(B)}\leq c\norm{A-B}$ for Hermitian $A,B$ and the
+Hilbert--Schmidt norm; and if $g$ is nonincreasing, then
+$\tr\bigl((g(A)-g(B))(A-B)\bigr)\leq0$. Both follow from the identities
+$\inner{u_j}{(g(A)-g(B))v_l}=(g(a_j)-g(b_l))\inner{u_j}{v_l}$ and
+$\inner{u_j}{(A-B)v_l}=(a_j-b_l)\inner{u_j}{v_l}$ for orthonormal
+eigenvectors $u_j$ of $A$ and $v_l$ of $B$ with eigenvalues $a_j$, $b_l$.
+
+\subsection{Semistable cohomology: comparison with the gradient flow}
+Put
+\[
+ \mathsf m_i=\frac1{G_i'(\theta_i)}=\frac{y_i}{\sigma^2}\qquad(i\in Q_0),
+\]
+and let $d_{\mathsf m}$ be the distance of the Riemannian metric
+$\norm\xi_{\mathsf m}^2=\sum_i\mathsf m_i\tr\xi_i^2$ on $\mathcal X$. With
+this metric $\mathcal X$ is the product of the symmetric spaces of positive
+definite Hermitian matrices, the $i$-th factor with its invariant metric
+multiplied by $\mathsf m_i$; it is complete, simply connected and
+nonpositively curved, its geodesics are again
+$u\mapsto\mathfrak he^{u\xi}$, and
+$d_{\mathsf m}(\mathfrak h,\mathfrak h')^2=\sum_i\mathsf m_i\norm{\log(\mathfrak h_i^{-1/2}\mathfrak h_i'\mathfrak h_i^{-1/2})}^2$.
+By Lemma~\ref{lem:variation} the gradient of $\cK_{\mathcal H}$ for this
+metric is the tangent vector $(-(\mu_i-\theta_i)/\mathsf m_i)_i$. The
+\emph{weighted gradient flow} is
+\begin{equation}\label{eq:gradflow}
+ \mathfrak g_i^{-1}\dot{\mathfrak g}_i=\frac{\mu_i(\mathfrak g)-\theta_i}{\mathsf m_i}\qquad(i\in Q_0).
+\end{equation}
+Its solutions exist for all later times: the sum $q$ of the squared norms of
+the arrows satisfies
+$\dot q=-\sum_i\tr(\mu_i\xi_i)\leq\sum_in_i\theta_i^2/(4\mathsf m_i)$ along
+\eqref{eq:gradflow}, so the velocity is bounded on bounded intervals of
+time. The flow \eqref{eq:gradflow} is the gradient flow studied in
+\cite{hkkp23}: it is \cite[(5.11)]{hkkp23}, with the parameters
+$\mathsf m_i$ and $\theta_i$ there.
+
+\begin{lemma}\label{lem:quadratic}
+For all real $u$ and all $i$,
+$\bigl|G_i(u)-(u-\theta_i)/\mathsf m_i\bigr|\leq\frac{3\sqrt3}{16\,y_i^2}(u-\theta_i)^2$.
+Consequently
+$\norm{G_i(M)-(M-\theta_i)/\mathsf m_i}\leq\frac{3\sqrt3}{16\,y_i^2}\norm{M-\theta_i}^2$
+for every Hermitian matrix $M$.
+\end{lemma}
+
+\begin{proof}
+$G_i''(u)=-2y_i(x_i+u)/((x_i+u)^2+y_i^2)^2$, and
+$2y|w|/(w^2+y^2)^2$ has its maximum $3\sqrt3/(8y^2)$ at $w^2=y^2/3$. Use
+Taylor's formula at $\theta_i$, where $G_i=0$ and $G_i'=1/\mathsf m_i$. For a
+Hermitian matrix apply this to the eigenvalues $u_k$, and
+$(\sum_k(u_k-\theta_i)^4)^{1/2}\leq\sum_k(u_k-\theta_i)^2$.
+\end{proof}
+
+\begin{lemma}\label{lem:hadamard}
+Let $\mathcal M$ be a complete, simply connected Riemannian manifold of
+nonpositive sectional curvature, with distance $d$, and $F$ a continuously
+differentiable function on $\mathcal M$ that is convex along geodesics. Let
+$y(t)$ be a solution of $\dot y=-\operatorname{grad}F(y)$ and $x(t)$ a
+continuously differentiable curve with
+$\dot x=-\operatorname{grad}F(x)+e(t)$ on an interval $[t_0,t_1]$. Then
+$d(x(t),y(t))\leq d(x(t_0),y(t_0))+\int_{t_0}^t|e|$ for $t_0\leq t\leq t_1$.
+\end{lemma}
+
+\begin{proof}
+On such a manifold any two points $p,p'$ are joined by a unique geodesic
+$\gamma_{p,p'}:[0,1]\to\mathcal M$, which depends smoothly on $(p,p')$, and
+$d(p,p')^2=\int_0^1|\gamma_{p,p'}'|^2$ is smooth. By the first variation
+formula, with $\gamma_t=\gamma_{x(t),y(t)}$ and $\rho(t)=d(x(t),y(t))$,
+\[
+ \frac d{dt}\,\frac{\rho^2}2=\inner{\dot y}{\gamma_t'(1)}-\inner{\dot x}{\gamma_t'(0)}
+ =-\inner{\operatorname{grad}F(y)}{\gamma_t'(1)}+\inner{\operatorname{grad}F(x)}{\gamma_t'(0)}
+ -\inner e{\gamma_t'(0)} .
+\]
+The function $u\mapsto F(\gamma_t(u))$ is convex and differentiable, so its
+derivative $\inner{\operatorname{grad}F(\gamma_t(u))}{\gamma_t'(u)}$ is
+nondecreasing, and the right side is at most $|e|\,\rho$. For
+$\epsilon>0$ this gives $\frac d{dt}\sqrt{\rho^2+\epsilon}\leq|e|$; integrate
+and let $\epsilon\to0$.
+\end{proof}
+
+For $e=0$ the lemma says that the gradient flow does not increase distances;
+for the flow \eqref{eq:gradflow} this is due to Harada and Wilkin
+\cite{hw11}, as recalled in \cite[\S5.3]{hkkp23}.
+
+\begin{theorem}[Comparison with the gradient flow]\label{thm:comparison}
+Assume (P) and let $\mathcal H$ be semistable. Let $\mathfrak g(t)$,
+$t\geq\tau_0$, be the solution of the weighted gradient flow
+\eqref{eq:gradflow} with $\mathfrak g(\tau_0)=\mathfrak h(\tau_0)$. Then for
+all $t\geq\tau_0$
+\[
+ d_{\mathsf m}\bigl(\mathfrak h(t),\mathfrak g(t)\bigr)\leq C_{\mathrm e}
+ :=\max_i\frac{3\sqrt3}{16\,\sigma\,y_i^{3/2}}\Bigl(2\Gamma\bigl(\cK_{\mathcal H}(\mathfrak h(\tau_0))-\cK_*\bigr)
+ +\frac{\Gamma^2c_\delta^2}{2\kappa}\Bigr)
+ +\frac{c_\delta}\kappa\,\max_i\sqrt{\mathsf m_i},
+\]
+with $\Gamma$ as in \eqref{eq:Gamma}; and, as Hermitian forms,
+$e^{-c}\mathfrak g_i(t)\leq\mathfrak h_i(t)\leq e^{c}\mathfrak g_i(t)$ with
+$c=C_{\mathrm e}/\min_i\sqrt{\mathsf m_i}$.
+\end{theorem}
+
+\begin{proof}
+The velocity of $\mathfrak h$ is minus the gradient of $\cK_{\mathcal H}$ for
+the metric $\norm\cdot_{\mathsf m}$ plus the tangent vector
+$e_i=[G_i(\mu_i)-(\mu_i-\theta_i)/\mathsf m_i]-\delta_i$. By
+Lemma~\ref{lem:quadratic},
+$\norm e_{\mathsf m}\leq\max_i\frac{3\sqrt3}{16\,\sigma y_i^{3/2}}\norm{\mu-\theta}^2+\max_i\sqrt{\mathsf m_i}\,\norm\delta$.
+By Proposition~\ref{prop:perturbed}(i) and Young's inequality,
+$\frac d{dt}\cK_{\mathcal H}(\mathfrak h(t))\leq-\frac1{2\Gamma}\norm{\mu-\theta}^2+\frac\Gamma2\norm\delta^2$,
+and $\cK_{\mathcal H}\geq\cK_*>-\infty$ because $\mathcal H$ is semistable
+(Lemma~\ref{lem:king}(a)); so
+$\int_{\tau_0}^\infty\norm{\mu-\theta}^2\leq2\Gamma(\cK_{\mathcal H}(\mathfrak h(\tau_0))-\cK_*)+\Gamma^2c_\delta^2/(2\kappa)$.
+Lemma~\ref{lem:hadamard} on $\mathcal X$ with the metric
+$\norm\cdot_{\mathsf m}$ and $F=\cK_{\mathcal H}$, which is convex along the
+geodesics $u\mapsto\mathfrak he^{u\xi}$ (Lemma~\ref{lem:variation}), gives
+the first claim. The second follows from
+$\norm{\log(\mathfrak g_i^{-1/2}\mathfrak h_i\mathfrak g_i^{-1/2})}\leq d_{\mathsf m}(\mathfrak h,\mathfrak g)/\sqrt{\mathsf m_i}$.
+\end{proof}
+
+\begin{corollary}\label{cor:presentations}
+Two curves that satisfy (P) for the same semistable representation
+$\mathcal H$ and the same charges remain at bounded distance from each
+other. In particular this holds for the normalized metrics induced on the
+cohomology of two complexes with a surjective or injective differential at
+one vertex whose cohomology representations are identified by a fixed
+isomorphism, and for any two initial metrics.
+\end{corollary}
+
+\begin{proof}
+Each of the two curves is at bounded distance from a solution of
+\eqref{eq:gradflow} by Theorem~\ref{thm:comparison}, and two solutions of
+\eqref{eq:gradflow} do not move apart by Lemma~\ref{lem:hadamard} with $e=0$.
+\end{proof}
+
+The asymptotics of the flow \eqref{eq:gradflow} on a semistable
+representation are the subject of \cite{hkkp23}. In the notation of
+\cite[\S5.2]{hkkp23} the trace is $\tau(b)=\sum_i\mathsf m_i\tr b_i$, the
+central element $\rho$ has the components $\theta_i/\mathsf m_i$, the flow is
+\cite[(5.28)]{hkkp23}, and the standing assumption \cite[(5.59)]{hkkp23} is
+the semistability of $\mathcal H$ in the sense of
+Section~\ref{sec:convergence}. A curve $\mathfrak h$ is called there an
+\emph{asymptotic solution} if $C^{-1}\mathfrak g\leq\mathfrak h\leq C\mathfrak g$
+for large times, for some, equivalently for every, solution $\mathfrak g$
+\cite[\S5.3]{hkkp23}. In \cite[\S5.4]{hkkp23} the lattice of
+subrepresentations of $\mathcal H$ of the same phase carries the
+\emph{iterated weight filtration}, a filtration labelled by finite sequences
+$\lambda=(\lambda_1,\dots,\lambda_n)$ of real numbers and defined
+algebraically from that lattice and the function
+$\mathsf R\mapsto\sum_i\mathsf m_i\dim\mathsf R_i$
+\cite[\S4 and (5.58)]{hkkp23}. After the arrows have been conjugated by a
+suitable invertible tuple of matrices, with $1=\sum_\lambda p_\lambda$ the
+orthogonal splitting given by the filtration, the function
+\begin{equation}\label{eq:iterated}
+ \mathfrak a(t)=\sum_{\lambda}t^{\lambda_1}(\log t)^{\lambda_2}\cdots\bigl(\log^{(n-1)}t\bigr)^{\lambda_n}\,p_\lambda
+\end{equation}
+is an asymptotic solution \cite[Corollary~5.10]{hkkp23}, and every solution
+satisfies the bounds of \cite[Theorem~5.11]{hkkp23} on the steps of the
+filtration.
+
+\begin{corollary}[Iterated logarithms]\label{cor:iterated}
+Assume (P) and let $\mathcal H$ be semistable. Then $\mathfrak h$ is an
+asymptotic solution of the gradient flow \cite[(5.28)]{hkkp23} with the
+weights $\mathsf m_i=y_i/\sigma^2$. Hence there are an invertible tuple of
+matrices $b$ and a constant $C$ such that
+$C^{-1}b^*\mathfrak a(t)b\leq\mathfrak h(t)\leq Cb^*\mathfrak a(t)b$ for large
+$t$, where $\mathfrak a$ is the function \eqref{eq:iterated} for the arrows
+of $\mathcal H$ conjugated by $b$; and the bounds of
+\cite[Theorem~5.11]{hkkp23} hold for $\mathfrak h$. The weight function of
+the iterated weight filtration is
+\[
+ \sum_i\mathsf m_i\dim\mathsf R_i=\frac{\Ima Z(\mathsf R)}{\sigma^2}=\frac{|Z(\mathsf R)|}\sigma
+\]
+on the subquotients $\mathsf R$ of $\mathcal H$ that are semistable of phase
+$\varphi$: a constant multiple of the mass.
+\end{corollary}
+
+\begin{proof}
+The first statement is the last statement of
+Theorem~\ref{thm:comparison}; the others follow from the definition of an
+asymptotic solution and the results of \cite{hkkp23} just quoted. For a
+projection $p$ the inequalities
+$e^{-c}\mathfrak g\leq\mathfrak h\leq e^{c}\mathfrak g$ give
+$e^{-c}p\mathfrak gp\leq p\mathfrak hp\leq e^{c}p\mathfrak gp$.
+\end{proof}
+
+The first statement of the corollary can also be deduced from
+\cite[Proposition~5.7]{hkkp23}, which says that a curve satisfying the
+equation of the gradient flow up to an absolutely integrable term is an
+asymptotic solution; the term is the vector $e$ of the proof of
+Theorem~\ref{thm:comparison}. The bounded factor between $\mathfrak h$ and
+\eqref{eq:iterated} is not shown to converge, also not in \cite{hkkp23} for
+the gradient flow; it converges in Proposition~\ref{prop:weights} below and
+in the example of \cite[Proposition~6.9]{wue26b}.
+The weights are forced up to a common factor, as the following example
+shows.
+
+\begin{proposition}\label{prop:weights}
+Let $Q$ be the quiver $0\to1$, let $z_0,z_1$ have the same argument
+$\varphi$, and let $\mathcal H=(\CC\xrightarrow{b}\CC)$ with $b\neq0$; it is
+semistable and not polystable, a nonsplit extension of the simple
+representation at the vertex $0$ by the simple representation at the vertex
+$1$. For every initial metric the normalized phase flow
+$\mathfrak h=e^{\varphi t}h$ satisfies
+\[
+ \log\mathfrak h_0(t)=\frac{|z_1|}{|z_0|+|z_1|}\log t+c_0+o(1),\qquad
+ \log\mathfrak h_1(t)=-\frac{|z_0|}{|z_0|+|z_1|}\log t+c_1+o(1)
+\]
+as $t\to\infty$, with constants $c_0,c_1$. The solutions of
+\eqref{eq:gradflow} with arbitrary positive weights $\mathsf m_0',\mathsf m_1'$
+have the exponents $\mathsf m_1'/(\mathsf m_0'+\mathsf m_1')$ and
+$-\mathsf m_0'/(\mathsf m_0'+\mathsf m_1')$.
+\end{proposition}
+
+\begin{proof}
+Here $\theta=0$ and $\mathsf m_i=|z_i|/\sigma$. The squared norm
+$q=|b|^2\mathfrak h_1/\mathfrak h_0$ of the arrow gives $\mu_0=q$,
+$\mu_1=-q$, so $(\log\mathfrak h_0)'=G_0(q)$, $(\log\mathfrak h_1)'=G_1(-q)$
+and $(\log q)'=-(G_0(q)-G_1(-q))<0$. By Lemma~\ref{lem:quadratic},
+$G_0(q)-G_1(-q)=\varkappa q+O(q^2)$ with
+$\varkappa=1/\mathsf m_0+1/\mathsf m_1$. So $q$ decreases to zero,
+$\frac d{dt}(1/q)=\varkappa+O(q)$, hence $1/q=\varkappa t+O(\log t)$ and
+$q=1/(\varkappa t)+O(t^{-2}\log t)$. Then
+$(\log\mathfrak h_0)'=q/\mathsf m_0+O(q^2)$ integrates to
+$\frac1{\mathsf m_0\varkappa}\log t+c_0+o(1)$, and
+$\frac1{\mathsf m_0\varkappa}=\frac{\mathsf m_1}{\mathsf m_0+\mathsf m_1}$;
+likewise for $\mathfrak h_1$. For \eqref{eq:gradflow} with weights
+$\mathsf m_i'$ the same computation applies with
+$(\log\mathfrak g_0)'=q/\mathsf m_0'$, $(\log\mathfrak g_1)'=-q/\mathsf m_1'$.
+\end{proof}
+
+So on this representation the metric grows like $t$ to the power
+$|Z(\mathsf S_1)|/|Z(\mathcal H)|$ on the quotient $\mathsf S_0$ and decays
+like $t$ to the power $-|Z(\mathsf S_0)|/|Z(\mathcal H)|$ on the
+subrepresentation $\mathsf S_1$, where $\mathsf S_i$ is the simple
+representation at the vertex $i$; and a gradient flow whose weights are not
+proportional to the masses $|z_i|$ is at logarithmically growing distance
+from the phase flow. For a generalized Kronecker quiver with
+$\alpha_0\neq\alpha_1$ the weights do not matter, because the stable
+factors of a semistable representation then have proportional dimension
+vectors.
+
+\subsection{The mass and the Harder--Narasimhan filtration}
+A representation $\mathsf R\neq0$ is semistable of phase
+$\phi=\arg Z(\mathsf R)$, in the sense of Section~\ref{sec:convergence} with
+the parameter $\theta$ formed with $\phi$, if and only if
+$\arg Z(\mathsf R')\leq\phi$ for all nonzero subrepresentations
+$\mathsf R'$. Every nonzero representation $\mathcal H$ has a unique
+filtration
+\[
+ 0=\mathcal H^0\subset\mathcal H^1\subset\dots\subset\mathcal H^{\mathsf n}=\mathcal H
+\]
+by subrepresentations whose factors
+$\operatorname{gr}^k=\mathcal H^k/\mathcal H^{k-1}$ are semistable of phases
+$\phi_1>\phi_2>\dots>\phi_{\mathsf n}$, the \emph{Harder--Narasimhan
+filtration} for the stability condition of Section~\ref{sec:setting}
+\cite[Proposition~2.4]{bri07}; a filtration by subrepresentations with
+semistable factors of strictly decreasing phases is this one, because there
+are no nonzero morphisms from a semistable representation to a semistable
+representation of smaller phase. We call
+$\mass_{\mathrm{HN}}(\mathcal H)=\sum_k|Z(\operatorname{gr}^k)|$ the
+\emph{mass of the filtration}; it is the mass of the object $\mathcal H$ for
+the stability condition. For a tuple of metrics on $\mathcal H$ let
+$\mass(\mathfrak h)=\sum_i\tr|z_i+\mu_i|$ be the mass of the metrized
+representation, $\Pi_k$ the orthogonal projections onto $\mathcal H^k$, and
+\[
+ \mathcal Y_k=\sum_a\norm{\Pi_{k,\mathsf t(a)}\beta_a(1-\Pi_{k,\mathsf s(a)})}^2
+\]
+the squared norm of the second fundamental form of $\mathcal H^k$.
+
+\begin{proposition}[Dissipation of the mass]\label{prop:dissipation}
+Assume (P). Then for $t\geq\tau_0$
+\[
+ \frac{d\,\mass(\mathfrak h(t))}{dt}\leq-\mathfrak D+4\bar\cN\norm\delta,
+ \qquad
+ \mathfrak D\geq\min(\sin\psi_-,\sin\psi_+)\sum_a\norm{\beta_a\Phi^{\mathcal H}_{\mathsf s(a)}-\Phi^{\mathcal H}_{\mathsf t(a)}\beta_a}^2,
+\]
+where
+$\mathfrak D=\sum_a\sum_{j,l}|\inner{v_l}{\beta_au_j}|^2(p_j-q_l)(\cos q_l-\cos p_j)$
+for orthonormal eigenvectors $u_j$ of $\Phi^{\mathcal H}_{\mathsf s(a)}$ and
+$v_l$ of $\Phi^{\mathcal H}_{\mathsf t(a)}$ with eigenvalues $p_j$, $q_l$. In
+particular the mass is nonincreasing along the phase flow of a
+representation, for all charges.
+\end{proposition}
+
+\begin{proof}
+The derivative of $u\mapsto|z_i+u|$ is $\cos\arg(z_i+u)$, so
+$\frac d{dt}\mass=\sum_i\tr(\cos\Phi^{\mathcal H}_i\,\dot\mu_i)$. Insert
+\eqref{eq:betaflow}; the result is linear in
+$\Phi^{\mathcal H}+\delta$. The part with $\Phi^{\mathcal H}$ is, since
+$\Phi^{\mathcal H}_i$ commutes with its cosine,
+\[
+ \sum_a\sum_{j,l}|\inner{v_l}{\beta_au_j}|^2\bigl(p_j\cos p_j-q_l\cos p_j-p_j\cos q_l+q_l\cos q_l\bigr)=-\mathfrak D .
+\]
+The cosine decreases on $(0,\pi)$, and
+$(p-q)(\cos q-\cos p)\geq\min(\sin\psi_-,\sin\psi_+)(p-q)^2$ for
+$p,q\in[\psi_-,\psi_+]$. The part with $\delta$ consists of four traces for
+each arrow, each at most $\norm{\beta_a}^2\norm\delta$.
+\end{proof}
+
+For Kronecker quivers the monotonicity of the mass on representations is
+\cite[Proposition~9.1]{wue26b}.
+
+\begin{proposition}[Mass of a metric and mass of the filtration]\label{prop:hnmass}
+For every tuple of metrics on $\mathcal H$,
+\[
+ \mass(\mathfrak h)\geq\mass_{\mathrm{HN}}(\mathcal H)
+ +\sum_{k=1}^{\mathsf n-1}\bigl(\cos\phi_{k+1}-\cos\phi_k\bigr)\,\mathcal Y_k ,
+\]
+and the coefficients $\cos\phi_{k+1}-\cos\phi_k$ are positive.
+\end{proposition}
+
+\begin{proof}
+Let $Q_k=\Pi_k-\Pi_{k-1}$. By the pinching inequality for the trace norm and
+$\tr|X|\geq|\tr X|$,
+$\mass\geq\sum_k\bigl|\sum_i\tr(Q_{k,i}(z_i+\mu_i))\bigr|$. For a
+subrepresentation with projections $\Pi$ one has
+$\sum_i\tr(\Pi_i\mu_i)=\sum_a(\norm{\beta_a\Pi_{\mathsf s(a)}}^2-\norm{\Pi_{\mathsf t(a)}\beta_a}^2)
+=-\sum_a\norm{\Pi_{\mathsf t(a)}\beta_a(1-\Pi_{\mathsf s(a)})}^2$, as in the
+proof of Lemma~\ref{lem:king}(b). So with
+$\mathcal Y_0=\mathcal Y_{\mathsf n}=0$,
+$\sum_i\tr(Q_{k,i}(z_i+\mu_i))=Z(\operatorname{gr}^k)-(\mathcal Y_k-\mathcal Y_{k-1})$,
+and the modulus of this number is at least its component in the direction of
+$Z(\operatorname{gr}^k)$, which is
+$|Z(\operatorname{gr}^k)|-(\mathcal Y_k-\mathcal Y_{k-1})\cos\phi_k$. Sum
+over $k$ and sum by parts.
+\end{proof}
+
+\subsection{Unstable cohomology}
+Assume (P). The arrows $\beta(t)=(\beta_a(t))$ in the frames of
+\eqref{eq:betaflow} form a bounded curve. Let $\omega$ be the set of its
+limit points as $t\to\infty$; it is nonempty, compact and connected.
+
+\begin{lemma}\label{lem:limitset}
+Assume \emph{(P)}.
+\begin{enumerate}
+\item[(a)] The mass $\mass(\mathfrak h(t))$ converges, and
+ $\beta_a\Phi^{\mathcal H}_{\mathsf s(a)}-\Phi^{\mathcal H}_{\mathsf t(a)}\beta_a$,
+ $\dot\beta_a$ and the derivatives of the $\Phi^{\mathcal H}_i$ tend to
+ zero.
+\item[(b)] There are numbers $\pi>\phi_1'>\dots>\phi_{\mathsf n'}'>0$ and
+ nonzero dimension vectors $d_k=(n_{i,k})_i$ with $\sum_kd_k=(n_i)$ and
+ $\arg Z(d_k)=\phi_k'$ such that for every $\beta^\infty\in\omega$ the phase
+ of $\beta^\infty$ at the vertex $i$ has the eigenvalues $\phi_k'$ with
+ multiplicities $n_{i,k}$, and the representation with the arrows
+ $\beta^\infty$ is the orthogonal direct sum of representations
+ $\mathsf P_k$ of dimension vectors $d_k$, supported on the eigenspaces,
+ with the moment map of a harmonic metric of phase $\phi_k'$ on
+ $\mathsf P_k$. In particular $\mathsf P_k$ is polystable of phase
+ $\phi_k'$.
+\item[(c)] The eigenvalues of $\Phi^{\mathcal H}_i(t)$, with multiplicity,
+ converge to the $\phi_k'$ with multiplicities $n_{i,k}$, and
+ $\mass(\mathfrak h(t))\to\sum_k|Z(d_k)|$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) By Proposition~\ref{prop:dissipation},
+$\mass+4\bar\cN\int_t^\infty\norm\delta$ is nonincreasing and nonnegative,
+so $\mass$ converges and $\mathfrak D$ is integrable. By
+\eqref{eq:betaflow} the $\dot\beta_a$ are bounded, hence so are the
+derivatives of the $\mu_i$ and, by the Lipschitz property, of the
+$\Phi^{\mathcal H}_i$. So
+$\sum_a\norm{\beta_a\Phi^{\mathcal H}_{\mathsf s(a)}-\Phi^{\mathcal H}_{\mathsf t(a)}\beta_a}^2$
+is Lipschitz and integrable and tends to zero; then $\dot\beta_a\to0$ by
+\eqref{eq:betaflow}, and the derivatives of $\mu_i$ and
+$\Phi^{\mathcal H}_i$ tend to zero.
+
+(b) For $\beta^\infty\in\omega$, by (a) and continuity each arrow
+intertwines the phases at its source and target. So the eigenspaces of the
+phase for a fixed eigenvalue $p$ form an orthogonal direct summand
+$\mathsf P_p$, and on it $\arg(z_i+\mu_i)=p$ for all $i$: the metric is
+harmonic of phase $p$ on $\mathsf P_p$, which is therefore polystable
+(Lemma~\ref{lem:king}(b)), and $\arg Z(\mathsf P_p)=p$ because
+$\sum_i\tr(\Pi_i\mu_i)=0$ for an orthogonal direct summand. Thus the
+eigenvalues of the phase of $\beta^\infty$ lie in the finite set of
+arguments of the numbers $Z(d)$, $0\neq d\leq(n_i)$. The ordered list of
+these eigenvalues at each vertex depends continuously on $\beta$, takes
+values in a finite set on $\omega$, and $\omega$ is connected; so it is
+constant on $\omega$.
+
+(c) The distance from $\beta(t)$ to $\omega$ tends to zero, and on
+$\mathsf P_k$ all eigenvalues of $z_i+\mu_i$ lie on one ray.
+\end{proof}
+
+By (c) there is a time after which the spectrum of each
+$\Phi^{\mathcal H}_i(t)$ consists of separated clusters near the
+$\phi_k'$. Let $P_k(t)$ be the spectral projection of the $k$-th cluster and
+$P_{\leq k}=P_1+\dots+P_k$. Since the derivatives of the
+$\Phi^{\mathcal H}_i$ tend to zero and the clusters stay separated,
+\begin{equation}\label{eq:slow}
+ \norm{\dot P_{\leq k}(t)}\to0,\qquad\norm{P_l\beta_aP_k}\to0\quad(l\neq k),
+\end{equation}
+the second because $X=P_l\beta_aP_k$ satisfies
+$X\Phi^{\mathcal H}_{\mathsf s(a)}-\Phi^{\mathcal H}_{\mathsf t(a)}X=P_l(\beta_a\Phi^{\mathcal H}_{\mathsf s(a)}-\Phi^{\mathcal H}_{\mathsf t(a)}\beta_a)P_k$
+with separated spectra on the two sides.
+
+\begin{lemma}\label{lem:dichotomy}
+Let $\Psi(t)$, $t\geq T$, be a continuous family of Hermitian
+$n\times n$ matrices and $P(t)$ a continuously differentiable family of
+orthogonal projections of constant rank. Suppose there are numbers
+$a_+>a_-$ and $\epsilon\geq0$ with $12\epsilon\leq a_+-a_-$ such that for
+all $t\geq T$ and all vectors $w$, with $w'=P(t)w$ and $w''=w-w'$,
+\[
+ \Rea\inner{w'}{\Psi w}\geq a_+|w'|^2-\epsilon|w'||w''|,\qquad
+ \Rea\inner{w''}{\Psi w}\leq a_-|w''|^2+\epsilon|w'||w''|,\qquad
+ \norm{\dot P}\leq\epsilon .
+\]
+Then $\CC^n=S^{\mathrm f}\oplus S^{\mathrm s}$ with
+$\dim S^{\mathrm f}=\operatorname{rank}P$, such that for the solutions of
+$\dot w=-\frac12\Psi w$ on $[T,\infty)$:
+\begin{enumerate}
+\item[(i)] if $w(T)\in S^{\mathrm f}$, then
+ $|w''(t)|\leq\frac{6\epsilon}{a_+-a_-}|w'(t)|$ and
+ $|w(t)|^2\leq2e^{-(a_+-3\epsilon)(t-T)}|w(T)|^2$ for $t\geq T$;
+\item[(ii)] if $w(T)\in S^{\mathrm s}$, then
+ $|w(t)|^2\geq\frac12e^{-(a_-+3\epsilon)(t-T)}|w(T)|^2$ for $t\geq T$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Since $P\dot PP=0=(1-P)\dot P(1-P)$, a solution satisfies
+$\frac d{dt}|w'|^2\leq-a_+|w'|^2+3\epsilon|w'||w''|$ and
+$\frac d{dt}|w''|^2\geq-a_-|w''|^2-3\epsilon|w'||w''|$. Let
+$c_0=6\epsilon/(a_+-a_-)\leq\frac12$. For $c\in[c_0,1]$ with $c>0$ and a
+nonzero solution, at a time with $|w''|=c|w'|$,
+\[
+ \frac d{dt}\bigl(c^2|w'|^2-|w''|^2\bigr)\leq c^2|w'|^2\bigl(-(a_+-a_-)+3\epsilon(c+c^{-1})\bigr)<0,
+\]
+because $3\epsilon c\leq\frac14(a_+-a_-)$ and
+$3\epsilon c^{-1}\leq\frac12(a_+-a_-)$. So a solution in the open cone
+$\{|w''|>c|w'|\}$ cannot reach its boundary: these cones are invariant
+forwards in time. Let $S^{\mathrm s}=\ker P(T)$. A solution starting there
+stays in the cone with $c=1$, where
+$\frac d{dt}|w''|^2\geq-(a_-+3\epsilon)|w''|^2$; this gives (ii). For
+$\tau\geq T$ let $S_\tau$ be the space of the initial values $w(T)$ of the
+solutions with $w(\tau)$ in the range of $P(\tau)$. Such a solution
+satisfies $|w''|\leq c_0|w'|$ on $[T,\tau]$, since otherwise it would lie, at
+the time $\tau$, in one of the open cones with $c\in[c_0,1]$, $c>0$. Let $S^{\mathrm f}$ be a
+limit point of the spaces $S_\tau$ in the Grassmannian as $\tau\to\infty$.
+By continuity every solution starting in $S^{\mathrm f}$ satisfies
+$|w''|\leq c_0|w'|$ for all $t\geq T$, and then
+$\frac d{dt}|w'|^2\leq-(a_+-3\epsilon)|w'|^2$ and $|w|^2\leq2|w'|^2$; this is
+(i). The two growth estimates exclude a common nonzero vector, and the
+dimensions add up to $n$.
+\end{proof}
+
+\begin{theorem}[Harder--Narasimhan asymptotics]\label{thm:hn}
+Let $\mathcal H$ be a nonzero representation of $Q$, with
+Harder--Narasimhan filtration $(\mathcal H^k)$, factors
+$\operatorname{gr}^k$ and phases $\phi_1>\dots>\phi_{\mathsf n}$, and let
+$\mathfrak h(t)$ satisfy \emph{(P)}. Then:
+\begin{enumerate}
+\item[(i)] the eigenvalues of $\Phi^{\mathcal H}_i(t)$, with multiplicity,
+ converge to the $\phi_k$ with multiplicities
+ $\dim\operatorname{gr}^k_i$, and $\mass(\mathfrak h(t))$ converges to
+ $\mass_{\mathrm{HN}}(\mathcal H)$, the infimum of the mass over all metrics
+ on $\mathcal H$;
+\item[(ii)] for every nonzero $v\in\mathcal H_i$,
+ \[
+ \lim_{t\to\infty}\frac1t\log\mathfrak h_i(t)(v,v)=\varphi-\phi_k,
+ \]
+ where $k$ is the least index with $v\in\mathcal H^k_i$; so the
+ Harder--Narasimhan filtration is the filtration of the spaces by the
+ exponential rate of decay of the metric;
+\item[(iii)] for every $\epsilon>0$ there is a constant $C$ with
+ $\mathcal Y_k(t)\leq Ce^{-2\varkappa_kt}$,
+ $\varkappa_k=\min\{\frac12(\phi_k-\phi_{k+1})-\epsilon,\ \kappa\}$, for
+ $k<\mathsf n$ (with $\kappa=\infty$ if $\delta=0$);
+\item[(iv)] for each $k$ the metric induced by $\mathfrak h(t)$ on
+ $\operatorname{gr}^k$, multiplied by $e^{(\phi_k-\varphi)t}$, satisfies
+ \emph{(P)} for the semistable representation $\operatorname{gr}^k$, with
+ an exponent $\min_l\varkappa_l$ in the place of $\kappa$. Hence
+ Proposition~\ref{prop:perturbed}, Theorem~\ref{thm:comparison} and
+ Corollary~\ref{cor:iterated} apply to it: its moment map tends to the
+ stability parameter of $\operatorname{gr}^k$, it is an asymptotic solution
+ of the weighted gradient flow of $\operatorname{gr}^k$, and if
+ $\operatorname{gr}^k$ is polystable it converges exponentially to a
+ harmonic metric of $\operatorname{gr}^k$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{Step 1: the filtration by exponents.} Fix $k<\mathsf n'$, a vertex
+$i$, and $\epsilon>0$ with $60\epsilon\leq\phi_k'-\phi_{k+1}'$. By
+Lemma~\ref{lem:limitset} and \eqref{eq:slow} there is a time $T$ after which
+the clusters are within $\epsilon$ of the $\phi_l'$,
+$\norm\delta\leq\epsilon$ and $\norm{\dot P_{\leq k}}\leq\epsilon$. For a
+vector $v\in\mathcal H_i$ the coordinates $w$ of $v$ in the frame satisfy
+$|w|^2=\mathfrak h_i(v,v)$ and $\dot w=-\frac12\Psi w$ with
+$\Psi=\Phi^{\mathcal H}_i-\varphi+\delta_i$. Since $P=P_{\leq k}$ commutes
+with $\Phi^{\mathcal H}_i$, the hypotheses of Lemma~\ref{lem:dichotomy} hold
+with $a_+=\phi_k'-\varphi-2\epsilon$ and
+$a_-=\phi_{k+1}'-\varphi+2\epsilon$. In terms of vectors of $\mathcal H_i$
+the lemma gives complementary subspaces, of which the first has the
+dimension $\sum_{l\leq k}n_{i,l}$, with
+$\mathfrak h_i(t)(v,v)\leq C_ve^{-(\phi_k'-\varphi-5\epsilon)t}$ on the
+first and
+$\mathfrak h_i(t)(v,v)\geq c_ve^{-(\phi_{k+1}'-\varphi+5\epsilon)t}$,
+$c_v>0$, for the nonzero vectors of the second. A vector with a nonzero
+component in the second subspace then satisfies
+$\liminf\frac1t\log\mathfrak h_i(t)(v,v)\geq-(\phi_{k+1}'-\varphi+5\epsilon)$.
+So the first subspace is the set of all $v$ with
+$\limsup\frac1t\log\mathfrak h_i(t)(v,v)\leq-(\phi_k'-\varphi-5\epsilon)$;
+these sets decrease with $\epsilon$ and have the same dimension, so they
+coincide with
+\[
+ F_{k,i}:=\Bigl\{v\in\mathcal H_i:\ \limsup_{t\to\infty}\frac1t\log\mathfrak h_i(t)(v,v)\leq\varphi-\phi_k'\Bigr\},
+ \qquad\dim F_{k,i}=\sum_{l\leq k}n_{i,l},
+\]
+and for $v\in F_{k,i}\setminus F_{k-1,i}$ the limit of
+$\frac1t\log\mathfrak h_i(t)(v,v)$ exists and equals $\varphi-\phi_k'$
+(with $F_0=0$ and $F_{\mathsf n'}=\mathcal H$). Here the lower bound for
+$k=1$ and the upper bound for $k=\mathsf n'$, which do not come from a gap,
+follow from $\frac d{dt}|w|^2=-\inner w{\Psi w}$ and
+Lemma~\ref{lem:limitset}(c): the eigenvalues of $\Psi$ lie eventually between
+$\phi_{\mathsf n'}'-\varphi-2\epsilon$ and $\phi_1'-\varphi+2\epsilon$.
+
+\emph{Step 2: the $F_k$ are subrepresentations.} For an arrow $a$ of
+$\mathcal H$ and $v\in\mathcal H_{\mathsf s(a)}$, the norm of the image of
+$v$ for $\mathfrak h_{\mathsf t(a)}$ is at most $\bar\cN^{1/2}$ times the
+norm of $v$ for $\mathfrak h_{\mathsf s(a)}$. So the arrows do not decrease
+the rate of decay, and they map $F_k$ to $F_k$. The factor $F_k/F_{k-1}$ has
+the dimension vector $d_k$, hence $\arg Z(F_k/F_{k-1})=\phi_k'$.
+
+\emph{Step 3.} By Lemma~\ref{lem:dichotomy}(i), applied with $\epsilon$
+arbitrarily small for large $T$, the coordinates of the vectors of $F_k$
+form the graph of a linear map from the range of $P_{\leq k}(t)$ to its
+orthogonal complement whose norm tends to zero. So for the
+$\mathfrak h(t)$-orthogonal projections $\Pi_k'(t)$ onto $F_k$, in the
+frames, $\norm{\Pi_k'-P_{\leq k}}\to0$; and with
+$Q_k=\Pi_k'-\Pi_{k-1}'$, by \eqref{eq:slow} and Lemma~\ref{lem:limitset}(c),
+\begin{equation}\label{eq:blockslimit}
+ Q_l\beta_aQ_k\to0\ (l\neq k),\qquad
+ \norm{Q_k(\Phi^{\mathcal H}-\phi_k')Q_k}\to0,\qquad
+ Q_l\Phi^{\mathcal H}Q_k\to0\ (l\neq k).
+\end{equation}
+
+\emph{Step 4: the factors are semistable.} In frames adapted to the
+decomposition $1=\sum_kQ_k(t)$ the arrows are block upper triangular, and the
+$k$-th diagonal block is the tuple of arrows of the representation
+$F_k/F_{k-1}$ in orthonormal frames of its induced metric, a point of the
+orbit of this representation under the changes of bases. Along a suitable
+sequence of times these frames and the arrows converge, and by
+\eqref{eq:blockslimit} the $k$-th diagonal block converges to the arrows of
+the summand $\mathsf P_k$ of a point of $\omega$. So the closure of the orbit
+of $F_k/F_{k-1}$ contains a representation isomorphic to $\mathsf P_k$, which
+is semistable of phase $\phi_k'$. If $F_k/F_{k-1}$ had a subrepresentation
+of a dimension vector $d'$ with $\arg Z(d')>\phi_k'$, then so would every
+representation in the closure of its orbit, because the set of
+representations with a subrepresentation of dimension vector $d'$ is the
+image of a closed set under a projection with compact fibres, a product of
+Grassmannians. This contradicts the semistability of $\mathsf P_k$. So
+$F_k/F_{k-1}$ is semistable of phase $\phi_k'$.
+
+\emph{Step 5.} The filtration $(F_k)$ has semistable factors of strictly
+decreasing phases. Hence it is the Harder--Narasimhan filtration:
+$\mathsf n'=\mathsf n$, $F_k=\mathcal H^k$, $\phi_k'=\phi_k$ and
+$d_k=\dim\operatorname{gr}^k$. With Lemma~\ref{lem:limitset}(c) and Step~1
+this gives (i) and (ii); the mass of the filtration is the infimum of the
+mass by Proposition~\ref{prop:hnmass}.
+
+\emph{Step 6: the second fundamental forms.} Fix $k<\mathsf n$ and write
+$\Pi=\Pi_k$. For an arrow $a$ let
+$\upsilon_a=\Pi_{\mathsf t(a)}\beta_a(1-\Pi_{\mathsf s(a)})$, and for a
+Hermitian matrix $M$ at a vertex let $M^{\mathrm{off}}=\Pi M(1-\Pi)+(1-\Pi)M\Pi$.
+With $\tilde\Phi=\Phi^{\mathcal H}+\delta$ we claim that
+\begin{equation}\label{eq:secondform}
+ \frac{d\mathcal Y_k}{dt}=\sum_a\Bigl[\tr\bigl(\upsilon_a^\dagger\upsilon_a\,\tilde\Phi_{\mathsf s(a)}\bigr)
+ -\tr\bigl(\upsilon_a\upsilon_a^\dagger\,\tilde\Phi_{\mathsf t(a)}\bigr)\Bigr]
+ +\sum_i\tr\bigl(\tilde\Phi_i^{\mathrm{off}}\mu_i^{\mathrm{off}}\bigr).
+\end{equation}
+Indeed, the coordinate maps of the frames satisfy
+$\dot gg^{-1}=-\frac12(\tilde\Phi-\varphi)$, a Hermitian matrix, and the
+range of $\Pi$ is the image of a fixed subspace, so
+$\dot\Pi=-\frac12\tilde\Phi^{\mathrm{off}}$. Differentiate
+$\upsilon_a$ with \eqref{eq:betaflow}, use
+$(1-\Pi_{\mathsf t(a)})\beta_a\Pi_{\mathsf s(a)}=0$, and take the trace
+against $\upsilon_a^\dagger$: with
+$\beta_a'=\Pi_{\mathsf t(a)}\beta_a\Pi_{\mathsf s(a)}$ and
+$\beta_a''=(1-\Pi_{\mathsf t(a)})\beta_a(1-\Pi_{\mathsf s(a)})$,
+\begin{align*}
+ \frac d{dt}\norm{\upsilon_a}^2={}&\tr\bigl(\upsilon_a^\dagger\upsilon_a\tilde\Phi_{\mathsf s(a)}\bigr)
+ -\tr\bigl(\upsilon_a\upsilon_a^\dagger\tilde\Phi_{\mathsf t(a)}\bigr)\\
+ &-2\Rea\tr\bigl(\Pi\tilde\Phi_{\mathsf t(a)}(1-\Pi)\beta_a''\upsilon_a^\dagger\bigr)
+ +2\Rea\tr\bigl(\Pi\tilde\Phi_{\mathsf s(a)}(1-\Pi)\upsilon_a^\dagger\beta_a'\bigr),
+\end{align*}
+and
+$(1-\Pi)\mu_i\Pi=\sum_{\mathsf s(a)=i}\upsilon_a^\dagger\beta_a'-\sum_{\mathsf t(a)=i}\beta_a''\upsilon_a^\dagger$;
+summing over the arrows gives \eqref{eq:secondform}.
+
+The term $\sum_i\tr((\Phi^{\mathcal H}_i)^{\mathrm{off}}\mu_i^{\mathrm{off}})$
+is nonpositive: the matrix $2\Pi-1$ is unitary and Hermitian, conjugation
+by it changes the sign of the off-diagonal parts, and
+$\Phi^{\mathcal H}_i$ is a decreasing function of $\mu_i$, so four times the
+trace is $\tr((g(A)-g(B))(A-B))\leq0$ with $A=\mu_i$,
+$B=(2\Pi-1)\mu_i(2\Pi-1)$ and $g=\arg(z_i+\,\cdot\,)$. By
+\eqref{eq:blockslimit} and Step~5, for every $\epsilon>0$ and large $t$
+the eigenvalues of $\Pi\Phi^{\mathcal H}\Pi$ on the range of $\Pi$ are at
+least $\phi_k-\epsilon$ and those of $(1-\Pi)\Phi^{\mathcal H}(1-\Pi)$ on the
+complement are at most $\phi_{k+1}+\epsilon$. The terms with $\delta$ are at
+most $2\norm\delta\mathcal Y_k+2\sqrt2\,\norm\delta(\bar\cN\mathcal Y_k)^{1/2}$.
+Hence
+\[
+ \frac{d\mathcal Y_k}{dt}\leq-\bigl(\phi_k-\phi_{k+1}-2\epsilon-2\norm\delta\bigr)\mathcal Y_k
+ +2\sqrt2\,\norm\delta\,(\bar\cN\mathcal Y_k)^{1/2}
+\]
+for large $t$. With $\norm\delta\leq c_\delta e^{-\kappa(t-\tau_0)}$ this
+gives (iii); one applies the inequality with $\epsilon/2$ in the place of
+$\epsilon$, so that a factor $t$ arising when the two exponents coincide is
+absorbed.
+
+\emph{Step 7: the factors.} The restriction of a metric to a subspace and
+the quotient metric move with the compressed velocity. So in the adapted
+frames of Step~4 the metric induced on $\operatorname{gr}^k$, multiplied by
+$e^{(\phi_k-\varphi)t}$, has the velocity
+$\phi_k-Q_k\Phi^{\mathcal H}Q_k-Q_k\delta Q_k$, and its arrows are the $k$-th
+diagonal block. Let $\mu^{(k)}$ be the moment map of this block, $D$ the
+block-diagonal part of $\mu$ and $O=\mu-D$. Every block of $O$, and every
+block of $Q_kDQ_k-\mu^{(k)}$, is a sum of products of two blocks of the
+arrows of which at least one, respectively both, are off-diagonal; so with
+$Y^2=\sum_a\sum_{l<k}\norm{Q_l\beta_aQ_k}^2\leq\sum_k\mathcal Y_k$,
+$\norm O\leq4\bar\cN^{1/2}Y$ and $\norm{Q_kDQ_k-\mu^{(k)}}\leq Y^2$. By the
+Lipschitz property, and because a function of $D$ is block diagonal,
+\[
+ \norm{Q_k\Phi^{\mathcal H}Q_k-\arg(z+\mu^{(k)})}\leq\frac{4\bar\cN^{1/2}Y+Y^2}{\min_iy_i}.
+\]
+So the velocity is $\phi_k-\arg(z+\mu^{(k)})-\delta^{(k)}$ with
+$\delta^{(k)}$ exponentially small by (iii), and the squared norms of the
+arrows of the block sum to at most $\bar\cN$: this is (P) for
+$\operatorname{gr}^k$, which is semistable of phase $\phi_k$.
+\end{proof}
+
+\begin{remark}\label{rem:hn}
+(1) For a subrepresentation of a representation, and $\delta=0$, the
+identity \eqref{eq:secondform} holds at every time, with $\mathcal Y$ the
+squared norm of its second fundamental form. Its last term is nonpositive.
+So the second fundamental form decays as long as the phases on the
+subrepresentation exceed those on its orthogonal complement.
+
+(2) The filtration by the rates of decay is a filtration by
+subrepresentations for the simple reason of Step~2; the theorem identifies
+the rates and the dimensions. For the gradient flow the limiting filtration
+is described in the same terms in \cite[\S1.1]{hkkp23}, and for unstable
+points of Kempf--Ness gradient flows the term linear in $t$ is in
+\cite{lam26}.
+
+(3) By (i) and Proposition~\ref{prop:dissipation}, along the phase flow of a
+representation of a quiver without oriented cycles the mass decreases to the
+mass of the object for the stability condition; the largest and the
+smallest eigenvalue of the phase tend to $\phi_1$ and $\phi_{\mathsf n}$.
+\end{remark}

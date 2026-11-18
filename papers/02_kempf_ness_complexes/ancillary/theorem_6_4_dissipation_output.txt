@@ -1,0 +1,13 @@
+Part 1: Theorem 6.4, enclosures
+   contribution of V  (degree 0, vertex 0)    in [3.4635467970700896342 +/- 7.62e-21]
+   contribution of W  (degree 0, vertex 1)    in [2.0009693154341673810 +/- 4.74e-20]
+   contribution of U_0 (degree 1, vertex 0)   in [-10.625785550948955265 +/- 3.19e-19]
+   contribution of U_1 (degree -1, vertex 1)  in [3.4332342059427739119 +/- 1.21e-20]
+   phases on U_0: [-3.10059349229 +/- 4.64e-12], [-0.0347688738789 +/- 3.44e-15]
+   calD in [-1.728035232501924338191 +/- 1.10e-22]
+   verified: calD < 0, that is, the phase potential increases along the flow at these metrics
+Part 2: comparison with the definition (1)
+   largest difference between the blocks of Part 1 and the definition: 6.04e-14
+   blocks of the representation C -> C: |Omega - i| = 1.1e-16, 1.1e-16; coupling to the acyclic complex: 0.0e+00
+   calD from the definition (floating point): -1.728035232502;  midpoint of the enclosure: -1.728035232502
+   the blocks and calD agree with the definition

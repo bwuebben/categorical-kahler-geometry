@@ -1,0 +1,16 @@
+Proposition 9.2: f^2 = 383/100; a_j = (-0.1978, -0.6072) for 480 arrows, (-0.5038, 0.8392) for 32 arrows; z_0 = -1 + i, z_1 = 1 + i
+   m in [749.8718852905914241849279 +/- 1.04e-23]
+   dm/dt in [1.770414820962757211728633 +/- 2.67e-25]
+   Phi_U in [-0.0004653669751450630974846607 +/- 3.87e-29]; the two values of Phi_W in [0.8566861186918339606610266 +/- 3.74e-26], [1.055526054618650564469542 +/- 2.41e-25]
+   verified: dm/dt > 0
+   consistency check: difference quotient of m along the velocity, step 10^-30: [1.7704148209627572117 +/- 2.87e-20]
+   dissipation calD of the phase potential in [48.75586502852349657518119 +/- 2.27e-24]
+   verified: calD > 0
+consistency check: the same data with all rows a_j divided by 20
+   m in [725.47223643671494060 +/- 2.82e-19], dm/dt in [-0.50945495381522721789 +/- 2.46e-21]
+   verified: dm/dt < 0
+the same two rows in the proportion 15 : 1 with fewer arrows
+   k = 400 (375 + 25 arrows): m in [585.71233074148869488 +/- 4.99e-18], dm/dt in [0.36650992062032564009 +/- 3.11e-21]
+   verified: dm/dt > 0
+   k = 368 (345 + 23 arrows): m in [538.81065399999293858 +/- 2.81e-18], dm/dt in [-0.0089273800265156648901 +/- 1.99e-23]
+   verified: dm/dt < 0

@@ -1,0 +1,80 @@
+\pdfoutput=1
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Bernd Johannes Wuebben},
+ pdftitle={Convergence of the minimizing flow on acyclic quivers},
+ pdfsubject={MSC 2020: 16G20, 53D20; 14F08, 14L24, 18G80},
+ pdfkeywords={quiver representation, complex of representations, stability condition, harmonic metric, Harder-Narasimhan filtration, Kempf-Ness function, moment map, derived category, projective line}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\Eone}{\mathrm E_1}
+\newcommand{\mass}{\mathfrak m}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+
+
+\title[The minimizing flow on acyclic quivers]{Convergence of the
+minimizing flow\\ on acyclic quivers}
+\author{Bernd Johannes Wuebben}
+\email{wuebben@gmail.com}
+\subjclass[2020]{Primary 16G20, 53D20; Secondary 14F08, 14L24, 18G80}
+\keywords{Quiver representation, complex of representations, stability
+condition, harmonic metric, Harder--Narasimhan filtration, Kempf--Ness
+function, moment map, derived category, projective line}
+\date{November 18, 2026\\This version: November 18, 2026}
+
+\begin{document}
+\begin{abstract}
+The minimizing flow of Haiden, Katzarkov, Kontsevich and Pandit recovers
+the Harder--Narasimhan filtration of every nonzero representation of a
+finite acyclic quiver from the exponential decay rates of its Hermitian
+metric $h(t)$. This holds for all vertex charges in the upper half-plane and every
+initial metric. If $v$ lies in the $k$th filtration step outside the
+preceding one and $Z_k$ is the central charge of the $k$th quotient, then
+$t^{-1}\log h(t)(v,v)$ tends to $-\arg Z_k$. The mass tends to
+$\sum_k|Z_k|$. On each quotient the metric rescaled by $e^{t\arg Z_k}$
+converges exponentially to a harmonic metric if the quotient is polystable.
+In general the rescaled metric stays at bounded distance from a
+Kempf--Ness gradient trajectory with vertex weights proportional to the
+imaginary parts of the charges. The iterated-logarithm asymptotics of
+Haiden, Katzarkov, Kontsevich and Pandit therefore apply up to bounded
+factors. For two-term complexes with nonzero cohomology concentrated in
+degree zero and differential supported at one vertex, the same results
+hold on cohomology when the phase is taken from the polar decomposition.
+For generalized Kronecker quivers the results extend to bounded complexes
+whose differentials vanish at one vertex, with the phases shifted by
+$-\pi n$ in degree $n$.
+Under Beilinson's equivalence this includes every object of
+$D^b(\mathbb P^1)$ in a minimal projective or injective Kronecker model.
+\end{abstract}
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_setting}
+\input{sections/03_energy}
+\input{sections/04_decay}
+\input{sections/05_convergence}
+\input{sections/06_asymptotics}
+\input{sections/06_kronecker}
+\input{references}
+\end{document}

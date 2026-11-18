@@ -1,0 +1,317 @@
+\section{Setting and results used}\label{sec:setting}
+
+\subsection{Complexes with one differential}
+Let $Q$ be a finite quiver without oriented cycles, with set of vertices
+$Q_0$ and set of arrows $Q_1$; for an arrow $a$ we write $\mathsf s(a)$ and
+$\mathsf t(a)$ for its source and target, and $a:i\to j$ if
+$\mathsf s(a)=i$, $\mathsf t(a)=j$. Fix \emph{central charges}
+$z_i=x_i+\ii y_i$, $i\in Q_0$, in the open upper half-plane, and put
+$\alpha_i=\arg z_i\in(0,\pi)$. Phases are arguments, measured in radians; the
+phase of \cite{bri07} is the argument divided by $\pi$, and a shift by one
+degree changes arguments by $\pi$. A \emph{complex of representations} of $Q$
+is a bounded complex in the abelian category of finite-dimensional
+representations: vector spaces $E_i^n$, differentials
+$d_i:E_i^n\to E_i^{n+1}$ and, for each arrow $a:i\to j$, a chain map
+$\rho_a:E_i^\bullet\to E_j^\bullet$. For a representation $\mathsf R$ with
+dimension vector $(n_i)$ we write $Z(\mathsf R)=\sum_in_iz_i$ for its central
+charge.
+
+\begin{definition}\label{def:type}
+Let $i_0\in Q_0$. A complex of representations $\mathsf E$ of $Q$ is a
+\emph{complex with a surjective differential at $i_0$} if at every vertex
+$i\neq i_0$ it is a vector space $W_i$ in degree zero, and at $i_0$ it is
+\[
+ V\xrightarrow{\ D\ }U\qquad\text{in degrees }0,1,
+\]
+with $D$ surjective. It is a \emph{complex with an injective differential at
+$i_0$} if at every vertex $i\neq i_0$ it is a vector space in degree zero,
+and at $i_0$ it is $U'\xrightarrow{D'}V'$ in degrees $-1,0$ with $D'$
+injective. In both cases the cohomology is a representation in degree zero,
+and we assume that it is not zero.
+\end{definition}
+
+So $\mathsf E$ has cohomology in degree zero and one differential, located
+at $i_0$, from degree $0$ to degree $1$ or from degree $-1$ to degree $0$.
+For a complex with a surjective differential the
+arrows act by linear maps $\rho_a$ between the spaces of degree zero, with
+$D\rho_a=0$ for the arrows into $i_0$ and no condition on the arrows out of
+$i_0$. Its cohomology is the representation $\mathcal H$ with
+$\mathcal H_{i_0}=\ker D$, $\mathcal H_i=W_i$ for $i\neq i_0$ and the
+restricted arrows. Put $r=\dim U\geq0$, $n_i=\dim\mathcal H_i$,
+\[
+ Z=Z(\mathcal H)=|Z|e^{\ii\varphi},\qquad\varphi\in(0,\pi),\qquad\sigma=\sin\varphi ,
+\]
+and write $z_\ast=x_\ast+\ii y_\ast$ and $\alpha_\ast$ for the charge at
+$i_0$. We call $\varphi$ the \emph{total phase} of $\mathsf E$; $\varphi/\pi$
+is the phase of $\mathcal H$ for the stability condition with central charge
+$Z(\,\cdot\,)$ and heart the category of representations
+\cite[Propositions~2.4 and~5.3]{bri07}. For
+$r=0$ the complex is a representation. For the generalized Kronecker quiver
+$K_m$, with vertices $0,1$ and $m\geq1$ arrows from $0$ to $1$, the complexes
+with a surjective differential at the vertex $0$ with $r\geq1$ and
+$n_0,n_1\geq1$ are those of \cite{wue26a,wue26b}.
+Sections~\ref{sec:energy}--\ref{sec:convergence} treat complexes with a
+surjective differential; those with an injective differential are their
+duals (Proposition~\ref{prop:injective}).
+
+A \emph{metric} on $\mathsf E$ consists of Hermitian metrics on $V$, $U$ and
+the $W_i$; adjoints for the metrics are written ${}^\dagger$. The subcomplex
+$(\ker D)^\perp\to U$ at $i_0$, which depends on the metric and is exact, is
+called the \emph{exact part} of the metrized complex, and $r$ its
+\emph{rank}. Put
+\[
+ B=D^\dagger D,\qquad L=DD^\dagger,\qquad\lambda=\lambda_{\min}(L),\qquad
+ R(b)=\frac{1-e^{-b}}b,
+\]
+\[
+ C_{\mathrm{out}}=\sum_{a:i_0\to\cdot}\rho_a^\dagger\rho_a,\qquad
+ G_{\mathrm{in}}=\sum_{a:\cdot\to i_0}\rho_a\rho_a^\dagger,
+\]
+and, for Hermitian $\Delta\geq0$ and matrices $G$, $M$,
+\[
+ K_\Delta(G)=\int_0^1e^{-(1-x)\Delta}Ge^{-x\Delta}dx,\qquad
+ J_L(M)=\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-xL}Me^{-yL}\,dx\,dy,
+\]
+and $J=J_L(DC_{\mathrm{out}}D^\dagger)$. We write $M_\pm\geq0$ for the positive
+and negative parts of a Hermitian matrix $M$, $\norm\cdot_1$ for the trace
+norm, $\norm\cdot$ for the Hilbert--Schmidt norm and
+$\norm\cdot_{\mathrm{op}}$ for the operator norm of matrices.
+
+\subsection{The endomorphism \texorpdfstring{$\Omega$}{Omega}, the phase and the flow}
+For a bounded complex of representations of $Q$ with Hermitian metrics on all
+its spaces $E_i^n$, the endomorphism $\Omega$ of \cite[\S5.4]{hkkp26} is
+defined through a superconnection in a graded algebra attached to $Q$:
+$\Omega$ is the grading times the component along the basis elements $f_i$
+of $\exp(-\sqrt{-1}F)$, where
+$F=(A-A^*)^2+\sqrt{-1}\sum_if_i\otimes z_i$ and
+$A=\sum_ie_i\otimes d_i+\sum_aa\otimes\rho_a$ in the algebra of
+\cite[Definition~5.13]{hkkp26} tensored with the endomorphisms. Expanding the
+exponential in the terms that contain the arrows, which stops at second
+order, gives the following formula \cite[Proposition~2.1]{wue26c}, which may
+be taken as the definition of $\Omega$ here. Let $\varepsilon$ be the grading, equal
+to $(-1)^n$ in degree $n$, and for $i\in Q_0$ and an arrow $a:i\to j$ put,
+on $E_i=\bigoplus_nE_i^n$,
+\[
+ \Delta_i=d_id_i^\dagger+d_i^\dagger d_i,\qquad
+ \eta_a=d_j^\dagger\rho_a-\rho_ad_i^\dagger,\qquad
+ \mu_i^{\mathsf E}=\sum_{a:i\to\cdot}\rho_a^\dagger\rho_a-\sum_{a:\cdot\to i}\rho_a\rho_a^\dagger .
+\]
+Then $\Omega$ preserves each $E_i^n$, and on $E_i$
+\begin{equation}\label{eq:general}
+ \begin{aligned}
+ \varepsilon\,\Omega=K_{\Delta_i}\bigl(z_i+\mu_i^{\mathsf E}\bigr)
+ &+\sum_{a:k\to i}\int e^{-x\Delta_i}\eta_a\,e^{-(1-x-y)\Delta_k}\eta_a^\dagger\,e^{-y\Delta_i}\\
+ &-\sum_{a:i\to j}\int e^{-x\Delta_i}\eta_a^\dagger\,e^{-(1-x-y)\Delta_j}\eta_a\,e^{-y\Delta_i},
+ \end{aligned}
+\end{equation}
+the integrals over $\{x,y\geq0,\ x+y\leq1\}$ with the measure $dx\,dy$. For a
+representation, that is, a complex in degree zero, this is
+$\Omega=\bigoplus_i(z_i+\mu_i^{\mathsf E})$: the charge at each vertex shifted
+by the moment map. All terms other than
+$z_ie^{-\Delta_i}$ are Hermitian, so $(-1)^n\Omega$ has the positive definite
+imaginary part $y_ie^{-\Delta_i}$ on $E_i^n$. A matrix $T$ with positive
+definite imaginary part has a unique Hermitian matrix $\Psi$ with spectrum in
+$(0,\pi)$ such that $Te^{-\ii\Psi}$ is positive definite: in the polar
+decomposition $T=|T|\,\mathsf W$, with $|T|=(TT^\dagger)^{1/2}$ and
+$\mathsf W$ unitary, an eigenvalue $e^{\ii\psi}$ of $\mathsf W$ with unit
+eigenvector $v$ gives $\inner v{Tv}=e^{\ii\psi}\inner v{|T|v}$, hence
+$\sin\psi>0$ (see \cite[Lemma~2.2]{wue26a}). We call $\Psi$ the \emph{polar
+phase} of $T$ and $|T|=Te^{-\ii\Psi}$ its modulus. The \emph{phase} $\Phi$ of
+the metrized complex is, on $E_i^n$, the polar phase of $(-1)^n\Omega$ minus
+$\pi n$, with spectrum in $(-\pi n,\pi-\pi n)$. This is how we read the
+positivity condition of \cite[\S4.2]{hkkp26} on the branches of
+\cite[(5.15)]{hkkp26}; in \cite[\S5.4]{hkkp26} the phase is written with the
+functional calculus, the two readings agree when $\Omega$ is normal, and for
+complexes $\Omega$ is not normal in general \cite[Example~2.3]{wue26a}. Two
+properties are read off from \eqref{eq:general}:
+\begin{enumerate}
+\item[(O1)] for an orthogonal direct sum of metrized complexes, $\Omega$ and
+ $\Phi$ are the direct sums of those of the summands;
+\item[(O2)] if $\mathsf F[-n]$ denotes the complex $\mathsf F$ with all
+ degrees raised by $n$, then $\Omega_{\mathsf F[-n]}=(-1)^n\Omega_{\mathsf F}$
+ and $\Phi_{\mathsf F[-n]}=\Phi_{\mathsf F}-\pi n$.
+\end{enumerate}
+The \emph{phase flow} is the flow
+\begin{equation}\label{eq:flow}
+ h^{-1}\dot h=-\Phi
+\end{equation}
+of the metrics; it is the minimizing flow of \cite[\S4.1]{hkkp26} for this
+phase, and we use a neutral name because the mass, defined below, can
+increase along it, already for two-term complexes over $K_m$
+\cite[Theorem~1.1]{wue26a}. It exists for all $t\geq0$ from every initial
+metric, because the vector field is real-analytic and the velocity
+$h^{-1}\dot h$ is bounded \cite[Proposition~2.2]{wue26c}. The \emph{mass} of a metric is
+$\mass(h)=\sum_{i,n}\tr|\Omega_i^n|$, where $\Omega_i^n$ is the restriction
+of $\Omega$ to $E_i^n$, and a metric is \emph{harmonic} if $\Phi$ is a
+scalar. Let each vector $e_k(t)$ of a frame of $E_i^n$ solve
+$\dot e_k=\frac12\Phi e_k$, starting from an $h(0)$-orthonormal frame; the
+frame is $h(t)$-orthonormal, because $h^{-1}\dot h=-\Phi$ and $\Phi$ is
+self-adjoint for $h$. Differentiating the matrices in these frames shows
+that the matrix of each structure map $T\in\{d_i,\rho_a\}$ evolves by
+\begin{equation}\label{eq:frameflow}
+ \dot T=\tfrac12\bigl(T\,\Phi_{\mathrm{source}}-\Phi_{\mathrm{target}}\,T\bigr),
+\end{equation}
+with the phases on the source and the target of $T$. By (O2) the
+trajectories of the flow of $\mathsf F[-n]$ are those of $\mathsf F$
+multiplied by $e^{\pi nt}$, and \eqref{eq:frameflow} is the same for both.
+
+For a complex with a surjective differential at $i_0$, \eqref{eq:general}
+gives the blocks \eqref{eq:blocks} below \cite[Theorem~6.1(a)]{wue26c}.
+Indeed, at $i_0$ one has $\Delta_{i_0}=B\oplus L$ on $V\oplus U$, and
+$\Delta_j=0$ for $j\neq i_0$; $\eta_a=-\rho_aD^\dagger$ on $U$ for the arrows
+$a$ out of $i_0$, and $\eta_a=0$ for all other arrows; the matrix
+$G_{\mathrm{in}}$ has its range in $\ker D$, so that
+$K_B(G_{\mathrm{in}})=G_{\mathrm{in}}$; and
+$\int e^{-(1-x-y)L}dx\,dy=(L-1+e^{-L})L^{-2}$ over the simplex, so that
+$D^\dagger(L-1+e^{-L})L^{-2}D=1-R(B)$. Hence
+\begin{equation}\label{eq:blocks}
+ \begin{gathered}
+ \Omega_V=z_\ast e^{-B}+M_V,\qquad M_V:=K_B(C_{\mathrm{out}})-G_{\mathrm{in}},\qquad
+ \Omega_U=J-z_\ast e^{-L},\\
+ \Omega_j=z_j+M_j,\qquad
+ M_j:=\sum_{a:j\to\cdot}\rho_a^\dagger\rho_a
+ -\sum_{\substack{a:k\to j\\k\neq i_0}}\rho_a\rho_a^\dagger
+ -\sum_{a:i_0\to j}\rho_aR(B)\rho_a^\dagger\qquad(j\neq i_0).
+ \end{gathered}
+\end{equation}
+The matrices $M_V$, $J$ and $M_j$ are Hermitian and do not depend on the
+charges; the $\Omega_j$ are normal; and $\tr\Omega=Z$
+\cite[Lemma~5.17]{hkkp26}. The phases are $\Phi_V$ and $\Phi_j$, with
+spectrum in $(0,\pi)$, and $\Phi_U$, with spectrum in $(-\pi,0)$; the mass is
+$\mass(h)=\tr|\Omega_V|+\tr|\Omega_U|+\sum_{j\neq i_0}\tr|\Omega_j|$.
+
+\subsection{The adapted splitting}
+Let $\mathsf E$ have a surjective differential at $i_0$, and fix a metric.
+Split
+$V=\ker D\oplus(\ker D)^\perp$ orthogonally and write the blocks of $\Phi_V$
+as $\Phi_{HH}$, $\Phi_{HA}$, $\Phi_{AH}$, $\Phi_{AA}$, the index $H$ referring
+to $\ker D$ and $A$ to its complement. In orthonormal frames adapted to the
+splitting,
+\[
+ D=(0,F),\qquad\rho_a=(H_a,T_a)\ \ (a:i_0\to j),\qquad
+ \rho_a=\begin{pmatrix}R_a\\0\end{pmatrix}\ \ (a:k\to i_0),
+\]
+with $F$ invertible. Put $X_a=T_aF^{-1}$ for the arrows out of $i_0$. The
+splitting depends on the metric. As in \cite[\S6.1]{wue26a}, the frame of $V$
+is kept adapted by the additional rotation with the anti-Hermitian generator
+$\mathsf a=\frac12\bigl(\begin{smallmatrix}0&\Phi_{HA}\\-\Phi_{AH}&0\end{smallmatrix}\bigr)$,
+and \eqref{eq:frameflow} becomes
+\begin{equation}\label{eq:adapted}
+ \begin{gathered}
+ \dot F=\tfrac12(F\Phi_{AA}-\Phi_UF),\qquad
+ \dot H_a=\tfrac12(H_a\Phi_{HH}-\Phi_jH_a),\\
+ \dot X_a=\tfrac12(X_a\Phi_U-\Phi_jX_a)+H_a\Phi_{HA}F^{-1},\qquad
+ \dot R_a=\tfrac12(R_a\Phi_k-\Phi_{HH}R_a).
+ \end{gathered}
+\end{equation}
+Indeed, the rotation changes the right sides of \eqref{eq:frameflow} by
+$+D\mathsf a$, $+\rho_a\mathsf a$ for the maps out of $V$ and by
+$-\mathsf a\rho_a$ for the maps into $V$; the first block of
+$\frac12(D\Phi_V-\Phi_UD)+D\mathsf a$ vanishes, the first two equations and
+$\dot T_a=\frac12(T_a\Phi_{AA}-\Phi_jT_a)+H_a\Phi_{HA}$ are its second block
+and the blocks of $\frac12(\rho_a\Phi_V-\Phi_j\rho_a)+\rho_a\mathsf a$, the
+third follows from $X_a=T_aF^{-1}$, and the second block of
+$\frac12(\rho_a\Phi_k-\Phi_V\rho_a)-\mathsf a\rho_a$ vanishes.
+
+The arrows of the cohomology representation, for the induced metrics, have
+the matrices $\beta_a=H_a$, $R_a$ or $\rho_a$ according as $a$ leaves $i_0$,
+enters $i_0$ or does not meet $i_0$. Its \emph{moment map} is
+\[
+ \mu_i=\sum_{a:i\to\cdot}\beta_a^\dagger\beta_a-\sum_{a:\cdot\to i}\beta_a\beta_a^\dagger
+ \qquad(i\in Q_0),
+\]
+outgoing minus incoming arrows; its endomorphism $\Omega$ is
+$\bigoplus_i(z_i+\mu_i)$, which is normal, with phases $\arg(z_i+\mu_i)$.
+Put
+\[
+ q_{\mathrm{out}}=\sum_{a:i_0\to\cdot}\norm{H_a}^2,\qquad
+ s=\sum_{a:i_0\to\cdot}\norm{X_a}^2,\qquad
+ Y_j=\sum_{a:i_0\to j}X_a(1-e^{-L})X_a^\dagger\geq0 .
+\]
+Since $B=0\oplus F^\dagger F$ and $FR(F^\dagger F)F^\dagger=1-e^{-L}$, the
+blocks \eqref{eq:blocks} are, in the adapted splitting,
+\begin{equation}\label{eq:adaptedblocks}
+ \Omega_V=\begin{pmatrix}z_\ast+\mu_{i_0}&E_R\\E_R^\dagger&z_\ast e^{-F^\dagger F}+K_{F^\dagger F}(C_T)\end{pmatrix},
+ \qquad\Omega_j=z_j+\mu_j-Y_j,
+\end{equation}
+with $E_R=\sum_aH_a^\dagger T_aR(F^\dagger F)$ and $C_T=\sum_aT_a^\dagger T_a$,
+the sums over the arrows out of $i_0$; moreover $C_T=F^\dagger SF$ and
+$DC_{\mathrm{out}}D^\dagger=L\,S\,L$ with $S=\sum_aX_a^\dagger X_a$,
+$\tr S=s$. Let
+\[
+ \delta_{i_0}=\Phi_{HH}-\arg(z_\ast+\mu_{i_0}),\qquad
+ \delta_j=\Phi_j-\arg(z_j+\mu_j)\quad(j\neq i_0)
+\]
+be the differences between the phases of the complex on the cohomology and
+the phases of the cohomology representation. We say that the exact part
+\emph{decays} along a trajectory if $\lambda\to\infty$ and
+\[
+ \norm{\Omega_V-(z_\ast+\mu_{i_0})\oplus0}_1+\norm{\Omega_U}_1
+ +\sum_{j\neq i_0}\norm{\Omega_j-(z_j+\mu_j)}_1\to0,
+\]
+where $\oplus\,0$ refers to $V=\ker D\oplus(\ker D)^\perp$: the blocks of
+$\Omega$ approach those of the cohomology representation with its induced
+metrics. If $s=0$, then $E_R=0$, $C_T=0$, $J=0$ and $Y_j=0$: the complex is
+the orthogonal direct sum of its cohomology representation and of the
+complex $(\ker D)^\perp\to U$ at $i_0$, and all $\delta_i$ vanish.
+
+\subsection{Results used}
+We use the following results of \cite{wue26a,wue26b}; they are statements
+about matrices.
+
+\begin{proposition}\label{prop:used}
+The following inequalities hold.
+\begin{enumerate}
+\item[(i)] \cite[Theorem~3.1]{wue26b} For Hermitian matrices $L>0$ and
+ $M\geq0$, $\tr J_L(M)_-\leq\frac25\tr J_L(M)$.
+\item[(ii)] \cite[Corollary~4.2]{wue26b} Let $P>0$ and $K$ be Hermitian
+ matrices and $z$ a complex number with $\Ima z>0$, and let $\Psi$ be the
+ polar phase of $zP+K$. Then $\tr(K\Psi)\leq(\arg z)\tr K$.
+\item[(iii)] \cite[Lemma~3.1]{wue26a} Let
+ $T=\bigl(\begin{smallmatrix}A&E\\E^\dagger&C\end{smallmatrix}\bigr)$ have
+ positive definite imaginary part, let the least singular value of $A$ be at
+ least $b>0$, and let $\Psi$ and $\psi_A$ be the polar phases of $T$ and $A$.
+ Then $\norm{\Psi_{12}}\leq2\pi\norm E/b$, and if $\norm E/b\leq\frac18$, then
+ $\norm{\Psi_{11}-\psi_A}\leq4\pi\norm E/b$.
+\item[(iv)] \cite[Lemma~3.2]{wue26a}, in the form of
+ \cite[Proposition~2.3(v)]{wue26b}. Let
+ $T_\circ=|T_\circ|\,e^{\ii\Psi_\circ}$ be an invertible matrix in polar form,
+ with $\Psi_\circ$ Hermitian, and $T=T_\circ+M$ a matrix with $\Ima T>0$ and
+ polar phase $\Psi$. If $v$ is a unit vector with $|T_\circ|v=pv$ and
+ $\Psi_\circ v=\psi v$, where $p>0$ and $0<\psi<\pi$, then
+ $|\inner v{(\Psi-\psi)v}|\leq\pi\sqrt{\norm M_1/p}$.
+\item[(v)] \cite[Lemma~4.2 and \S6.3]{wue26a}, in the form of
+ \cite[Proposition~2.3(ii)]{wue26b}. Let $F$ be an invertible $r\times r$
+ matrix, $L=FF^\dagger$, and $S\geq0$ a Hermitian $r\times r$ matrix. Then,
+ with $\kappa_0=\pi/(2e)$,
+ $\norm{K_{F^\dagger F}(F^\dagger SF)}_1\leq r\kappa_0\tr S$ and
+ $\norm{J_L(LSL)}_1\leq r\tr S$.
+\end{enumerate}
+\end{proposition}
+
+We also use two results of \cite{wue26c} on complexes.
+
+\begin{proposition}[\cite{wue26c}]\label{prop:usedc}
+\begin{enumerate}
+\item[(a)] \cite[Theorem~3.4]{wue26c} Let $\mathsf E$ be a complex with a
+ surjective differential at $i_0$, and for a metric $h$ let
+ \begin{equation}\label{eq:primitive}
+ \cS_{\CC}(h)=\sum_iz_i\log\det h_i-z_\ast\log\det h_U-\sum_a\norm{\rho_a}^2
+ +\int_0^1\bigl(\tr\Omega_U^{(x)}-\tr\Omega_U^{(0)}\bigr)\frac{dx}x,
+ \end{equation}
+ where $h_{i_0}$, $h_U$ and $h_i$ are the metrics of $V$, $U$ and $W_i$, the
+ determinants are Gram determinants in fixed bases, and $\Omega^{(x)}$
+ denotes $\Omega$ for the complex with $D$ replaced by $\sqrt x\,D$. Then
+ $\cS_{\CC}$ is a complex-valued primitive of $\Omega$:
+ $d\cS_{\CC}(\xi)=\tr(\Omega_V\xi_V)+\tr(\Omega_U\xi_U)+\sum_j\tr(\Omega_j\xi_j)$
+ for $\xi=h^{-1}\delta h$.
+\item[(b)] \cite[Theorem~5.1]{wue26c} Let $\mathsf E^\vee$ be the dual
+ complex over the opposite quiver: the dual spaces in the opposite degrees,
+ the transposed maps, the dual metrics, and the charges $-\overline{z_i}$.
+ Then $h(t)\mapsto e^{-\pi t}(h(t)^{-1})^{\mathsf T}$ maps trajectories of
+ the phase flow of $\mathsf E$ to trajectories of the phase flow of
+ $\mathsf E^\vee$; in dual orthonormal frames $\Omega$ is replaced by
+ $-\overline\Omega$ and $\Phi$ by $\pi-\overline\Phi$; and the mass is
+ preserved.
+\end{enumerate}
+\end{proposition}

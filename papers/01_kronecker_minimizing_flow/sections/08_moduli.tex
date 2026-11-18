@@ -1,0 +1,297 @@
+\section{The infimum: quasi-isomorphic complexes and moduli}\label{sec:moduli}
+
+The charges are ordered. This section identifies the infimum of the phase
+potential and shows that, up to an explicit constant, it is the same for
+quasi-isomorphic complexes of the class \eqref{eq:complex}.
+
+\subsection{Volume data}
+A \emph{volume datum} for a complex $\mathsf E$ is a triple
+$\varpi=(\varpi_V,\varpi_U,\varpi_W)$ of nonzero elements of the top exterior
+powers $\det V,\det U,\det W$. If these are the wedges of the reference bases,
+then by \eqref{eq:primitive}
+\begin{equation}\label{eq:Kvol}
+ \cK(h;\varpi)=\theta_0\bigl(\log\norm{\varpi_V}^2_{h_V}-\log\norm{\varpi_U}^2_{h_U}\bigr)
+ -\theta_1\log\norm{\varpi_W}^2_{h_W}+\theta_0\tr\Ein(B)+\tr\bigl(CR(B)\bigr),
+\end{equation}
+and we use \eqref{eq:Kvol} as the definition of $\cK$ for an arbitrary volume
+datum. Let $H=\ker D$. There is a canonical isomorphism
+\[
+ \iota_D:\det V\otimes(\det U)^{-1}\to\det H,\qquad
+ (v_1\wedge\dots\wedge v_{n_0+r})\otimes(Dv_{n_0+1}\wedge\dots\wedge Dv_{n_0+r})^{-1}
+ \mapsto v_1\wedge\dots\wedge v_{n_0},
+\]
+for any basis $(v_i)$ of $V$ whose first $n_0$ vectors span $H$. Put
+$\bar\varpi=(\iota_D(\varpi_V\otimes\varpi_U^{-1}),\varpi_W)$, a volume datum
+for the cohomology representation $\mathcal H=(H\to W)$, and
+\begin{gather*}
+ \cK_{\coh}(\mathcal H;h_0,h_1;\bar\varpi)=q+\theta_0\log\norm{\iota_D(\varpi_V\otimes\varpi_U^{-1})}^2_{h_0}
+ -\theta_1\log\norm{\varpi_W}^2_{h_1},\\
+ \cK_*(\mathcal H;\bar\varpi)=\inf_{h_0,h_1}\cK_{\coh}.
+\end{gather*}
+
+\begin{lemma}\label{lem:determinant}
+For all metrics, with $h_0=h_V|_H$ and $\det{}'$ the product of the nonzero
+eigenvalues,
+\[
+ \log\norm{\varpi_V}^2_{h_V}-\log\norm{\varpi_U}^2_{h_U}+\log\det{}'(D^\dagger D)
+ =\log\norm{\iota_D(\varpi_V\otimes\varpi_U^{-1})}^2_{h_0}.
+\]
+\end{lemma}
+
+\begin{proof}
+Take an $h_V$-orthonormal basis $(v_i)$ with $v_1,\dots,v_{n_0}\in H$ and an
+$h_U$-orthonormal basis $(u_i)$, let $F$ be the matrix of $D|_{H^\perp}$, and
+write $\varpi_V=a_Vv_1\wedge\dots\wedge v_{n_0+r}$,
+$\varpi_U=a_Uu_1\wedge\dots\wedge u_r$. Then
+$\iota_D(\varpi_V\otimes\varpi_U^{-1})=(a_V/a_U)\det F\cdot v_1\wedge\dots\wedge v_{n_0}$,
+and $|\det F|^2=\det{}'(D^\dagger D)$.
+\end{proof}
+
+This is the comparison already used in the proof of
+Proposition~\ref{prop:decomposition}, where $c_D$ is the logarithm of the
+squared modulus of $\iota_D$ in the reference bases.
+
+\begin{theorem}[Infimum of the potential]\label{thm:infimum}
+Let the charges be ordered. For every complex and volume datum,
+\begin{gather*}
+ \cK(h;\varpi)=\cK_{\coh}(\mathcal H;h_0,h_1;\bar\varpi)
+ +\theta_0\bigl[r\gamma+\tr{}'E_1(D^\dagger D)\bigr]+\tr Y,\\
+ \inf_h\cK(h;\varpi)=\cK_*(\mathcal H;\bar\varpi)+\theta_0\gamma\,r,
+\end{gather*}
+where $\tr{}'$ is the trace over the nonzero spectrum; the infimum is not
+attained. Consequently, let $\mathsf E,\mathsf E'$ be two complexes of the
+class \eqref{eq:complex} with semistable cohomology and
+$f=(f_V,f_U,f_W):\mathsf E\to\mathsf E'$ a quasi-isomorphism of complexes of
+representations, that is, a morphism inducing an isomorphism
+$\mathcal H\to\mathcal H'$ of the cohomology representations. If the volume
+data correspond, $\bar\varpi'=f_*\bar\varpi$, then
+\[
+ \inf_{h'}\cK_{\mathsf E'}(h';\varpi')-\inf_h\cK_{\mathsf E}(h;\varpi)=\theta_0\gamma\,(r'-r).
+\]
+\end{theorem}
+
+\begin{proof}
+The first identity is Proposition~\ref{prop:decomposition} with
+Lemma~\ref{lem:determinant} and
+\[
+ \tr\Ein(D^\dagger D)=\log\det{}'(D^\dagger D)+r\gamma+\tr{}'E_1(D^\dagger D);
+\]
+the infimum is Corollary~\ref{cor:infimum}. The function $\cK_*$ is
+transported by isomorphisms of representations with volume data.
+\end{proof}
+
+We note three special cases. For an invertible triple $g=(g_V,g_U,g_W)$ and fixed
+$\varpi$,
+$\inf\cK_{g\cdot\mathsf E}=\inf\cK_{\mathsf E}-\theta_0\log|\det g_V/\det g_U|^2+\theta_1\log|\det g_W|^2$.
+A shear $g_V=\left(\begin{smallmatrix}\id&S\\0&\id\end{smallmatrix}\right)$ in
+a splitting $V=H\oplus H'$, which leaves $D$ and the arrows on $H$ unchanged
+and replaces the arrows $T_j$ on $H'$ by $T_j-A_j|_HS$, does not change the
+infimum. Adding an acyclic summand $H''\xrightarrow{F''}U''$ with arbitrary
+arrows $H''\to W$ adds
+$\theta_0[\gamma\dim U''+\log|\det F''|^2]$, independently of those arrows.
+In \cite[\S8.1]{wue26} the shear and the removal of orthogonal acyclic
+summands were compared for fixed metrics on $V,U,W$ and $\lambda$ large.
+
+\begin{remark}\label{rem:normalization}
+The \emph{normalized potential} $\cK-\theta_0\gamma\,r$ has infimum
+$\cK_*(\mathcal H;\bar\varpi)$, the infimum of the Kempf--Ness function of the
+cohomology representation, for every complex with that cohomology. The
+constant reflects the choice of regularization: for $b>0$,
+$\log b=\int_0^1(1-e^{-xb})\frac{dx}x-\int_1^\infty e^{-xb}\frac{dx}x-\gamma$,
+and $\Ein(b)$ is the first integral alone. The primitive of $\Omega$
+is determined on the metrics of one complex only up to an additive constant,
+and the normalized potential fixes these constants compatibly.
+\end{remark}
+
+\subsection{The potential on moduli}
+Let $\mathcal R=\operatorname{Hom}(\CC^{n_0},\CC^{n_1})^k$ be the space of
+representations of dimension vector $(n_0,n_1)$, with the action of
+$\mathrm G=\mathrm{GL}_{n_0}\times\mathrm{GL}_{n_1}$,
+$b_j\mapsto g_1b_jg_0^{-1}$, and $\mathrm K=\mathrm U(n_0)\times\mathrm U(n_1)$.
+Put
+\[
+ \varkappa(b)=\inf_{g\in\mathrm G}\Bigl[\norm{g\cdot b}^2+\theta_0\log|\det g_0|^2
+ -\theta_1\log|\det g_1|^2\Bigr],
+\]
+let $\mathcal R^{\mathrm s}$ be the set of stable points,
+$\mathcal R_0=\{C_0=\theta_0\id,\ C_1=\theta_1\id\}\cap\mathcal R^{\mathrm s}$
+the zeros of the moment map in it, and
+$\mathcal M^{\mathrm s}=\mathcal R^{\mathrm s}/\mathrm G=\mathcal R_0/\mathrm K$
+the moduli space of stable representations \cite{kin94}, with the K\"ahler
+form $\omega_\theta$ obtained by reduction of
+$\omega_{\mathrm{flat}}=\ii\partial\bar\partial\norm b^2$: its pullback to
+$\mathcal R_0$ is the restriction of $\omega_{\mathrm{flat}}$. Let
+$\mathrm{pr}:\mathcal R^{\mathrm s}\to\mathcal M^{\mathrm s}$ be the
+projection. The stable locus may be empty, for instance for $k=2$ and
+$n_0=n_1\geq2$; the statements about it are then vacuous.
+
+\begin{lemma}\label{lem:kappa}
+The function $\varkappa$ has the following properties.
+\begin{enumerate}
+\item[(a)] $\varkappa(g\cdot b)=\varkappa(b)-\theta_0\log|\det g_0|^2+\theta_1\log|\det g_1|^2$.
+\item[(b)] $\varkappa$ is real-analytic on $\mathcal R^{\mathrm s}$ and
+ $\ii\partial\bar\partial\varkappa=\mathrm{pr}^*\omega_\theta$ there.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Substitute $g'g$ in the infimum. (b) Let $b_0\in\mathcal R_0$ and, for a
+pair $\zeta=(\zeta_0,\zeta_1)$ of Hermitian matrices, let
+$f(\zeta,b)=\norm{e^\zeta\cdot b}^2+2\theta_0\tr\zeta_0-2\theta_1\tr\zeta_1$,
+so $\varkappa(b)=\inf_\zeta f(\zeta,b)$. Then $\partial_\zeta f(0,b_0)=0$, and
+$\partial_\zeta^2f(0,b_0)[\zeta,\zeta]=4\norm{\zeta\cdot b_0}^2$, with
+$\zeta\cdot b=(\zeta_1b_j-b_j\zeta_0)_j$ the infinitesimal action, is positive
+definite modulo the scalars $(c,c)$, on which $f$ is constant. By the
+implicit function theorem there is a critical point $\zeta(b)$ of
+$f(\cdot,b)$, real-analytic near $b_0$. It is the global minimizer:
+$b'=e^{\zeta(b)}\cdot b$ lies in $\mathcal R_0$, the function
+$x\mapsto f(x\zeta',b')$ is convex with zero derivative at $0$ for every
+$\zeta'$, and every element of $\mathrm G$ is $ue^{\zeta'}$ with
+$u\in\mathrm K$. For a holomorphic curve $b(w)$ with $b(0)=b_0$ and
+$\dot b=b'(0)$, differentiating the minimum gives
+$\partial_w\partial_{\bar w}\varkappa
+=f_{w\bar w}-f_{w\zeta}f_{\zeta\zeta}^{-1}f_{\zeta\bar w}$ with
+$f_{w\bar w}=\norm{\dot b}^2$,
+$f_{w\zeta}[\zeta]=2\inner{\zeta\cdot b_0}{\dot b}$ and
+$f_{\zeta\zeta}[\zeta,\zeta']=4\Rea\inner{\zeta\cdot b_0}{\zeta'\cdot b_0}$. At
+a point of $\mathcal R_0$ the $\mathrm K$-orbit is isotropic, so the real
+space $\{\zeta\cdot b_0\}$ is orthogonal to its multiple by $\ii$, and a real
+orthonormal basis of it is a unitary basis of the tangent space
+$\mathfrak g\cdot b_0$ of the complex orbit. Hence
+\[
+ \partial_w\partial_{\bar w}\varkappa(b(w))\big|_{w=0}
+ =\norm{\dot b}^2-\norm{\Pi_{\mathfrak g\cdot b_0}\dot b}^2,
+\]
+the squared length of the component of $\dot b$ orthogonal to the complex
+orbit, which is the reduced form evaluated on $d\,\mathrm{pr}(\dot b)$. For a
+general stable point: every stable orbit meets $\mathcal R_0$
+\cite{kn79,kin94}, and for fixed $g$ the translation $b\mapsto g\cdot b$ is a
+biholomorphism of $\mathcal R^{\mathrm s}$ commuting with $\mathrm{pr}$ and
+changing $\varkappa$ by a constant, by (a); so both sides of the identity are
+invariant under it.
+\end{proof}
+
+Lemma~\ref{lem:kappa}(b) is the classical description of the K\"ahler
+potential of a K\"ahler quotient through the shifted ambient potential; for
+tori see \cite{bg04}. We include the short proof for the reader's
+convenience.
+
+Let now $\mathcal P$ be a complex manifold with holomorphic maps
+$p\mapsto D(p),A_j(p)$ (matrices in fixed bases), $D(p)$ surjective, $\varpi$
+the volume datum of the bases, $\mathsf E(p)$ the corresponding complexes,
+$\cK_\infty(p)=\inf_h\cK_{\mathsf E(p)}(h;\varpi)$, and $\mathcal P^{\mathrm s}$
+the open set where the cohomology representation is stable.
+
+\begin{theorem}[The potential on moduli]\label{thm:moduli}
+Let the charges be ordered. On $\mathcal P^{\mathrm s}$ the function
+$\cK_\infty$ is real-analytic and
+\[
+ \ii\partial\bar\partial\cK_\infty=\mathrm{coh}^*\omega_\theta,
+\]
+where $\mathrm{coh}:\mathcal P^{\mathrm s}\to\mathcal M^{\mathrm s}$ sends $p$
+to the class of the cohomology representation of $\mathsf E(p)$. In
+particular the form is the same for all holomorphic families of complexes of
+the class \eqref{eq:complex} with the same family of cohomology
+representations, and it vanishes in every direction along which the
+isomorphism class of the cohomology representation is constant.
+\end{theorem}
+
+\begin{proof}
+$\ker D(p)$ is a holomorphic subbundle. In a local holomorphic frame
+$(e_i(p))$ of it let $b(p)\in\mathcal R$ be the matrices of
+$A_j(p)|_{\ker D(p)}$; then $b$ is holomorphic and
+$\mathrm{coh}=\mathrm{pr}\circ b$. Write
+$\iota_{D(p)}(\varpi_V\otimes\varpi_U^{-1})=a(p)\,e_1(p)\wedge\dots\wedge e_{n_0}(p)$
+with $a$ holomorphic and nowhere zero. By Theorem~\ref{thm:infimum},
+$\cK_\infty(p)=\varkappa(b(p))+\theta_0\log|a(p)|^2+\theta_0\gamma r$, and the
+last two terms are pluriharmonic. Apply Lemma~\ref{lem:kappa}(b).
+\end{proof}
+
+\begin{remark}\label{rem:levi}
+For fixed metrics on $V,U,W$ the function $(A,D)\mapsto\cK(h)$ is not
+plurisubharmonic: for the symmetric charges it has a negative Levi direction
+along a family of complexes with constant cohomology representation
+\cite[Proposition~7.5]{wue26}. Theorem~\ref{thm:moduli} concerns the function
+after minimizing over the metrics, where the infimum is not attained; along
+such a family it is pluriharmonic.
+\end{remark}
+
+\subsection{Convergence along the flow in families}
+For a continuous family of initial metrics $h^{\mathrm{in}}(p)$ let $h(t;p)$ be
+the trajectory of the phase flow of $\mathsf E(p)$ starting at
+$h^{\mathrm{in}}(p)$, and $\cK_t(p)=\cK_{\mathsf E(p)}(h(t;p);\varpi)$.
+
+\begin{theorem}[Convergence in families]\label{thm:families}
+Let the charges be ordered.
+\begin{enumerate}
+\item[(i)] If the cohomology representation of $\mathsf E(p)$ is semistable,
+ then $\cK_t(p)\to\cK_\infty(p)$ as $t\to\infty$, although the infimum is not
+ attained and no zero of the moment map need exist. For admissible charges
+ $\cK_t(p)$ is strictly decreasing in $t$.
+\item[(ii)] On compact subsets of $\mathcal P^{\mathrm s}$,
+ $0<\cK_t-\cK_\infty\leq Ce^{-ct}$ with $C,c>0$ depending only on the subset.
+\item[(iii)] On $\mathcal P^{\mathrm s}$ all parameter derivatives of $\cK_t$
+ converge to those of $\cK_\infty$ in the sense of distributions; in
+ particular $\ii\partial\bar\partial\cK_t\to\mathrm{coh}^*\omega_\theta$
+ weakly.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) By Theorem~\ref{thm:infimum},
+$\cK_t-\cK_\infty=\mathcal E(t)+\theta_0\tr{}'E_1(D^\dagger D)+\tr Y$ with
+$\mathcal E=\cK_{\coh}-\cK_*\geq0$ as in Section~\ref{sec:convergence}. The
+second term is at most $\theta_0rE_1(\lambda(t))$ and the third at most
+$s(t)$; both tend to zero by
+Theorem~\ref{thm:cancellation}, and $\mathcal E(t)\to0$ by
+Theorem~\ref{thm:relaxation}. Monotonicity for admissible charges is
+Theorem~\ref{thm:monotone}; positivity of the difference is
+Corollary~\ref{cor:infimum}.
+
+(ii) For $t\geq t_1$, $\tr Y\leq s\leq s_1e^{-\frac{\alpha_1}2(t-t_1)}$ and
+$\theta_0\tr{}'E_1\leq\theta_0re^{-\lambda}\leq\theta_0re^{\mathfrak c_3}e^{-\frac{\alpha_1}4(t-t_1)}$
+by Theorem~\ref{thm:cancellation} and \eqref{eq:E1bounds}, and
+$\mathcal E(t)\leq\mathfrak C_2e^{-2\beta t}$ by the proof of
+Theorem~\ref{thm:convergence}. All constants there and in
+\eqref{eq:constants} are continuous functions of $N(0)$, $\lambda(0)$,
+$\tr E_1(L)|_{t=0}$, $\mathcal E(0)$ and $\nu_*$, which are continuous in $p$
+for continuous initial metrics; and $\nu_*(p)$ is positive on
+$\mathcal P^{\mathrm s}$, being the least eigenvalue of the Hessian form of
+Lemma~\ref{lem:gap} at a zero of the moment map, which depends continuously
+on $p$ modulo $\mathrm K$ by the proof of Lemma~\ref{lem:kappa}(b), on the
+orthogonal complement of the scalars.
+
+(iii) Locally uniform convergence of continuous functions implies convergence
+of all derivatives in the sense of distributions.
+\end{proof}
+
+\begin{corollary}\label{cor:continuity}
+In Theorem~\ref{thm:convergence} the limit $\mathfrak h_\infty$ depends continuously on
+the initial metric. Along a continuous family of complexes whose cohomology
+representations stay stable, with continuous initial metrics, it depends
+continuously on the parameter, in continuous local frames of $\ker D$.
+\end{corollary}
+
+\begin{proof}
+The constants of Theorem~\ref{thm:convergence} are locally uniform in such
+families: $N(0)$, $t_2$ and $\mathcal E(0)$ are continuous, and $\nu_*$ is
+continuous and positive on the stable locus, as shown in the proof of
+Theorem~\ref{thm:families}(ii). So $d(\mathfrak h(t),\mathfrak h_\infty)\leq\mathfrak Ce^{-\beta t}$ uniformly,
+and $\mathfrak h(T)$ depends continuously on the data for each fixed $T$.
+\end{proof}
+
+
+We do not know whether the parameter derivatives of $\cK_t$ converge
+pointwise. Outside the stable locus the infimum need not be differentiable.
+For example let $k=2$, $n_0=n_1=2$ (so $\theta_0=\theta_1$) and
+$b=(\id_2,\left(\begin{smallmatrix}0&a\\a'&0\end{smallmatrix}\right))$ with
+$a,a'\neq0$. This representation is isomorphic to the direct sum of the two
+representations $(1,\pm c)$ of dimension vector $(1,1)$, $c^2=aa'$, by a
+simultaneous conjugation, which does not change $\varkappa$ because
+$\theta_0=\theta_1$; and on a direct sum of representations $(1,c_i)$ the
+infimum is attained at a diagonal zero of the moment map. Hence
+\[
+ \varkappa(b)=2\theta_0+2\theta_0\log\frac{1+|a|\,|a'|}{\theta_0}\qquad(a,a'\neq0),
+\]
+which has no differentiable extension to $a=0$, where the representation is
+semistable and not polystable.

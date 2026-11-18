@@ -1,0 +1,360 @@
+\section{Complexes of bundles on a curve}\label{sec:bundles}
+
+The dictionary of \cite[Remark~5.14]{hkkp26} recalled in
+Section~\ref{sec:setting} suggests the following formulation for two-term
+complexes of holomorphic vector bundles on a curve, through the
+superconnection of Quillen \cite{qui85}; the remark states the analogy
+between the algebra of the quiver and the forms on a Riemann surface, and
+the definition for bundles below is ours. A two-term complex $E^0\to E^1$ is
+a
+holomorphic triple in the sense of Bradlow and Garc\'ia-Prada \cite{bg96},
+and for $E^0=\mathcal O$ a holomorphic pair \cite{bra91}; the equations
+studied there are the vortex equations. No equation for the pair of metrics
+is proposed here: the phases $\Phi^0$ and $\Phi^1$ defined below take values
+in the disjoint intervals $(0,\pi)$ and $(-\pi,0)$, so that, as for
+complexes of representations (Remark~\ref{rem:phase}), a metric of constant
+phase exists only on a single bundle, where it is a Hermitian--Einstein
+metric. The object of this section is the flow \eqref{eq:bundleflow}. We give
+the endomorphism
+$\Omega$, a primitive and the derivative of the phase potential along the
+flow, show that the linearization of the flow is parabolic, and work out the
+case of a section of a line bundle. In this section ${}^\dagger$ denotes the
+adjoint for the metrics, also for endomorphism-valued forms; $K_\Delta$ and
+the divided differences $\mathsf f[\,\cdot\,]$ of $e^{-x}$ (not the bundle
+map $f$) are as in Section~\ref{sec:setting}, and $\Eone$ and $\Ein$ as in
+Section~\ref{sec:rate}. The results of the earlier sections are cited where
+they are used.
+
+\subsection{The endomorphism \texorpdfstring{$\Omega$}{Omega}}
+Let $X$ be a compact Riemann surface with a K\"ahler form $\omega$,
+$\int_X\omega=1$, and $z$ a complex number with $\Ima z>0$. For a holomorphic
+vector bundle $E$ put $Z(E)=z\rk E-\deg E$; for $z=\ii$ this is the usual
+central charge $-\deg E+\ii\rk E$. A \emph{metrized two-term
+complex} is $E^0\xrightarrow{f}E^1$ with $f$ a holomorphic bundle map and
+Hermitian metrics $h^0,h^1$. Let $\nabla$ be the Chern connections, $F_{h^n}$
+their curvatures,
+\[
+ \mathfrak k^n=\tfrac{\ii}{2\pi}\Lambda_\omega F_{h^n}\in\End(E^n),
+ \qquad B=f^\dagger f,\quad L=ff^\dagger,
+\]
+and, in a local holomorphic coordinate $w$ with
+$\omega=\frac{\ii}2g\,dw\wedge d\bar w$ and $f_w=\nabla_{\partial_w}f$,
+\[
+ \mathfrak q^0(T)=\frac{f_w^\dagger\,T\,f_w}{\pi g},\qquad
+ \mathfrak q^1(T)=\frac{f_w\,T\,f_w^\dagger}{\pi g},
+\]
+which do not depend on the coordinate. The endomorphisms $\mathfrak k^n$ are
+Hermitian, and $\int_X\tr\mathfrak k^n\,\omega=\deg E^n$. Let $\gr$ be the
+grading of $E^0\oplus E^1$, let $\mathbb A=\nabla+\varkappa(f+f^\dagger)$ be
+the superconnection on $E^0\oplus E^1$ with $\varkappa^2=-2\pi\ii$, and
+\[
+ \mathfrak F_h=\tfrac{\ii}{2\pi}\mathbb A^2-z\,\omega
+ =(B\oplus L)+\tfrac{\ii\varkappa}{2\pi}\bigl(\nabla^{1,0}f+\nabla^{0,1}f^\dagger\bigr)
+ +\tfrac{\ii}{2\pi}F_h-z\,\omega .
+\]
+We define $\Omega=\Omega^0\oplus\Omega^1\in\End(E^0)\oplus\End(E^1)$ by
+\begin{equation}\label{eq:bundlecoefficient}
+ \Omega\,\omega=\gr\,\bigl[\exp(-\mathfrak F_h)\bigr]^{(2)},
+\end{equation}
+the two-form part of the exponential in the algebra of
+$\End(E^0\oplus E^1)$-valued forms with the sign rule of graded tensor
+products. Up to the normalization $\varkappa$, $\mathbb A$ is Quillen's
+superconnection of the Hermitian complex, and the supertrace of
+$\exp(-\mathfrak F_h)$ is $e^{z\omega}$ times its Chern character form in the
+normalization $\str\exp(-\frac{\ii}{2\pi}\mathbb A^2)$, whose part of degree
+two represents $-c_1(E^0)+c_1(E^1)$. In \eqref{eq:bundlecoefficient} the
+operator $\bar\partial+\varkappa f$, which does not depend on the metric,
+takes the place of the element $A$ of Section~\ref{sec:setting}; so the
+arrows correspond to forms of type $(0,1)$, whereas
+\cite[Remark~5.14]{hkkp26} compares them with forms of type $(1,0)$.
+
+\begin{proposition}\label{prop:bundleformula}
+The blocks of $\Omega$ are
+\[
+ \Omega^0=K_B(z-\mathfrak k^0)+\mathcal J^0,\qquad
+ \Omega^1=\mathcal J^1-K_L(z-\mathfrak k^1),
+\]
+with
+$\mathcal J^0=\int e^{-xB}\,\mathfrak q^0\bigl(e^{-(1-x-y)L}\bigr)\,e^{-yB}\,dx\,dy$
+and
+$\mathcal J^1=\int e^{-xL}\,\mathfrak q^1\bigl(e^{-(1-x-y)B}\bigr)\,e^{-yL}\,dx\,dy$
+over $\{x,y\geq0,\ x+y\leq1\}$. The endomorphisms $\mathcal J^n$ are
+Hermitian, so $\Ima\Omega^0=(\Ima z)e^{-B}>0$ and
+$\Ima(-\Omega^1)=(\Ima z)e^{-L}>0$ at every point of $X$. Moreover
+\[
+ \int_X\tr(\Omega)\,\omega=Z(E^0)-Z(E^1).
+\]
+\end{proposition}
+
+\begin{proof}
+The Duhamel expansion of $\exp(-(B\oplus L)-Y)$ with
+$Y=\beta+\frac{\ii}{2\pi}F_h-z\omega$,
+$\beta=\frac{\ii\varkappa}{2\pi}(\nabla^{1,0}f+\nabla^{0,1}f^\dagger)$, has
+the two-form part
+$K_{B\oplus L}(z\omega-\frac{\ii}{2\pi}F_h)+\int e^{-x(B\oplus L)}\beta e^{-(1-x-y)(B\oplus L)}\beta e^{-y(B\oplus L)}$,
+and
+$\beta\,T\,\beta=\frac{\ii}{2\pi}(dw\otimes f_w+d\bar w\otimes f_w^\dagger)\,T\,(dw\otimes f_w+d\bar w\otimes f_w^\dagger)$.
+By the sign rule, on $E^0$:
+$(d\bar w\otimes f_w^\dagger)\,T\,(dw\otimes f_w)=dw\wedge d\bar w\otimes f_w^\dagger Tf_w$,
+and on $E^1$:
+$(dw\otimes f_w)\,T\,(d\bar w\otimes f_w^\dagger)=-dw\wedge d\bar w\otimes f_wTf_w^\dagger$.
+Since $\frac{\ii}{2\pi}dw\wedge d\bar w=\frac1{\pi g}\omega$, the two-form
+parts are $[K_B(z-\mathfrak k^0)+\mathcal J^0]\omega$ on $E^0$ and
+$[K_L(z-\mathfrak k^1)-\mathcal J^1]\omega$ on $E^1$; the latter is multiplied
+by $-1$. Hermiticity is as in Proposition~\ref{prop:properties}(a). For the
+integral, replace $f$ by $uf$, $u\in[0,1]$: the derivative in $u$ of the
+supertrace of $[\exp(-\mathfrak F)]^{(2)}$ is exact, by the transgression
+formula for superconnections \cite{qui85}, so the integral equals its value
+at $u=0$, which is $z(\rk E^0-\rk E^1)-(\deg E^0-\deg E^1)$.
+\end{proof}
+
+The formula has the shape of $\Omega$ for a two-term complex of
+representations, with $-\mathfrak k^0$ in the place of the arrow term. The
+phases $\Phi^0$, with spectrum in $(0,\pi)$, and $\Phi^1$, with spectrum in
+$(-\pi,0)$, are defined pointwise on $X$ as in
+Proposition~\ref{prop:properties}(c), and the \emph{phase flow} is
+\begin{equation}\label{eq:bundleflow}
+ (h^n)^{-1}\partial_th^n=-\Phi^n(h),\qquad n=0,1 .
+\end{equation}
+For a single bundle, $E^1=0$, it is $h^{-1}\partial_th=-\arg(z-\mathfrak k_h)$,
+with $z-\mathfrak k_h$ a normal endomorphism; its fixed points modulo
+rescaling are the metrics with $\mathfrak k_h$ a scalar, the
+Hermitian--Einstein metrics. Donaldson's heat flow \cite{don85} has velocity
+proportional to $\mu-\mathfrak k_h$, with $\mu$ the slope; the present flow
+has velocity $-\arg(z-\mathfrak k_h)$, and the two have the same stationary
+points modulo rescaling. For a line bundle this is a flow of the metric
+by an angle, of the same kind as the flow of Jacob and Yau for the deformed
+Hermitian--Yang--Mills equation \cite[(1.2)]{jy17}, and the condition that
+the phase be constant is of the type of the equation for $Z$-critical
+connections \cite[Definition~2.22]{dms24}.
+
+\subsection{The primitive and the derivative along the flow}
+For a bundle $E$ with a reference metric let $M$ be the function on the
+space of metrics with $dM(\xi)=\int_X\tr(\mathfrak k_h\xi)\,\omega$ and
+$M(h^{\mathrm{ref}})=0$; this one-form is closed \cite{don85}, which is also
+the case $f=0$, $E^1=0$ of the proposition below.
+
+\begin{proposition}\label{prop:bundleprimitive}
+On the space of smooth metrics the one-form
+$\xi\mapsto\int_X\tr(\Omega\,\xi)\,\omega$, $\xi=h^{-1}\delta h$, is closed. A
+primitive is
+\begin{multline*}
+ \cS_{\CC}(h)=z\int_X\Bigl(\log\det\bigl((h^{0,\mathrm{ref}})^{-1}h^0\bigr)
+ -\log\det\bigl((h^{1,\mathrm{ref}})^{-1}h^1\bigr)\Bigr)\omega
+ -M(h^0)+M(h^1)\\
+ +\int_0^1\!\!\int_X\tr\bigl(\Omega_{[x]}^1+z-\mathfrak k^1\bigr)\,\omega\,\frac{dx}x,
+\end{multline*}
+where $\Omega_{[x]}^1$ is the block on $E^1$ of the endomorphism
+\eqref{eq:bundlecoefficient} for $\sqrt x\,f$, the analogue of the
+$\Omega^{(x)}$ of Theorem~\ref{thm:primitive}; for $x=0$ this block is
+$-(z-\mathfrak k^1)$.
+\end{proposition}
+
+\begin{proof}
+We apply Lemma~\ref{lem:abstract}. Let $\mathcal C$ be the algebra of smooth
+$\End(E^0\oplus E^1)$-valued forms on $X$, graded by the form degree plus the
+degree of the endomorphism, with the sign rule of graded tensor products, and
+let $\tau(\alpha)=\int_X\str\alpha^{(2)}$, the integral of the supertrace of
+the two-form part; it vanishes on supercommutators. Let
+$\mathbb A''=\bar\partial+\varkappa f$ and
+$\mathbb A'=\nabla^{1,0}+\varkappa f^\dagger$ be the two parts of the
+superconnection, and put
+\[
+ \mathfrak d=(2\pi)^{-1/2}[\mathbb A'',\,\cdot\,],\qquad
+ \mathfrak d^\star=-(2\pi)^{-1/2}[\mathbb A',\,\cdot\,],\qquad
+ F=\tfrac1{2\pi}\mathbb A^2+\sqrt{-1}\,z\,\omega=-\sqrt{-1}\,\mathfrak F_h .
+\]
+These are odd derivations of $\mathcal C$: first-order operators acting on
+endomorphism-valued forms by supercommutators. One has
+$(\mathbb A'')^2=0$, because $\bar\partial^2=0$, $\bar\partial f=0$ and
+$f^2=0$, and $(\mathbb A')^2=0$ likewise; so
+$\mathbb A^2=[\mathbb A',\mathbb A'']$, and by the graded Jacobi identity
+$\mathfrak d$ and $\mathfrak d^\star$ annihilate $\mathbb A^2$ and satisfy
+$\mathfrak d\mathfrak d^\star+\mathfrak d^\star\mathfrak d
+=-\frac1{2\pi}[\mathbb A^2,\,\cdot\,]=-[F,\,\cdot\,]$; the form $\omega$ is
+closed and central. By Stokes' theorem and the vanishing of the supertrace
+on supercommutators, $\tau\circ\mathfrak d=0=\tau\circ\mathfrak d^\star$. For
+a variation $\xi=h^{-1}\delta h$ of the metrics, $\delta_\xi\mathbb A''=0$ and
+$\delta_\xi\mathbb A'=[\mathbb A',\xi]$ for the Chern connection and the
+adjoint $f^\dagger$, hence
+$\delta_\xi F=\frac1{2\pi}[\mathbb A'',[\mathbb A',\xi]]=-\mathfrak d\mathfrak d^\star\xi$;
+and $\partial_v\xi-\partial_u\eta=[\xi,\eta]$ as before. The exponential of
+$-\sqrt{-1}F=-\mathfrak F_h$ is the finite Duhamel expansion around the
+form-degree zero part $-(B\oplus L)$, so the remaining hypotheses hold, and
+$\tau(e^{-\sqrt{-1}F}\xi)=\int_X\tr(\Omega\,\xi)\,\omega$ by
+\eqref{eq:bundlecoefficient}. All terms in the proof of the lemma are
+integrals over $X$ of polynomials in $\xi$, $\eta$ and their covariant
+derivatives up to order two, with smooth coefficients. The
+primitive is obtained as in Theorem~\ref{thm:primitive} from the path of
+metrics $(h^0,xh^1)$, $x\in(0,1]$, along which the velocity is $\frac1x$
+times the number operator and which corresponds to the rescaling
+$\sqrt x\,f$; the integrand of the $x$-integral is bounded near $x=0$ because
+$\Omega_{[x]}$ is analytic in $x$. For $f=0$ one has
+$\Omega=(z-\mathfrak k_{h^0})\oplus-(z-\mathfrak k_{h^1})$, with the primitive
+given by the first three terms.
+\end{proof}
+
+In the terms of the theory of Bott--Chern forms: the integral of the
+form-valued one-form $\xi\mapsto\str\bigl(\xi\,e^{-\mathfrak F_h}\bigr)$ along
+a path of metrics from $h^{\mathrm{ref}}$ to $h$ is the secondary form of the
+pair $(h^{\mathrm{ref}},h)$ for the character form
+$\str\exp(-\mathfrak F_h)$, and $\cS_{\CC}(h)-\cS_{\CC}(h^{\mathrm{ref}})$ is
+the integral over $X$ of its part of degree two. As in Section~\ref{sec:rate}, for
+$Z=Z(E^0)-Z(E^1)\neq0$ and $Z=|Z|e^{\ii\varphi}$ the function
+$\Ima(e^{-\ii\varphi}\cS_{\CC})$ is called the \emph{phase potential}.
+
+For a single bundle of slope $\mu=\deg E/\rk E$, with
+$Z(E)=|Z|e^{\ii\varphi}$, one has $\Ima(e^{-\ii\varphi}z)=-\mu\sin\varphi$, and
+\[
+ \frac{\Ima(e^{-\ii\varphi}\cS_{\CC})}{\sin\varphi}
+ =M(h)-\mu\int_X\log\det\bigl((h^{\mathrm{ref}})^{-1}h\bigr)\,\omega .
+\]
+This is Donaldson's functional \cite{don85}, in the normalization given by
+$\mathfrak k_h$; its critical points are the Hermitian--Einstein metrics
+$\mathfrak k_h=\mu$.
+
+\begin{proposition}\label{prop:bundlerate}
+Let $Z=Z(E^0)-Z(E^1)$, let $\varphi$ be a real number with
+$\Ima(e^{-\ii\varphi}Z)=0$, and let $h(t)$ be a smooth solution of
+\eqref{eq:bundleflow} on an interval. Then
+\[
+ \frac d{dt}\Ima\bigl(e^{-\ii\varphi}\cS_{\CC}(h(t))\bigr)
+ =-\int_X\sum_{n=0,1}\tr\Bigl(|\Omega^n|(\Phi^n-\varphi)\sin(\Phi^n-\varphi)\Bigr)\omega .
+\]
+\begin{enumerate}
+\item[(a)] For a single bundle, with $\varphi=\arg Z(E)$, the right side is
+ nonpositive and vanishes only at Hermitian--Einstein metrics.
+\item[(b)] If $\rk E^0=\rk E^1$ and $\deg E^1>\deg E^0$, then $Z>0$,
+ $\varphi=0$, and the right side is negative: $\Ima\cS_{\CC}$ is strictly
+ decreasing along the flow.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Proposition~\ref{prop:bundleprimitive}, the flow equation, the trace formula
+of Proposition~\ref{prop:bundleformula} and the computation of
+Proposition~\ref{prop:rate}, applied pointwise. (a) $\Phi$ and $\varphi$ lie
+in $(0,\pi)$, and $\Phi=\varphi$ exactly when
+$\mathfrak k_h=\mu$. (b) $x\sin x>0$ on $(0,\pi)$ and on $(-\pi,0)$.
+\end{proof}
+
+For $\rk E^0>\rk E^1$ one has $\varphi\in(0,\pi)$, the term of degree zero is
+nonnegative and the sign of the term of degree one is not controlled in
+general, as for complexes of representations; for $\rk E^0<\rk E^1$ the roles
+are exchanged.
+
+\subsection{Parabolicity}
+A system $\partial_t\xi=\mathcal P\,\Delta_\omega\xi+{}$terms of lower order,
+with $\mathcal P$ a smooth field of endomorphisms of the fibre and
+$\Delta_\omega=-d^*d\leq0$ the Laplace--Beltrami operator of $\omega$, is
+parabolic in the sense of Petrovskii if all eigenvalues of $\mathcal P$ have
+positive real part at every point.
+
+\begin{proposition}\label{prop:parabolic}
+The linearization of \eqref{eq:bundleflow} at a smooth metric is
+$\partial_t\xi^n=\frac1{4\pi}\mathcal P^n\,\Delta_\omega\xi^n+{}$terms of lower
+order, where $\mathcal P^n=-\mathcal V^n\circ K^n$, $K^0=K_B$, $K^1=K_L$,
+and $\mathcal V^n$ is the derivative of the phase $\Phi^n$ with respect to
+the Hermitian part of $(-1)^n\Omega^n$ at fixed imaginary part.
+All eigenvalues of $\mathcal P^n$ have positive real part: the system is
+parabolic in the sense of Petrovskii. Moreover $\mathcal P^n$ has a positive definite
+symmetric part for the fibre metric $\tr(K^n(\xi)\eta)$ on Hermitian
+endomorphisms.
+\end{proposition}
+
+\begin{proof}
+$\Omega$ depends on second derivatives of $h$ only through $\mathfrak k$, and
+for a variation $\xi$ of the metric the variation of $\mathfrak k^n$ is
+$-\frac1{4\pi}\Delta_\omega\xi^n$ up to terms of lower order. So the
+second-order part of the variation of $(-1)^n\Omega^n$ is the Hermitian
+endomorphism $\frac1{4\pi}K^n(\Delta_\omega\xi^n)$, with the imaginary part
+unchanged, and the variation of the phase is $\mathcal V^n$ applied to it.
+The operators $K_B$ and $K_L$ are positive definite and self-adjoint on
+Hermitian matrices: in an eigenbasis of $B$, or of $L$, with eigenvalues
+$\ell_i$, they multiply the entries by the positive numbers
+$-\mathsf f[\ell_i,\ell_k]$. By
+Theorem~\ref{thm:imported}(b), $\tr(\eta\,\mathcal V^n\eta)<0$ for Hermitian
+$\eta\neq0$. Hence
+$\tr\bigl(K(\xi)\,\mathcal P\xi\bigr)=-\tr\bigl(K(\xi)\,\mathcal V(K(\xi))\bigr)>0$,
+which is the statement on the symmetric part for the inner product
+$\tr(K(\xi)\eta)$; an operator with positive definite symmetric part for
+some inner product has its eigenvalues in the open right half-plane.
+\end{proof}
+
+We do not prove short-time existence of smooth solutions of
+\eqref{eq:bundleflow}. For a line bundle the flow
+is the scalar equation
+$\partial_tu=-\arg\bigl(z-\mathfrak k_{h^{\mathrm{ref}}}+\frac1{4\pi}\Delta_\omega u\bigr)$
+for $h=e^uh^{\mathrm{ref}}$, whose right side is increasing in
+$\Delta_\omega u$, and $\mathcal P=\Ima z/|z-\mathfrak k_h|^2$. This tends to
+zero where the phase approaches $0$ or $\pi$, so the parabolicity is not
+uniform.
+
+\subsection{A section of a line bundle}
+Let the complex be $\mathcal O\xrightarrow{s}\mathcal L$, with $\mathcal L$ a
+line bundle of degree $d\geq1$ and $s$ a nonzero holomorphic section with
+divisor $\Sigma$. It is quasi-isomorphic to $\mathcal O_\Sigma[-1]$, and
+$Z=Z(\mathcal O)-Z(\mathcal L)=d>0$, so $\varphi=0$. Let
+$\mathsf h=h^1/h^0$, a metric on $\mathcal L$, $b=|s|^2_{\mathsf h}$,
+$\mathfrak k^n=\frac{\ii}{2\pi}\Lambda_\omega F_{h^n}$ as before and
+$\nu=|\nabla_ws|^2_{\mathsf h}/(\pi g)\geq0$. All blocks are scalar, and
+Proposition~\ref{prop:bundleformula} gives
+\[
+ \Omega^0=e^{-b}\bigl(z-\mathfrak k^0+\tfrac\nu2\bigr),\qquad
+ \Omega^1=-e^{-b}\bigl(z-\mathfrak k^1-\tfrac\nu2\bigr),
+\]
+\[
+ \Phi^0=\arg\bigl(z-\mathfrak k^0+\tfrac\nu2\bigr)\in(0,\pi),\qquad
+ \Phi^1=\arg\bigl(z-\mathfrak k^1-\tfrac\nu2\bigr)-\pi\in(-\pi,0).
+\]
+The sum is
+\[
+ (\Omega^0+\Omega^1)\,\omega=e^{-|s|^2_{\mathsf h}}\bigl[\tfrac{\ii}{2\pi}F_{\mathsf h}
+ +\tfrac{\ii}{2\pi}\nabla s\wedge\overline{\nabla s}\bigr]
+ =\tfrac{\ii}{2\pi}F_{\mathsf h}+\tfrac{\ii}{2\pi}\partial\bar\partial\Ein\bigl(|s|^2_{\mathsf h}\bigr),
+\]
+a representative of the Euler class of $\mathcal L$ of the kind constructed
+by Mathai and Quillen \cite{mq86}, pulled back by $s$; its integral is $d$,
+and when $s$ is replaced by $cs$ with $c\to\infty$, it converges to the
+current of integration over $\Sigma$, because
+$\Ein(c^2b)=\gamma+\log c^2+\log b+\Eone(c^2b)$, with $\gamma$ Euler's
+constant, and $\frac{\ii}{2\pi}\partial\bar\partial\log b=\delta_\Sigma-\frac{\ii}{2\pi}F_{\mathsf h}$
+by the Poincar\'e--Lelong formula.
+
+With $u^n=\log(h^n/h^{n,\mathrm{ref}})$ the flow is $\partial_tu^n=-\Phi^n$,
+so $\partial_t\log b=\Phi^0-\Phi^1\in(0,2\pi)$: $b$ increases at every point
+outside $\Sigma$. By Proposition~\ref{prop:bundleprimitive} the phase
+potential is
+\[
+ \Ima\cS_{\CC}=(\Ima z)\,\mathcal W(h),\qquad
+ \mathcal W(h)=\int_X\bigl(u^0-u^1+\Ein(b)\bigr)\omega
+ =\int_X\Eone(b)\,\omega+\mathrm{const}.
+\]
+It involves no derivatives of the metrics, and it is bounded below, with a
+bound that is not attained.
+
+\begin{proposition}\label{prop:section}
+Along every solution of the flow, at every point of $X$,
+\[
+ \partial_t\bigl(u^0-u^1+\Ein(b)\bigr)=-e^{-b}(\Phi^0-\Phi^1)<0,
+ \qquad\frac d{dt}\mathcal W=-\int_Xe^{-b}\bigl(\Phi^0+|\Phi^1|\bigr)\,\omega .
+\]
+Consequently
+$\int_0^T\!\int_Xe^{-b}(\Phi^0+|\Phi^1|)\,\omega\,dt\leq\int_X\Eone(b|_{t=0})\,\omega<\infty$
+on the interval of existence.
+\end{proposition}
+
+\begin{proof}
+$\partial_t(u^0-u^1)=-(\Phi^0-\Phi^1)$ and
+$\partial_t\Ein(b)=\frac{1-e^{-b}}b\,\partial_tb=(1-e^{-b})(\Phi^0-\Phi^1)$.
+The function $\Eone(b)$ has a logarithmic singularity along $\Sigma$ and is
+integrable; $\mathcal W-\int_X\Eone(b)\,\omega$ is constant along the flow and
+$\Eone\geq0$.
+\end{proof}
+
+So in this case the potential is monotone for every $z$ in the upper
+half-plane, in accordance with Proposition~\ref{prop:bundlerate}(b). If
+instead $d=0$ and $s$ has no zeros, the complex is acyclic and $Z=0$; for
+constant metrics on a trivialization $\Omega^0=ze^{-b}=-\Omega^1$ and
+$b(t)=b(0)e^{\pi t}$, as for the contractible summand of
+Proposition~\ref{prop:contractible}.

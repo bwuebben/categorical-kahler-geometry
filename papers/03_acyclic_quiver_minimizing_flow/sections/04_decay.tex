@@ -1,0 +1,278 @@
+\section{Growth of the differential and decay of the exact part}\label{sec:decay}
+
+In this section $\mathsf E$ is a complex with a surjective differential at
+$i_0$ and $r\geq1$. The estimates of Lemma~\ref{lem:estimates} and the proof
+of Theorem~\ref{thm:decay} follow those of \cite{wue26b} for $K_m$; what is
+new is that the block $z_\ast+\mu_{i_0}$ is no longer $z_\ast$ plus a
+positive matrix, and that the phases at the targets of the arrows out of
+$i_0$ are bounded below only through the a priori bound. Recall $\lambda=\lambda_{\min}(L)=\lambda_{\min}(F^\dagger F)$, and
+let
+\[
+ \varpi_\star=\min\bigl\{\lambda_{\min}(\Phi_j):\ j=\mathsf t(a)\ \text{for an arrow }a\text{ out of }i_0\bigr\};
+\]
+if no arrow leaves $i_0$, then $s=0$, Lemma~\ref{lem:estimates}(iii) reads
+$0\leq0$, and $\varpi_\star$, $\bar\varpi$ and the constants
+\eqref{eq:constants} are not used.
+Let $\Eone(b)=\int_1^\infty e^{-xb}\frac{dx}x$ be the exponential integral;
+for $b>0$,
+\begin{equation}\label{eq:E1}
+ \frac{e^{-b}}{1+b}\leq\Eone(b)\leq e^{-b}\log\bigl(1+\tfrac1b\bigr),\qquad
+ \Eone'(b)=-\frac{e^{-b}}b ,
+\end{equation}
+because the differences of the three functions tend to $0$ at infinity and
+have derivatives of constant sign.
+
+\begin{lemma}\label{lem:estimates}
+For all charges and every metric:
+\begin{enumerate}
+\item[(i)] $\lambda$ is nondecreasing along the flow; its right derivative is
+ the minimum of
+ $\lambda\bigl(\inner v{\Phi_{AA}v}-\inner u{\Phi_Uu}\bigr)$ over the unit
+ vectors $v$ with $F^\dagger Fv=\lambda v$, where $u=Fv/\sqrt\lambda$.
+\item[(ii)] $\norm{E_R}\leq\sqrt{q_{\mathrm{out}}s/\lambda}$ and
+ $\sum_j\norm{Y_j}_1\leq s$; hence, with $\mathsf d=\min(n_{i_0},r)$ and
+ $\mathcal E_V:=\Omega_V-\diag(z_\ast+\mu_{i_0},\ z_\ast e^{-F^\dagger F})$,
+ \[
+ \norm{\mathcal E_V}_1\leq2\sqrt{\mathsf d\,q_{\mathrm{out}}s/\lambda}+r\kappa_0s .
+ \]
+\item[(iii)] $\dot s\leq\bigl(-\varpi_\star+\frac{4\pi q_{\mathrm{out}}}{y_\ast\lambda}\bigr)s$
+ along the flow. Moreover $\lambda_{\min}(\Phi_j)\geq\arg(z_j+\cN)$ for
+ $j\neq i_0$, and $\lambda_{\min}(\Phi_j)\geq\alpha_j$ if $j$ is a sink.
+\item[(iv)] If $\sqrt{q_{\mathrm{out}}s/\lambda}\leq y_\ast/8$, then
+ $\norm{\delta_{i_0}}\leq\frac{4\pi}{y_\ast}\sqrt{q_{\mathrm{out}}s/\lambda}$;
+ and $\norm{\delta_j}\leq\norm{Y_j}/y_j\leq s/y_j$ for $j\neq i_0$.
+\item[(v)] Along the flow
+ \[
+ \frac d{dt}\tr\Eone(L)\leq-\tr\bigl(e^{-L}|\Phi_U|\bigr),\qquad
+ \tr\bigl(e^{-L}|\Phi_U|\bigr)\geq
+ \frac{y_\ast(\tr e^{-L})^2}{(y_\ast+|x_\ast|)\tr e^{-L}+\tr J_+} .
+ \]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) By \eqref{eq:adapted},
+$\frac d{dt}(F^\dagger F)=\frac12(\Phi_{AA}F^\dagger F+F^\dagger F\Phi_{AA})-F^\dagger\Phi_UF$.
+For a unit vector $v$ with $F^\dagger Fv=\lambda v$ this gives
+$\inner v{\frac d{dt}(F^\dagger F)v}=\lambda\inner v{\Phi_{AA}v}-\inner{Fv}{\Phi_UFv}$,
+which is positive because $\Phi_{AA}>0>\Phi_U$; and the right derivative of
+the least eigenvalue of a differentiable family of Hermitian matrices is the
+minimum of these numbers over the unit vectors of the eigenspace.
+
+(ii) Since $E_R=\sum_aH_a^\dagger X_a\,FR(F^\dagger F)$ and
+$\norm{FR(F^\dagger F)}_{\mathrm{op}}\leq\lambda^{-1/2}$, the Cauchy--Schwarz
+inequality gives the first bound. $\sum_j\tr Y_j=\tr\bigl((1-e^{-L})S\bigr)\leq s$.
+The off-diagonal part of $\mathcal E_V$ has rank at most $2\mathsf d$ and
+trace norm $2\norm{E_R}_1\leq2\sqrt{\mathsf d}\norm{E_R}$, and its remaining
+block is $K_{F^\dagger F}(C_T)=K_{F^\dagger F}(F^\dagger SF)$; use
+Proposition~\ref{prop:used}(v).
+
+(iii) By \eqref{eq:adapted},
+\[
+ \dot s=\sum_a\tr(X_a^\dagger X_a\Phi_U)-\sum_a\tr(X_a^\dagger\Phi_{\mathsf t(a)}X_a)
+ +2\Rea\sum_a\tr\bigl(X_a^\dagger H_a\Phi_{HA}F^{-1}\bigr).
+\]
+The first sum is nonpositive, the second is at least $\varpi_\star s$, and the last
+term is at most $2\sqrt{s\,q_{\mathrm{out}}/\lambda}\,\norm{\Phi_{HA}}$. In
+\eqref{eq:adaptedblocks} the block $z_\ast+\mu_{i_0}$ is normal with
+imaginary part $y_\ast$, so its singular values are at least $y_\ast$, and
+Proposition~\ref{prop:used}(iii) gives
+$\norm{\Phi_{HA}}\leq\frac{2\pi}{y_\ast}\norm{E_R}\leq\frac{2\pi}{y_\ast}\sqrt{q_{\mathrm{out}}s/\lambda}$.
+For the phases: $\Phi_j=g_j(M_j)$ with $g_j(u)=\arg(z_j+u)$ decreasing, and
+$M_j\leq\sum_{a:j\to\cdot}\rho_a^\dagger\rho_a\leq\cN$ by \eqref{eq:blocks};
+for a sink $M_j\leq0$.
+
+(iv) The first statement is Proposition~\ref{prop:used}(iii) for
+\eqref{eq:adaptedblocks}. For $j\neq i_0$, $\Phi_j=g_j(\mu_j-Y_j)$ and
+$\arg(z_j+\mu_j)=g_j(\mu_j)$ by \eqref{eq:adaptedblocks}, $|g_j'|\leq1/y_j$, and a
+function with Lipschitz constant $c$ satisfies
+$\norm{g(A)-g(A')}\leq c\norm{A-A'}$ for Hermitian matrices $A,A'$ in the
+Hilbert--Schmidt norm, as one sees by expanding in eigenbases of $A$ and
+$A'$.
+
+(v) By \eqref{eq:adapted},
+$\dot L=F\Phi_{AA}F^\dagger-\frac12(\Phi_UL+L\Phi_U)$, so by \eqref{eq:E1}
+\[
+ \frac d{dt}\tr\Eone(L)=-\tr\bigl(e^{-F^\dagger F}\Phi_{AA}\bigr)+\tr\bigl(e^{-L}\Phi_U\bigr),
+\]
+and both terms are nonpositive. Let $(u_k)$ be an orthonormal eigenbasis of
+$\Phi_U$ with eigenvalues $\psi_k\in(-\pi,0)$, and put
+$e_k=\inner{u_k}{e^{-L}u_k}>0$, $j_k=\inner{u_k}{Ju_k}$. Since
+$-\Omega_U=z_\ast e^{-L}-J$ has the polar phase $\Phi_U+\pi$ and a positive
+definite modulus, $\inner{u_k}{(z_\ast e^{-L}-J)u_k}$ is a positive multiple
+of $e^{\ii(\psi_k+\pi)}$; hence
+$\cot(\psi_k+\pi)=(x_\ast e_k-j_k)/(y_\ast e_k)$ and
+\[
+ |\psi_k|=\operatorname{arccot}\frac{j_k-x_\ast e_k}{y_\ast e_k}
+ \geq\operatorname{arccot}\frac{(j_k)_++|x_\ast|e_k}{y_\ast e_k}
+ \geq\frac{y_\ast e_k}{(y_\ast+|x_\ast|)e_k+(j_k)_+},
+\]
+because $\operatorname{arccot}$ is decreasing and
+$\operatorname{arccot}x\geq\frac1{1+x}$ for $x\geq0$. Therefore
+\[
+ \tr\bigl(e^{-L}|\Phi_U|\bigr)=\sum_k|\psi_k|e_k
+ \geq\sum_k\frac{y_\ast e_k^2}{(y_\ast+|x_\ast|)e_k+(j_k)_+}
+ \geq\frac{y_\ast(\sum_ke_k)^2}{(y_\ast+|x_\ast|)\sum_ke_k+\sum_k(j_k)_+}
+\]
+by the Cauchy--Schwarz inequality, and $\sum_ke_k=\tr e^{-L}$,
+$\sum_k(j_k)_+\leq\tr J_+$.
+\end{proof}
+
+\subsection{Constants}
+Fix a height function $w$ and let $\gamma_w$, $c_Q$, $\bar\cN$, $t_0$ be as in
+Theorem~\ref{thm:energy}. We assume $c_Q>0$, that is, $W_j\neq0$ for some
+$j\neq i_0$; otherwise all arrows vanish, Proposition~\ref{prop:sink} below
+applies, and we put $\bar\cN=0$ and $t_0=0$. Let $\bar\varpi$ be the least of the
+numbers
+\[
+ \arg(z_j+\bar\cN)\ \ (j\text{ not a sink}),\qquad\alpha_j\ \ (j\text{ a sink}),
+\]
+over the targets $j$ of the arrows out of $i_0$; by
+Lemma~\ref{lem:estimates}(iii) and Theorem~\ref{thm:energy},
+$\varpi_\star\geq\bar\varpi$ for $t\geq t_0$. Let $\lambda_0=\lambda(0)$,
+$c_\lambda=1/\log(1+1/\lambda_0)$, $\Xi_0=\tr\Eone(L)|_{t=0}$, and
+\begin{equation}\label{eq:constants}
+ \begin{gathered}
+ \kappa_1=\frac{y_\ast\,c_\lambda^2}{\sqrt2\,|z_\ast|\,c_\lambda\,\Xi_0+\frac75\bar\cN},\qquad
+ \Lambda_1=\max\Bigl\{1,\frac{8\pi\bar\cN}{\bar\varpi\,y_\ast}\Bigr\},\\
+ t_1=t_0+\frac{(1+\Lambda_1)e^{\Lambda_1}}{\kappa_1},\qquad
+ s_1=\frac{\bar\cN}{1-e^{-1}},\qquad
+ \mathfrak c_1=2\sqrt{\mathsf d\,\bar\cN s_1}+r\kappa_0s_1,\\
+ \mathfrak c_2=\frac\pi{\sqrt{|z_\ast|}}\bigl(\sqrt{\mathfrak c_1}+\sqrt{rs_1}\bigr),\qquad
+ \mathfrak c_3=\max\Bigl\{0,2\log\frac{2\mathfrak c_2}\pi\Bigr\},\\
+ C_1=\mathfrak c_1+(r+1)s_1+2|z_\ast|re^{\mathfrak c_3},\qquad
+ t_2=t_1+\frac2{\bar\varpi}\log^+\frac{8\bar\varpi\,s_1}{\pi y_\ast}.
+ \end{gathered}
+\end{equation}
+In these constants the subscripts are ordinal labels and do not refer to
+vertices.
+
+\begin{theorem}[Decay of the exact part]\label{thm:decay}
+Let $\mathsf E$ be a complex with a surjective differential at $i_0$ and
+$r\geq1$, with $W_j\neq0$ for some $j\neq i_0$ and with at least one arrow
+leaving $i_0$; fix a height function $w$ and let the constants be as in
+\eqref{eq:constants}. For all
+charges in the upper half-plane and along every trajectory of the phase flow:
+\begin{enumerate}
+\item[(i)] $\lambda(t)\to\infty$; for $t\geq t_1$, $\lambda(t)\geq
+ \max\{\Lambda_1,\ \frac{\bar\varpi}4(t-t_1)-\mathfrak c_3\}$ and
+ $s(t)\leq s_1e^{-\frac{\bar\varpi}2(t-t_1)}$;
+\item[(ii)] for $t\geq t_1$,
+ \[
+ \norm{\Omega_V-(z_\ast+\mu_{i_0})\oplus0}_1+\norm{\Omega_U}_1
+ +\sum_{j\neq i_0}\norm{\Omega_j-(z_j+\mu_j)}_1
+ \leq C_1\,e^{-\frac{\bar\varpi}4(t-t_1)};
+ \]
+ the difference between the mass and the mass $\sum_i\norm{z_i+\mu_i}_1$ of
+ the cohomology representation with its induced metrics satisfies the same
+ bound;
+\item[(iii)] for $t\geq t_2$,
+ $\norm{\delta_{i_0}}^2\leq\frac{2\pi\bar\varpi}{y_\ast}\,s$ and
+ $\norm{\delta_j}\leq s/y_j$ for $j\neq i_0$.
+\end{enumerate}
+In particular the exact part decays.
+\end{theorem}
+
+The theorem makes no assumption on the cohomology representation.
+
+\begin{proof}
+\emph{Growth of $\lambda$.} Put $\Xi=\tr\Eone(L)$. By
+Lemma~\ref{lem:estimates}(i) all eigenvalues of $L$ are at least $\lambda_0$
+for $t\geq0$, so \eqref{eq:E1} gives $\tr e^{-L}\geq c_\lambda\Xi$. For
+$t\geq t_0$, $\tr J_+=\tr J+\tr J_-\leq\frac75\tr J\leq\frac75\bar\cN$ by
+Proposition~\ref{prop:used}(i), \eqref{eq:energybounds} and
+Theorem~\ref{thm:energy}, and $y_\ast+|x_\ast|\leq\sqrt2|z_\ast|$. The
+function $x\mapsto x^2/(cx+d)$ is increasing for $x>0$, and $\Xi$ is
+nonincreasing; so Lemma~\ref{lem:estimates}(v) gives, for $t\geq t_0$,
+\[
+ \dot\Xi\leq-\frac{y_\ast c_\lambda^2\,\Xi^2}{\sqrt2|z_\ast|c_\lambda\,\Xi+\frac75\bar\cN}
+ \leq-\kappa_1\Xi^2,
+\]
+hence $\Eone(\lambda(t))\leq\Xi(t)<1/(\kappa_1(t-t_0))$ for $t>t_0$. For
+$t\geq t_1$ this is at most $e^{-\Lambda_1}/(1+\Lambda_1)\leq\Eone(\Lambda_1)$
+by \eqref{eq:E1}, so $\lambda(t)\geq\Lambda_1$.
+
+\emph{Decay of $s$.} For $t\geq t_0$ we have $q_{\mathrm{out}}\leq\bar\cN$ and
+$\varpi_\star\geq\bar\varpi$, so for $t\geq t_1$,
+$\frac{4\pi q_{\mathrm{out}}}{y_\ast\lambda}\leq\frac{\bar\varpi}2$ and
+$\dot s\leq-\frac{\bar\varpi}2s$ by Lemma~\ref{lem:estimates}(iii); at $t_1$,
+$\lambda\geq1$ and $s\leq\bar\cN/(1-e^{-\lambda})\leq s_1$ by
+\eqref{eq:energybounds}.
+
+\emph{Linear growth of $\lambda$.} By Lemma~\ref{lem:estimates}(ii) and
+Proposition~\ref{prop:used}(v), for $t\geq t_1$,
+$\norm{\mathcal E_V}_1\leq\mathfrak c_1e^{-\frac{\bar\varpi}4(t-t_1)}$ and
+$\norm J_1\leq rs_1e^{-\frac{\bar\varpi}2(t-t_1)}$. Let $v$ be a unit vector of
+$(\ker D)^\perp$ with $F^\dagger Fv=\lambda v$ and $u=Fv/\sqrt\lambda$. Apply
+Proposition~\ref{prop:used}(iv) to $T=\Omega_V$ with
+$T_\circ=\diag(z_\ast+\mu_{i_0},\ z_\ast e^{-F^\dagger F})$, whose first
+block is normal and invertible and for which
+$|T_\circ|v=|z_\ast|e^{-\lambda}v$ and $\Psi_\circ v=\alpha_\ast v$, and to
+$T=-\Omega_U=z_\ast e^{-L}-J$ with $T_\circ=z_\ast e^{-L}$ and the vector
+$u$:
+\[
+ |\inner v{(\Phi_V-\alpha_\ast)v}|\leq\pi\sqrt{\frac{\norm{\mathcal E_V}_1e^\lambda}{|z_\ast|}},
+ \qquad
+ |\inner u{(\Phi_U+\pi-\alpha_\ast)u}|\leq\pi\sqrt{\frac{\norm J_1e^\lambda}{|z_\ast|}} .
+\]
+By Lemma~\ref{lem:estimates}(i) the right derivative of $\lambda$ satisfies
+$\dot\lambda\geq\lambda\bigl[\pi-\mathfrak c_2e^{\lambda/2-\frac{\bar\varpi}8(t-t_1)}\bigr]$
+for $t\geq t_1$. Where $\lambda$ is at most
+$\frac{\bar\varpi}4(t-t_1)-\mathfrak c_3$, the bracket is at least $\frac\pi2$, so
+$\dot\lambda\geq\frac\pi2\lambda\geq\frac\pi2>\frac{\bar\varpi}4$; since
+$\lambda(t_1)\geq1>-\mathfrak c_3$, the graph of $\lambda$ cannot cross below
+this line. This proves (i).
+
+(ii) By \eqref{eq:adaptedblocks},
+$\norm{\Omega_V-(z_\ast+\mu_{i_0})\oplus0}_1\leq\norm{\mathcal E_V}_1+|z_\ast|re^{-\lambda}$,
+$\norm{\Omega_U}_1\leq rs+|z_\ast|re^{-\lambda}$ and
+$\sum_j\norm{\Omega_j-(z_j+\mu_j)}_1=\sum_j\tr Y_j\leq s$; by (i),
+$e^{-\lambda}\leq e^{\mathfrak c_3}e^{-\frac{\bar\varpi}4(t-t_1)}$. The statement
+on the masses follows from the triangle inequality for the trace norm.
+
+(iii) For $t\geq t_2$, $s\leq\frac{\pi y_\ast}{8\bar\varpi}$ by (i). Then
+$\frac{q_{\mathrm{out}}s}{\lambda y_\ast^2}\leq\frac{\bar\cN}{\Lambda_1}\frac s{y_\ast^2}
+\leq\frac{\bar\varpi\,s}{8\pi y_\ast}\leq\frac1{64}$, and
+Lemma~\ref{lem:estimates}(iv) gives
+$\norm{\delta_{i_0}}^2\leq\frac{16\pi^2}{y_\ast^2}\frac{q_{\mathrm{out}}s}\lambda
+\leq\frac{2\pi\bar\varpi}{y_\ast}s$.
+\end{proof}
+
+\begin{proposition}[No arrow out of $i_0$]\label{prop:sink}
+Let $\mathsf E$ have a surjective differential at $i_0$ and $r\geq1$, and
+let $\rho_a=0$ for every arrow $a$ out of $i_0$; this holds if no arrow leaves
+$i_0$, and if $W_j=0$ for all $j\neq i_0$. Then, for every metric, the complex is the orthogonal
+direct sum of its cohomology representation and of the complex
+$(\ker D)^\perp\to U$ at $i_0$, the flow preserves this decomposition,
+$\delta_i=0$ for all $i$, the phases on $(\ker D)^\perp$ and $U$ are
+$\alpha_\ast$ and $\alpha_\ast-\pi$, and
+\[
+ F(t)=e^{\pi t/2}F(0),\qquad
+ \Omega_V=(z_\ast+\mu_{i_0})\oplus z_\ast e^{-F^\dagger F},\qquad
+ \Omega_U=-z_\ast e^{-L}
+\]
+for all $t$. In particular
+$\norm{\Omega_V-(z_\ast+\mu_{i_0})\oplus0}_1+\norm{\Omega_U}_1
+\leq2|z_\ast|r\exp(-\lambda_0e^{\pi t})$, and the exact part decays. This
+bound is at most $2|z_\ast|r\,e^{-(t-t_1)}$ for
+$t\geq t_1:=\frac1\pi\log^+\frac1{\lambda_0}$.
+\end{proposition}
+
+\begin{proof}
+Here $C_{\mathrm{out}}=0$, so $J=0$, $E_R=0$, $C_T=0$ and $Y_j=0$ in
+\eqref{eq:blocks} and \eqref{eq:adaptedblocks}. The blocks of $\Omega_V$ are
+$z_\ast+\mu_{i_0}$ and $z_\ast e^{-F^\dagger F}$, so $\Phi_{HA}=0$,
+$\Phi_{AA}=\alpha_\ast$, $\Phi_U=\alpha_\ast-\pi$, and \eqref{eq:adapted} gives
+$\dot F=\frac\pi2F$.
+\end{proof}
+
+\begin{remark}\label{rem:decay}
+(1) The time $t_1$ contains the factor $e^{\Lambda_1}$, and
+$\Lambda_1\geq8\bar\cN/y_\ast$.
+
+(2) When an arrow leaves $i_0$, the phases $\Phi_{AA}$ and $\Phi_U$ on the
+exact part need not tend to $\alpha_\ast$ and $\alpha_\ast-\pi$, in contrast
+with Proposition~\ref{prop:sink}. The proof of Theorem~\ref{thm:decay} bounds
+$\inner v{\Phi_Vv}-\inner u{\Phi_Uu}$ from below by $\frac\pi2$ and does not
+determine its limit.
+\end{remark}

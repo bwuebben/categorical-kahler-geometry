@@ -1,0 +1,334 @@
+\section{The arrow energy and the cancellation of the acyclic part}\label{sec:energy}
+
+In this section the charges are arbitrary in the upper half-plane, and no
+hypothesis on the cohomology representation is made. The subscripts of
+$z_i$, $x_i$, $y_i$, $\alpha_i$, $n_i$, $C_i$, $\phi_i$, $\delta_i$ and $M_1$
+refer to the vertices. In $\lambda_0$ and
+$\Xi_0$ the subscript marks the value at time zero, and in $N_0$, $t_0$,
+$t_1$, $t_2$, $\kappa_0$, $\kappa_1$, $d_0$, $s_1$, $\Lambda_1$ and
+$\mathfrak c_1$, $\mathfrak c_2$, $\mathfrak c_3$ it is a label.
+
+\subsection{The arrow energy}
+
+\begin{definition}\label{def:energy}
+The \emph{arrow energy} of a state is
+\[
+ N:=\sum_j\tr\bigl(A_jR(D^\dagger D)A_j^\dagger\bigr)=\tr\bigl(CR(B)\bigr)=\tr G .
+\]
+\end{definition}
+
+It is the term of the primitive \eqref{eq:primitive} that does not contain
+the charges. For $D=0$ it would be the sum of the squared norms of the
+arrows.
+
+\begin{lemma}\label{lem:energy}
+The arrow energy has the following properties.
+\begin{enumerate}
+\item[(a)] $N=q+\tr Y$.
+\item[(b)] $\tr K=\tr(Ce^{-B})\geq0$,
+ $\tr J=\tr\bigl(C(R(B)-e^{-B})\bigr)\geq0$, and $\tr K+\tr J=N$.
+\item[(c)] Along the phase flow, for all charges,
+ \[
+ \frac{dN}{dt}=\tr(K\Phi_V)+\tr(J\Phi_U)-\tr(G\Phi_W).
+ \]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) In the adapted splitting $R(B)=\id_{\ker D}\oplus R(F^\dagger F)$, so
+$\tr(CR(B))=\tr C_0+\sum_j\tr(T_jR(F^\dagger F)T_j^\dagger)$, and
+$T_jR(F^\dagger F)T_j^\dagger=X_jFR(F^\dagger F)F^\dagger X_j^\dagger
+=X_j(\id-e^{-L})X_j^\dagger$.
+
+(b) $\tr K_B(C)=\int_0^1\tr(e^{-(1-x)B}Ce^{-xB})\,dx=\tr(Ce^{-B})$. By
+\eqref{eq:J}, $\tr J_L(M)=\tr(M\,g(L))$ with
+$g(\ell)=\int_{x,y\geq0,\,x+y\leq1}e^{-(x+y)\ell}\,dx\,dy
+=\int_0^1xe^{-x\ell}dx=(1-e^{-\ell}-\ell e^{-\ell})/\ell^2$; for
+$M=DCD^\dagger$, and since $D^\dagger g(L)D=B\,g(B)=R(B)-e^{-B}$ (both sides
+vanish on $\ker B$), this is $\tr(C(R(B)-e^{-B}))$. Both traces are
+nonnegative because $C\geq0$, $e^{-B}\geq0$ and $R(b)\geq e^{-b}$ for
+$b\geq0$.
+
+(c) This is \eqref{eq:energyvariation} at $\xi=-\Phi$.
+\end{proof}
+
+\begin{lemma}\label{lem:three}
+At every state and for all charges in the upper half-plane:
+\begin{enumerate}
+\item[(a)] $\tr(K\Phi_V)\leq\alpha_0\tr K$;
+\item[(b)] $\tr(J\Phi_U)\leq\pi\tr J_-\leq\frac{2\pi}5\tr J$, and
+ $\tr(J\Phi_U)\leq0$ if $r=1$;
+\item[(c)] $\tr(G\Phi_W)\geq\pi N-n_1M_1$, where
+ $M_1:=\max\{\pi\max(x_1,0),\,2y_1\}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Corollary~\ref{cor:comparison} with $\Omega^{(0)}=z_0e^{-B}$ and the
+Hermitian matrix $K$: $\Omega^{(0)}+K=\Omega_V$, and $e^{-B}>0$.
+
+(b) Let $(u_k)$ be an orthonormal eigenbasis of $\Phi_U$ with eigenvalues
+$\phi_k\in(-\pi,0)$, and $j_k=\inner{u_k}{Ju_k}$. Then
+$\tr(J\Phi_U)=\sum_k\phi_kj_k\leq\pi\sum_k(j_k)_-$, where
+$(j_k)_-=\max(-j_k,0)$, and
+$\sum_k(j_k)_-\leq\sum_k\inner{u_k}{J_-u_k}=\tr J_-$. By
+Theorem~\ref{thm:kernel}, $\tr J_-\leq\frac25\tr J$, because
+$DCD^\dagger\geq0$. For $r=1$, $J\geq0$ is a number and $\Phi_U<0$.
+
+(c) $\Omega_W=z_1\id-G$ is normal and $\Phi_W=f_1(G)$ with
+$f_1(x)=\arg(z_1-x)$. We claim that $x(\pi-f_1(x))\leq M_1$ for all
+$x\geq0$. If $x\leq\max(x_1,0)$ the left side is at most $\pi\max(x_1,0)$.
+If $x>\max(x_1,0)$, then $x-x_1>0$ and
+$\pi-f_1(x)=\arctan\frac{y_1}{x-x_1}\leq\min\{\frac\pi2,\frac{y_1}{x-x_1}\}$;
+for $x\leq2x_1$ the product is at most $2x_1\cdot\frac\pi2$, and for
+$x>2\max(x_1,0)$ we have $x-x_1\geq x/2$ and the product is at most $2y_1$.
+Summing over the eigenvalues of $G\geq0$ gives
+$\tr(G\,f_1(G))\geq\pi\tr G-n_1M_1$.
+\end{proof}
+
+\begin{theorem}[A priori bound]\label{thm:energy}
+Let
+\[
+ \rho:=\pi-\max\bigl\{\alpha_0,\tfrac{2\pi}5\bigr\}\quad
+ (\rho:=\pi-\alpha_0\text{ if }r=1),\qquad
+ \bar N:=\frac{2n_1M_1}\rho,\qquad
+ t_0:=\frac1\rho\log^+\frac{\rho N(0)}{n_1M_1},
+\]
+where $\log^+x=\max(\log x,0)$.
+For all charges in the upper half-plane and along every trajectory of the
+phase flow,
+\[
+ \frac{dN}{dt}\leq-\rho N+n_1M_1,\qquad
+ N(t)\leq N(0)e^{-\rho t}+\frac{n_1M_1}\rho\bigl(1-e^{-\rho t}\bigr).
+\]
+Hence $N(t)\leq N_0:=\max\{N(0),n_1M_1/\rho\}$ for all $t\geq0$, and
+$N(t)\leq\bar N$ for $t\geq t_0$. At all times $q\leq N$, $\tr Y\leq N$,
+$\tr J\leq N$ and $s\leq N/(1-e^{-\lambda})$.
+\end{theorem}
+
+\begin{proof}
+By Lemmas~\ref{lem:energy}(c) and~\ref{lem:three},
+$\dot N\leq\alpha_0\tr K+\frac{2\pi}5\tr J-\pi N+n_1M_1$. Since $\tr K$ and
+$\tr J$ are nonnegative with sum $N$, the first two terms are at most
+$\max\{\alpha_0,\frac{2\pi}5\}N$; for $r=1$ the second term may be omitted.
+Integrate; for $t\geq t_0$ the first term of the bound is at most
+$n_1M_1/\rho$. The remaining statements are Lemma~\ref{lem:energy}(a),(b) and
+\eqref{eq:Y}.
+\end{proof}
+
+The bound $\bar N$ depends only on the charges and on $n_1$; the initial
+state enters only through the time $t_0$. For the symmetric charges
+$\rho=\frac\pi4$, $M_1=\pi$ and $\bar N=8n_1$. The two matrix inequalities of
+Sections~\ref{sec:kernel} and~\ref{sec:phase} enter through
+Lemma~\ref{lem:three}(a),(b). If Lemma~\ref{lem:three}(a) is replaced by the
+elementary estimates $\tr(K\Phi_V)\leq\pi\tr K_+$,
+$\tr K_+=\frac12(\norm K_1+\tr K)$ and $\norm K_1\leq\tr(CR(2B))\leq N$, one
+obtains only $\dot N\leq-\frac\pi{10}\tr J+n_1M_1$, which gives no decay of
+the arrows on $\ker D$.
+
+\subsection{Growth of the least eigenvalue of
+\texorpdfstring{$DD^\dagger$}{D D-dagger}}
+
+Let $E_1(b)=\int_1^\infty e^{-xb}\,dx/x$ be the exponential integral. For
+$b>0$,
+\begin{equation}\label{eq:E1bounds}
+ \frac{e^{-b}}{1+b}\leq E_1(b)\leq e^{-b}\log\bigl(1+\tfrac1b\bigr),\qquad
+ E_1'(b)=-\frac{e^{-b}}b :
+\end{equation}
+the difference $E_1(b)-e^{-b}/(1+b)$ has derivative $-e^{-b}/(b(1+b)^2)<0$
+and the difference $e^{-b}\log(1+\frac1b)-E_1(b)$ has derivative
+$e^{-b}[\frac1{1+b}-\log(1+\frac1b)]<0$, and both tend to $0$ as $b\to\infty$.
+
+\begin{lemma}\label{lem:growth}
+For all charges, along the phase flow,
+\[
+ \frac d{dt}\tr E_1(L)=-\tr\bigl(e^{-F^\dagger F}\Phi_{AA}\bigr)-\tr\bigl(e^{-L}|\Phi_U|\bigr)
+ \leq-\tr\bigl(e^{-L}|\Phi_U|\bigr),
+\]
+and at every state
+\[
+ \tr\bigl(e^{-L}|\Phi_U|\bigr)\geq
+ \frac{y_0\,(\tr e^{-L})^2}{(y_0+|x_0|)\tr e^{-L}+\tr J_+} .
+\]
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:mapflow},
+$\dot L=D\Phi_VD^\dagger-\frac12(\Phi_UL+L\Phi_U)$, so by \eqref{eq:E1bounds}
+\[
+ \frac d{dt}\tr E_1(L)=-\tr\bigl(L^{-1}e^{-L}D\Phi_VD^\dagger\bigr)+\tr\bigl(e^{-L}\Phi_U\bigr),
+\]
+and $D^\dagger L^{-1}e^{-L}D=0\oplus e^{-F^\dagger F}$ in the adapted
+splitting. Both terms are nonpositive, because $\Phi_{AA}>0>\Phi_U$.
+
+Let $(u_k)$ be an orthonormal eigenbasis of $\Phi_U$ with eigenvalues
+$\phi_k\in(-\pi,0)$, and put $e_k=\inner{u_k}{e^{-L}u_k}>0$,
+$j_k=\inner{u_k}{Ju_k}$. By Lemma~\ref{lem:eigenbasis} applied to
+$-\Omega_U=z_0e^{-L}-J$, whose polar phase is $\Phi_U+\pi$,
+$\inner{u_k}{(z_0e^{-L}-J)u_k}=p_ke^{\ii(\phi_k+\pi)}$ with $p_k>0$. Hence
+$\cot(\phi_k+\pi)=(x_0e_k-j_k)/(y_0e_k)$ and
+\[
+ |\phi_k|=\pi-(\phi_k+\pi)=\operatorname{arccot}\frac{j_k-x_0e_k}{y_0e_k}
+ \geq\operatorname{arccot}\frac{(j_k)_++|x_0|e_k}{y_0e_k}
+ \geq\frac{y_0e_k}{(y_0+|x_0|)e_k+(j_k)_+},
+\]
+where $(j_k)_+=\max(j_k,0)$; we used that $\operatorname{arccot}$ is
+decreasing and that $\operatorname{arccot}x\geq\frac1{1+x}$ for $x\geq0$ (the
+difference is positive at $0$, tends to $0$ at infinity and has derivative
+$-2x/((1+x^2)(1+x)^2)\leq0$). Therefore
+\[
+ \tr\bigl(e^{-L}|\Phi_U|\bigr)=\sum_k|\phi_k|e_k
+ \geq\sum_k\frac{y_0e_k^2}{(y_0+|x_0|)e_k+(j_k)_+}
+ \geq\frac{y_0\,(\sum_ke_k)^2}{(y_0+|x_0|)\sum_ke_k+\sum_k(j_k)_+}
+\]
+by the Cauchy--Schwarz inequality in the form
+$\sum_ka_k^2/d_k\geq(\sum_ka_k)^2/\sum_kd_k$ for $d_k>0$. Finally
+$\sum_ke_k=\tr e^{-L}$ and $\sum_k(j_k)_+\leq\tr J_+$.
+\end{proof}
+
+\begin{theorem}[Growth]\label{thm:growth}
+Let $\bar N$ and $t_0$ be as in Theorem~\ref{thm:energy}, $y_0=\Ima z_0$,
+$\lambda_0=\lambda(0)>0$, $c_\lambda=1/\log(1+1/\lambda_0)$,
+$\Xi_0=\tr E_1(L)|_{t=0}$ and
+\[
+ \kappa_1:=\frac{y_0\,c_\lambda^2}{\sqrt2\,|z_0|\,c_\lambda\,\Xi_0+\frac75\bar N}.
+\]
+Then for all charges and all $t>t_0$
+\[
+ E_1(\lambda(t))\leq\tr E_1(L(t))\leq\frac1{\Xi_0^{-1}+\kappa_1(t-t_0)}<\frac1{\kappa_1(t-t_0)}.
+\]
+In particular $\lambda(t)\to\infty$, and $\lambda(t)\geq\Lambda$ for all
+$t\geq t_0+(1+\Lambda)e^\Lambda/\kappa_1$, for every $\Lambda>0$.
+\end{theorem}
+
+\begin{proof}
+Put $\Xi=\tr E_1(L)=\sum_iE_1(\ell_i)$. By
+Proposition~\ref{prop:imported}(i) all $\ell_i\geq\lambda_0$ for $t\geq0$, so
+\eqref{eq:E1bounds} gives $\Xi\leq\log(1+1/\lambda_0)\tr e^{-L}$, that is
+$\tr e^{-L}\geq c_\lambda\Xi$. By Theorem~\ref{thm:kernel} and
+Theorem~\ref{thm:energy}, for $t\geq t_0$,
+$\tr J_+=\tr J+\tr J_-\leq\frac75\tr J\leq\frac75\bar N$, and
+$y_0+|x_0|\leq\sqrt2|z_0|$. The function $x\mapsto x^2/(cx+d)$ is increasing
+on $x>0$ for $c,d>0$. Hence by Lemma~\ref{lem:growth}, for $t\geq t_0$,
+\[
+ \dot\Xi\leq-\frac{y_0c_\lambda^2\,\Xi^2}{\sqrt2|z_0|c_\lambda\,\Xi+\frac75\bar N}
+ \leq-\kappa_1\Xi^2,
+\]
+where we used $\Xi\leq\Xi_0$ in the denominator; $\Xi$ is nonincreasing by
+Lemma~\ref{lem:growth}. Integrating from $t_0$,
+$\Xi(t)^{-1}\geq\Xi(t_0)^{-1}+\kappa_1(t-t_0)\geq\Xi_0^{-1}+\kappa_1(t-t_0)$.
+Since $E_1(\lambda)$ is one of the nonnegative summands of $\Xi$,
+$E_1(\lambda)\leq\Xi$. For the last statement, if
+$t\geq t_0+(1+\Lambda)e^\Lambda/\kappa_1$ then
+$E_1(\lambda(t))<e^{-\Lambda}/(1+\Lambda)\leq E_1(\Lambda)$ by
+\eqref{eq:E1bounds}.
+\end{proof}
+
+\subsection{Cancellation}
+Put
+\begin{equation}\label{eq:constants}
+ \begin{gathered}
+ \Lambda_1=\max\Bigl\{1,\frac{8\pi\bar N}{\alpha_1y_0}\Bigr\},\qquad
+ t_1=t_0+\frac{(1+\Lambda_1)e^{\Lambda_1}}{\kappa_1},\qquad
+ s_1=\frac{\bar N}{1-e^{-1}},\\
+ \mathfrak c_1=2\sqrt{d_0\bar Ns_1}+r\kappa_0s_1,\qquad
+ \mathfrak c_2=\frac\pi{\sqrt{|z_0|}}\bigl(\sqrt{\mathfrak c_1}+\sqrt{rs_1}\bigr),\qquad
+ \mathfrak c_3=\max\Bigl\{0,2\log\frac{2\mathfrak c_2}\pi\Bigr\},\\
+ C_{\mathrm{can}}=\mathfrak c_1+(r+1)s_1+2|z_0|re^{\mathfrak c_3},\qquad
+ t_2=t_1+\frac2{\alpha_1}\log^+\frac{8\alpha_1s_1}{\pi y_0}.
+ \end{gathered}
+\end{equation}
+The numbers $\Lambda_1$, $s_1$, $\mathfrak c_1$, $\mathfrak c_2$,
+$\mathfrak c_3$, $C_{\mathrm{can}}$ depend only on the dimensions and the charges; the times $t_1$ and $t_2$
+depend in addition on the three numbers $N(0)$, $\lambda(0)$ and
+$\tr E_1(L)|_{t=0}$ of the initial state.
+
+\begin{theorem}[Cancellation]\label{thm:cancellation}
+For all charges in the upper half-plane and along every trajectory of the
+phase flow:
+\begin{enumerate}
+\item[(i)] for $t\geq t_1$: $\lambda(t)\geq\Lambda_1$,
+ $\dot s\leq-\frac{\alpha_1}2s$ and
+ $s(t)\leq s_1e^{-\frac{\alpha_1}2(t-t_1)}$;
+\item[(ii)] for $t\geq t_1$:
+ $\lambda(t)\geq\max\{\Lambda_1,\ \frac{\alpha_1}4(t-t_1)-\mathfrak c_3\}$;
+\item[(iii)] for $t\geq t_1$:
+ \[
+ \norm{\Omega_V-(z_0\id+C_0)\oplus0}_1+\norm{\Omega_U}_1+\norm{\Omega_W-(z_1\id-C_1)}_1
+ \leq C_{\mathrm{can}}\,e^{-\frac{\alpha_1}4(t-t_1)},
+ \]
+ and $|m(h(t))-m_H(t)|$ satisfies the same bound;
+\item[(iv)] for $t\geq t_2$:
+ $\norm{\delta_0}_{\HS}^2\leq\frac{2\pi\alpha_1}{y_0}\,s$ and
+ $\norm{\delta_1}_{\HS}\leq s/y_1$.
+\end{enumerate}
+So the acyclic part cancels, with $q\leq\bar N$ from the time $t_0$ on, and
+after the time $t_2$ the metrics induced on the cohomology representation move by its own
+phases $\phi_0,\phi_1$ up to an exponentially decaying error.
+\end{theorem}
+
+\begin{proof}
+(i) By Theorem~\ref{thm:growth} with $\Lambda=\Lambda_1$,
+$\lambda\geq\Lambda_1$ on $[t_1,\infty)$. By Theorem~\ref{thm:energy},
+$q\leq\bar N$ for $t\geq t_0$, so $\frac{4\pi q}{y_0\lambda}\leq\frac{\alpha_1}2$ there, and
+Proposition~\ref{prop:imported}(iii) gives $\dot s\leq-\frac{\alpha_1}2s$. At
+$t_1$, $\lambda\geq1$ and $s\leq\tr Y/(1-e^{-\lambda})\leq s_1$ by
+\eqref{eq:Y} and Theorem~\ref{thm:energy}.
+
+(ii) By Proposition~\ref{prop:imported}(ii), Theorem~\ref{thm:energy} and
+(i), for $t\geq t_1$,
+\[
+ \norm{\mathcal E_V}_1\leq2\sqrt{d_0qs/\lambda}+r\kappa_0s
+ \leq\mathfrak c_1e^{-\frac{\alpha_1}4(t-t_1)},
+ \qquad\norm J_1\leq rs_1e^{-\frac{\alpha_1}2(t-t_1)}.
+\]
+Let $v$ be a unit vector of $(\ker D)^\perp$ with $F^\dagger Fv=\lambda v$ and
+$u=Fv/\sqrt\lambda$, so $Lu=\lambda u$. Apply
+Proposition~\ref{prop:imported}(v) to $T=\Omega_V$ with
+$T_\circ=\diag(z_0\id+C_0,\ z_0e^{-F^\dagger F})$, for which
+$|T_\circ|v=|z_0|e^{-\lambda}v$ and $\Psi_\circ v=\alpha_0v$; and to
+$T=-\Omega_U=z_0e^{-L}-J$ with $T_\circ=z_0e^{-L}$ and the vector $u$:
+\[
+ |\inner v{(\Phi_V-\alpha_0)v}|\leq\pi\sqrt{\frac{\norm{\mathcal E_V}_1e^\lambda}{|z_0|}},
+ \qquad
+ |\inner u{(\Phi_U+\pi-\alpha_0)u}|\leq\pi\sqrt{\frac{\norm J_1e^\lambda}{|z_0|}} .
+\]
+By Proposition~\ref{prop:imported}(i), the right derivative of $\lambda$
+satisfies
+\[
+ \dot\lambda\geq\lambda\bigl[\pi-\mathfrak c_2e^{\lambda/2-\frac{\alpha_1}8(t-t_1)}\bigr]\qquad(t\geq t_1).
+\]
+Consider the line $t\mapsto\frac{\alpha_1}4(t-t_1)-\mathfrak c_3$. Where
+$\lambda$ is at most its value we have
+$\mathfrak c_2e^{\lambda/2-\frac{\alpha_1}8(t-t_1)}\leq\mathfrak c_2e^{-\mathfrak c_3/2}\leq\frac\pi2$,
+hence $\dot\lambda\geq\frac\pi2\lambda\geq\frac\pi2>\frac{\alpha_1}4$, because
+$\lambda\geq\Lambda_1\geq1$ and $\alpha_1<\pi$. Since
+$\lambda(t_1)\geq1>-\mathfrak c_3$, the graph of $\lambda$ cannot cross below the line.
+
+(iii) For $t\geq t_1$:
+$\norm{\Omega_V-(z_0\id+C_0)\oplus0}_1\leq\norm{\mathcal E_V}_1+|z_0|re^{-\lambda}$;
+$\norm{\Omega_U}_1\leq rs+|z_0|re^{-\lambda}$; and
+$\norm{\Omega_W-(z_1\id-C_1)}_1=\tr Y\leq s$. By (ii),
+$e^{-\lambda}\leq e^{\mathfrak c_3}e^{-\frac{\alpha_1}4(t-t_1)}$. Adding gives the
+bound, and the statement on the masses follows from the triangle inequality
+for the trace norm.
+
+(iv) For $t\geq t_2$, (i) gives $s\leq\frac{\pi y_0}{8\alpha_1}$. Then
+$\frac{qs}{\lambda y_0^2}\leq\frac{\bar N}{\Lambda_1}\frac s{y_0^2}
+\leq\frac{\alpha_1s}{8\pi y_0}\leq\frac1{64}$, and
+Proposition~\ref{prop:imported}(iv) gives
+$\norm{\delta_0}_{\HS}^2\leq\frac{16\pi^2}{y_0^2}\frac{qs}\lambda
+\leq\frac{2\pi\alpha_1}{y_0}s$.
+\end{proof}
+
+\begin{remark}\label{rem:rates}
+The time $t_1$ is an a priori bound; it contains $e^{\Lambda_1}$ and
+$\log^2(1+1/\lambda(0))$ and exceeds by many orders of magnitude the time at
+which the decay is observed to begin in numerical integrations. For the
+symmetric charges $\alpha_1=\frac\pi4$, so the theorem gives the rate
+$\frac\pi8$ for $s$ and $\frac\pi{16}$ for the blocks of $\Omega$ on the
+acyclic part. Numerical integration of \eqref{eq:mapflow}, which is not used
+in any proof and is not reproduced here, suggests that
+$\dot\lambda/\lambda$ approaches $\frac\pi2$, so that $\lambda$ would grow
+exponentially.
+\end{remark}

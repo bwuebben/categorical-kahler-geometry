@@ -1,0 +1,218 @@
+\section{Closedness and a primitive}\label{sec:primitive}
+
+Consider the complex-valued one-form
+\[
+ \vartheta_h(\xi):=\tr(\Omega\,\xi)
+\]
+on the space of metrics; here $\xi=h^{-1}\delta h$ is a tangent vector at
+$h$. For representations $\Omega=\Gamma$, and
+$\vartheta$ is the differential of
+$\sum_iz_i\log\det h_i-\sum_a\norm{\rho(a)}_{\HS}^2$ \cite[\S5.1]{hkkp26}. For
+two-term complexes over $K_m$ with a surjective differential at the vertex
+$0$, a function with differential $\vartheta$ was found by direct computation
+in \cite[Proposition~7.1]{wue26a}. Here closedness is proved for all
+complexes by a computation in the algebra $\mathcal B$ of
+Section~\ref{sec:setting}.
+
+The algebra $\mathcal B$ contains $A$, $A^*$, $F$ and the elements
+$\sum_ie_i\otimes\xi_i$, with which we identify tangent vectors $\xi$. For
+$X\in\mathcal B$ let $\tau(X)=\tr\bigl(\gr\,[X]_f\bigr)$, so that
+$\vartheta_h(\xi)=\tau(e^{-\sqrt{-1}F}\xi)$. All brackets below are
+supercommutators, $[X,Y]=XY-(-1)^{|X||Y|}YX$.
+
+\begin{lemma}\label{lem:tau}
+$\tau$ vanishes on supercommutators of elements of $\mathcal B$.
+\end{lemma}
+
+\begin{proof}
+The products of basis elements with a component along some $f_i$ are those of
+the types $(e_i,f_i)$, $(f_i,e_i)$, $(a,a^*)$ and $(a^*,a)$. For the first
+two the claim is that the supertrace on $E_i$ vanishes on supercommutators.
+For $a:i\to j$, $T\in\Hom(E_i,E_j)$ and
+$S\in\Hom(E_j,E_i)$ homogeneous with $|T|+|S|=0$,
+\[
+ \tau\bigl([a\otimes T,a^*\otimes S]\bigr)
+ =\sqrt{-1}\bigl((-1)^{|T|}\str_{E_j}(TS)-\str_{E_i}(ST)\bigr)=0,
+\]
+because $\str_{E_j}(TS)=(-1)^{|T|}\str_{E_i}(ST)$; here $\str=\tr(\gr\,\cdot\,)$.
+\end{proof}
+
+The restriction to $\mathcal B$ matters. On the whole algebra
+$\mathcal A(Q)\otimes\End(E)$, with the projection onto
+$\bigoplus_if_i\otimes\End(E_i)$ in the place of $[\,\cdot\,]_f$, the functional
+does not vanish on all supercommutators, for instance on
+$[e_i\otimes T,f_i\otimes S]$ with $T:E_j\to E_i$, $S:E_i\to E_j$, $i\neq j$.
+
+The closedness of $\vartheta$ uses only the structure described in the next
+lemma. For the endomorphism-valued forms of Section~\ref{sec:bundles} the
+lemma is the classical computation by which the one-form
+$\xi\mapsto\str(\xi\,e^{-\mathfrak F})$ on the space of metrics is closed
+modulo $\partial$- and $\bar\partial$-exact forms, and by which Bott--Chern
+forms do not depend, modulo such forms, on the path of metrics
+\cite{bc65,don85,bgs88}. We
+isolate the identities used in that argument because they also hold in the
+algebra $\mathcal B$.
+
+\begin{lemma}\label{lem:abstract}
+Let $\mathcal C$ be a $\mathbb Z/2$-graded associative algebra over $\CC$
+with a linear functional $\tau$ that vanishes on supercommutators. For each
+point $h$ of a manifold $\mathcal M$ let $\mathfrak d$, $\mathfrak d^\star$
+be odd derivations of $\mathcal C$ and $F\in\mathcal C$ an even element,
+depending smoothly on $h$, such that
+\[
+ \tau\circ\mathfrak d=0=\tau\circ\mathfrak d^\star,\qquad
+ \mathfrak dF=0=\mathfrak d^\star F,\qquad
+ \mathfrak d\mathfrak d^\star+\mathfrak d^\star\mathfrak d=-[F,\,\cdot\,].
+\]
+Suppose that to each tangent vector of $\mathcal M$ at $h$ an even element
+$\xi\in\mathcal C$ is assigned, linearly, such that the derivative of $F$
+in this direction is $\delta_\xi F=-\mathfrak d\mathfrak d^\star\xi$, and
+that for a two-parameter family $h(u,v)$, with the elements $\xi$, $\eta$
+assigned to $\partial_uh$, $\partial_vh$, one has
+$\partial_v\xi-\partial_u\eta=[\xi,\eta]$. Suppose finally that
+$\mathsf e:=e^{-\sqrt{-1}F}$ and the elements
+\[
+ \Xi_Y:=\int_0^1e^{-\sqrt{-1}(1-x)F}\,Y\,e^{-\sqrt{-1}xF}dx\qquad(Y\in\mathcal C)
+\]
+are defined, with $\mathfrak d$ and $\mathfrak d^\star$ vanishing on the
+exponentials and with the derivative of $\mathsf e$ given by the Duhamel
+formula $\delta_\xi\mathsf e=-\sqrt{-1}\,\Xi_{\delta_\xi F}$. Then the one-form
+$\vartheta(\xi)=\tau(\mathsf e\,\xi)$ on $\mathcal M$ is closed.
+\end{lemma}
+
+\begin{proof}
+We use three identities, for $\mathfrak b\in\{\mathfrak d,\mathfrak d^\star\}$
+and homogeneous $X,Y\in\mathcal C$:
+\begin{enumerate}
+\item[(I1)] $\tau\bigl((\mathfrak bX)\,Y\bigr)=-(-1)^{|X|}\tau\bigl(X\,\mathfrak bY\bigr)$,
+ because $\mathfrak b(XY)=(\mathfrak bX)Y+(-1)^{|X|}X\,\mathfrak bY$ and
+ $\tau\circ\mathfrak b=0$;
+\item[(I2)] $\mathfrak b\,\Xi_Y=\Xi_{\mathfrak bY}$, because $\mathfrak b$
+ vanishes on the exponentials of $F$;
+\item[(I3)] $\tau(\Xi_YY')=\tau(Y\,\Xi_{Y'})$ for even $Y,Y'$, by the
+ cyclicity of $\tau$ on even elements and the substitution $x\mapsto1-x$.
+\end{enumerate}
+Moreover $\frac d{dx}\bigl(e^{-\sqrt{-1}(1-x)F}Ye^{-\sqrt{-1}xF}\bigr)
+=\sqrt{-1}\,[F,e^{-\sqrt{-1}(1-x)F}Ye^{-\sqrt{-1}xF}]$ gives
+$[F,\Xi_Y]=\sqrt{-1}\,[\mathsf e,Y]$. From
+$\delta_\xi F=-\mathfrak d\mathfrak d^\star\xi=[F,\xi]+\mathfrak d^\star\mathfrak d\xi$
+and (I2),
+\[
+ \delta_\xi\mathsf e=-\sqrt{-1}\,[F,\Xi_\xi]-\sqrt{-1}\,\mathfrak d^\star\mathfrak d\,\Xi_\xi
+ =[\mathsf e,\xi]-\sqrt{-1}\,\mathfrak d^\star\mathfrak d\,\Xi_\xi .
+\]
+For a two-parameter family,
+\[
+ \partial_v\vartheta(\xi)-\partial_u\vartheta(\eta)
+ =\tau(\delta_\eta\mathsf e\;\xi)-\tau(\delta_\xi\mathsf e\;\eta)
+ +\tau(\mathsf e\,[\xi,\eta]).
+\]
+The terms with the first summand of $\delta\mathsf e$, together with the last
+term, give
+\[
+ \tau([\mathsf e,\eta]\xi)-\tau([\mathsf e,\xi]\eta)+\tau(\mathsf e[\xi,\eta])
+ =-\tau(\mathsf e[\xi,\eta]),
+\]
+by cyclicity. For the remaining terms put
+$\beta(\eta,\xi)=\tau(\Xi_\eta\,\mathfrak d\mathfrak d^\star\xi)$ and
+$\beta'(\eta,\xi)=\tau(\Xi_\eta\,\mathfrak d^\star\mathfrak d\xi)$. By (I1),
+applied twice,
+\[
+ \tau\bigl((\mathfrak d^\star\mathfrak d\,\Xi_\eta)\,\xi\bigr)
+ =\tau\bigl((\mathfrak d\,\Xi_\eta)(\mathfrak d^\star\xi)\bigr)
+ =-\tau\bigl(\Xi_\eta\,\mathfrak d\mathfrak d^\star\xi\bigr)=-\beta(\eta,\xi),
+\]
+and by (I2), (I3) and cyclicity,
+\[
+ \tau\bigl((\mathfrak d^\star\mathfrak d\,\Xi_\eta)\,\xi\bigr)
+ =\tau\bigl(\Xi_{\mathfrak d^\star\mathfrak d\eta}\,\xi\bigr)
+ =\tau\bigl((\mathfrak d^\star\mathfrak d\eta)\,\Xi_\xi\bigr)=\beta'(\xi,\eta).
+\]
+So $\beta(\eta,\xi)=-\beta'(\xi,\eta)$. Since
+$\mathfrak d\mathfrak d^\star\xi+\mathfrak d^\star\mathfrak d\xi=-[F,\xi]$,
+\[
+ \beta(\eta,\xi)+\beta'(\eta,\xi)=-\tau(\Xi_\eta[F,\xi])=\tau([F,\Xi_\eta]\,\xi)
+ =\sqrt{-1}\,\tau([\mathsf e,\eta]\xi)=-\sqrt{-1}\,\tau(\mathsf e[\xi,\eta]).
+\]
+Therefore
+\begin{align*}
+ -\sqrt{-1}\bigl[\tau\bigl((\mathfrak d^\star\mathfrak d\,\Xi_\eta)\xi\bigr)
+ -\tau\bigl((\mathfrak d^\star\mathfrak d\,\Xi_\xi)\eta\bigr)\bigr]
+ &=\sqrt{-1}\bigl[\beta(\eta,\xi)-\beta(\xi,\eta)\bigr]\\
+ &=\sqrt{-1}\bigl[\beta(\eta,\xi)+\beta'(\eta,\xi)\bigr]=\tau(\mathsf e[\xi,\eta]),
+\end{align*}
+and the two contributions cancel.
+\end{proof}
+
+\begin{theorem}[Closedness]\label{thm:closed}
+The one-form $\vartheta$ is closed. Hence there is a function $\cS_{\CC}$ on the
+space of metrics, unique up to an additive constant, with
+$d\cS_{\CC}(\xi)=\tr(\Omega\,\xi)$.
+\end{theorem}
+
+\begin{proof}
+We apply Lemma~\ref{lem:abstract} to $\mathcal C=\mathcal B$, the functional
+$\tau$ of Lemma~\ref{lem:tau}, the space of metrics, and
+$\mathfrak d=[A,\,\cdot\,]$, $\mathfrak d^\star=[A^*,\,\cdot\,]$. The
+functional vanishes on the images of these inner derivations by
+Lemma~\ref{lem:tau}. Work in fixed bases. Adjoints depend on $h$ by
+$T^\dagger=h^{-1}\overline T^{\mathsf T}h$, with $\overline T^{\mathsf T}$ the
+conjugate transpose of the matrix, so for a variation $\xi$ one has
+$\delta_\xi T^\dagger=[T^\dagger,\xi]$, hence $\delta_\xi A^*=[A^*,\xi]$ and
+$\delta_\xi A=0$. The elements $A,A^*$ are odd, $\xi$ and $F$ are even. From
+$A^2=0$, and hence $(A^*)^2=0$ for every metric, we get
+$F_0:=(A-A^*)^2=-[A,A^*]$ and, by the graded Jacobi identity,
+$[A,F_0]=0=[A^*,F_0]$ and
+$\mathfrak d\mathfrak d^\star+\mathfrak d^\star\mathfrak d=[[A,A^*],\,\cdot\,]=-[F_0,\,\cdot\,]$.
+The element $F_z=\sqrt{-1}\sum_if_i\otimes z_i\id_{E_i}$ is central in
+$\mathcal B$ and does not depend on the metric. So $F=F_0+F_z$ satisfies
+$\mathfrak dF=\mathfrak d^\star F=0$,
+$\mathfrak d\mathfrak d^\star+\mathfrak d^\star\mathfrak d=-[F,\,\cdot\,]$ and
+$\delta_\xi F=-[A,[A^*,\xi]]=-\mathfrak d\mathfrak d^\star\xi$. For a
+two-parameter family of metrics with $\xi=h^{-1}\partial_uh$ and
+$\eta=h^{-1}\partial_vh$ one has $\partial_v\xi-\partial_u\eta=[\xi,\eta]$.
+The algebra is finite-dimensional, so the exponentials exist and the Duhamel
+formula holds. Hence $\vartheta$ is closed, and the space of metrics is
+contractible.
+\end{proof}
+
+\begin{theorem}[Primitive]\label{thm:primitive}
+For $x\in[0,1]$ let $\Omega^{(x)}$ be the endomorphism \eqref{eq:Omegadef} of
+the complex with differentials $\sqrt x\,d_i$ and the same arrows and metrics. Then
+\[
+ \cS_{\CC}(h)=\sum_n(-1)^n\Bigl[\sum_iz_i\log\det h_i^n-\sum_a\norm{\rho^n(a)}^2_{\HS}\Bigr]
+ +\int_0^1\sum_{i,n}n\,\tr\bigl((\Omega^{(x)})_i^n-(\Omega^{(0)})_i^n\bigr)\frac{dx}x
+\]
+satisfies $d\cS_{\CC}(\xi)=\tr(\Omega\,\xi)$. Here $\rho^n(a)=\rho(a)|_{E_i^n}$,
+$(\Omega^{(x)})_i^n$ is the block of $\Omega^{(x)}$ on $E_i^n$, and the
+determinants are Gram determinants in fixed bases.
+\end{theorem}
+
+\begin{proof}
+Rescaling the differentials by $\sqrt x$ at a fixed metric is the same, up
+to unitary equivalence of the data, as the change of metric
+$h_i^n\mapsto x^nh_i^n$ at fixed differentials: it multiplies each
+$d_i^\dagger$ by $x$ and leaves $\rho(a)^\dagger$ unchanged. Along this path
+of metrics the velocity is $\frac1x\Nop$, and $\Nop$ commutes with every
+tangent vector $\xi$. By Theorem~\ref{thm:closed}, applied to the family
+obtained from $he^{u\xi}$ by this rescaling,
+$\delta_\xi\bigl[\frac1x\tr(\Omega^{(x)}\Nop)\bigr]=\partial_x\tr(\Omega^{(x)}\xi)$.
+Since $\Omega^{(x)}$ is analytic in $x$, the integrand
+$\frac1x\tr\bigl((\Omega^{(x)}-\Omega^{(0)})\Nop\bigr)$ is bounded and
+$\delta_\xi$ of the integral is $\tr(\Omega^{(1)}\xi)-\tr(\Omega^{(0)}\xi)$;
+here $\tr(\Omega^{(0)}\Nop)$ does not depend on the metric, because for zero
+differentials $\Omega^{(0)}=\gr\,\Gamma$ and the arrow terms of
+$\sum_i\tr\Gamma_i$ cancel in each degree. For zero differentials
+$\Omega$ is that of a representation in each degree, up to the sign $\gr$,
+with the primitive given by the first sum.
+\end{proof}
+
+For two-term complexes over $K_m$ with a surjective differential at the
+vertex $0$ the formula of Theorem~\ref{thm:primitive} reduces to the
+primitive of \cite[Proposition~7.1]{wue26a}. The integral in
+Theorem~\ref{thm:primitive} is $\int_0^1\tr\bigl(\Nop\,(\Omega^{(x)}-\Omega^{(0)})\bigr)\frac{dx}x$:
+a transgression by the number operator along the rescaling of the
+differential, as in the construction of Bott--Chern forms of Hermitian
+complexes by Bismut, Gillet and Soul\'e \cite{bgs88}, where the regularized
+integral runs over $(0,\infty)$. Here the rescaling stops at $x=1$, and the
+identity is on the space of metrics, in the algebra $\mathcal B$.

@@ -1,0 +1,144 @@
+\section{The derivative of the phase potential along the flow}\label{sec:rate}
+
+Assume $Z(\mathsf E)\neq0$ and fix $\varphi\in\RR$ with
+$Z(\mathsf E)=|Z(\mathsf E)|e^{\ii\varphi}$. The \emph{phase potential} of the
+metrized complex is $\Ima(e^{-\ii\varphi}\cS_{\CC})$, with $\cS_{\CC}$ as in
+Theorem~\ref{thm:primitive}. Put
+\[
+ \cD:=\sum_{i,n}\cD_i^n,\qquad
+ \cD_i^n:=\tr\Bigl(|\Omega_i^n|\,(\Phi_i^n-\varphi)\sin(\Phi_i^n-\varphi)\Bigr).
+\]
+We call $\cD_i^n$ the contribution of the block $\Omega_i^n$. By
+Proposition~\ref{prop:rate} below, the derivative of the phase potential
+along the flow is $-\cD$.
+
+\begin{proposition}[Representations]\label{prop:kempfness}
+Let $\mathsf E$ be a representation in degree zero, with $\varphi\in(0,\pi)$,
+and put $\theta_i=\Ima(e^{-\ii\varphi}z_i)/\sin\varphi$ and
+$\mu_i=\sum_{a:i\to\cdot}\rho(a)^\dagger\rho(a)-\sum_{a:\cdot\to i}\rho(a)\rho(a)^\dagger$,
+the moment map. Then $\sum_i\theta_i\dim E_i=0$ and
+\[
+ \frac{\Ima(e^{-\ii\varphi}\cS_{\CC})}{\sin\varphi}
+ =\sum_a\norm{\rho(a)}^2_{\HS}+\sum_i\theta_i\log\det h_i=:\cK_\theta(h),\qquad
+ d\cK_\theta(\xi)=-\sum_i\tr\bigl(\xi_i(\mu_i-\theta_i)\bigr).
+\]
+This is the Kempf--Ness function of the representation for the character
+$-\theta$ in the convention of King \cite{kin94}, for which a representation
+is semistable when $\sum_i\theta_i\dim E'_i\leq0$ for all subrepresentations
+$E'$, that is, when no subrepresentation has a central charge of argument
+larger than $\varphi$. The metric is harmonic if and only if
+$\mu_i=\theta_i$ for all $i$. All contributions $\cD_i^0$ are nonnegative,
+and $\cD=0$ exactly at the harmonic metrics.
+\end{proposition}
+
+\begin{proof}
+Here $\cS_{\CC}=\sum_iz_i\log\det h_i-\sum_a\norm{\rho(a)}^2_{\HS}$,
+$\Ima(e^{-\ii\varphi}z_i)=\theta_i\sin\varphi$ and
+$\Ima(e^{-\ii\varphi})=-\sin\varphi$; and
+$\sum_i\theta_i\dim E_i=\Ima(e^{-\ii\varphi}Z(\mathsf E))/\sin\varphi=0$. The
+block at $i$ is $z_i+\mu_i$, so
+$\Ima\bigl(e^{-\ii\varphi}\tr(\Omega\xi)\bigr)=-\sin\varphi\sum_i\tr\bigl((\mu_i-\theta_i)\xi_i\bigr)$.
+For a real number $x$, $\arg(z_i+x)=\varphi$ exactly for $x=\theta_i$. The
+phases lie in $(0,\pi)$, so $\Phi_i-\varphi$ has its spectrum in
+$(-\pi,\pi)$, where $x\sin x\geq0$ with equality only at $x=0$.
+\end{proof}
+
+\begin{proposition}\label{prop:rate}
+Along the phase flow,
+$\frac d{dt}\Ima\bigl(e^{-\ii\varphi}\cS_{\CC}\bigr)=-\cD$. The sum $\cD$ does not
+depend on the choice of $\varphi$ modulo $2\pi$.
+\end{proposition}
+
+\begin{proof}
+By Theorem~\ref{thm:closed} and the flow equation,
+$\frac d{dt}\cS_{\CC}=-\tr(\Omega\Phi)$, and
+$e^{-\ii\varphi}\tr\Omega=|Z(\mathsf E)|$ is real
+(Proposition~\ref{prop:properties}(b)). Hence
+$\frac d{dt}\Ima(e^{-\ii\varphi}\cS_{\CC})
+=-\Ima\tr\bigl(e^{-\ii\varphi}\Omega(\Phi-\varphi)\bigr)$, and on each block
+$e^{-\ii\varphi}\Omega_i^n(\Phi_i^n-\varphi)
+=|\Omega_i^n|\,(\Phi_i^n-\varphi)e^{\ii(\Phi_i^n-\varphi)}$; the trace of a
+product of two Hermitian matrices is real. Replacing $\varphi$ by
+$\varphi+2\pi$ changes $\cD$ by
+$-2\pi\sum\tr(|\Omega_i^n|\sin(\Phi_i^n-\varphi))=-2\pi\Ima(e^{-\ii\varphi}Z(\mathsf E))=0$.
+\end{proof}
+
+For a fixed $\varphi$ the summand $\cD_i^n$ is nonnegative when the spectrum
+of $\Phi_i^n-\varphi$ lies in $\bigcup_{l\geq0}\pm[2l\pi,(2l+1)\pi]$. Since the
+phase on $E_i^n$ lies in $(-\pi n,\pi(1-n))$, a block can have either sign as
+soon as the complex has terms in more than one degree.
+
+\subsection{A contractible summand that increases the potential}
+The simplest instance of a negative contribution is a contractible summand
+at one vertex.
+
+\begin{proposition}\label{prop:contractible}
+Let $\mathsf E=\mathsf E'\oplus\mathsf C$ be an orthogonal direct sum of
+metrized complexes, where $\mathsf C=(C^n\xrightarrow{f}C^{n+1})$ is
+concentrated at one vertex $i$ in degrees $n,n+1$, with $f$ invertible, and no
+arrow acts on $\mathsf C$. The phase flow preserves the orthogonal splitting. The
+blocks of $\Omega$ on $\mathsf C$ are $(-1)^nz_ie^{-f^\dagger f}$ and
+$(-1)^{n+1}z_ie^{-ff^\dagger}$, with constant phases $\alpha_i-\pi n$ and
+$\alpha_i-\pi(n+1)$, $\alpha_i=\arg z_i$; in orthonormal frames
+$f(t)=e^{\pi t/2}f(0)$; and the contribution of $\mathsf C$ to $\cD$ is
+\[
+ \pi\,|z_i|\,\tr e^{-ff^\dagger}\,\sin(\alpha_i-\pi n-\varphi).
+\]
+\end{proposition}
+
+\begin{proof}
+For an orthogonal direct sum of metrized complexes $\Omega$ is the direct sum
+of the endomorphisms of the summands, by Proposition~\ref{prop:coefficient}. On
+$\mathsf C$, $\Delta=f^\dagger f\oplus ff^\dagger$, $\Gamma=z_i$ and all $M_a$
+vanish. By \eqref{eq:frameflow},
+$\dot f=\frac12(f\Phi^n-\Phi^{n+1}f)=\frac\pi2f$. With
+$x=\alpha_i-\pi n-\varphi$ the two blocks contribute
+$|z_i|\tr e^{-f^\dagger f}\,x\sin x+|z_i|\tr e^{-ff^\dagger}(x-\pi)\sin(x-\pi)
+=\pi|z_i|\tr e^{-ff^\dagger}\sin x$.
+\end{proof}
+
+So the blocks of $\Omega$ on a contractible summand of this kind always tend
+to zero, at the rate $e^{-\lambda e^{\pi t}}$ with $\lambda$ the least
+eigenvalue of $f^\dagger f$ at time $0$; but the summand makes the potential
+decrease only if $\sin(\alpha_i-\pi n-\varphi)>0$.
+
+\begin{corollary}\label{cor:increase}
+Let $Q=K_m$ with the charges $z_0=-1+\ii$, $z_1=1+\ii$. Let $\mathsf R$ be
+a representation $(R_0\xrightarrow{\beta_j}R_1)$ with
+$\dim R_0=\dim R_1\geq1$,
+with a metric such that $\sum_j\beta_j^\dagger\beta_j=\id$ and
+$\sum_j\beta_j\beta_j^\dagger=\id$, placed in degree $0$, and let
+$\mathsf E=\mathsf R\oplus\mathsf C$ with $\mathsf C=(\CC\xrightarrow{f}\CC)$ at
+the vertex $1$ in degrees $0,1$, $f\neq0$. Then $\varphi=\frac\pi2$, the
+metric of $\mathsf R$ is harmonic and does not move modulo rescaling, and
+along the whole trajectory
+\[
+ \frac d{dt}\Ima\bigl(e^{-\ii\varphi}\cS_{\CC}\bigr)=+\pi e^{-|f|^2}>0 .
+\]
+The phase potential is not bounded below on the metrics of $\mathsf E$.
+\end{corollary}
+
+\begin{proof}
+The blocks of $\mathsf R$ are $z_0+\id$ and $z_1-\id$, both equal to
+$\ii\,\id$, of phase $\frac\pi2=\varphi$. Proposition~\ref{prop:contractible}
+with $i=1$, $n=0$, $\alpha_1=\frac\pi4$, $|z_1|=\sqrt2$ gives the rate
+$-\pi\sqrt2\,e^{-|f|^2}\sin(\frac\pi4-\frac\pi2)$. By
+Theorem~\ref{thm:primitive}, for $\mathsf C$ with metrics $h^0,h^1$ and
+$b=|f|^2$ in orthonormal frames,
+$\cS_{\CC}=z_1\bigl(\log h^0-\log h^1+\Ein(b)\bigr)$ with
+$\Ein(b)=\int_0^1(1-e^{-xb})\,dx/x=\gamma+\log b+\Eone(b)$, where $\gamma$ is
+Euler's constant and $\Eone(b)=\int_1^\infty e^{-xb}\,dx/x$ is the exponential
+integral. Since $b$ is a constant multiple of $h^1/h^0$, this is
+$z_1\Eone(b)$ up to a constant, and its contribution to
+$\Ima(e^{-\ii\varphi}\cS_{\CC})$ is $-\Eone(b)$ up to a constant, which tends to
+$-\infty$ as $b\to0$.
+\end{proof}
+
+For two-term complexes over $K_m$ with the acyclic part at the vertex $0$ in
+degrees $0,1$ and cohomology that is nonzero at the vertex $1$, as in
+\cite{wue26a,wue26b}, one has $\sin(\alpha_0-\varphi)>0$ for strictly ordered
+charges. In general, for cohomology $\mathsf R[-n_*]$ with
+$\mathsf R$ a representation of phase $\varphi_{\mathsf R}\in(0,\pi)$, so
+that $\varphi=\varphi_{\mathsf R}-\pi n_*$, a contractible summand at the
+vertex $i$ in degrees $n,n+1$ decreases the potential if and only if
+$(-1)^{n-n_*}\sin(\alpha_i-\varphi_{\mathsf R})>0$.

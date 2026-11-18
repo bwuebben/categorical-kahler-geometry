@@ -1,0 +1,104 @@
+\section{Charges for which the potential is not monotone, and questions}\label{sec:remarks}
+
+The phase potential is monotone for the charges of
+Theorem~\ref{thm:monotone}. This section gives charges for which it is not,
+and states the questions left open.
+
+\subsection{Reversed and ordered charges}
+\begin{proposition}\label{prop:reversed}
+If all $A_j=0$, then for all charges in the upper half-plane
+\[
+ \cD=c_0\bigl[\,n_0(\alpha_0-\alpha_1)+\pi\tr e^{-L}\,\bigr].
+\]
+In particular, for reversed charges one has $\cD<0$ at every such state with
+$\pi\tr e^{-L}>n_0(\alpha_1-\alpha_0)$; such states exist if and only if
+$\pi r>n_0(\alpha_1-\alpha_0)$.
+\end{proposition}
+
+\begin{proof}
+The matrices $\Omega_V=z_0e^{-B}$, $-\Omega_U=z_0e^{-L}$, $\Omega_W=z_1\id$
+are normal with phases $\alpha_0$, $\alpha_0-\pi$, $\alpha_1$. Hence
+$\cD_V=|z_0|(n_0+\tr e^{-L})(\alpha_0-\varphi)\sin(\alpha_0-\varphi)$,
+$\cD_U=|z_0|\tr e^{-L}(\pi-\alpha_0+\varphi)\sin(\alpha_0-\varphi)$ and
+$\cD_W=n_1c_1(\varphi-\alpha_1)=n_0c_0(\varphi-\alpha_1)$. For reversed
+charges $c_0<0$, and $\tr e^{-L}$ takes all values in $(0,r)$.
+\end{proof}
+
+For example, for $z_0=1+2\ii$, $z_1=-3+2\ii$, $n_0=n_1=r=1$, $D=(0,\frac12)$
+and standard metrics, $\cD=-1.78927\ldots$
+
+For ordered charges the potential can also fail to be monotone when
+$r\geq2$.
+
+\begin{proposition}\label{prop:orderedfailure}
+Let $z_0=10^{-6}(-1+\ii)$ and $z_1=1+\frac\ii{500}$, so that
+$\alpha_0=\frac{3\pi}4>\alpha_1$, and let $n_0=n_1=1$, $r=2$, $k=2$. With
+standard metrics on $V=\CC^3$, $U=\CC^2$, $W=\CC$, let
+\[
+ D=\begin{pmatrix}0&\sqrt{\ell_1}&0\\0&0&\sqrt{\ell_2}\end{pmatrix},\quad
+ A_1=(\tfrac15,0,0),\quad A_2=(0,a_1,a_2),\qquad\ell_1=\tfrac1{20},\ \ell_2=8,
+\]
+\[
+ a_1=\sqrt{\epsilon/\ell_1},\quad a_2=\tfrac7{10}\sqrt{\epsilon\,\ell_2},\quad
+ \epsilon=\tfrac3{10}\Bigl(\frac{1-e^{-\ell_1}}{\ell_1^2}+\frac{49}{100}(1-e^{-\ell_2})\Bigr)^{-1}.
+\]
+The cohomology representation is the nonzero map $\frac15:\CC\to\CC$, which
+is stable, and
+\[
+ \cD=-1.6654354\ldots\times10^{-6}<0,\qquad
+ (\cD_V,\cD_U,\cD_W)\approx(6.72,\,-9.09,\,0.70)\times10^{-6}.
+\]
+\end{proposition}
+
+\begin{proof}
+Since $C=\diag(\frac1{25},\,(a_1,a_2)^\dagger(a_1,a_2))$ has no block between
+$\ker D$ and its complement, all blocks of $\Omega$ are of size $1$ or
+$2$, and the polar decomposition of a $2\times2$ matrix is explicit, as in
+the proof of Proposition~\ref{prop:mass}. The value of $\cD$ was enclosed
+with interval arithmetic at $300$ bits; the enclosure has radius below
+$10^{-30}$.\footnote{The program
+\texttt{prop\_10\_1\_10\_2\_dissipation.py} and its output accompany this
+paper as supplementary files.} At the same state and for the symmetric charges the same
+computation gives $\cD=3.79\ldots>0$, in agreement with
+Theorem~\ref{thm:monotone}.
+\end{proof}
+
+The mechanism is the following. As $z_0\to0$ with $z_1=e^{\ii\epsilon'}$ and
+no arrows on the cohomology, $\Omega_V$ and $\Omega_U$ tend to the Hermitian
+matrices $K_{F^\dagger F}(C_T)$ and $J$, whose phases have the eigenvalues
+$0,\pi$ and $0,-\pi$ respectively, and
+$\cD/\sigma\to\epsilon'\,\tr Y/(1-\tr Y)+\pi\bigl(\tr K_{F^\dagger F}(C_T)_--\tr J_-\bigr)$
+up to terms of order $\epsilon'^2$ ($n_1=1$, $\tr Y<1$). Configurations with
+$\tr J_->\tr K_{F^\dagger F}(C_T)_-$ exist, and then $\cD<0$ for small
+$\epsilon'$. By Remark~\ref{rem:sharp} the block of degree one alone is
+negative on a much larger set of charges; in numerical minimizations of
+$\cD$ over the maps $D,A_j$, which are not used in any proof, the blocks of
+degree zero compensated it except for charges very close to the real axis. By
+Theorems~\ref{thm:cancellation} and~\ref{thm:convergence} the failure of
+monotonicity of the potential does not affect the long-time behaviour.
+
+\subsection{Questions}
+We collect the questions left open.
+\begin{enumerate}
+\item Determine the best constant in Theorem~\ref{thm:kernel}. The value
+ $(\sqrt2-1)/2$ would enlarge the admissible range to
+ $\varphi\geq\frac\pi2(\sqrt2-1)$ and improve the constant $\rho$ of
+ Theorem~\ref{thm:energy}.
+\item Determine the set of charges for which $\cD\geq0$ at every state. It
+ contains the admissible charges, and by
+ Proposition~\ref{prop:orderedfailure} it does not contain all ordered
+ charges when $r\geq2$.
+\item For semistable cohomology that is not polystable, does the bounded
+ factor between the induced metrics and the asymptotic solutions of
+ \cite{hkkp23} converge, as in Proposition~\ref{prop:semistable}
+ (Remark~\ref{rem:semistable}; \cite[Corollary~6.5]{wue26b})?
+\item Is the mass nonincreasing along the flow for the symmetric charges and
+ few arrows?
+\item Do the parameter derivatives of $\cK_t$ converge pointwise on
+ $\mathcal P^{\mathrm s}$ (Theorem~\ref{thm:families})?
+\item Extend Theorems~\ref{thm:cancellation} and~\ref{thm:convergence} to
+ complexes with acyclic parts at both vertices or in several degrees. The
+ block of degree one then involves a Schur multiplier given by divided
+ differences of the exponential function with one more interpolation point,
+ to which Theorem~\ref{thm:kernel} does not apply.
+\end{enumerate}

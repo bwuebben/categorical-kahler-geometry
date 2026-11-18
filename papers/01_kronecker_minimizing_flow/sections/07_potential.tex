@@ -1,0 +1,272 @@
+\section{The phase potential}\label{sec:potential}
+
+\subsection{The rate identity}
+
+\begin{definition}\label{def:potential}
+The \emph{phase potential} is
+$\cK(h):=\sigma^{-1}\Ima\bigl(e^{-\ii\varphi}\cS_{\CC}(h)\bigr)$, and the
+\emph{dissipation} is $\cD:=\cD_V+\cD_U+\cD_W$ with
+\[
+ \cD_\bullet:=\tr\Bigl(|\Omega_\bullet|\,(\Phi_\bullet-\varphi)\sin(\Phi_\bullet-\varphi)\Bigr).
+\]
+\end{definition}
+
+For the symmetric charges and $n_0=n_1$, $\cK=-\Rea\cS_{\CC}$, that is
+\begin{equation}\label{eq:Ksymmetric}
+ \cK(h)=\log\det h_V-\log\det h_U-\log\det h_W+\tr\Ein(D^\dagger D)
+ +\sum_j\tr\bigl(A_jR(D^\dagger D)A_j^\dagger\bigr).
+\end{equation}
+For a representation regarded as a complex in degree $0$ the potential is its
+Kempf--Ness function for the stability parameter $(\theta_0,\theta_1)$; see
+Proposition~\ref{prop:decomposition}. The function $\cK$ is a primitive of the
+real one-form
+$\xi\mapsto\sigma^{-1}\Ima\sum_\bullet\tr(e^{-\ii\varphi}\Omega_\bullet\xi_\bullet)$
+on the space of metrics. The phase flow is not its gradient flow: the
+gradient of $\cK$ for the invariant metric on the space of metrics has the
+components $\sigma^{-1}\Ima(e^{-\ii\varphi}\Omega_\bullet)$, which do not differ
+from the phases $\Phi_\bullet$ by a constant.
+
+\begin{proposition}[Rate identity]\label{prop:rate}
+Along the phase flow, for all charges in the upper half-plane,
+\[
+ \sigma\,\frac{d\cK}{dt}=-\cD .
+\]
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:primitivevariation} and \eqref{eq:flow},
+$\frac d{dt}\cS_{\CC}=-\sum_\bullet\tr(\Omega_\bullet\Phi_\bullet)$. By
+\eqref{eq:central}, $e^{-\ii\varphi}\sum_\bullet\tr\Omega_\bullet=|Z|$ is real,
+so
+\[
+ \frac d{dt}\Ima(e^{-\ii\varphi}\cS_{\CC})
+ =-\sum_\bullet\Ima\tr\bigl(e^{-\ii\varphi}\Omega_\bullet(\Phi_\bullet-\varphi)\bigr).
+\]
+By \eqref{eq:phase},
+$e^{-\ii\varphi}\Omega_\bullet(\Phi_\bullet-\varphi)
+=|\Omega_\bullet|\bigl[(\Phi_\bullet-\varphi)\cos(\Phi_\bullet-\varphi)
++\ii(\Phi_\bullet-\varphi)\sin(\Phi_\bullet-\varphi)\bigr]$, and the trace of a
+product of two Hermitian matrices is real.
+\end{proof}
+
+The proof uses only \eqref{eq:primitivevariation}, \eqref{eq:flow} and
+\eqref{eq:central}. For a representation in degree $0$ the endomorphism $\Omega$ is
+normal and the statement follows from formulas displayed in
+\cite[\S\S4.2, 5.1]{hkkp26}, although it is not stated there.
+
+By Lemma~\ref{lem:eigenbasis}, in an orthonormal eigenbasis $(v_k)$ of
+$\Phi_\bullet$ with eigenvalues $\phi_k$ and
+$p_k=\inner{v_k}{|\Omega_\bullet|v_k}>0$,
+\begin{equation}\label{eq:diagonal}
+ \cD_\bullet=\sum_kp_k(\phi_k-\varphi)\sin(\phi_k-\varphi),\qquad
+ p_k\sin(\phi_k-\varphi)=\inner{v_k}{\Ima\bigl(e^{-\ii\varphi}\Omega_\bullet\bigr)v_k}.
+\end{equation}
+
+\begin{proposition}\label{prop:degreezero}
+$\cD_V\geq0$ and $\cD_W\geq0$, with equality on a block if and only if the
+phase is $\varphi\id$ there.
+\end{proposition}
+
+\begin{proof}
+For $\bullet=V,W$ the spectrum of $\Phi_\bullet$ lies in $(0,\pi)$ and
+$\varphi\in(0,\pi)$, so $|\phi_k-\varphi|<\pi$ and
+$(\phi_k-\varphi)\sin(\phi_k-\varphi)\geq0$, with equality only for
+$\phi_k=\varphi$.
+\end{proof}
+
+The block $U$ of degree one is different: the spectrum of $\Phi_U-\varphi$
+lies in $(-\pi-\varphi,-\varphi)$, and $x\sin x<0$ for
+$x\in(-\pi-\varphi,-\pi)$.
+
+\begin{proposition}\label{prop:degreeone}
+Let $M=\sigma J+c_0e^{-L}$. For all charges in the upper half-plane,
+\[
+ \cD_U\geq\varphi\tr M-\pi\tr M_- .
+\]
+If $c_0\geq0$, then
+\[
+ \cD_U\geq\varphi c_0\tr e^{-L}+\sigma\bigl(\varphi\tr J-\pi\tr J_-\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:coeff},
+$\Ima(e^{-\ii\varphi}\Omega_U)=-\sigma J-|z_0|\sin(\alpha_0-\varphi)e^{-L}=-M$,
+so by \eqref{eq:diagonal}, with $M_{kk}=\inner{v_k}{Mv_k}$,
+$p_k\sin(\phi_k-\varphi)=-M_{kk}$ and
+$\cD_U=\sum_k(\varphi-\phi_k)M_{kk}$. If $M_{kk}\geq0$, then
+$\sin(\phi_k-\varphi)\leq0$, so $\varphi-\phi_k\in(\varphi,\pi]$ and the term
+is at least $\varphi M_{kk}$. If $M_{kk}<0$, then
+$\varphi-\phi_k\in(\pi,\pi+\varphi)$ and the term is at least
+$(\pi+\varphi)M_{kk}$. In both cases it is at least
+$\varphi M_{kk}-\pi(M_{kk})_-$. For any orthonormal basis
+$M_{kk}\geq-(M_-)_{kk}$, hence $\sum_k(M_{kk})_-\leq\tr M_-$. This is the first
+inequality. For the second, $\tr M_-=\max_{0\leq\Pi\leq\id}(-\tr(M\Pi))$ and
+$c_0e^{-L}\geq0$, so $\tr M_-\leq\sigma\tr J_-$.
+\end{proof}
+
+\begin{remark}\label{rem:sharp}
+As $e^{-L}\to0$ with $J$ fixed and invertible, $\Omega_U$ becomes Hermitian,
+its phases tend to $0$ or $-\pi$, and the first inequality of
+Proposition~\ref{prop:degreeone} becomes an equality. So the sign of $\cD_U$
+is governed by the ratio $\tr J_-/\tr J$, which is the subject of
+Theorem~\ref{thm:kernel}; this is the origin of the number
+$\frac{2\pi}5=\pi\cdot\frac25$ in Definition~\ref{def:admissible}.
+\end{remark}
+
+\begin{theorem}[Lyapunov function]\label{thm:monotone}
+Let the charges be admissible. Then at every state
+\begin{equation}\label{eq:dissipationbound}
+ \cD\geq\cD_U\geq\varphi c_0\tr e^{-L}
+ +\sigma\bigl(\varphi-\tfrac{2\pi}5\bigr)_+\tr J>0,
+\end{equation}
+and the phase potential is strictly decreasing along the phase flow: it is a
+strict Lyapunov function. For the symmetric charges and $n_0=n_1$,
+\[
+ \frac{d\cK}{dt}=-\cD,\qquad
+ \cD\geq\frac\pi{10}\tr J+\frac\pi2\tr e^{-L}.
+\]
+\end{theorem}
+
+\begin{proof}
+Propositions~\ref{prop:rate}, \ref{prop:degreezero} and \ref{prop:degreeone},
+together with Theorem~\ref{thm:kernel}: $\tr J_-\leq\frac25\tr J$ and
+$\tr J\geq0$, since $DCD^\dagger\geq0$. If $r=1$ then $J$ is a nonnegative
+number, by \eqref{eq:schurform} and Lemma~\ref{lem:mformula}, and $J_-=0$.
+Here $L>0$ because $D$ is surjective, and $c_0>0$.
+\end{proof}
+
+No stability assumption on the cohomology representation and no assumption on
+the size of $D$ or of the maps $A_jD^+$ enters Theorem~\ref{thm:monotone}.
+Some condition on the charges is needed: see
+Propositions~\ref{prop:reversed} and~\ref{prop:orderedfailure}.
+
+\subsection{Decomposition and infimum}
+In this subsection the charges are ordered. Let $H=\ker D$, with the induced
+metric $h_0=h_V|_H$, and $h_1=h_W$. Fix reference bases adapted to
+$H\subset V$: a basis of $H$ followed by vectors whose classes form a basis
+of $V/H$. Let $\bar D:V/H\to U$ be the isomorphism induced by $D$ and
+$c_D=\log|\det\bar D|^2$, the determinant taken in the reference bases. Let
+$\cK_{\coh}$ be the Kempf--Ness function \eqref{eq:KN} of the cohomology
+representation, in the reference basis of $H$ and that of $W$, and
+$\cK_*$ its infimum.
+
+Let $E_1(b)=\int_1^\infty e^{-xb}\,dx/x$ be the exponential integral and
+$\gamma$ Euler's constant.
+
+\begin{proposition}[Decomposition]\label{prop:decomposition}
+\[
+ \cK=\cK_{\coh}(h_0,h_1)+\theta_0\Bigl(c_D+r\gamma+\sum_{i=1}^rE_1(\ell_i)\Bigr)
+ +\tr Y .
+\]
+\end{proposition}
+
+\begin{proof}
+$B$ vanishes on $H$ and equals $F^\dagger F$ on $H^\perp$, so
+$\tr\Ein(B)=\sum_i\Ein(\ell_i)$, and $R(B)$ is the identity on $H$, so
+$\tr(CR(B))=\sum_j\tr(A_jR(B)A_j^\dagger)=q+\tr Y$, using
+$T_jR(F^\dagger F)T_j^\dagger=X_j(\id-e^{-L})X_j^\dagger$. For the Gram matrix
+in the adapted reference basis, $\det h_V=\det h_0\cdot\det h_{V/H}$ with
+$h_{V/H}$ the quotient metric, which is the metric of $H^\perp\cong V/H$. In
+the reference bases of $V/H$ and $U$ the endomorphism $F^\dagger F$ of
+$H^\perp$ has matrix $h_{V/H}^{-1}[\bar D]^*h_U[\bar D]$, so
+$\prod_i\ell_i=|\det\bar D|^2\det h_U/\det h_{V/H}$. Hence
+$\log\det h_V-\log\det h_U=\log\det h_0+c_D-\sum_i\log\ell_i$, and with
+$\Ein(b)=\gamma+\log b+E_1(b)$ for $b>0$,
+\[
+ \cS_{\CC}=z_0\Bigl(\log\det h_0+c_D+r\gamma+\sum_iE_1(\ell_i)\Bigr)
+ +z_1\log\det h_1-q-\tr Y .
+\]
+Finally $\Ima(e^{-\ii\varphi}z_0)=c_0$, $\Ima(e^{-\ii\varphi}z_1)=-c_1$ and
+$\Ima(-e^{-\ii\varphi})=\sigma$.
+\end{proof}
+
+The identity
+$\log\det h_V-\log\det h_U+\log\det(F^\dagger F)=\log\det h_0+c_D$ in this
+proof is the finite-dimensional comparison between the metric induced on the
+determinant of the cohomology and the metric of the cohomology, with torsion
+$\log\det(F^\dagger F)$; compare \cite[Theorem~1.1]{bz92} for complexes of
+real vector spaces. The constant $r\gamma$ arises because $\Ein$ is the heat
+integral cut off at time $1$ rather than its zeta-regularization
+(Remark~\ref{rem:normalization}).
+
+\begin{corollary}\label{cor:infimum}
+$\inf_h\cK=\cK_*+\theta_0(c_D+r\gamma)$, and the infimum is not attained.
+\end{corollary}
+
+\begin{proof}
+The terms $\theta_0\sum_iE_1(\ell_i)$ and $\tr Y$ are nonnegative and the
+first is positive, which gives ``$\geq$'' and non-attainment. For the
+converse fix a complement $H'$ of $H$ in $V$ with a metric, a metric $h_U^0$,
+and take $h_V=h_0\oplus h_{H'}$, $h_U=\epsilon^{-1}h_U^0$. As $\epsilon\to0$
+all $\ell_i\to\infty$, so $E_1(\ell_i)\to0$ and
+$\tr Y\leq\sum_j\norm{T_j}_{\HS}^2/\min_i\ell_i\to0$, while $\cK_{\coh}$
+depends only on $(h_0,h_1)$.
+\end{proof}
+
+\begin{lemma}\label{lem:qbound}
+For every pair $(h_0,h_1)$ with $q>0$,
+\[
+ q-\vartheta-\vartheta\log\frac q\vartheta\leq\cK_{\coh}(h_0,h_1)-\cK_* .
+\]
+\end{lemma}
+
+\begin{proof}
+Replacing $h_1$ by $e^xh_1$ changes $\cK_{\coh}$ to
+$e^xq+(\cK_{\coh}-q)-\vartheta x$; at $e^x=\vartheta/q$ this is
+$\vartheta+\cK_{\coh}-q+\vartheta\log(q/\vartheta)\geq\cK_*$.
+\end{proof}
+
+The function $Q\mapsto Q-\vartheta-\vartheta\log(Q/\vartheta)$ is convex,
+vanishes only at $Q=\vartheta$ and tends to $+\infty$ as $Q\to0$ and as
+$Q\to\infty$.
+
+\subsection{Bounds through the potential}
+Let the charges be admissible and the cohomology representation semistable.
+Then the Lyapunov function gives bounds that do not involve the arrow energy.
+Put
+\begin{equation}\label{eq:gap}
+ \Delta_0:=\cK(h(0))-\inf_h\cK
+ =\cK_{\coh}(0)-\cK_*+\theta_0\sum_iE_1(\ell_i(0))+\tr Y(0)\in(0,\infty),
+\end{equation}
+and let $Q_\infty\geq\vartheta$ be the larger root of
+$Q-\vartheta-\vartheta\log(Q/\vartheta)=\Delta_0$.
+
+\begin{proposition}[Bounds through the potential]\label{prop:apriori}
+Let the charges be admissible and $\cK_*>-\infty$. For all $t\geq0$:
+\begin{enumerate}
+\item[(i)] $0\leq\cK_{\coh}(t)-\cK_*\leq\Delta_0$ and $q(t)\leq Q_\infty$;
+\item[(ii)] $\theta_0\sum_iE_1(\ell_i(t))\leq\Delta_0$ and
+ $\tr Y(t)\leq\Delta_0$, hence $s(t)\leq\Delta_0/(1-e^{-\lambda(t)})$;
+\item[(iii)] $\int_0^\infty\cD\,dt\leq\sigma\Delta_0$;
+\item[(iv)] $\int_0^\infty e^{-\lambda(t)}dt\leq\dfrac{\Delta_0}{\varphi\theta_0}$
+ and
+ $\lambda(t)\geq\max\Bigl\{\lambda(0),\ \log\dfrac{\varphi\theta_0t}{\Delta_0}\Bigr\}$.
+\end{enumerate}
+In particular the conclusions of Theorem~\ref{thm:cancellation} hold with the
+constants \eqref{eq:constants} computed from
+$\bar N':=\max\{Q_\infty,\Delta_0\}$ in place of $\bar N$, and with $t_1$
+replaced by $t_1':=\frac{\Delta_0}{\varphi\theta_0}e^{\Lambda_1'}$, where
+$\Lambda_1'=\max\{1,8\pi\bar N'/(\alpha_1y_0)\}$.
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:decomposition} and Corollary~\ref{cor:infimum},
+$\cK-\inf\cK=(\cK_{\coh}-\cK_*)+\theta_0\sum_iE_1(\ell_i)+\tr Y$ is a sum of
+three nonnegative terms, and it is at most $\Delta_0$ by
+Theorem~\ref{thm:monotone}. This gives (i), with Lemma~\ref{lem:qbound}, and
+(ii), by \eqref{eq:Y}. (iii) is the integral of $\sigma\dot\cK=-\cD$. For
+(iv), \eqref{eq:dissipationbound} gives
+$\cD\geq\varphi c_0\tr e^{-L}\geq\varphi\sigma\theta_0e^{-\lambda}$, and
+$\lambda$ is nondecreasing (Proposition~\ref{prop:imported}(i)), so
+$te^{-\lambda(t)}\leq\int_0^te^{-\lambda}$. For the last statement, by (i)
+and (ii) $q\leq\bar N'$ and $\tr Y\leq\bar N'$ for all $t\geq0$, and by (iv)
+$\lambda\geq\Lambda_1'$ for $t\geq t_1'$. The proof of
+Theorem~\ref{thm:cancellation} uses Theorems~\ref{thm:energy}
+and~\ref{thm:growth} only to obtain these three facts, with $\bar N$,
+$\Lambda_1$, $t_1$ in place of $\bar N'$, $\Lambda_1'$, $t_1'$; the rest of
+that proof applies unchanged.
+\end{proof}
+
+For the symmetric charges and $n_0=n_1$, (iv) reads
+$\lambda(t)\geq\log(\pi t/2\Delta_0)$.

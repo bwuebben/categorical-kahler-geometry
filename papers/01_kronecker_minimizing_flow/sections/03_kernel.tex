@@ -1,0 +1,289 @@
+\section{A trace inequality for a Schur multiplier}\label{sec:kernel}
+
+For a Hermitian $r\times r$ matrix $L>0$ and a Hermitian matrix $E\geq0$ put
+\[
+ J_L(E)=\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-xL}Ee^{-yL}\,dx\,dy ,
+\]
+as in \eqref{eq:J}. This Hermitian matrix is in general indefinite
+(Remark~\ref{rem:indefinite}). Recall that $M_\pm\geq0$ denote the positive
+and negative parts of a Hermitian matrix $M=M_+-M_-$, $M_+M_-=0$.
+
+\begin{theorem}[Trace inequality]\label{thm:kernel}
+For all Hermitian $L>0$ and $E\geq0$,
+\[
+ \tr J_L(E)_-\leq\frac25\,\tr J_L(E).
+\]
+In particular $\tr J_L(E)\geq0$, and
+$\tr J_L(E)_-\leq\frac27\tr J_L(E)_+$.
+\end{theorem}
+
+The proof occupies this section. It has three steps: a reduction to a Schur
+multiplier, an explicit way of writing that multiplier as a difference of two
+positive semidefinite kernels, and an inequality in one real variable, part
+of which is verified with interval arithmetic.
+
+\subsection{Reduction to a Schur multiplier}
+Diagonalize $L=\diag(\ell_1,\dots,\ell_r)$ with $\ell_i>0$. Then
+$J_L(E)_{ik}=\mathsf j(\ell_i,\ell_k)E_{ik}$, where
+\[
+ \mathsf j(a,b)=\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-xa-yb}\,dx\,dy .
+\]
+Put $S=L^{-1}EL^{-1}\geq0$ and $\mathsf m(a,b)=ab\,\mathsf j(a,b)$. Then
+\begin{equation}\label{eq:schurform}
+ J_L(E)=S\circ\mathsf M,\qquad\mathsf M=[\mathsf m(\ell_i,\ell_k)]_{i,k},\qquad
+ \tr J_L(E)=\sum_i\mathsf m(\ell_i,\ell_i)S_{ii},
+\end{equation}
+where $\circ$ denotes the entrywise (Schur) product. By the Hermite--Genocchi
+formula $\mathsf j(a,b)$ is the second divided difference of $e^{-x}$ at the
+points $a,0,b$. By the recursion for divided differences it equals
+$-(R(a)-R(b))/(a-b)$ for $a\neq b$, with $R(x)=(1-e^{-x})/x$, so that
+$J_L(E)$ is minus the Schur product of $E$ with the L\"owner matrix of $R$ at
+the eigenvalues of $L$. The function $-R$ is increasing but, being entire and
+not affine, it is not operator monotone; so by L\"owner's theorem
+\cite{bha97} these matrices are not all positive semidefinite. Theorem~\ref{thm:kernel} bounds
+the negative part of the Schur product in trace.
+
+\begin{lemma}\label{lem:mformula}
+Let $\eta(a)=1-e^{-a}$. For $a,b>0$, $a\ne b$,
+\[
+ \mathsf m(a,b)=\frac{b\,\eta(a)-a\,\eta(b)}{b-a},\qquad
+ \mathsf m(a,a)=1-(1+a)e^{-a}>0 .
+\]
+\end{lemma}
+
+\begin{proof}
+Integrating in $y$ gives
+$\mathsf j(a,b)=b^{-1}\int_0^1e^{-xa}(1-e^{-(1-x)b})\,dx
+=b^{-1}[\eta(a)/a-(e^{-a}-e^{-b})/(b-a)]$. Multiply by $ab$ and use
+$e^{-a}-e^{-b}=\eta(b)-\eta(a)$. The diagonal value is the limit $b\to a$,
+and it is positive because its derivative is $ae^{-a}$.
+\end{proof}
+
+\subsection{An expansion of the kernel}
+On $L^2[0,1]$ let $e_a(x)=e^{-ax}$, and let $\mathsf T$ be the integral
+operator with kernel $\mathbf 1_{\{x+y>1\}}$. The integral operator with
+kernel $\mathbf 1_{\{x+y\leq1\}}$ is
+$\mathbf 1\otimes\mathbf 1-\mathsf T$, where $\mathbf 1\otimes\mathbf 1$ maps
+$g$ to $(\int_0^1g)\mathbf 1$, and
+$\mathsf j(a,b)=\inner{e_a}{(\mathbf 1\otimes\mathbf 1-\mathsf T)e_b}$.
+
+\begin{lemma}\label{lem:eigen}
+Put $\omega_k=(k+\frac12)\pi$ and $\chi_k(x)=\sqrt2\sin(\omega_kx)$ for
+$k\geq0$. The functions $\chi_k$ form an orthonormal basis of $L^2[0,1]$,
+and $\mathsf T\chi_k=(-1)^k\omega_k^{-1}\chi_k$.
+\end{lemma}
+
+\begin{proof}
+The $\chi_k$ are the eigenfunctions of $-d^2/dx^2$ on $[0,1]$ with a
+Dirichlet condition at $0$ and a Neumann condition at $1$, a self-adjoint
+problem with simple eigenvalues $\omega_k^2$. Further
+$(\mathsf T\chi_k)(x)=\int_{1-x}^1\sqrt2\sin(\omega_ky)\,dy
+=\sqrt2\,\omega_k^{-1}[\cos(\omega_k(1-x))-\cos\omega_k]$, and
+$\cos\omega_k=0$, $\sin\omega_k=(-1)^k$ give
+$\cos(\omega_k(1-x))=(-1)^k\sin(\omega_kx)$.
+\end{proof}
+
+\begin{lemma}\label{lem:expansion}
+For $a,b>0$,
+\[
+ \mathsf m(a,b)=\eta(a)\eta(b)-\sum_{k\geq0}\frac{(-1)^k}{\omega_k}\,t_k(a)t_k(b),
+ \qquad
+ t_k(a)=\frac{\sqrt2\,a\,\bigl(\omega_k-(-1)^kae^{-a}\bigr)}{a^2+\omega_k^2},
+\]
+and the series converges absolutely.
+\end{lemma}
+
+\begin{proof}
+We have
+$\mathsf m(a,b)=a\inner{e_a}{\mathbf 1}\,b\inner{\mathbf 1}{e_b}-\inner{ae_a}{\mathsf T\,be_b}$
+and $a\inner{e_a}{\mathbf 1}=\eta(a)$. The operator $\mathsf T$ is symmetric and
+Hilbert--Schmidt, so Lemma~\ref{lem:eigen} gives
+\begin{align*}
+ \inner{ae_a}{\mathsf Tbe_b}&=\sum_k\frac{(-1)^k}{\omega_k}\,
+ a\inner{e_a}{\chi_k}\,b\inner{\chi_k}{e_b},\\
+ \int_0^1e^{-ax}\sin(\omega x)\,dx
+ &=\frac{\omega-e^{-a}(a\sin\omega+\omega\cos\omega)}{a^2+\omega^2},
+\end{align*}
+and at $\omega=\omega_k$ the integral equals
+$(\omega_k-(-1)^kae^{-a})/(a^2+\omega_k^2)$.
+Absolute convergence follows from
+$|t_k(a)|\leq\sqrt2a(\omega_k+1)/\omega_k^2$.
+\end{proof}
+
+\subsection{A difference of two positive semidefinite kernels}
+Put $u=\eta$ and $v=t_0/\sqrt{\omega_0}$, two functions on $(0,\infty)$; the
+letters $u,v$ are used for them in this section only. Fix $\tau\in(-1,0)$
+and define
+\[
+ u_\tau=\frac{u+\tau v}{\sqrt{1-\tau^2}},\qquad v_\tau=\frac{\tau u+v}{\sqrt{1-\tau^2}} .
+\]
+Then $u(a)u(b)-v(a)v(b)$ equals $u_\tau(a)u_\tau(b)-v_\tau(a)v_\tau(b)$ for all
+$a,b$, and Lemma~\ref{lem:expansion} gives
+$\mathsf m=\mathsf m^{\mathrm I}-\mathsf m^{\mathrm{II}}$ with
+\[
+ \mathsf m^{\mathrm I}(a,b)=u_\tau(a)u_\tau(b)+\sum_{k\ \mathrm{odd}}\frac{t_k(a)t_k(b)}{\omega_k},
+ \qquad
+ \mathsf m^{\mathrm{II}}(a,b)=v_\tau(a)v_\tau(b)+\sum_{\substack{k\ \mathrm{even}\\k\geq2}}
+ \frac{t_k(a)t_k(b)}{\omega_k}.
+\]
+Both are sums, with nonnegative weights, of kernels of the form
+$f(a)f(b)$. Hence for any points $\ell_1,\dots,\ell_r$ the matrices
+$\mathsf M^{\mathrm I}=[\mathsf m^{\mathrm I}(\ell_i,\ell_k)]$ and
+$\mathsf M^{\mathrm{II}}=[\mathsf m^{\mathrm{II}}(\ell_i,\ell_k)]$ are positive
+semidefinite. They are not the positive and negative parts of $\mathsf M$:
+their product need not vanish.
+
+\begin{proposition}\label{prop:schurbound}
+Let $\kappa_\tau=\sup_{a>0}\mathsf m^{\mathrm{II}}(a,a)/\mathsf m(a,a)$. Then
+$\tr J_L(E)_-\leq\kappa_\tau\tr J_L(E)$ for all $L>0$ and $E\geq0$.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:schurform},
+$J_L(E)=S\circ\mathsf M^{\mathrm I}-S\circ\mathsf M^{\mathrm{II}}$, and both
+terms are positive semidefinite by the Schur product theorem
+\cite[Section~7.5]{hj13}. Hence $J_L(E)\geq-S\circ\mathsf M^{\mathrm{II}}$,
+and since $\tr M_-=\max_{0\leq\Pi\leq\id}(-\tr(M\Pi))$ for Hermitian $M$,
+\[
+ \tr J_L(E)_-\leq\tr(S\circ\mathsf M^{\mathrm{II}})
+ =\sum_i\mathsf m^{\mathrm{II}}(\ell_i,\ell_i)S_{ii}
+ \leq\kappa_\tau\sum_i\mathsf m(\ell_i,\ell_i)S_{ii}=\kappa_\tau\tr J_L(E).\qedhere
+\]
+\end{proof}
+
+\subsection{The inequality in one variable}
+Fix $\tau=-\frac9{25}$ and write, for $a>0$,
+\[
+ \mathsf n(a)=\mathsf m^{\mathrm{II}}(a,a)=\frac{(\tau u(a)+v(a))^2}{1-\tau^2}
+ +\sum_{j\geq1}\frac{t_{2j}(a)^2}{\omega_{2j}},
+ \qquad\mathsf m(a)=\mathsf m(a,a)=1-(1+a)e^{-a}.
+\]
+
+\begin{lemma}\label{lem:onevariable}
+$\mathsf n(a)\leq\frac25\,\mathsf m(a)$ for all $a>0$.
+\end{lemma}
+
+Theorem~\ref{thm:kernel} follows from Proposition~\ref{prop:schurbound} and
+Lemma~\ref{lem:onevariable}; the second inequality of the theorem is the
+first one rewritten with $\tr J=\tr J_+-\tr J_-$.
+
+Two elementary bounds are used throughout the proof. For even $k$,
+$0<ae^{-a}\leq e^{-1}<\omega_0\leq\omega_k$, so
+$0<\omega_k-ae^{-a}\leq\omega_k$ and
+\begin{equation}\label{eq:gbound}
+ \frac{t_k(a)^2}{\omega_k}\leq g_a(\omega_k),\qquad
+ g_a(\omega)=\frac{2a^2\omega}{(a^2+\omega^2)^2}.
+\end{equation}
+The function $g_a$ increases on $[0,a/\sqrt3]$ and decreases on
+$[a/\sqrt3,\infty)$; its maximum is $9/(8\sqrt3\,a)$ and
+$\int_0^\infty g_a=1$. The even frequencies
+$\omega_{2j}=2\pi j+\frac\pi2$ have spacing $2\pi$. Secondly,
+\begin{equation}\label{eq:vbound}
+ 0<v(a)\leq\sqrt{\frac2{\omega_0}}\,\frac{a\,\omega_0}{a^2+\omega_0^2}
+ \leq\min\Bigl(c_*a,\ \frac{\sqrt{2\omega_0}}a\Bigr),\qquad
+ c_*=\sqrt2\,\omega_0^{-3/2}=0.718348\ldots
+\end{equation}
+
+\begin{lemma}\label{lem:unimodal}
+Let $g\geq0$ be integrable on $[0,\infty)$, nondecreasing on $[0,c]$ and
+nonincreasing on $[c,\infty)$, and let $p_j=p_0+j\epsilon$ for $j\geq1$, with
+$\epsilon>0$ and $p_1\geq0$. Then
+$\sum_{j\geq1}g(p_j)\leq\epsilon^{-1}\int_{p_1}^\infty g+\max g$.
+\end{lemma}
+
+\begin{proof}
+For $x_1\leq x\leq x_2$ one has $g(x)\geq\min(g(x_1),g(x_2))$. The values
+$\gamma_j=g(p_j)$ are nonincreasing once $p_j\geq c$, so some index $j^*$
+maximizes $\gamma_j$. If $j<j^*$, then $g\geq\gamma_j$ on
+$[p_j,p_{j^*}]\supset[p_j,p_{j+1}]$, so
+$\gamma_j\leq\epsilon^{-1}\int_{p_j}^{p_{j+1}}g$. If $j>j^*$, then $g\geq\gamma_j$ on
+$[p_{j^*},p_j]\supset[p_{j-1},p_j]$, so
+$\gamma_j\leq\epsilon^{-1}\int_{p_{j-1}}^{p_j}g$. These intervals have disjoint
+interiors and lie in $[p_1,\infty)$. Add $\gamma_{j^*}\leq\max g$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:onevariable}]
+\emph{The range $a\geq10$.} Since $0<u<1$ and $\tau<0$ we have
+$\tau u+v\geq\tau$. By \eqref{eq:vbound}, $v\leq\sqrt{2\omega_0}/10<0.178$,
+while $\tau u\leq\tau(1-e^{-10})<-0.359$; hence $\tau\leq\tau u+v<0$ and the
+first term of $\mathsf n$ is at most $\tau^2/(1-\tau^2)=81/544<0.148898$. By
+\eqref{eq:gbound} and Lemma~\ref{lem:unimodal} with $g=g_a$,
+$p_j=\omega_{2j}$, $\epsilon=2\pi$,
+\[
+ \sum_{j\geq1}\frac{t_{2j}(a)^2}{\omega_{2j}}
+ \leq\frac1{2\pi}+\frac9{8\sqrt3\,a}\leq0.159155+0.064952 .
+\]
+Since $\mathsf m$ is increasing, $\mathsf m(a)\geq1-11e^{-10}$, and
+$\mathsf n(a)/\mathsf m(a)\leq(0.148898+0.224107)/(1-11e^{-10})<0.3733$.
+
+\emph{The range $0<a\leq\frac1{20}$.} Here $a-\frac{a^2}2\leq u\leq a$. With
+$\tau<0$ and \eqref{eq:vbound},
+$\tau u+v\leq a(c_*+\tau+\frac{|\tau|}2a)\leq0.367349\,a$. Also
+$\tau u+v>0$: indeed
+$v\geq c_*a(1-a/\omega_0)(1-a^2/\omega_0^2)>0.68\,a$ while
+$\tau u\geq-0.36\,a$. Hence the first term of $\mathsf n$ is at most
+$0.367349^2a^2/(1-\tau^2)<0.155039\,a^2$. By \eqref{eq:gbound},
+$t_k^2/\omega_k\leq2a^2/\omega_k^3$, so the sum is at most $2a^2\Sigma_3$ with
+$\Sigma_3=\sum_{j\geq1}\omega_{2j}^{-3}<0.0026764$. The series
+$\mathsf m(a)=\sum_{n\geq2}(-1)^n\frac{n-1}{n!}a^n$ is alternating with
+decreasing terms for $0<a\leq1$, so
+$\mathsf m(a)\geq\frac{a^2}2-\frac{a^3}3\geq\frac{29}{60}a^2$. Therefore
+$\mathsf n(a)/\mathsf m(a)\leq(0.155039+0.005353)/0.483333<0.3319$.
+
+\emph{The range $\frac1{20}\leq a\leq10$.} For an integer $j_*\geq1$ with
+$\omega_{2j_*}>a/\sqrt3$, \eqref{eq:gbound} and the monotonicity of $g_a$ on
+$[\omega_{2j_*},\infty)$ give
+\begin{equation}\label{eq:tail}
+ \sum_{j>j_*}\frac{t_{2j}(a)^2}{\omega_{2j}}
+ \leq\frac1{2\pi}\int_{\omega_{2j_*}}^\infty g_a
+ =\frac{a^2}{2\pi(a^2+\omega_{2j_*}^2)} .
+\end{equation}
+With $j_*=80$ the quantity
+$\frac25\mathsf m(a)-(\tau u+v)^2/(1-\tau^2)-\sum_{j\leq80}t_{2j}^2/\omega_{2j}
+-a^2/(2\pi(a^2+\omega_{160}^2))$ is an explicit elementary function of $a$.
+Its positivity on $[\frac1{20},10]$ was verified with interval arithmetic:
+the interval is covered by $3535$ subintervals $[a_k,a_{k+1}]$ with
+$a_{k+1}/a_k\leq1.0015$, and on each of them an enclosure of the range of
+this function, computed with $120$ bits of precision, is positive. The
+smallest lower bound obtained for $\frac25-\mathsf n(a)/\mathsf m(a)$ is
+$0.0766$, at the left end of the interval.\footnote{The enclosures were
+computed with the ball arithmetic of Arb \cite{joh17}. The program and its
+output accompany this paper as supplementary files
+(\texttt{lemma\_3\_6\_interval\_check.py}).}
+\end{proof}
+
+\begin{remark}\label{rem:constant}
+The method gives a constant close to $0.31$: evaluating the series on a grid
+of values of $a$ gives $\sup_a\mathsf n(a)/\mathsf m(a)\approx0.3081$, with
+limits
+$\tau^2/(1-\tau^2)+\frac1{2\pi}$ as $a\to\infty$ and
+$2[(c_*+\tau)^2/(1-\tau^2)+2\Sigma_3]\approx0.3058$ as $a\to0$. The value $\frac25$ is
+chosen for a short verification. The best constant $\kappa_*$ in
+Theorem~\ref{thm:kernel} satisfies
+\[
+ \frac{\sqrt2-1}2\leq\kappa_*\leq\frac25 .
+\]
+For the lower bound take $L=\diag(a,b)$ and $S=ww^\dagger$ with
+$w=(a^{-1},2^{-1/2})$: by Lemma~\ref{lem:mformula},
+$J_L(E)\to\left(\begin{smallmatrix}1/2&2^{-1/2}\\2^{-1/2}&1/2\end{smallmatrix}\right)$
+as $a\to0$ and $b\to\infty$, with eigenvalues $\frac12\pm2^{-1/2}$. A numerical
+maximization of $\tr J_L(E)_-/\tr J_L(E)$ over $L$ and $E$ for $r\leq12$, which
+is not used in any proof, found no value above the lower bound; this
+suggests that the lower bound is the best constant and that it is not
+attained. We do not know a proof.
+\end{remark}
+
+\begin{remark}\label{rem:indefinite}
+The matrices $\mathsf M=[\mathsf m(\ell_i,\ell_k)]$ are not positive
+semidefinite, and $\mathsf m$ has infinitely many negative squares: for every
+$n$ there are points $\ell_1,\dots,\ell_N$ for which $\mathsf M$ has at least
+$n$ negative eigenvalues. Indeed $\mathsf M$ is the Gram matrix of the
+quadratic form
+$f\mapsto\inner f{(\mathbf 1\otimes\mathbf 1-\mathsf T)f}$ on the functions
+$\ell_ie_{\ell_i}$. The functions $\sqrt2\cos(\omega_kx)$ are eigenfunctions
+of $\mathbf 1\otimes\mathbf 1-\mathsf T$ with eigenvalues $(-1)^k/\omega_k$,
+so the
+form is negative definite on a space of dimension $n$; and the span of the
+$e_a$, $a>0$, is dense in $L^2[0,1]$ by the Stone--Weierstrass theorem. The
+inequality of Theorem~\ref{thm:kernel} also fails for indefinite $L$.
+\end{remark}

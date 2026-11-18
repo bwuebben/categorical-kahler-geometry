@@ -1,0 +1,121 @@
+\section{Duality}\label{sec:duality}
+
+Let $\mathsf E$ be a metrized complex of representations of $Q$ with charges
+$z_i$. The \emph{dual complex} $\mathsf E^\vee$ is the complex of
+representations of the opposite quiver $Q^{\mathrm{op}}$ with
+\[
+ (E^\vee)_i^n=(E_i^{-n})^*,\qquad d_i^\vee=d_i^{\mathsf T},\qquad
+ \rho^\vee(a^{\mathrm{op}})=\rho(a)^{\mathsf T},
+\]
+the dual metrics, and the charges $z_i^\vee=-\overline{z_i}$, which again lie
+in the upper half-plane. Here $X^{\mathsf T}$ is the transposed map between
+the dual spaces; in orthonormal frames and their dual frames it is the
+transposed matrix, and $\overline X$ denotes the entrywise complex conjugate.
+
+\begin{theorem}[Duality]\label{thm:duality}
+For every metrized complex $\mathsf E$:
+\begin{enumerate}
+\item[(a)] As endomorphisms of $E^*$,
+ $\Omega^\vee=-(\Omega^\dagger)^{\mathsf T}$, $|\Omega^\vee|=|\Omega|^{\mathsf T}$ and
+ $\Phi^\vee=\pi-\Phi^{\mathsf T}$; in dual orthonormal frames,
+ $\Omega^\vee=-\overline\Omega$ and $\Phi^\vee=\pi-\overline\Phi$. Hence
+ $\mass(\mathsf E^\vee)=\mass(\mathsf E)$ and
+ $Z(\mathsf E^\vee)=-\overline{Z(\mathsf E)}$.
+\item[(b)] If $h(t)$ is a trajectory of the phase flow of $\mathsf E$, then
+ $e^{-\pi t}(h(t)^{-1})^{\mathsf T}$ is a trajectory of the phase flow of
+ $\mathsf E^\vee$. In orthonormal frames, transposition of all structure maps
+ intertwines the equations \eqref{eq:frameflow} of the two complexes.
+\item[(c)] If $Z(\mathsf E)\neq0$ and $\varphi^\vee=\pi-\varphi$, the phase
+ potentials $\Ima(e^{-\ii\varphi^\vee}\cS^\vee_{\CC})$ and
+ $\Ima(e^{-\ii\varphi}\cS_{\CC})$ agree, up to an additive constant, on
+ corresponding metrics $h$ and $c\,(h^{-1})^{\mathsf T}$, $c>0$, and the
+ contributions $\cD_i^n$ of corresponding blocks agree.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) Use Proposition~\ref{prop:coefficient} for $\mathsf E^\vee$ in dual
+orthonormal frames, where $(d^\vee)^\dagger=\overline d$ and
+$(\rho^\vee)^\dagger=\overline\rho$. Then
+$\Delta_i^\vee=d_i^{\mathsf T}\overline{d_i}+\overline{d_i}d_i^{\mathsf T}=\Delta_i^{\mathsf T}$. The arrows
+of $Q^{\mathrm{op}}$ out of $i$ are the arrows of $Q$ into $i$, so
+\[
+ \Gamma_i^\vee=-\overline{z_i}+\Bigl(\sum_{a:k\to i}\rho(a)\rho(a)^\dagger
+ -\sum_{a:i\to j}\rho(a)^\dagger\rho(a)\Bigr)^{\mathsf T}=-\overline{\Gamma_i},
+\]
+the bracket being Hermitian. For $a:i\to j$ the arrow $a^{\mathrm{op}}$ goes
+from $j$ to $i$, and
+$M^\vee_{a^{\mathrm{op}}}=\overline{d_i}\,\rho(a)^{\mathsf T}-\rho(a)^{\mathsf T}\overline{d_j}=-M_a^{\mathsf T}$,
+$(M^\vee_{a^{\mathrm{op}}})^\dagger=-\overline{M_a}$. In
+Proposition~\ref{prop:coefficient} for $Q^{\mathrm{op}}$ the term of
+$a^{\mathrm{op}}$ at the vertex $i$ is of incoming type,
+\[
+ +\mathcal J_{\Delta_i^{\mathsf T},\Delta_j^{\mathsf T}}\bigl(M_a^{\mathsf T},\overline{M_a}\bigr)
+ =\bigl(\mathcal J_{\Delta_i,\Delta_j}(M_a^\dagger,M_a)\bigr)^{\mathsf T}
+ =\overline{\mathcal J_{\Delta_i,\Delta_j}(M_a^\dagger,M_a)},
+\]
+which enters $\mathsf E$ at $i$ with the sign $-$; likewise the term at $j$
+is $-\overline{\mathcal J_{\Delta_j,\Delta_i}(M_a,M_a^\dagger)}$, which
+enters $\mathsf E$ with $+$. Finally
+$K_{\Delta^{\mathsf T}}(-\overline\Gamma)=-\bigl(K_\Delta(\Gamma^\dagger)\bigr)^{\mathsf T}
+=-\overline{K_\Delta(\Gamma)}$. Altogether
+$\gr\,\Omega^\vee=-\overline{\gr\,\Omega}$, and the degrees $n$
+and $-n$ have the same parity. If $\Omega=|\Omega|e^{\ii\Phi}$ on a block of
+degree $n$, then
+$-\overline\Omega=\overline{|\Omega|}\,e^{\ii(\pi-\overline\Phi)}$ with
+$\overline{|\Omega|}>0$, and the spectrum of $\pi-\overline\Phi$ lies in
+$(\pi n,\pi(1+n))$, the branch of degree $-n$.
+
+(b) Transposing \eqref{eq:frameflow} and using $\Phi^{\mathsf T}=\overline\Phi$ gives
+$\frac d{dt}T^{\mathsf T}=\frac12(\overline{\Phi_{\mathrm{source}}}\,T^{\mathsf T}-T^{\mathsf T}\,\overline{\Phi_{\mathrm{target}}})$.
+In $\mathsf E^\vee$ the map $T^{\mathsf T}$ goes from the dual of the target to the dual
+of the source, with phases $\pi-\overline{\Phi_{\mathrm{target}}}$ and
+$\pi-\overline{\Phi_{\mathrm{source}}}$, and its equation
+\eqref{eq:frameflow} is the same expression. For metrics: if
+$g=c\,(h^{-1})^{\mathsf T}$, then $g^{-1}\dot g=\dot c/c+\Phi^{\mathsf T}$, and
+$-\Phi^\vee=\Phi^{\mathsf T}-\pi$ gives $c=e^{-\pi t}$ up to a constant.
+
+(c) For corresponding variations $\xi^\vee=-\overline\xi$,
+$\tr(\Omega^\vee\xi^\vee)=\overline{\tr(\Omega\xi)}$, so
+$\cS^\vee_{\CC}=\overline{\cS_{\CC}}$ up to a constant on the metrics
+$h\leftrightarrow(h^{-1})^{\mathsf T}$, and
+$\Ima(e^{-\ii(\pi-\varphi)}\overline{\cS_{\CC}})=\Ima(e^{-\ii\varphi}\cS_{\CC})$.
+For a common factor $c>0$ the endomorphism $\Omega^\vee$ is unchanged and
+$\cS^\vee_{\CC}(cg)=\cS^\vee_{\CC}(g)+Z(\mathsf E^\vee)\log c$; since
+$e^{-\ii\varphi^\vee}Z(\mathsf E^\vee)$ is real, the phase potential is
+invariant under common rescaling.
+\end{proof}
+
+\begin{remark}[Injective differentials]\label{rem:injective}
+Duality exchanges complexes that are $V\xrightarrow{D}U$ in degrees $0,1$ at
+a vertex $i_0$, with $D$ surjective, and a vector space in degree zero at the
+other vertices, with complexes that are $U'\xrightarrow{D'}V'$ in degrees
+$-1,0$ at $i_0$, with $D'$ injective. The cohomology representation of the
+dual is the dual of the cohomology representation, with the dual metrics
+(the quotient metric on $V'/D'U'$ is the metric of the orthogonal complement
+of $D'U'$); subrepresentations correspond to quotients and arguments $\psi$
+of central charges to $\pi-\psi$, so semistability, stability and
+polystability correspond. By Theorem~\ref{thm:duality}, every statement
+about the flow of the first kind of complex therefore gives one for the
+second kind, with the charges $-\overline{z_i}$, the argument $\pi-\varphi$
+of the central charge, and the metrics $e^{-\pi t}(h^{-1})^{\mathsf T}$; in
+particular the rescaled metrics $e^{\varphi t}h(t)$ of the complex
+correspond to the rescaled metrics $e^{(\pi-\varphi)t}h^\vee(t)$ of the dual,
+so that the flow converges on the cohomology for one exactly when it does
+for the other, and the acyclic part decays for one exactly when it does for
+the other. This is how Theorem~\ref{thm:onevertex}(c) follows from
+Theorem~\ref{thm:onevertex}(b), and how the decay and convergence theorems
+of \cite{wue26b,wue26c} pass to complexes with an injective differential.
+
+For $Q=K_m$ one has $Q^{\mathrm{op}}\cong Q$ by exchanging the two vertices,
+and the dual charges are $(-\overline{z_1},-\overline{z_0})$. The pair
+$(-1+\ii,1+\ii)$ is self-dual, and strictly ordered charges are mapped to
+strictly ordered charges. For these self-dual charges the sufficient
+conditions of Theorem~\ref{thm:onevertex}(b) and (c) cover different
+dimension vectors when the acyclic part has rank at least two: for
+cohomology of dimension vector $(k,l)$, part (b) applies to a surjective
+differential at the vertex $0$ when
+$\arg((l-k)+\ii(k+l))\geq\frac{2\pi}5$, and part (c) to an injective
+differential at the vertex $1$ when this argument is at most
+$\frac{3\pi}5$; for $k=l$ both apply.
+\end{remark}

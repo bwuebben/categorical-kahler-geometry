@@ -1,0 +1,299 @@
+\section{Where the phase potential is monotone}\label{sec:monotone}
+
+By Corollary~\ref{cor:increase} the phase potential is not monotone on all
+complexes. This section treats two families: complexes with cohomology in
+degree zero whose acyclic part is at one vertex of an arbitrary quiver,
+where the monotonicity known for $K_m$ \cite[Theorem~7.6]{wue26b} persists,
+and complexes over $K_m$ with acyclic parts at both vertices, where it
+persists for ranks at most one and fails in general for larger ranks
+(Theorem~\ref{thm:twosidedfailure}, Corollary~\ref{cor:classification}). We
+use $\cD$ and $\cD_i^n$ from Section~\ref{sec:rate}, $K_\Delta$, $\mathcal J$
+and the divided differences $\mathsf f[\,\cdot\,]$ from
+Section~\ref{sec:setting}, $J_L(M)$, $M_\pm$ and the inequality
+\eqref{eq:kernel} from Theorem~\ref{thm:imported}, and the terms of
+Definition~\ref{def:phase}.
+
+\subsection{An acyclic part at one vertex}
+Let $Q$ be a finite quiver, $i_0$ a vertex without loops, and consider
+complexes $\mathsf E$ with $E_i=E_i^0$ for $i\neq i_0$ and
+$E_{i_0}=V\oplus U$ in degrees $0,1$, with $d_{i_0}=D:V\to U$ surjective and
+$r=\dim U\geq1$. The chain-map condition says that every arrow into $i_0$
+maps into $\ker D$, and is empty for the arrows out of $i_0$. The cohomology
+is a representation $\mathcal H$ of $Q$ in degree $0$, with $\ker D$ at $i_0$;
+we assume $\mathcal H\neq0$. Then
+$Z=Z(\mathsf E)=\sum_iz_i\dim\mathcal H_i=|Z|e^{\ii\varphi}$ with
+$\varphi\in(0,\pi)$. Let $\sigma=\sin\varphi$, $\alpha_i=\arg z_i$,
+$c_0=|z_{i_0}|\sin(\alpha_{i_0}-\varphi)$, $B=D^\dagger D$, $L=DD^\dagger$,
+\[
+ C_{\mathrm{out}}=\sum_{a:i_0\to j}\rho(a)^\dagger\rho(a),\qquad
+ G_{\mathrm{in}}=\sum_{a:k\to i_0}\rho(a)\rho(a)^\dagger,\qquad
+ J=J_L(DC_{\mathrm{out}}D^\dagger),
+\]
+and $R(b)=(1-e^{-b})/b$.
+
+\begin{theorem}[Acyclic part at one vertex]\label{thm:onevertex}
+For the complexes just described:
+\begin{enumerate}
+\item[(a)] The blocks of $\Omega$ are
+ \[
+ \Omega_V=z_{i_0}e^{-B}+K_B(C_{\mathrm{out}})-G_{\mathrm{in}},\qquad
+ \Omega_U=J-z_{i_0}e^{-L},
+ \]
+ and for $j\neq i_0$
+ \[
+ \Omega_j=z_j+\sum_{a:j\to\cdot}\rho(a)^\dagger\rho(a)
+ -\sum_{\substack{a:k\to j\\k\neq i_0}}\rho(a)\rho(a)^\dagger
+ -\sum_{a:i_0\to j}\rho(a)R(B)\rho(a)^\dagger .
+ \]
+\item[(b)] If $\alpha_{i_0}\geq\varphi$, then for every metric
+ \[
+ \cD\geq\varphi c_0\tr e^{-L}+\sigma\bigl(\varphi\tr J-\pi\tr J_-\bigr)
+ \geq\varphi c_0\tr e^{-L}+\sigma\bigl(\varphi-\tfrac{2\pi}5\bigr)\tr J .
+ \]
+ Hence the phase potential is nonincreasing along the flow if
+ $\alpha_{i_0}\geq\varphi$ and either $\varphi\geq\frac{2\pi}5$ or $r=1$, and
+ strictly decreasing if moreover $\alpha_{i_0}>\varphi$.
+\item[(c)] Let instead $E_i=E_i^0$ for $i\neq i_0$ and
+ $E_{i_0}=U\oplus V$ in degrees $-1,0$, with $d_{i_0}=D:U\to V$ injective,
+ $r=\dim U\geq1$, and nonzero cohomology, so that
+ $\varphi=\arg Z(\mathsf E)\in(0,\pi)$. If $\alpha_{i_0}\leq\varphi$ and
+ either $\varphi\leq\frac{3\pi}5$ or $r=1$, the phase potential is
+ nonincreasing along the phase flow.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) Proposition~\ref{prop:coefficient}. For $a:i_0\to j$,
+$M_a=-\rho(a)D^\dagger:U\to E_j$. For $a:k\to i_0$, $M_a=d_{i_0}^\dagger\rho(a)=0$,
+because $\rho(a)$ takes values in $V$, on which $d_{i_0}^\dagger$ vanishes.
+For arrows not meeting $i_0$, $M_a=0$. So at $i_0$, $\Delta=B\oplus L$ and
+$\Gamma=(z_{i_0}+C_{\mathrm{out}}-G_{\mathrm{in}})\oplus z_{i_0}$;
+$K_B(G_{\mathrm{in}})=G_{\mathrm{in}}$ because $G_{\mathrm{in}}$ is supported on
+$\ker B$; and $M_a^\dagger M_a=D\rho(a)^\dagger\rho(a)D^\dagger$ is supported on
+$U$, with $\Delta_j=0$. At $j\neq i_0$, $\Delta_j=0$ and the mixed term is
+$\rho(a)D^\dagger\bigl[\int_0^1(1-x)e^{-xL}dx\bigr]D\rho(a)^\dagger
+=\rho(a)(1-R(B))\rho(a)^\dagger$.
+
+(b) All blocks other than $U$ are in degree $0$, with phases in $(0,\pi)$,
+and contribute nonnegative terms to $\cD$. Let $(u_k)$ be an orthonormal
+eigenbasis of $\Phi_U$ with eigenvalues $\psi_k\in(-\pi,0)$,
+$q_k=\inner{u_k}{|\Omega_U|u_k}$, $\iota_k=\inner{u_k}{Ju_k}$ and
+$e_k=\inner{u_k}{e^{-L}u_k}>0$. Since
+$\inner{u_k}{\Omega_Uu_k}=q_ke^{\ii\psi_k}$,
+$q_k\sin(\psi_k-\varphi)=\Ima(e^{-\ii\varphi}\inner{u_k}{\Omega_Uu_k})
+=-(\sigma\iota_k+c_0e_k)$. If $\sigma\iota_k+c_0e_k\geq0$, then
+$\psi_k-\varphi\in[-\pi,-\varphi)$ and the summand
+$q_k(\psi_k-\varphi)\sin(\psi_k-\varphi)$ of the contribution of $U$ is at
+least $\varphi(\sigma\iota_k+c_0e_k)$; otherwise
+$\psi_k-\varphi\in(-\pi-\varphi,-\pi)$ and the summand is at least
+$(\pi+\varphi)(\sigma\iota_k+c_0e_k)$. In both cases it is at least
+$\varphi(\sigma\iota_k+c_0e_k)-\pi\sigma(\iota_k)_-$, because $c_0e_k\geq0$;
+here $(\iota_k)_-=\max(-\iota_k,0)$. Summing, with
+$\sum_k(\iota_k)_-\leq\tr J_-$, gives the first inequality; the second is
+\eqref{eq:kernel}, since $DC_{\mathrm{out}}D^\dagger\geq0$. For $r=1$,
+$J\geq0$. If $\alpha_{i_0}>\varphi$, then $c_0>0$ and $\cD>0$. (c) follows from
+(b) by Theorem~\ref{thm:duality}: the dual complex has an acyclic part at
+$i_0$ in degrees $0,1$ with surjective differential, the charge
+$-\overline{z_{i_0}}$ of argument $\pi-\alpha_{i_0}$ at $i_0$, and central
+charge of argument $\pi-\varphi$ (Remark~\ref{rem:injective}).
+\end{proof}
+
+For $Q=K_m$, $i_0=0$ and cohomology at both vertices, $\varphi$ lies between
+$\alpha_1$ and $\alpha_0$, and the case $\alpha_0>\alpha_1$ of (b) is
+\cite[Proposition~7.4 and Theorem~7.6]{wue26b}; here equality and cohomology
+at one vertex are
+allowed. For $r\geq2$ a lower bound on $\varphi$ cannot be dispensed with:
+for $K_2$, the charges $z_0=10^{-6}(-1+\ii)$, $z_1=1+\frac\ii{500}$ and
+cohomology of dimension vector $(1,1)$, where $\varphi=0.0020\ldots$, there
+is a complex with $r=2$ and a metric with $\cD<0$
+\cite[Proposition~10.2]{wue26b}. The
+hypothesis on $\alpha_{i_0}$ cannot be dropped: by
+Proposition~\ref{prop:contractible} a contractible summand at $i_0$ in
+degrees $0,1$ contributes
+$\pi|z_{i_0}|\tr e^{-ff^\dagger}\sin(\alpha_{i_0}-\varphi)$ to $\cD$, and
+Corollary~\ref{cor:increase} is an instance with a negative sign. Decay of
+the acyclic part and convergence on the cohomology
+(Definition~\ref{def:phase}(v)) for the complexes of
+Theorem~\ref{thm:onevertex} are the subject of \cite{wue26b}, for $K_m$ with
+a surjective differential at the vertex $0$, and of \cite{wue26c}, for
+quivers without oriented cycles.
+
+\subsection{Acyclic parts at both vertices of a generalized Kronecker quiver}
+Let $Q=K_m$. Consider the three-term complexes
+\begin{equation}\label{eq:twosided}
+ (0\to U_1)\ \xrightarrow{\ D_1\ }\ (V\xrightarrow{A_j}W)\ \xrightarrow{\ D_0\ }\ (U_0\to0)
+ \qquad\text{in degrees }-1,0,1,
+\end{equation}
+with $D_1:U_1\to W$ injective and $D_0:V\to U_0$ surjective; the chain-map
+conditions are empty. The cohomology is the representation
+$\ker D_0\to W/D_1U_1$ in degree $0$. Put $r_0=\dim U_0$, $r_1=\dim U_1$,
+$n_0=\dim\ker D_0$, $n_1=\dim W-r_1$, assume $n_0+n_1\geq1$, and let
+$Z=n_0z_0+n_1z_1=|Z|e^{\ii\varphi}$ with $\varphi\in(0,\pi)$,
+$\sigma=\sin\varphi$, $c_0=|z_0|\sin(\alpha_0-\varphi)$,
+$c_1=|z_1|\sin(\varphi-\alpha_1)$, and
+\[
+ B_0=D_0^\dagger D_0,\quad L_0=D_0D_0^\dagger,\quad P_1=D_1D_1^\dagger,\quad
+ L_1=D_1^\dagger D_1,\quad C=\sum_jA_j^\dagger A_j,\quad G=\sum_jA_jA_j^\dagger .
+\]
+Here $D_0$ is the differential at the vertex $0$ and $D_1$ the differential
+at the vertex $1$; the subscripts are vertices, not degrees. For $r_1=0$
+these are complexes as in Theorem~\ref{thm:onevertex}(b) with $i_0=0$, and
+for $r_0=0$ as in Theorem~\ref{thm:onevertex}(c) with $i_0=1$.
+
+\begin{proposition}\label{prop:twosidedcoefficient}
+The blocks of $\Omega$ for a complex \eqref{eq:twosided} are
+\begin{align*}
+ \Omega_V&=z_0e^{-B_0}+K_{B_0}(C)-\sum_j\mathcal J_{B_0,L_1}(A_j^\dagger D_1,D_1^\dagger A_j),\\
+ \Omega_W&=z_1e^{-P_1}-K_{P_1}(G)+\sum_j\mathcal J_{P_1,L_0}(A_jD_0^\dagger,D_0A_j^\dagger),\\
+ \Omega_{U_0}&=\mathcal J_{U_0}-z_0e^{-L_0},\qquad
+ \mathcal J_{U_0}:=\sum_j\mathcal J_{L_0,P_1}(D_0A_j^\dagger,A_jD_0^\dagger),\\
+ \Omega_{U_1}&=-z_1e^{-L_1}-\mathcal J_{U_1},\qquad
+ \mathcal J_{U_1}:=\sum_j\mathcal J_{L_1,B_0}(D_1^\dagger A_j,A_j^\dagger D_1),
+\end{align*}
+with phases in $(0,\pi)$ on $V,W$, in $(-\pi,0)$ on $U_0$ and in $(\pi,2\pi)$
+on $U_1$. If the charges are ordered, then for every metric
+\[
+ \cD\geq\varphi c_0\tr e^{-L_0}+\sigma\bigl(\varphi\tr\mathcal J_{U_0}-\pi\tr(\mathcal J_{U_0})_-\bigr)
+ +(\pi-\varphi)c_1\tr e^{-L_1}+\sigma\bigl((\pi-\varphi)\tr\mathcal J_{U_1}-\pi\tr(\mathcal J_{U_1})_-\bigr).
+\]
+\end{proposition}
+
+\begin{proof}
+Proposition~\ref{prop:coefficient} with $E_0=V\oplus U_0$, $d_0=D_0$,
+$E_1=U_1\oplus W$, $d_1=D_1$, $\Delta_0=B_0\oplus L_0$,
+$\Delta_1=L_1\oplus P_1$, and the operator
+$M_{a_j}=d_1^\dagger\rho(a_j)-\rho(a_j)d_0^\dagger$ of \eqref{eq:DeltaMGamma},
+which maps $V\to U_1$ by $D_1^\dagger A_j$ and $U_0\to W$ by
+$-A_jD_0^\dagger$. The bound for the block $U_0$ is the argument of
+Theorem~\ref{thm:onevertex}(b) with $J$ replaced by the Hermitian matrix
+$\mathcal J_{U_0}$. For $U_1$, with $(u_k)$ an eigenbasis of $\Phi_{U_1}$,
+eigenvalues $\psi_k\in(\pi,2\pi)$, $q_k=\inner{u_k}{|\Omega_{U_1}|u_k}$,
+$\iota_k=\inner{u_k}{\mathcal J_{U_1}u_k}$ and
+$e_k=\inner{u_k}{e^{-L_1}u_k}$:
+$q_k\sin(\psi_k-\varphi)=\sigma\iota_k+c_1e_k$. If this is nonnegative,
+$\psi_k-\varphi\in(\pi-\varphi,\pi]$ and the summand is at least
+$(\pi-\varphi)(\sigma\iota_k+c_1e_k)$; otherwise
+$\psi_k-\varphi\in(\pi,2\pi-\varphi)$ and it is at least
+$(2\pi-\varphi)(\sigma\iota_k+c_1e_k)$. In both cases it is at least
+$(\pi-\varphi)(\sigma\iota_k+c_1e_k)-\pi\sigma(\iota_k)_-$.
+\end{proof}
+
+In eigenbases of $L_0$, with eigenvalues $\ell_i$, and of $P_1$, with
+eigenvalues $p_\mu$ ($p_\mu=0$ on the orthogonal complement of $D_1U_1$),
+\[
+ (\mathcal J_{U_0})_{ik}=\sum_{j,\mu}(D_0A_j^\dagger)_{i\mu}\overline{(D_0A_j^\dagger)_{k\mu}}\;
+ \mathsf f[\ell_i,p_\mu,\ell_k],
+\]
+with the second divided differences of $e^{-x}$. If all $p_\mu$ vanish this
+is the Schur multiplier of \eqref{eq:kernel}; in general the interpolation
+point $0$ is replaced by the eigenvalues $p_\mu$.
+
+\begin{theorem}[Ranks at most one]\label{thm:rankone}
+Let $\alpha_0\geq\alpha_1$ (ordered charges) and $r_0\leq1$, $r_1\leq1$. Then for every metric
+on a complex \eqref{eq:twosided}
+\[
+ \cD\geq\varphi\bigl(c_0\tr e^{-L_0}+\sigma\tr\mathcal J_{U_0}\bigr)
+ +(\pi-\varphi)\bigl(c_1\tr e^{-L_1}+\sigma\tr\mathcal J_{U_1}\bigr)\geq0,
+\]
+where a term with $r_i=0$ is omitted. The phase potential is nonincreasing
+along the phase flow, and strictly decreasing if the charges are strictly
+ordered, $n_0,n_1\geq1$ and $r_0+r_1\geq1$.
+\end{theorem}
+
+\begin{proof}
+For $r_0=1$, $\mathcal J_{U_0}$ is the nonnegative number
+\[
+ \sum_j\int_{\substack{x,y\geq0\\x+y\leq1}}e^{-(x+y)L_0}\,D_0A_j^\dagger e^{-(1-x-y)P_1}A_jD_0^\dagger\,dx\,dy ;
+\]
+likewise $\mathcal J_{U_1}\geq0$ for $r_1=1$. Apply
+Proposition~\ref{prop:twosidedcoefficient}. If $\alpha_0>\alpha_1$ and
+$n_0,n_1\geq1$, then $c_0,c_1>0$.
+\end{proof}
+
+\begin{theorem}[Ranks $(2,1)$]\label{thm:twosidedfailure}
+Let $z_0=-1+\ii$, $z_1=1+\ii$, and let $V=\CC^3$, $W=\CC^2$, $U_0=\CC^2$,
+$U_1=\CC$ with the standard metrics,
+\[
+ D_0=\begin{pmatrix}0&1&0\\0&0&4\end{pmatrix},\qquad
+ D_1=\begin{pmatrix}0\\3\end{pmatrix},\qquad
+ A_1=\begin{pmatrix}1&0&0\\0&4&100\end{pmatrix},\qquad A_j=0\ (j\geq2).
+\]
+The cohomology is the representation $\CC\xrightarrow{1}\CC$, which is
+stable, and the induced metric on it is harmonic. For these metrics
+\[
+ \cD=-1.7280352\ldots<0,\qquad\text{that is,}\qquad
+ \frac d{dt}\Ima\bigl(e^{-\ii\varphi}\cS_{\CC}\bigr)=+1.728\ldots>0 .
+\]
+\end{theorem}
+
+\begin{proof}
+The complex is the orthogonal direct sum of the representation
+$\CC\xrightarrow1\CC$, whose two blocks $z_0+1$ and $z_1-1$ equal $\ii$ and
+have phase $\varphi=\frac\pi2$, and of the acyclic complex
+$(0\to U_1)\to(\CC^2\xrightarrow{\rho}\CC)\to(U_0\to0)$ with
+$\rho=(\rho_1,\rho_2)=(4,100)$ of Example~\ref{ex:nonnormal}. With
+$(\ell_1,\ell_2)=(1,16)$ the eigenvalues of $B_0$ on $\CC^2$ and $p=9$,
+Proposition~\ref{prop:twosidedcoefficient} gives for the acyclic complex the
+blocks
+\begin{align*}
+ (\Omega_V)_{ik}&=z_0e^{-\ell_i}\delta_{ik}+\rho_i\rho_k\bigl(-\mathsf f[\ell_i,\ell_k]-p\,\mathsf f[\ell_i,p,\ell_k]\bigr),\\
+ \Omega_W&=(z_1-|\rho|^2)e^{-p}+\sum_i\rho_i^2\ell_i\,\mathsf f[p,\ell_i,p],\\
+ (-\Omega_{U_0})_{ik}&=z_0e^{-\ell_i}\delta_{ik}-\sqrt{\ell_i\ell_k}\,\rho_i\rho_k\,\mathsf f[\ell_i,p,\ell_k],\\
+ -\Omega_{U_1}&=z_1e^{-p}+p\sum_i\rho_i^2\,\mathsf f[p,\ell_i,p],
+\end{align*}
+with the divided differences of $e^{-x}$. The four block contributions, on
+$V$, $W$, $U_0$ and $U_1$, are $3.4635\ldots$, $2.0009\ldots$,
+$-10.6257\ldots$ and $3.4332\ldots$; they and their sum were enclosed with
+interval arithmetic \cite{joh17},\footnote{The program
+\texttt{theorem\_6\_4\_dissipation.py}, which uses the library Arb, and its
+output accompany this paper as supplementary files. The program also checks
+that $\tr\Omega=0$ for the acyclic complex and compares the blocks, in
+floating point, with an evaluation of the definition \eqref{eq:Omegadef},
+with the exponential taken in $\mathcal A(K_1)\otimes\End(E)$.} with radius below
+$10^{-18}$. The $2\times2$ polar decompositions are explicit, and the phases
+on $U_0$ are $-3.1005\ldots$ and $-0.0347\ldots$
+\end{proof}
+
+\begin{corollary}\label{cor:classification}
+For the charges $(-1+\ii,1+\ii)$ and $n_0=n_1\geq1$, the phase potential is
+nonincreasing along the phase flow for all metrics on all complexes
+\eqref{eq:twosided} with ranks $(r_0,r_1)$ if and only if $\min(r_0,r_1)=0$
+or $r_0=r_1=1$.
+\end{corollary}
+
+\begin{proof}
+Here $\varphi=\frac\pi2$ and $\alpha_1<\varphi<\alpha_0$. If $r_0=r_1=0$ the
+complex is a representation and $\cD\geq0$ by
+Proposition~\ref{prop:kempfness}. If
+exactly one of $r_0,r_1$ vanishes, this is Theorem~\ref{thm:onevertex}(b) or
+(c) for $Q=K_m$; if $r_0=r_1=1$ it is Theorem~\ref{thm:rankone}. Conversely, by Theorem~\ref{thm:duality}, which
+exchanges $r_0$ and $r_1$ and fixes these charges, we may assume $r_0\geq2$
+and $r_1\geq1$. Take the orthogonal direct sum of $n_0$ copies of
+$\CC\xrightarrow1\CC$, of the acyclic complex of
+Theorem~\ref{thm:twosidedfailure}, and of contractible summands at the vertex
+$0$ in degrees $0,1$ and at the vertex $1$ in degrees $-1,0$, of ranks
+$r_0-2$ and $r_1-1$, with differentials $x\,\id$. By
+Proposition~\ref{prop:contractible} the latter contribute
+$\pi(r_0+r_1-3)e^{-x^2}$ to $\cD$, which tends to $0$ as $x\to\infty$.
+\end{proof}
+
+\begin{remark}\label{rem:interpolation}
+The example of Theorem~\ref{thm:twosidedfailure} comes from the following
+computation. Let $r_0=2$, let $P_1$ have one nonzero eigenvalue $p$, and let
+there be one nonzero arrow, which maps into the corresponding line. Then
+$(\mathcal J_{U_0})_{ik}=v_i\overline{v_k}\,\mathsf f[\ell_i,p,\ell_k]$ for a
+vector $v\in\CC^2$, and for a $2\times2$ matrix of this form the supremum over
+$v$ of $\tr(\mathcal J_{U_0})_-/\tr\mathcal J_{U_0}$ is the positive part of
+$\frac12\bigl(\mathsf f[\ell_1,p,\ell_2]\,(\mathsf f[\ell_1,p,\ell_1]\mathsf f[\ell_2,p,\ell_2])^{-1/2}-1\bigr)$,
+attained for $|v_1|^2\mathsf f[\ell_1,p,\ell_1]=|v_2|^2\mathsf f[\ell_2,p,\ell_2]$.
+As $\ell_1\to0$ and $\ell_2\to\infty$ this tends to
+\[
+ \frac12\Bigl(\frac{R(p)\,e^{p/2}}{\sqrt{(e^{-p}-1+p)/p^2}}-1\Bigr),
+\]
+which is $(\sqrt2-1)/2$ at $p=0$ and tends to infinity with $p$. So
+\eqref{eq:kernel} has no analogue that is uniform in $p$.
+
+\end{remark}
+
+Whether the acyclic parts decay along the phase flow of the complexes
+\eqref{eq:twosided}, in the sense of Definition~\ref{def:phase}(v), is open.

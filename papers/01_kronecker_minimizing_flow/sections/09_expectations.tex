@@ -1,0 +1,278 @@
+\section{Mass, extreme phases and fixed points}\label{sec:expectations}
+
+In \cite[\S4.1]{hkkp26} the structures of a categorical K\"ahler metric are
+listed as axioms that ``should be read more as a collection of desiderata
+rather than as a final definition''. For the flow the text reads: ``We expect
+the following quantities to vary monotonically under this action: $m(X,h)$
+decreases, $\phi^-(X,h)$ increases, and $\phi^+(X,h)$ decreases. Moreover,
+the fixed points of the action on $\mathrm{Met}(X)/$rescaling are precisely
+the harmonic metrics.'' Here $\phi^\pm$ are the ends of the support of the
+mass measure, which is defined in \cite[\S4.2]{hkkp26} by
+$\int f\,d\mu_{X,h}=\Omega\bigl(e^{-\sqrt{-1}\arg\Omega}f(\arg\Omega/\pi)\bigr)$;
+there $\Omega$ is the functional $a\mapsto\tr(\Omega a)$, so that the right
+side is $\tr\bigl(|\Omega|\,f(\arg\Omega/\pi)\bigr)$. We write $\nu_h$ for this
+measure, since $\mu$ denotes the moment map. For
+the endomorphism $\Omega$ of the complex \eqref{eq:complex}, the polar phase
+$\Phi=\Phi_V\oplus\Phi_U\oplus\Phi_W$ and phases measured in radians, this is
+the measure
+\[
+ \nu_h=\sum_kp_k\,\delta_{\phi_k},\qquad p_k=\inner{v_k}{|\Omega|v_k}>0,
+\]
+for an orthonormal eigenbasis $(v_k)$ of $\Phi$ with eigenvalues $\phi_k$;
+equivalently $\int f\,d\nu_h=\tr(|\Omega|f(\Phi))$. Its total mass is $m(h)$,
+and
+\[
+ \phi_+=\max\bigl(\spec\Phi_V\cup\spec\Phi_W\bigr),\qquad
+ \phi_-=\min\spec\Phi_U .
+\]
+A metric is harmonic if $\Phi$ is a scalar. In \cite[Remark~5.15]{hkkp26} the
+metrics of an object are the metrized complexes isomorphic to it in the
+derived category. The statements of this section concern the metrics on a
+given complex, which the flow preserves. For these we examine whether the
+mass is nonincreasing, whether $\phi_+$ is nonincreasing and $\phi_-$
+nondecreasing, and whether the fixed points modulo rescaling are the harmonic
+metrics. For a representation all of this holds
+(Proposition~\ref{prop:representations}). For the complexes
+\eqref{eq:complex} the mass and both extreme phases can move in the opposite
+direction (Propositions~\ref{prop:mass} and~\ref{prop:extreme}), and there
+are neither fixed points nor harmonic metrics on the complex
+(Proposition~\ref{prop:fixed}); what converges is the mass measure
+(Proposition~\ref{prop:measure}).
+
+\subsection{Representations}
+Let a representation of the generalized Kronecker quiver with metrics be
+given, regarded as a complex in degree zero, with dimension vector
+$(n_0,n_1)$, $n_0,n_1\geq1$. In orthonormal frames let $H_j$ be the matrices
+of the arrows, $C_0=\sum_jH_j^\dagger H_j$ and $C_1=\sum_jH_jH_j^\dagger$. Its
+endomorphism $\Omega=(z_0+C_0)\oplus(z_1-C_1)$ is normal, with phases
+$\phi_0=\arg(z_0+C_0)$ and $\phi_1=\arg(z_1-C_1)$, and the flow is
+$\dot H_j=\frac12(H_j\phi_0-\phi_1H_j)$.
+
+\begin{proposition}\label{prop:representations}
+For a representation and all charges in the upper half-plane, along the phase
+flow:
+\begin{enumerate}
+\item[(i)] the mass is nonincreasing;
+\item[(ii)] the largest phase is nonincreasing and the smallest phase is
+ nondecreasing;
+\item[(iii)] the fixed points on metrics modulo rescaling are the metrics
+ with $\phi_0=\varphi\,\id$ and $\phi_1=\varphi\,\id$, that is, the harmonic
+ metrics.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+From the flow,
+$\dot C_0=\phi_0C_0-\sum_jH_j^\dagger\phi_1H_j$ and
+$\dot C_1=\sum_jH_j\phi_0H_j^\dagger-\phi_1C_1$, because $\phi_0$ commutes with
+$C_0$ and $\phi_1$ with $C_1$.
+
+(i) This is \cite[\S6.2]{wue26}: the derivative of $x\mapsto|z_0+x|$ is
+$\cos\arg(z_0+x)$ and that of $x\mapsto|z_1-x|$ is $-\cos\arg(z_1-x)$, so in
+eigenbases of $\phi_0$ (eigenvalues $a_i$) and $\phi_1$ (eigenvalues $b_l$)
+\[
+ \dot m=\tr(\cos\phi_0\,\dot C_0)-\tr(\cos\phi_1\,\dot C_1)
+ =\sum_{j,i,l}|(H_j)_{li}|^2(\cos a_i-\cos b_l)(a_i-b_l)\leq0,
+\]
+because the cosine decreases on $(0,\pi)$.
+
+(ii) We have $\phi_0=f_0(C_0)$ and $\phi_1=f_1(C_1)$ with
+$f_0(x)=\arg(z_0+x)$ decreasing and $f_1(x)=\arg(z_1-x)$ increasing on
+$[0,\infty)$. Let $\bar\phi_0=f_0(\lambda_{\min}(C_0))$ and
+$\bar\phi_1=f_1(\lambda_{\max}(C_1))$ be the largest eigenvalues of $\phi_0$
+and $\phi_1$. For a unit eigenvector $v$ of $C_0$ for its least eigenvalue
+$c$,
+$\inner v{\dot C_0v}=\bar\phi_0c-\sum_j\inner{H_jv}{\phi_1H_jv}
+\geq(\bar\phi_0-\bar\phi_1)c$. The right lower derivative of
+$\lambda_{\min}(C_0)$ is the minimum of $\inner v{\dot C_0v}$ over such $v$;
+so whenever $\bar\phi_0\geq\bar\phi_1$, the upper right derivative of
+$\bar\phi_0$ is nonpositive. For a unit eigenvector $w$ of $C_1$ for its
+largest eigenvalue $c'$,
+$\inner w{\dot C_1w}=\sum_j\inner{H_j^\dagger w}{\phi_0H_j^\dagger w}-\bar\phi_1c'
+\leq(\bar\phi_0-\bar\phi_1)c'$; so whenever $\bar\phi_1\geq\bar\phi_0$, the
+upper right derivative of $\bar\phi_1$ is nonpositive. Hence
+$\max(\bar\phi_0,\bar\phi_1)$ is nonincreasing. The statement for the
+smallest phase is the same argument with $\lambda_{\max}(C_0)$ and
+$\lambda_{\min}(C_1)$.
+
+(iii) At a fixed point modulo rescaling the velocities are a common scalar,
+$\phi_0=c\,\id$ and $\phi_1=c\,\id$ with $c\in(0,\pi)$, and
+$\tr\Omega=Z$ forces $c=\varphi$.
+\end{proof}
+
+\subsection{The mass}
+The example of \cite[Theorem~1.1]{wue26} with increasing mass has charges
+close to the real axis and an invertible differential, and the question
+whether the mass decreases is asked in \cite[Question~5.18]{hkkp26}. The
+mass can also increase for the symmetric charges and for complexes with
+stable cohomology and $r=1$, to which Theorems~\ref{thm:monotone}
+and~\ref{thm:convergence} apply.
+
+\begin{proposition}[A state with increasing mass]\label{prop:mass}
+Let $z_0=-1+\ii$, $z_1=1+\ii$, $k=512$, $V=\CC^2$, $U=\CC$, $W=\CC^{512}$ with
+the standard metrics, $D=(0,f)$ with $f^2=\frac{383}{100}$, and let $A_j$ be
+the matrix whose only nonzero row is the $j$-th, equal to
+$(-0.1978,\,-0.6072)$ for $480$ values of $j$ and to $(-0.5038,\,0.8392)$ for
+the other $32$. The cohomology representation $\CC\to\CC^{512}$ is stable,
+$r=1$, and at this state
+\[
+ m=749.87188\ldots,\qquad\frac{dm}{dt}=1.77041\ldots>0,\qquad\cD=48.7558\ldots>0 .
+\]
+\end{proposition}
+
+\begin{proof}
+Since $r=1$ and the arrows have orthogonal images, $\Omega$ is in
+closed form: with $v=D^\dagger$, $\ell=|v|^2$, $a_j$ the nonzero row of $A_j$
+and $C=\sum_ja_j^\dagger a_j$,
+\[
+ \Omega_V=z_0\bigl(\id-R(\ell)vv^\dagger\bigr)+C-\tfrac{1-R(\ell)}\ell(vv^\dagger C+Cvv^\dagger)
+ +\tfrac{1-2R(\ell)+e^{-\ell}}{\ell^2}(v^\dagger Cv)\,vv^\dagger,
+\]
+$\Omega_U=(v^\dagger Cv)(1-e^{-\ell}-\ell e^{-\ell})/\ell^2-z_0e^{-\ell}$, and
+$\Omega_W$ is diagonal with entries
+$z_1-|a_j|^2+\frac{1-R(\ell)}\ell|a_jv|^2$. The flow preserves this form, with
+$\dot v=\frac12(\Phi_V-\Phi_U)v$ and
+$\dot a_j=\frac12(a_j\Phi_V-(\Phi_W)_{jj}a_j)$, and
+$\frac d{dt}\tr|T|=\Rea\tr(\dot T\,e^{-\ii\Psi})$ for a matrix $T$ with polar
+phase $\Psi$. The $2\times2$ polar decomposition is explicit:
+$|T|=(M+\sqrt{\det M})/\sqrt{\tr M+2\sqrt{\det M}}$ with $M=TT^\dagger$. The
+three numbers were enclosed with interval arithmetic at $500$ bits; the
+enclosures have radius below $10^{-20}$.\footnote{The program
+\texttt{prop\_9\_2\_mass.py} and its output accompany this paper as
+supplementary files. The program also checks
+the trace identity \eqref{eq:central}, compares the derivative with a
+difference quotient of the enclosed mass along the velocity, and gives
+$\dot m<0$ for the same state with all rows divided by $20$.} Stability: every row $a_j$ has a nonzero
+first entry, so the proper nonzero subrepresentations are subspaces of $W$,
+of phase $\frac\pi4<\varphi$.
+\end{proof}
+
+With these two rows in the proportion $15:1$, the same formulas give
+$\dot m>0$ for $k=400$ arrows and $\dot m<0$ for $k=368$; both signs are
+enclosed by the same program. For $k\leq3$ arrows
+and the symmetric charges, a numerical maximization of $\dot m/m$ over the
+maps $D,A_j$ from random starting points, for small dimensions, found no
+metric with increasing mass; this observation is not used in any
+proof.
+
+\subsection{The extreme phases}
+
+\begin{proposition}[Extreme phases]\label{prop:extreme}
+Let $z_0=-1+\ii$, $z_1=1+\ii$, and take the standard metrics.
+\begin{enumerate}
+\item[(i)] For $V=\CC^2$, $U=W=\CC$, $D=(0,f)$ with $f^2=\frac1{10}$,
+ $A_1=(1,0)$ and $A_2=(0,10)$, the smallest phase satisfies
+ $\frac d{dt}\phi_-=-0.38959518\ldots<0$.
+\item[(ii)] For $V=\CC^3$, $U=\CC$, $W=\CC^2$, $D=(0,0,\frac92)$,
+ \[
+ A_1=\begin{pmatrix}5.7&-1.7&6\\6&0&-5.6\end{pmatrix},\qquad
+ A_2=\begin{pmatrix}6&0.1&-6\\-6&-1.8&-6\end{pmatrix},
+ \]
+ the largest eigenvalue of $\Phi_V$ is simple and exceeds the eigenvalues of
+ $\Phi_W$, and $\frac d{dt}\phi_+=0.0060800323\ldots>0$.
+\end{enumerate}
+In both cases $r=1$ and the cohomology representation is polystable; in (i)
+it is stable.
+\end{proposition}
+
+\begin{proof}
+(i) Here $C=\diag(1,100)$, all blocks of $\Omega$ are numbers, and the
+flow preserves this form. With $\ell=f^2$, $x=100/\ell$ and
+$\mathsf m(\ell)=1-(1+\ell)e^{-\ell}$, the phases are $\arg(z_0+1)$ and
+$\Phi_A:=\arg(z_0+100)$ on the two lines of $V$,
+$\Phi_W=\arg(z_1-1-x(1-e^{-\ell}))$, and
+$\Phi_U=\arg(z_0e^{-\ell}-x\,\mathsf m(\ell))-\pi=-\arctan\frac1{1+y}$ with
+$y=x\,\mathsf m(\ell)e^\ell$; moreover $\dot\ell=\ell(\Phi_A-\Phi_U)$ and
+$\dot x=x(\Phi_U-\Phi_W)$ by \eqref{eq:mapflow} and \eqref{eq:adapted}. Hence
+$\dot\Phi_U=\dot y/((1+y)^2+1)$ and
+$\dot y/y=(\Phi_U-\Phi_W)+(\ell e^{-\ell}/\mathsf m(\ell)+1)\dot\ell$, an
+explicit expression, which was enclosed with interval
+arithmetic.\footnote{The program \texttt{prop\_9\_3\_extreme\_phases.py} and
+its output accompany this paper as supplementary files.} The cohomology
+representation is $1:\CC\to\CC$ with a second arrow equal to zero.
+
+(ii) Since $r=1$, $\Omega$ is given by the formulas in the proof of
+Proposition~\ref{prop:mass}, with $C=A_1^\dagger A_1+A_2^\dagger A_2$ and
+$\Omega_W=z_1-\sum_jA_j\bigl(\id-\tfrac{1-R(\ell)}\ell vv^\dagger\bigr)A_j^\dagger$;
+the derivative of $\Omega_V$ along the flow is obtained by the product rule
+from $\dot v=\frac12(\Phi_V-\Phi_U)v$ and
+$\dot A_j=\frac12(A_j\Phi_V-\Phi_WA_j)$. By Lemma~\ref{lem:variation}, the
+derivative of a simple eigenvalue of $\Phi_V$ with spectral projection $\Pi$
+is $2\tr(\Pi\Theta)$, where $\Theta$ solves \eqref{eq:sylvester} for the
+variation $\dot\Omega_V$. The spectra of $\Phi_V$ and $\Phi_W$, the
+projection $\Pi$ and the solution $\Theta$ were enclosed with interval
+arithmetic at $400$ bits; the spectra are
+$\{0.0071\ldots,\,0.1929\ldots,\,3.13307\ldots\}$ and
+$\{3.12792\ldots,\,3.12883\ldots\}$. The eigenvalue $\phi_+$ carries the
+weight $6.09\ldots\times10^{-6}$ of the mass measure, whose total mass is
+$303.13\ldots$ The cohomology representation $\CC^2\to\CC^2$ has the arrows
+$H_1,H_2$ given by the first two columns of $A_1,A_2$. The polynomial
+$\det(H_1-\tau H_2)=-\frac{51}5\tau^2+\frac{1053}{50}\tau+\frac{51}5$ has two
+distinct roots $\tau_1,\tau_2$; if $H_1v_i=\tau_iH_2v_i$, then the lines
+$\CC v_i\to\CC H_2v_i$ are two non-isomorphic stable subrepresentations of
+dimension vector $(1,1)$, and the representation is their direct sum.
+\end{proof}
+
+\subsection{Fixed points and harmonic metrics}
+
+\begin{proposition}\label{prop:fixed}
+Let $r\geq1$. For all charges in the upper half-plane the phase flow has no
+fixed point and no periodic orbit on the metrics of the complex modulo
+rescaling, and the complex carries no harmonic metric. If
+$\alpha_0\neq\alpha_1$, the phase potential has no critical point.
+\end{proposition}
+
+\begin{proof}
+The least eigenvalue $\lambda$ of $DD^\dagger$ is invariant under a common
+rescaling of the metrics, and by Proposition~\ref{prop:imported}(i) its right
+derivative is at least
+$\lambda\min\bigl(\inner v{\Phi_{AA}v}-\inner u{\Phi_Uu}\bigr)>0$ over unit
+vectors, since $\Phi_V>0>\Phi_U$. So $\lambda$ is strictly increasing along
+every trajectory. A harmonic metric would have $\Phi_V$ and $\Phi_U$ equal to
+the same scalar, which is impossible for the same reason. The differential
+of the phase potential is
+$\xi\mapsto\sigma^{-1}\sum_\bullet\tr(\Ima(e^{-\ii\varphi}\Omega_\bullet)\xi_\bullet)$
+(Section~\ref{sec:potential}), so at a critical point
+$\Ima(e^{-\ii\varphi}\Omega_\bullet)=0$ for all three blocks. But
+$\tr\Ima(e^{-\ii\varphi}\Omega_U)=-\sigma\tr J-c_0\tr e^{-L}<0$ if $c_0>0$, and
+$\tr\Ima(e^{-\ii\varphi}\Omega_V)=c_0\tr e^{-B}-\sigma\tr K<0$ if $c_0<0$; here
+$\tr J\geq0$ by Theorem~\ref{thm:kernel}, $\tr K=\tr(Ce^{-B})\geq0$, and
+$c_0\neq0$ exactly when $\alpha_0\neq\alpha_1$.
+\end{proof}
+
+So on the metrics of the given complex the set of fixed points and the set
+of harmonic metrics coincide trivially, both being empty. In the sense of
+\cite[Remark~5.15]{hkkp26} the harmonic metrics of the object live on other
+representatives; for ordered charges and polystable cohomology
+Theorem~\ref{thm:convergence} identifies the limit of the flow with a
+harmonic metric of the cohomology representation.
+
+\subsection{The mass measure}
+The extreme phases need not converge to $\varphi$. If the arrows vanish on
+$(\ker D)^\perp$, then $\Omega_V=(z_0+C_0)\oplus z_0e^{-F^\dagger F}$ and
+$\Omega_U=-z_0e^{-L}$, the flow preserves this form, and the phases of the
+acyclic part are $\alpha_0$ and $\alpha_0-\pi$ for all time, while their
+weights $|z_0|e^{-\ell_i}$ in the mass measure tend to zero.
+
+\begin{proposition}\label{prop:measure}
+For every metric on the complex,
+\[
+ m(h)-|Z|=\int\bigl(1-\cos(\phi-\varphi)\bigr)\,d\nu_h(\phi)\geq0 .
+\]
+Along a trajectory, $\nu_{h(t)}\to|Z|\,\delta_\varphi$ weakly if and only if
+$m(h(t))\to|Z|$. In particular $\nu_{h(t)}\to|Z|\,\delta_\varphi$ for ordered
+charges and semistable cohomology.
+\end{proposition}
+
+\begin{proof}
+For a unit eigenvector $v_k$ of $\Phi$,
+$\inner{v_k}{\Omega v_k}=p_ke^{\ii\phi_k}$, because
+$\Omega=|\Omega|e^{\ii\Phi}$. Hence $\int e^{\ii\phi}d\nu_h=\tr\Omega=Z$ and
+$\int d\nu_h=m(h)$; take the real part of $e^{-\ii\varphi}$ times the first
+identity. The phases lie in $(-\pi,\pi)$ and $\varphi\in(0,\pi)$, so on
+$[-\pi,\pi]$ the function $1-\cos(\phi-\varphi)$ vanishes only at
+$\phi=\varphi$. If $m\to|Z|$, the $\nu_{h(t)}$-measure of the complement of
+any neighbourhood of $\varphi$ therefore tends to zero, and the total mass
+tends to $|Z|$; the converse follows by integrating the constant $1$. The
+last statement is Theorem~\ref{thm:relaxation}.
+\end{proof}
