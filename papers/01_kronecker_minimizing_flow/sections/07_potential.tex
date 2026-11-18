@@ -106,31 +106,34 @@ $c_0e^{-L}\geq0$, so $\tr M_-\leq\sigma\tr J_-$.
 \end{proof}
 
 \begin{remark}\label{rem:sharp}
-As $e^{-L}\to0$ with $J$ fixed and invertible, $\Omega_U$ becomes Hermitian,
-its phases tend to $0$ or $-\pi$, and the first inequality of
-Proposition~\ref{prop:degreeone} becomes an equality. So the sign of $\cD_U$
-is governed by the ratio $\tr J_-/\tr J$, which is the subject of
-Theorem~\ref{thm:kernel}; this is the origin of the number
-$\frac{2\pi}5=\pi\cdot\frac25$ in Definition~\ref{def:admissible}.
+Fix $L$ and the arrows, suppose $J$ is invertible, and let $z_0\to0$
+in the upper half-plane with $z_1$ fixed. Then $\Omega_U\to J$ and
+$\varphi\to\arg z_1$. The unitary polar factor tends to the sign of $J$.
+On the closed lower semicircle the argument extends continuously with
+values $0$ at $1$ and $-\pi$ at $-1$. Hence $\Phi_U$ tends to $-\pi$
+times the negative spectral projection of $J$. The lower bound in the
+first inequality of Proposition~\ref{prop:degreeone} is attained in this
+limit. The trace ratio in Theorem~\ref{thm:kernel} therefore controls
+the degree-one contribution in this varying-charge limit.
 \end{remark}
 
 \begin{theorem}[Lyapunov function]\label{thm:monotone}
 Let the charges be admissible. Then at every state
 \begin{equation}\label{eq:dissipationbound}
  \cD\geq\cD_U\geq\varphi c_0\tr e^{-L}
- +\sigma\bigl(\varphi-\tfrac{2\pi}5\bigr)_+\tr J>0,
+ +\sigma\bigl(\varphi-\tfrac\pi3\bigr)_+\tr J>0,
 \end{equation}
 and the phase potential is strictly decreasing along the phase flow: it is a
 strict Lyapunov function. For the symmetric charges and $n_0=n_1$,
 \[
  \frac{d\cK}{dt}=-\cD,\qquad
- \cD\geq\frac\pi{10}\tr J+\frac\pi2\tr e^{-L}.
+ \cD\geq\frac\pi6\tr J+\frac\pi2\tr e^{-L}.
 \]
 \end{theorem}
 
 \begin{proof}
 Propositions~\ref{prop:rate}, \ref{prop:degreezero} and \ref{prop:degreeone},
-together with Theorem~\ref{thm:kernel}: $\tr J_-\leq\frac25\tr J$ and
+together with Theorem~\ref{thm:kernel}: $\tr J_-\leq\frac13\tr J$ and
 $\tr J\geq0$, since $DCD^\dagger\geq0$. If $r=1$ then $J$ is a nonnegative
 number, by \eqref{eq:schurform} and Lemma~\ref{lem:mformula}, and $J_-=0$.
 Here $L>0$ because $D$ is surjective, and $c_0>0$.

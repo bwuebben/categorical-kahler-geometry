@@ -6,7 +6,7 @@ Bernd Johannes Wuebben · [ORCID](https://orcid.org/0009-0002-4588-3284)
 
 ### Convergence of the minimizing flow on Kronecker quiver complexes
 
-[Manuscript and source](papers/01_kronecker_minimizing_flow/) · [PDF](papers/01_kronecker_minimizing_flow/paper.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/phase-flow-convergence-kronecker/) · [Zenodo:24341605](https://zenodo.org/records/24341605)
+[Manuscript and source](papers/01_kronecker_minimizing_flow/) · [PDF](papers/01_kronecker_minimizing_flow/paper.pdf) · [Abstract and citation](https://bwuebben.github.io/papers/phase-flow-convergence-kronecker/) · [Zenodo:24347557](https://zenodo.org/records/24347557)
 
 ### Extending the Kempf–Ness function to complexes of quiver representations
 

@@ -56,7 +56,7 @@ $b\geq0$.
 At every state and for all charges in the upper half-plane:
 \begin{enumerate}
 \item[(a)] $\tr(K\Phi_V)\leq\alpha_0\tr K$;
-\item[(b)] $\tr(J\Phi_U)\leq\pi\tr J_-\leq\frac{2\pi}5\tr J$, and
+\item[(b)] $\tr(J\Phi_U)\leq\pi\tr J_-\leq\frac\pi3\tr J$, and
  $\tr(J\Phi_U)\leq0$ if $r=1$;
 \item[(c)] $\tr(G\Phi_W)\geq\pi N-n_1M_1$, where
  $M_1:=\max\{\pi\max(x_1,0),\,2y_1\}$.
@@ -64,15 +64,20 @@ At every state and for all charges in the upper half-plane:
 \end{lemma}
 
 \begin{proof}
-(a) Corollary~\ref{cor:comparison} with $\Omega^{(0)}=z_0e^{-B}$ and the
-Hermitian matrix $K$: $\Omega^{(0)}+K=\Omega_V$, and $e^{-B}>0$.
+(a) For each unit eigenvector $v$ of $\Phi_V$ of phase $\phi$, put
+$p=\langle v,|\Omega_V|v\rangle$. By Lemma~\ref{lem:eigenbasis},
+$\langle v,\Omega_Vv\rangle=pe^{\ii\phi}$. Taking imaginary parts after
+multiplication by $e^{-\ii\alpha_0}$ in $\Omega_V=z_0e^{-B}+K$ gives
+$\langle v,Kv\rangle=p\sin(\alpha_0-\phi)/\sin\alpha_0$.
+Its product with $\phi-\alpha_0$ is nonpositive. Summation in an
+orthonormal eigenbasis gives the bound.
 
 (b) Let $(u_k)$ be an orthonormal eigenbasis of $\Phi_U$ with eigenvalues
 $\phi_k\in(-\pi,0)$, and $j_k=\inner{u_k}{Ju_k}$. Then
 $\tr(J\Phi_U)=\sum_k\phi_kj_k\leq\pi\sum_k(j_k)_-$, where
 $(j_k)_-=\max(-j_k,0)$, and
 $\sum_k(j_k)_-\leq\sum_k\inner{u_k}{J_-u_k}=\tr J_-$. By
-Theorem~\ref{thm:kernel}, $\tr J_-\leq\frac25\tr J$, because
+Theorem~\ref{thm:kernel}, $\tr J_-\leq\frac13\tr J$, because
 $DCD^\dagger\geq0$. For $r=1$, $J\geq0$ is a number and $\Phi_U<0$.
 
 (c) $\Omega_W=z_1\id-G$ is normal and $\Phi_W=f_1(G)$ with
@@ -89,12 +94,12 @@ $\tr(G\,f_1(G))\geq\pi\tr G-n_1M_1$.
 \begin{theorem}[A priori bound]\label{thm:energy}
 Let
 \[
- \rho:=\pi-\max\bigl\{\alpha_0,\tfrac{2\pi}5\bigr\}\quad
+ \rho:=\pi-\max\bigl\{\alpha_0,\tfrac\pi3\bigr\}\quad
  (\rho:=\pi-\alpha_0\text{ if }r=1),\qquad
  \bar N:=\frac{2n_1M_1}\rho,\qquad
  t_0:=\frac1\rho\log^+\frac{\rho N(0)}{n_1M_1},
 \]
-where $\log^+x=\max(\log x,0)$.
+where $\log^+x=\log\max\{1,x\}$ for $x\geq0$.
 For all charges in the upper half-plane and along every trajectory of the
 phase flow,
 \[
@@ -108,9 +113,9 @@ $\tr J\leq N$ and $s\leq N/(1-e^{-\lambda})$.
 
 \begin{proof}
 By Lemmas~\ref{lem:energy}(c) and~\ref{lem:three},
-$\dot N\leq\alpha_0\tr K+\frac{2\pi}5\tr J-\pi N+n_1M_1$. Since $\tr K$ and
+$\dot N\leq\alpha_0\tr K+\frac\pi3\tr J-\pi N+n_1M_1$. Since $\tr K$ and
 $\tr J$ are nonnegative with sum $N$, the first two terms are at most
-$\max\{\alpha_0,\frac{2\pi}5\}N$; for $r=1$ the second term may be omitted.
+$\max\{\alpha_0,\frac\pi3\}N$; for $r=1$ the second term may be omitted.
 Integrate; for $t\geq t_0$ the first term of the bound is at most
 $n_1M_1/\rho$. The remaining statements are Lemma~\ref{lem:energy}(a),(b) and
 \eqref{eq:Y}.
@@ -118,12 +123,11 @@ $n_1M_1/\rho$. The remaining statements are Lemma~\ref{lem:energy}(a),(b) and
 
 The bound $\bar N$ depends only on the charges and on $n_1$; the initial
 state enters only through the time $t_0$. For the symmetric charges
-$\rho=\frac\pi4$, $M_1=\pi$ and $\bar N=8n_1$. The two matrix inequalities of
-Sections~\ref{sec:kernel} and~\ref{sec:phase} enter through
-Lemma~\ref{lem:three}(a),(b). If Lemma~\ref{lem:three}(a) is replaced by the
+$\rho=\frac\pi4$, $M_1=\pi$ and $\bar N=8n_1$. Corollary~\ref{cor:comparison} also implies Lemma~\ref{lem:three}(a)
+by comparison with $z_0e^{-B}$. If Lemma~\ref{lem:three}(a) is replaced by the
 elementary estimates $\tr(K\Phi_V)\leq\pi\tr K_+$,
 $\tr K_+=\frac12(\norm K_1+\tr K)$ and $\norm K_1\leq\tr(CR(2B))\leq N$, one
-obtains only $\dot N\leq-\frac\pi{10}\tr J+n_1M_1$, which gives no decay of
+obtains only $\dot N\leq-\frac\pi6\tr J+n_1M_1$, which gives no decay of
 the arrows on $\ker D$.
 
 \subsection{Growth of the least eigenvalue of
@@ -191,7 +195,7 @@ Let $\bar N$ and $t_0$ be as in Theorem~\ref{thm:energy}, $y_0=\Ima z_0$,
 $\lambda_0=\lambda(0)>0$, $c_\lambda=1/\log(1+1/\lambda_0)$,
 $\Xi_0=\tr E_1(L)|_{t=0}$ and
 \[
- \kappa_1:=\frac{y_0\,c_\lambda^2}{\sqrt2\,|z_0|\,c_\lambda\,\Xi_0+\frac75\bar N}.
+ \kappa_1:=\frac{y_0\,c_\lambda^2}{\sqrt2\,|z_0|\,c_\lambda\,\Xi_0+\frac43\bar N}.
 \]
 Then for all charges and all $t>t_0$
 \[
@@ -207,11 +211,11 @@ Proposition~\ref{prop:imported}(i) all $\ell_i\geq\lambda_0$ for $t\geq0$, so
 \eqref{eq:E1bounds} gives $\Xi\leq\log(1+1/\lambda_0)\tr e^{-L}$, that is
 $\tr e^{-L}\geq c_\lambda\Xi$. By Theorem~\ref{thm:kernel} and
 Theorem~\ref{thm:energy}, for $t\geq t_0$,
-$\tr J_+=\tr J+\tr J_-\leq\frac75\tr J\leq\frac75\bar N$, and
+$\tr J_+=\tr J+\tr J_-\leq\frac43\tr J\leq\frac43\bar N$, and
 $y_0+|x_0|\leq\sqrt2|z_0|$. The function $x\mapsto x^2/(cx+d)$ is increasing
 on $x>0$ for $c,d>0$. Hence by Lemma~\ref{lem:growth}, for $t\geq t_0$,
 \[
- \dot\Xi\leq-\frac{y_0c_\lambda^2\,\Xi^2}{\sqrt2|z_0|c_\lambda\,\Xi+\frac75\bar N}
+ \dot\Xi\leq-\frac{y_0c_\lambda^2\,\Xi^2}{\sqrt2|z_0|c_\lambda\,\Xi+\frac43\bar N}
  \leq-\kappa_1\Xi^2,
 \]
 where we used $\Xi\leq\Xi_0$ in the denominator; $\Xi$ is nonincreasing by
@@ -270,7 +274,7 @@ phases $\phi_0,\phi_1$ up to an exponentially decaying error.
 \begin{proof}
 (i) By Theorem~\ref{thm:growth} with $\Lambda=\Lambda_1$,
 $\lambda\geq\Lambda_1$ on $[t_1,\infty)$. By Theorem~\ref{thm:energy},
-$q\leq\bar N$ for $t\geq t_0$, so $\frac{4\pi q}{y_0\lambda}\leq\frac{\alpha_1}2$ there, and
+$q\leq\bar N$ for $t\geq t_0$, so $\frac{4\pi q}{y_0\lambda}\leq\frac{\alpha_1}2$ for $t\geq t_1$, and
 Proposition~\ref{prop:imported}(iii) gives $\dot s\leq-\frac{\alpha_1}2s$. At
 $t_1$, $\lambda\geq1$ and $s\leq\tr Y/(1-e^{-\lambda})\leq s_1$ by
 \eqref{eq:Y} and Theorem~\ref{thm:energy}.

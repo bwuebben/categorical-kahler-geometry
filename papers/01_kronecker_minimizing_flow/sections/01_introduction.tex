@@ -20,9 +20,9 @@ of quiver representations $\Omega$ is defined through a superconnection in a
 graded algebra \cite[\S5.4]{hkkp26}, and it is asked there whether the mass
 decreases \cite[Question~5.18]{hkkp26}.
 
-For a complex the endomorphism $\Omega$ is in general not normal
-\cite[Example~2.3]{wue26}, whereas in \cite[\S5.4]{hkkp26} its phase is
-written with the functional calculus. Throughout this paper $\arg\Omega$ is
+The normality assertion in \cite[Lemma~5.16]{hkkp26}, used there to
+define the phase by functional calculus, fails for complexes
+\cite[Example~2.3]{wue26}. Throughout this paper $\arg\Omega$ is
 taken in the sense of the positivity condition of \cite[\S4.2]{hkkp26}, that
 is, as the argument of the unitary factor in the polar decomposition
 (Section~\ref{sec:setting}). Every statement about the flow below, including
@@ -163,7 +163,7 @@ the \emph{arrow energy}; it is the term of $-\cS_{\CC}$, see
 For all charges in the upper half-plane, along the phase flow
 \[
  \frac{dN}{dt}\leq-\rho N+n_1M_1,\qquad
- \rho=\pi-\max\bigl\{\arg z_0,\tfrac{2\pi}5\bigr\}>0,
+ \rho=\pi-\max\bigl\{\arg z_0,\tfrac\pi3\bigr\}>0,
 \]
 with $M_1=\max\{\pi\max(\Rea z_1,0),\,2\Ima z_1\}$. Hence
 $N(t)\leq\max\{N(0),n_1M_1/\rho\}$ for all $t\geq0$, and
@@ -172,9 +172,11 @@ $N(t)\leq2n_1M_1/\rho$ after an explicit time.
 
 The three terms of $dN/dt$ come from the three blocks of $\Omega$
 (Lemma~\ref{lem:energy}). The block $\Omega_W$ is a normal matrix and its
-term is elementary. The blocks $\Omega_V$ and $\Omega_U$ are not normal, and
-their terms are controlled by two matrix inequalities, stated and proved
-independently of the flow in Sections~\ref{sec:kernel} and~\ref{sec:phase}.
+term is elementary. For the source block $\Omega_V$, taking expectations in a polar-phase
+eigenbasis bounds its term by $\alpha_0\tr K$, with $K$ the Hermitian arrow
+term of that block. For the degree-one block $\Omega_U$ the required
+estimate is the trace inequality in (i) below. Part (ii) gives a
+comparison for arbitrary pairs of matrices with the same imaginary part.
 
 \begin{theorem}[Two matrix inequalities]\label{thm:introD}
 The following hold.
@@ -182,7 +184,7 @@ The following hold.
 \item[(i)] Let $L>0$ and $E\geq0$ be Hermitian matrices, and let $J_L(E)$ be
  the integral of $e^{-xL}Ee^{-yL}$ over the simplex $x,y\geq0$, $x+y\leq1$.
  Then the negative part of the Hermitian matrix $J_L(E)$ satisfies
- $\tr J_L(E)_-\leq\frac25\tr J_L(E)$.
+ $\tr J_L(E)_-\leq\frac13\tr J_L(E)$.
 \item[(ii)] Let $\Omega',\Omega''$ be matrices with the same positive
  definite imaginary part and $\Phi',\Phi''$ the arguments of the unitary
  factors in their polar decompositions, with spectrum in $(0,\pi)$. Then
@@ -194,12 +196,12 @@ The following hold.
 By the Hermite--Genocchi formula for divided differences, in an eigenbasis
 of $L$ the matrix
 $J_L(E)$ is the entrywise product of $E$ with the matrix of second divided
-differences of $e^{-x}$ at the points $\ell_i,0,\ell_k$; this matrix is not
+differences of $e^{-x}$ at the points $\ell_i,0,\ell_k$; this matrix need not be
 positive semidefinite, and (i) says that the negative part of the product
-carries at most two fifths of the trace. The best constant is at least
-$(\sqrt2-1)/2$. The proof reduces (i) to an inequality in one real variable,
-which is proved by estimates near $0$ and $\infty$ and by interval
-arithmetic on a compact interval (Section~\ref{sec:kernel}). Statement (ii)
+carries at most one third of the trace. Splitting the integration simplex
+at its midpoints writes the kernel as a difference of two positive
+semidefinite kernels. A diagonal bound on the second kernel proves (i).
+Statement (ii)
 says that minus the argument of the polar factor is a strictly monotone
 operator, in the sense of Minty \cite{min62}, on the Hermitian matrices with
 the trace inner product; it is not monotone for the L\"owner order, because
@@ -237,18 +239,18 @@ $n_0=n_1$,
 with the determinants of the Gram matrices in fixed reference bases.
 
 \begin{theorem}[Lyapunov function]\label{thm:introE}
-Let the charges be ordered, and suppose that $\varphi\geq\frac{2\pi}5$ or
+Let the charges be ordered, and suppose that $\varphi\geq\frac\pi3$ or
 $r=1$. Then the phase potential is strictly decreasing along the phase flow.
 For the symmetric charges and $n_0=n_1$,
 \[
- -\frac{d\cK}{dt}\ \geq\ \frac\pi{10}\tr J_L(DCD^\dagger)+\frac\pi2\tr e^{-L}>0,
+ -\frac{d\cK}{dt}\ \geq\ \frac\pi6\tr J_L(DCD^\dagger)+\frac\pi2\tr e^{-L}>0,
  \qquad C=\sum_jA_j^\dagger A_j .
 \]
 There are ordered charges and complexes with $r=2$, with metrics at which
 the phase potential increases along the flow.
 \end{theorem}
 
-The number $\frac{2\pi}5$ is $\pi$ times the constant of
+The number $\frac\pi3$ is $\pi$ times the constant of
 Theorem~\ref{thm:introD}(i). The rate of the potential is a sum of three
 terms, one for each of $V$, $W$ (degree zero) and $U$ (degree one); the first
 two are nonnegative for elementary reasons, and the third is controlled by
